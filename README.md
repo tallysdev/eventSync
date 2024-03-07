@@ -60,4 +60,24 @@ RNF02 - Escalabilidade | Garantir que a plataforma seja escalável, capaz de lid
 RNF03 - Usabilidade | Desenvolver uma interface intuitiva e de fácil uso, proporcionando uma experiência agradável aos usuários.
 RNF04 - Conformidade Legal | Assegurar que a plataforma esteja em conformidade com todas as leis e regulamentos aplicáveis, especialmente no que diz respeito à proteção de dados e direitos do consumidor.
 
+## Riscos
+
+Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os responsáveis.
+
+Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
+------ | ------ | ------ | ------ | ------ | ------ |
+07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários
+07/03/2024 | Risco de Falha no Sistema de Pagamentos | Média | Gerente | Vigente | Realizar testes extensivos do sistema de pagamentos, implementar soluções de backup e suporte técnico adequado
+07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância
+
+
+
+
+
+
+
+
+
+
+
 
