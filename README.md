@@ -51,4 +51,13 @@ RF009 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciament
 RF010 - Calendário de eventos | Disponibilizar um calendário público de eventos, permitindo que os participantes visualizem e acompanhem os eventos futuros, e os participantes convidados podem visualizar no calendário os eventos privados | Cliente
 RF011 - Recomendações personalizadas | Uma vez cadastrado na plataforma, os usuários podem marcar quais tipos de eventos eles tem interesse, com base nisso e no histórico de eventos já participados, o sistema pode sugerir eventos para ele participar | Cliente
 
+## Lista de Requisitos Não-Funcionais
+
+Requisito                                 | Descrição   |
+---------                                 | ----------- |
+RNF01 - Segurança e Autenticação | Implementar mecanismos robustos de segurança e autenticação para proteger os dados dos usuários e informações sensíveis dos eventos.
+RNF02 - Escalabilidade | Garantir que a plataforma seja escalável, capaz de lidar com um grande número de eventos e usuários simultaneamente.
+RNF03 - Usabilidade | Desenvolver uma interface intuitiva e de fácil uso, proporcionando uma experiência agradável aos usuários.
+RNF04 - Conformidade Legal | Assegurar que a plataforma esteja em conformidade com todas as leis e regulamentos aplicáveis, especialmente no que diz respeito à proteção de dados e direitos do consumidor.
+
 
