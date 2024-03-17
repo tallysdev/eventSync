@@ -132,3 +132,4 @@ erDiagram
     EVENTO }|--||TIPO : "é de tipo"
     EVENTO }|--|{ PATROCINADOR : "patrocina"
 ```
+
