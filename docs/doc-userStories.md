@@ -42,19 +42,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
 
-### User Story US02 -
+### User Story US010 - Calendários De eventos
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
+| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuario, sendo eles publicos e privados caso o usuário esteja convidado para aquele evento |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| RF010          | Calendário de Eventos |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -63,9 +59,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | Vinicius Maia                                 | 
+| **Revisor**               | Tallys Aureliano                               | 
+| **Testador**              | Dayanne Xavier                                | 
 
 ### User Story US03 - 
 
