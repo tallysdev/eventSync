@@ -20,44 +20,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 
 
-### User Story US01 - Manter Evento
+### User Story US01 - Manter Usuário
 
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
-
-| **Requisitos envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
-
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 8 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
-| **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
-
-### User Story US02 -
-
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
-
-| **Requisitos envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+|               |                                                                 |
+| ------------- | :-------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos |
+|               | permissões.                                                     |
+| **Requisitos envolvidos** |                                                     |
+|               |                                                                 |
+| RF01          | Manter Usuário                                                  |
+| RF01.1        | Alterar Usuário                                                 |
+| RF01.2        | Consultar Usuários                                              |
+| RF01.3        | Excluir Usuário                                                 |
+| RF01.4        | Vizualizar detalhes do Usuário                                  |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -66,9 +41,34 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                  | 
+| **Revisor**               | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                               | 
+| **Testador**              | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                | 
+
+### User Story US02 Manter Evento 
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento   |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF02          | Manter Eventos |
+| RF02.1        | Alterar Evento                                                  |
+| RF02.2        | Consultar Evento                                                |
+| RF02.3        | Excluir Evento                                                  |
+| RF02.4        | Vizualizar detalhes do Evento                                  |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                  | 
+| **Revisor**               | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                               | 
+| **Testador**              | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                | 
 
 ### User Story US03 - 
 
