@@ -63,19 +63,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
 
-### User Story US03 - 
+### User Story US09 - Convite para eventos privados 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
+| **Descrição** | O sistema deve ter uma seção onde o gerente de eventos possa buscar e convidar os usuarios cadastrados para um evento privado |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| RF010          | Calendário de Eventos |
+| RF05          | Comunicação com cliente |
+| RF02          | Gerenciar Participantes |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -84,10 +82,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
-
+| **Desenvolvedor**         | Vinicius Maia                                 | 
+| **Revisor**               | Tallys Aureliano                               | 
+| **Testador**              | Dayanne Xavier                                | 
 ### User Story US04 - 
 
 |               |                                                                |
