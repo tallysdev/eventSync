@@ -24,8 +24,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                 |
 | ------------- | :-------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos |
-|               | permissões.                                                     |
+| **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos de permissões. |
+|               |                                                                 |
 | **Requisitos envolvidos** |                                                     |
 |               |                                                                 |
 | RF01          | Manter Usuário                                                  |
@@ -41,15 +41,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                  | 
-| **Revisor**               | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                               | 
-| **Testador**              | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                | 
+| **Desenvolvedor**         | Lucas Mateus                        | 
+| **Revisor**               | Vinicius Maia                       | 
+| **Testador**              | Dayanne Xavier                      | 
 
-### User Story US02 Manter Evento 
+### User Story US02 - Manter Evento 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento   |
+| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, consultar, excluir e visualizar os dados do evento.   |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
@@ -57,7 +57,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF02.1        | Alterar Evento                                                  |
 | RF02.2        | Consultar Evento                                                |
 | RF02.3        | Excluir Evento                                                  |
-| RF02.4        | Vizualizar detalhes do Evento                                  |
+| RF02.4        | Vizualizar detalhes do Evento                                   |
+| RF09          | Sistema de Reservas                                             |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -66,23 +67,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                  | 
-| **Revisor**               | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                               | 
-| **Testador**              | Italo Mauricio, Lucas Mateus, Tallys Aureliano, Vinicius Maia, Dayanne Xavier                                | 
+| **Desenvolvedor**         | Italo Mauricio                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
 
-### User Story US03 - 
+### User Story US03 - Gerenciar Participantes
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
+| **Descrição** | O sistema deve ser capaz de permitir que os usuários  gerenciem a lista de participantes inscritos em um evento específico, possibilitando adicionar, remover e visualizar participantes, garantindo uma gestão eficiente das inscrições |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| RF03          | Gerenciar Participantes |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -91,23 +88,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | Dayanne Xavier                      | 
+| **Revisor**               | Italo Maurício                      | 
+| **Testador**              | Lucas Mateus                        | 
 
-### User Story US04 - 
+### User Story US04 - Controle de Agenda
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
+| **Descrição** | O sistema deve ser capaz de permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendamentos para eventos. |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| RF04          | Controlar Agenda |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -116,6 +109,49 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
+
+### User Story US05 - Gerar Relatórios
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes e despesas. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF05          | Geração de Relatórios |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Dayanne Xavier                      | 
+| **Testador**              | Tallys Aureliano                    | 
+ 
+### User Story US06 - Comunicação com Clientes
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF06          | Comunicação com clientes |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Vinicius Maia                       | 
+| **Testador**              | Lucas Mateus                        | 
