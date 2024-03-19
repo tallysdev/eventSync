@@ -67,3 +67,69 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários
 07/03/2024 | Risco de Falha no Sistema de Pagamentos | Média | Gerente | Vigente | Realizar testes extensivos do sistema de pagamentos, implementar soluções de backup e suporte técnico adequado
 07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância
+
+
+## Modelos
+
+### Modelo de entidade relacionamento
+
+Para criar modelos ER é possível usar o BrModelo e gerar uma imagem. Contudo, atualmente é possível criar modelos ER usando a ferramenta **Mermaid**, escrevendo o modelo diretamente em markdown. Acesse a documentação para escrever modelos [ER Diagram Mermaid](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram).
+
+```mermaid
+erDiagram
+    USUARIO {
+        string id pk
+        string cpf
+        string rg
+        string permissoes
+        date data_nascimento
+    }
+    
+    ADM
+
+    ORGANIZADOR 
+    
+    PARTICIPANTE {
+        string[] interesse
+    }
+    
+    TIPO {
+        string id pk
+        string descricao
+    }
+
+    EVENTO {
+        string id pk
+        date data
+        string titulo
+        string local
+        string descricao
+        boolean ativo
+        boolean autorizado
+    }
+
+    PATROCINADOR{
+        string cnpj
+    }
+    
+    CRIACAO {
+        string evento_id pk
+        string organizador_id pk
+    }
+    
+    %% PARTICIPA {
+    %%     string evento_id pk
+    %%     string participante_id pk
+    %% }
+
+    USUARIO ||--|| ORGANIZADOR : "é um"
+    USUARIO ||--|| PARTICIPANTE : "é um"
+    USUARIO ||--|| ADM : "é um"
+    %% Na duvida se isso se mantém PARTICIPANTE ||--|{ PARTICIPA : participa
+    PARTICIPANTE }|--o{ EVENTO : "participa"
+    ORGANIZADOR ||--|{ CRIACAO : cria
+    EVENTO ||--|| CRIACAO : "é criado por"
+    EVENTO }|--||TIPO : "é de tipo"
+    EVENTO }|--|{ PATROCINADOR : "patrocina"
+```
+
