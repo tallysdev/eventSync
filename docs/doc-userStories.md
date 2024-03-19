@@ -19,22 +19,21 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 30/04/2022 | 1.6.0   | Adição das informações da equipe: Analista, Desenvolvedor, Revisor e Testador. | Taciano |
 
 
-
-### User Story US011 - Eventos Recomendados
+### User Story US07 - Seção de avaliação
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve possuir um seção que a partir do histórico de eventos do usuário logado, ele possa fornecer indicações outros eventos próximos que estejam nas mesma categorias dos eventos anteriores |
+| **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, e que possa avalia-los, desde que ainda esteja dentro do prazo de avaliação |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF011          | Recomendações personalizadas |
-
+| RF010          | Calendário de Eventos |
+| RF07          | Avaliação dos Eventos |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 15 h                                 | 
+| **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
@@ -42,14 +41,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
 
-### User Story US010 - Calendários De eventos
+### User Story US08 - Reserva e confirmação 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuario, sendo eles publicos e privados caso o usuário esteja convidado para aquele evento |
+| **Descrição** | O sistema deve pussuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
+| RF018         | Sistema de reservas |
 | RF010          | Calendário de Eventos |
 
 |                           |                                     |
@@ -85,15 +85,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | Vinicius Maia                                 | 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
-### User Story US08 - Reserva e confirmação 
+
+
+### User Story US010 - Calendários De eventos
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve pussuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
+| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuario, sendo eles publicos e privados caso o usuário esteja convidado para aquele evento |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF018         | Sistema de reservas |
 | RF010          | Calendário de Eventos |
 
 |                           |                                     |
@@ -107,21 +108,21 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
 
-### User Story US07 - Seção de avaliação
+### User Story US011 - Eventos Recomendados
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, e que possa avalia-los, desde que ainda esteja dentro do prazo de avaliação |
+| **Descrição** | O sistema deve possuir um seção que a partir do histórico de eventos do usuário logado, ele possa fornecer indicações outros eventos próximos que estejam nas mesma categorias dos eventos anteriores |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
-| RF07          | Avaliação dos Eventos |
+| RF011          | Recomendações personalizadas |
+
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 8 h                                 | 
+| **Estimativa**            | 15 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
