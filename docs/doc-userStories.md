@@ -106,3 +106,25 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | Vinicius Maia                                 | 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
+
+### User Story US07 - Seção de avaliação
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, e que possa avalia-los, desde que ainda esteja dentro do prazo de avaliação |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF010          | Calendário de Eventos |
+| RF07          | Avaliação dos Eventos |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Vinicius Maia                                 | 
+| **Revisor**               | Tallys Aureliano                               | 
+| **Testador**              | Dayanne Xavier                                | 
