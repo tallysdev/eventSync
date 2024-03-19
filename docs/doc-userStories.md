@@ -19,6 +19,143 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 30/04/2022 | 1.6.0   | Adição das informações da equipe: Analista, Desenvolvedor, Revisor e Testador. | Taciano |
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### User Story US07 - Seção de avaliação
 
 |               |                                                                |
@@ -106,7 +243,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Vinicius Maia                                 | 
 | **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                | 
+| **Testador**              | Dayanne Xavier                                |   
 
 ### User Story US011 - Eventos Recomendados
 
