@@ -85,19 +85,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | Vinicius Maia                                 | 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
-### User Story US04 - 
+### User Story US08 - Reserva e confirmação 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter eventos |
+| **Descrição** | O sistema deve pussuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Manter Eventos |
-| RF02          | Alterar Usuário  |
-| RF03          | Consultar Usuários        |
-| RF04          | Excluir Usuário |
-| RF05          | Vizualizar detalhes do Usuário |
+| RF018         | Sistema de reservas |
+| RF010          | Calendário de Eventos |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -106,6 +103,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Zé                                  | 
-| **Revisor**               | Maria                               | 
-| **Testador**              | Xuxa                                | 
+| **Desenvolvedor**         | Vinicius Maia                                 | 
+| **Revisor**               | Tallys Aureliano                               | 
+| **Testador**              | Dayanne Xavier                                | 
