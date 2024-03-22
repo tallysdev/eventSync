@@ -19,6 +19,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 30/04/2022 | 1.6.0   | Adição das informações da equipe: Analista, Desenvolvedor, Revisor e Testador. | Taciano |
 
 
+
 ### User Story US07 - Seção de avaliação
 
 |               |                                                                |
@@ -29,6 +30,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
 | RF07          | Avaliação dos Eventos |
+=======
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -51,7 +53,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF018         | Sistema de reservas |
 | RF010          | Calendário de Eventos |
-
+=======
+| **Desenvolvedor**         | Italo Mauricio                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
@@ -74,6 +79,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF010          | Calendário de Eventos |
 | RF05          | Comunicação com cliente |
 | RF02          | Gerenciar Participantes |
+=======
+| **Desenvolvedor**         | Dayanne Xavier                      | 
+| **Revisor**               | Italo Maurício                      | 
+| **Testador**              | Lucas Mateus                        | 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -96,6 +105,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
+=======
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -104,7 +117,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                                 | 
+| **Desenvolvedor**         | Vinicius Maia                               | 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                |   
 
@@ -129,3 +142,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | Vinicius Maia                                 | 
 | **Revisor**               | Tallys Aureliano                               | 
 | **Testador**              | Dayanne Xavier                                | 
+=======
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Vinicius Maia                       | 
+| **Testador**              | Lucas Mateus                        | 
