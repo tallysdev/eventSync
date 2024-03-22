@@ -18,7 +18,141 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 12/07/2020 | 1.0.0   | Documento completo com o detalhamento de todos os User Stories | Taciano     |
 | 30/04/2022 | 1.6.0   | Adição das informações da equipe: Analista, Desenvolvedor, Revisor e Testador. | Taciano |
 
+### User Story US01 - Manter Usuário
 
+|               |                                                                 |
+| ------------- | :-------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos de permissões. |
+|               |                                                                 |
+| **Requisitos envolvidos** |                                                     |
+|               |                                                                 |
+| RF01          | Manter Usuário                                                  |
+| RF01.1        | Alterar Usuário                                                 |
+| RF01.2        | Consultar Usuários                                              |
+| RF01.3        | Excluir Usuário                                                 |
+| RF01.4        | Vizualizar detalhes do Usuário                                  |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Lucas Mateus                        | 
+| **Revisor**               | Vinicius Maia                       | 
+| **Testador**              | Dayanne Xavier                      | 
+
+### User Story US02 - Manter Evento 
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, consultar, excluir e visualizar os dados do evento.   |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF02          | Manter Eventos |
+| RF02.1        | Alterar Evento                                                  |
+| RF02.2        | Consultar Evento                                                |
+| RF02.3        | Excluir Evento                                                  |
+| RF02.4        | Vizualizar detalhes do Evento                                   |
+| RF09          | Sistema de Reservas                                             |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Italo Mauricio                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
+
+### User Story US03 - Gerenciar Participantes
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de permitir que os usuários  gerenciem a lista de participantes inscritos em um evento específico, possibilitando adicionar, remover e visualizar participantes, garantindo uma gestão eficiente das inscrições |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF03          | Gerenciar Participantes |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Dayanne Xavier                      | 
+| **Revisor**               | Italo Maurício                      | 
+| **Testador**              | Lucas Mateus                        | 
+
+### User Story US04 - Controle de Agenda
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendamentos para eventos. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF04          | Controlar Agenda |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Lucas Mateus                        | 
+
+### User Story US05 - Gerar Relatórios
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes e despesas. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF05          | Geração de Relatórios |
+
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Dayanne Xavier                      | 
+| **Testador**              | Tallys Aureliano                    | 
+ 
+### User Story US06 - Comunicação com Clientes
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF06          | Comunicação com clientes |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 8 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Taciano                             | 
+| **Desenvolvedor**         | Italo Maurício                      | 
+| **Revisor**               | Vinicius Maia                       | 
+| **Testador**              | Lucas Mateus                        | 
 
 ### User Story US07 - Seção de avaliação
 
@@ -29,8 +163,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
-| RF07          | Avaliação dos Eventos |
-=======
+| RF07          | Avaliação dos Eventos  |
+
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -39,9 +173,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                                 | 
-| **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                | 
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Dayanne Xavier                      | 
 
 ### User Story US08 - Reserva e confirmação 
 
@@ -53,7 +187,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF018         | Sistema de reservas |
 | RF010          | Calendário de Eventos |
-=======
+
 | **Desenvolvedor**         | Italo Mauricio                      | 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
@@ -64,9 +198,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                                 | 
-| **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                | 
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Dayanne Xavier                      | 
 
 ### User Story US09 - Convite para eventos privados 
 
@@ -79,7 +213,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF010          | Calendário de Eventos |
 | RF05          | Comunicação com cliente |
 | RF02          | Gerenciar Participantes |
-=======
+
 | **Desenvolvedor**         | Dayanne Xavier                      | 
 | **Revisor**               | Italo Maurício                      | 
 | **Testador**              | Lucas Mateus                        | 
@@ -91,9 +225,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                                 | 
-| **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                | 
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Dayanne Xavier                      | 
 
 
 ### User Story US010 - Calendários De eventos
@@ -105,7 +239,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
-=======
+
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
@@ -117,9 +251,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                               | 
-| **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                |   
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Dayanne Xavier                      |   
 
 ### User Story US011 - Eventos Recomendados
 
@@ -135,14 +269,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 15 h                                 | 
+| **Estimativa**            | 15 h                                | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                                 | 
-| **Revisor**               | Tallys Aureliano                               | 
-| **Testador**              | Dayanne Xavier                                | 
-=======
+| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Revisor**               | Tallys Aureliano                    | 
+| **Testador**              | Dayanne Xavier                      | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Vinicius Maia                       | 
 | **Testador**              | Lucas Mateus                        | 
