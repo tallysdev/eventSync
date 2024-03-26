@@ -188,9 +188,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF018         | Sistema de reservas |
 | RF010          | Calendário de Eventos |
 
-| **Desenvolvedor**         | Italo Mauricio                      | 
-| **Revisor**               | Tallys Aureliano                    | 
-| **Testador**              | Lucas Mateus                        | 
+
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
@@ -198,9 +196,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Desenvolvedor**         | Italo Mauricio                      | 
 | **Revisor**               | Tallys Aureliano                    | 
-| **Testador**              | Dayanne Xavier                      | 
+| **Testador**              | Lucas Mateus                        | 
 
 ### User Story US09 - Convite para eventos privados 
 
@@ -214,9 +212,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF05          | Comunicação com cliente |
 | RF02          | Gerenciar Participantes |
 
-| **Desenvolvedor**         | Dayanne Xavier                      | 
-| **Revisor**               | Italo Maurício                      | 
-| **Testador**              | Lucas Mateus                        | 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -225,9 +220,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                       | 
-| **Revisor**               | Tallys Aureliano                    | 
-| **Testador**              | Dayanne Xavier                      | 
+| **Desenvolvedor**         | Dayanne Xavier                      | 
+| **Revisor**               | Italo Maurício                      | 
+| **Testador**              | Lucas Mateus                        | 
 
 
 ### User Story US010 - Calendários De eventos
@@ -240,9 +235,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
 
-| **Desenvolvedor**         | Italo Maurício                      | 
-| **Revisor**               | Tallys Aureliano                    | 
-| **Testador**              | Lucas Mateus                        | 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -251,9 +243,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                       | 
+| **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Tallys Aureliano                    | 
-| **Testador**              | Dayanne Xavier                      |   
+| **Testador**              | Lucas Mateus                        |   
 
 ### User Story US011 - Eventos Recomendados
 
