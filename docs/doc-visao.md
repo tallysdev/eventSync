@@ -7,11 +7,12 @@ link: <https://docs.google.com/document/d/1EZMq4H7l9eXpIhbgYRLK2Zbm6W0_0091QUN5s
 
 Membro              |     Papel     |   E-mail                         |
 ------------------  | ------------- | ----------                       |
-Italo Maurício      | Cliente       | <italo.santos.059@ufrn.edu.br>
-Lucas Mateus        | Desenvolvedor | <lucas.mateus.130@ufrn.edu.br>
-Vinicius Maia       | Desenvolvedor | <vinicius.maia.706@ufrn.edu.br>
-Tallys Aureliano    | Gerente       | <tallys.santos.017@ufrn.edu.br>
-Dayanne Xavier      | Testador      | <dayanne.xavier.119@ufrn.edu.br>
+Tallys Aureliano    | Analista, Gerente | <tallys.santos.017@ufrn.edu.br>
+Italo Maurício      | Analista      | <italo.santos.059@ufrn.edu.br>
+Lucas Mateus        | Analista      | <lucas.mateus.130@ufrn.edu.br>
+Vinicius Maia       | Analista      | <vinicius.maia.706@ufrn.edu.br>
+Dayanne Xavier      | Analista      | <dayanne.xavier.119@ufrn.edu.br>
+Taciano Silva       | Cliente       | <taciano@bsi.ufrn.br>
 
 ### Matriz de Competências
 
