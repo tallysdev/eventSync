@@ -254,7 +254,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF011          | Recomendações personalizadas |
 
-
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
@@ -262,8 +261,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                       | 
-| **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Dayanne Xavier                      | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Vinicius Maia                       | 
