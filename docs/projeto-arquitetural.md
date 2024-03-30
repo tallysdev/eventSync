@@ -7,6 +7,7 @@ Data | Versão | Descrição | Autores(as) |
 
 ## Descrição
 Este documento descreve a arquitetura proposta, descrevendo os padrões arquiteturais usados, decisões arquiteturais e descrição da tecnologias utilizadas.
+![Model](https://github.com/tallysdev/eventSync/assets/91434644/7bc11a40-8e81-456a-bd53-612034b3338d)
 
 ### Referencias
 https://medium.com/@renatojlelis/entendendo-a-arquitetura-do-django-f4b505773c14
