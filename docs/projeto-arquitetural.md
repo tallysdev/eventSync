@@ -31,10 +31,10 @@ Telas | A "tela" em si é usada no desenho apenas para direcionar o usuário sob
 Store | No Vue.js, o "store" refere-se ao Vuex, que é uma biblioteca de gerenciamento de estado. O Vuex permite compartilhar dados entre componentes de forma centralizada, facilitando a comunicação e o gerenciamento do estado de um aplicativo Vue.js. O store contém o estado global da aplicação, bem como métodos para atualizá-lo de forma previsível e reativa. Isso ajuda a manter a consistência dos dados em toda a aplicação e simplifica a depuração e o desenvolvimento de funcionalidades complexas. |
 
 ### Referencias
-https://medium.com/@renatojlelis/entendendo-a-arquitetura-do-django-f4b505773c14
-https://www.treinaweb.com.br/blog/entendendo-o-mtv-do-django#google_vignette
-https://fga-eps-mds.github.io/2018.2-Integra-Vendas/docs/doc-arquitetura
-https://www.django-rest-framework.org/
-https://docs.google.com/document/d/1i80vPaInPi5lSpI7rk4QExnO86iEmrsHBfmYRy6RDSM/edit
-https://vuetifyjs.com/en/
-https://vuejs.org/guide/introduction.html
+ - https://medium.com/@renatojlelis/entendendo-a-arquitetura-do-django-f4b505773c14
+ - https://www.treinaweb.com.br/blog/entendendo-o-mtv-do-django#google_vignette
+ - https://fga-eps-mds.github.io/2018.2-Integra-Vendas/docs/doc-arquitetura
+ - https://www.django-rest-framework.org/
+ - https://docs.google.com/document/d/1i80vPaInPi5lSpI7rk4QExnO86iEmrsHBfmYRy6RDSM/edit
+ - https://vuetifyjs.com/en/
+ - https://vuejs.org/guide/introduction.html
