@@ -38,17 +38,18 @@ Perfil Cliente | Usuário que contrata os serviços de organização de eventos 
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Manter Eventos | Permitir o cadastro e manutenção de eventos na plataforma, incluindo informações como nome, data, local, descrição e tipo de evento | Organizador de Eventos
-RF002 - Gerenciar Participantes | Possibilitar o controle de participantes inscritos em cada evento, incluindo informações como nome, contato e status de pagamento | Organizador de Eventos
-RF003 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
-RF004 - Geração de Relatórios | Gerar relatórios informativos sobre eventos realizados, participantes, receitas e despesas | Administrador
-RF005 - Comunicação com Clientes | Possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes | Organizador de Eventos
-RF006 - Controle Financeiro | Permitir o registro e controle de pagamentos, incluindo faturamento, recibos, e status de pagamento dos participantes |Administrador
-RF007 - Avaliação dos eventos | Permitir que os participantes avaliem e forneçam feedbacks sobre os eventos após a conclusão do mesmo | Cliente
-RF008 - Sistema de reservas | Permitir que o cliente reserve e confirme sua participação no evento | Cliente  
-RF009 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciamento de patrocinadores para eventos, incluindo informações sobre eles | Organizador de eventos  
-RF010 - Calendário de eventos | Disponibilizar um calendário público de eventos, permitindo que os participantes visualizem e acompanhem os eventos futuros, e os participantes convidados podem visualizar no calendário os eventos privados | Cliente
-RF011 - Recomendações personalizadas | Uma vez cadastrado na plataforma, os usuários podem marcar quais tipos de eventos eles tem interesse, com base nisso e no histórico de eventos já participados, o sistema pode sugerir eventos para ele participar | Cliente
+RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos
+RF002 - Manter Eventos | Permitir o cadastro e manutenção de eventos na plataforma, incluindo informações como nome, data, local, descrição e tipo de evento | Organizador de Eventos
+RF003 - Gerenciar Participantes | Possibilitar o controle de participantes inscritos em cada evento, incluindo informações como nome, contato e status de pagamento | Organizador de Eventos
+RF004 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
+RF005 - Geração de Relatórios | Gerar relatórios informativos sobre eventos realizados, participantes, receitas e despesas | Administrador
+RF006 - Comunicação com Clientes | Possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes | Organizador de Eventos
+RF007 - Controle Financeiro | Permitir o registro e controle de pagamentos, incluindo faturamento, recibos, e status de pagamento dos participantes |Administrador
+RF008 - Avaliação dos eventos | Permitir que os participantes avaliem e forneçam feedbacks sobre os eventos após a conclusão do mesmo | Cliente
+RF009 - Sistema de reservas | Permitir que o cliente reserve e confirme sua participação no evento | Cliente  
+RF0010 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciamento de patrocinadores para eventos, incluindo informações sobre eles | Organizador de eventos  
+RF011 - Calendário de eventos | Disponibilizar um calendário público de eventos, permitindo que os participantes visualizem e acompanhem os eventos futuros, e os participantes convidados podem visualizar no calendário os eventos privados | Cliente
+RF012 - Recomendações personalizadas | Uma vez cadastrado na plataforma, os usuários podem marcar quais tipos de eventos eles tem interesse, com base nisso e no histórico de eventos já participados, o sistema pode sugerir eventos para ele participar | Cliente
 
 ## Lista de Requisitos Não-Funcionais
 
