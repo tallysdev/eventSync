@@ -14,6 +14,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
 | 13/03/2024 | 0.0.1   | Template e descrição do documento  | Italo e Lucas |
 | 13/03/2024 | 0.0.2   | Detalhamento do User Story US01    | Italo e Lucas |
+| 31/03/2024 | 0.0.3   | Revisão e correção das numerações  | Italo e Lucas |
 
 ### User Story US01 - Manter Usuário
 
@@ -206,8 +207,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF010          | Calendário de Eventos |
-| RF05          | Comunicação com cliente |
-| RF02          | Gerenciar Participantes |
+| RF06          | Comunicação com cliente |
+| RF03          | Gerenciar Participantes |
 
 
 |                           |                                     |
@@ -264,4 +265,3 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Testador**              | Dayanne Xavier                      | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Vinicius Maia                       | 
-| **Testador**              | Lucas Mateus                        | 
