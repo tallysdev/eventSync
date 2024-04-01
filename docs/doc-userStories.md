@@ -160,8 +160,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
-| RF07          | Avaliação dos Eventos  |
+| RF011         | Calendário de Eventos |
+| RF08          | Avaliação dos Eventos  |
 
 
 |                           |                                     |
@@ -183,8 +183,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF018         | Sistema de reservas |
-| RF010          | Calendário de Eventos |
+| RF09          | Sistema de reservas |
+| RF011         | Calendário de Eventos |
 
 
 |                           |                                     |
@@ -206,7 +206,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
+| RF011         | Calendário de Eventos |
 | RF06          | Comunicação com cliente |
 | RF03          | Gerenciar Participantes |
 
@@ -231,7 +231,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
+| RF011          | Calendário de Eventos |
 
 
 |                           |                                     |
@@ -253,7 +253,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF011          | Recomendações personalizadas |
+| RF012          | Recomendações personalizadas |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
