@@ -14,6 +14,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | :--------- | :-----: | :--------------------------------: | :----------------------------- |
 | 13/03/2024 | 0.0.1   | Template e descrição do documento  | Italo e Lucas |
 | 13/03/2024 | 0.0.2   | Detalhamento do User Story US01    | Italo e Lucas |
+| 31/03/2024 | 0.0.3   | Revisão e correção das numerações  | Italo e Lucas |
 
 ### User Story US01 - Manter Usuário
 
@@ -159,8 +160,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
-| RF07          | Avaliação dos Eventos  |
+| RF011         | Calendário de Eventos |
+| RF08          | Avaliação dos Eventos  |
 
 
 |                           |                                     |
@@ -182,8 +183,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF018         | Sistema de reservas |
-| RF010          | Calendário de Eventos |
+| RF09          | Sistema de reservas |
+| RF011         | Calendário de Eventos |
 
 
 |                           |                                     |
@@ -205,9 +206,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
-| RF05          | Comunicação com cliente |
-| RF02          | Gerenciar Participantes |
+| RF011         | Calendário de Eventos |
+| RF06          | Comunicação com cliente |
+| RF03          | Gerenciar Participantes |
 
 
 |                           |                                     |
@@ -230,7 +231,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF010          | Calendário de Eventos |
+| RF011          | Calendário de Eventos |
 
 
 |                           |                                     |
@@ -252,8 +253,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF011          | Recomendações personalizadas |
-
+| RF012          | Recomendações personalizadas |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -262,9 +262,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Vinicius Maia                       | 
-| **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Dayanne Xavier                      | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Vinicius Maia                       | 
-| **Testador**              | Lucas Mateus                        | 
