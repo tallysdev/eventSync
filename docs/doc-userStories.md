@@ -53,10 +53,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF02          | Manter Eventos |
-| RF02.1        | Alterar Evento                                                  |
-| RF02.2        | Consultar Evento                                                |
-| RF02.3        | Excluir Evento                                                  |
-| RF02.4        | visualizar detalhes do Evento                                   |
+| RF02.1        | Inserir Evento                                                  |
+| RF02.2        | Alterar Evento                                                  |
+| RF02.3        | Consultar Evento                                                |
+| RF02.4        | Excluir Evento                                                  |
+| RF02.5        | visualizar detalhes do Evento                                   |
 | RF09          | Sistema de Reservas                                             |
 
 |                           |                                     |
