@@ -129,7 +129,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF05          | Geração de Relatórios |
+| RF05          | Geração de Relatórios       |
+| RF05.1        | Relatório de eventos feitos |
+| RF05.2        | Relatório de participantes  |
+| RF05.3        | Relatório de despesas |
+
 
 
 |                           |                                     |
@@ -137,7 +141,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 34 PF                               | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Vinicius Maia                       | 
 | **Revisor**               | Dayanne Xavier                      | 
