@@ -80,13 +80,18 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF03          | Gerenciar Participantes |
+| RF03.1        | Inserir participante   |
+| RF03.2        | Excluir participante   |
+| RF03.3        | Visualizar participante   |
+
+
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 33 PF                               | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Dayanne Xavier                      | 
 | **Revisor**               | Italo Maurício                      | 
