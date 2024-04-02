@@ -27,10 +27,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Manter Usuário                                                  |
-| RF01.1        | Alterar Usuário                                                 |
-| RF01.2        | Consultar Usuários                                              |
-| RF01.3        | Excluir Usuário                                                 |
-| RF01.4        | Vizualizar detalhes do Usuário                                  |
+| RF01.1        | Inserir Usuário                                                 |
+| RF01.2        | Alterar Usuário                                                 |
+| RF01.3        | Consultar Usuários                                              |
+| RF01.4        | Excluir Usuário                                                 |
+| RF01.5        | visualizar detalhes do Usuário                                  |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -55,7 +56,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF02.1        | Alterar Evento                                                  |
 | RF02.2        | Consultar Evento                                                |
 | RF02.3        | Excluir Evento                                                  |
-| RF02.4        | Vizualizar detalhes do Evento                                   |
+| RF02.4        | visualizar detalhes do Evento                                   |
 | RF09          | Sistema de Reservas                                             |
 
 |                           |                                     |
