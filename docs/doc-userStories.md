@@ -15,6 +15,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 13/03/2024 | 0.0.1   | Template e descrição do documento  | Italo e Lucas |
 | 13/03/2024 | 0.0.2   | Detalhamento do User Story US01    | Italo e Lucas |
 | 31/03/2024 | 0.0.3   | Revisão e correção das numerações  | Italo e Lucas |
+| 02/04/2024 | 0.0.4   | Revisão e correção de pontos de função  | Italo e Lucas |
+
 
 ### User Story US01 - Manter Usuário
 
