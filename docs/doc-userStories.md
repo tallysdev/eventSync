@@ -188,7 +188,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 11 PF                                | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Vinicius Maia                       | 
 | **Revisor**               | Tallys Aureliano                    | 
