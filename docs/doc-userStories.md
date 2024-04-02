@@ -38,7 +38,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 55 PF                               | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Lucas Mateus                        | 
 | **Revisor**               | Vinicius Maia                       | 
@@ -64,7 +64,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 67 PF                                | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Italo Mauricio                      | 
 | **Revisor**               | Tallys Aureliano                    | 
