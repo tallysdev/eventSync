@@ -105,14 +105,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF04          | Controlar Agenda |
+| RF04          | Controlar Agenda             |
+| RF04          | Visualizar datas disponíveis |
+| RF04          | Agendar evento               |
+
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 22 PF                                | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Tallys Aureliano                    | 
