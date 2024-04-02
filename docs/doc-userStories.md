@@ -202,8 +202,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF09          | Sistema de reservas |
-| RF011         | Calendário de Eventos |
+| RF09          | Sistema de reservas    |
+| RF09.1        | Sistema de confirmação |
+| RF011         | Calendário de Eventos  |
 
 
 |                           |                                     |
@@ -211,7 +212,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 22 PF                                | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Italo Mauricio                      | 
 | **Revisor**               | Tallys Aureliano                    | 
