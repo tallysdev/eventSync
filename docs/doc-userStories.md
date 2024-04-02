@@ -147,7 +147,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Dayanne Xavier                      | 
 | **Testador**              | Tallys Aureliano                    | 
  
-### User Story US06 - Comunicação com Clientes
+### User Story US06 - Comunicação com Participantes
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -155,14 +155,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF06          | Comunicação com clientes |
+| RF06          | Comunicação com Participantes |
+| RF06.1        | Cadastrar mensagens           |
+| RF06.2        | Notificar participantes       |
+
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 8 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
+| **Tamanho Funcional**     | 22 PF                               | 
 | **Analista**              | Taciano                             | 
 | **Desenvolvedor**         | Italo Maurício                      | 
 | **Revisor**               | Vinicius Maia                       | 
