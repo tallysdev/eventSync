@@ -218,32 +218,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US09 - Convite para eventos privados 
-
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ter uma seção onde o gerente de eventos possa buscar e convidar os usuarios cadastrados para um evento privado |
-
-| **Requisitos envolvidos** |                                                    |
-| ------------- | :------------------------------------------------------------- |
-| RF011         | Calendário de Eventos |
-| RF06          | Comunicação com cliente |
-| RF03          | Gerenciar Participantes |
-
-
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 8 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 7 PF                                | 
-| **Analista**              | Taciano                             | 
-| **Desenvolvedor**         | Dayanne Xavier                      | 
-| **Revisor**               | Italo Maurício                      | 
-| **Testador**              | Lucas Mateus                        | 
-
-
-### User Story US010 - Calendários De eventos
+### User Story US09 - Calendários De eventos
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -265,7 +240,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        |   
 
-### User Story US011 - Eventos Recomendados
+### User Story US010 - Eventos Recomendados
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
