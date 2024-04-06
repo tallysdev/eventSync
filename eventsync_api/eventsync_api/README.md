@@ -30,6 +30,9 @@
 <li>Faça as migrações do banco de dados:</li>
 <pre>python manage.py migrate</pre>
 
+<li>OPCIONAL SE FOR USAR A INTERFACE DO DRF: execute o comando de coleta de arquivos estaticos:</li>
+<pre>python manage.py collectstatic --no-input</pre>
+
 <li>Inicie o servidor de desenvolvimento:</li>
 <pre>python manage.py runserver</pre>
 
