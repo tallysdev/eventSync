@@ -28,11 +28,12 @@ Dayanne Xavier      | Desenvolvedor C
 
 O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
 
-Perfil                                 | Descrição   |
----------                              | ----------- |
-Administrador                          | Responsável pelo gerenciamento geral da plataforma. Possui acesso completo a todas as funcionalidades, incluindo cadastro de eventos, gestão de equipes, geração de relatórios e controle financeiro.
-Organizador de Eventos | Usuário responsável pela criação e organização de eventos na plataforma. Pode cadastrar novos eventos, gerenciar participantes, definir agendas e enviar comunicações aos clientes.
-Perfil Cliente | Usuário que contrata os serviços de organização de eventos através da plataforma. Pode visualizar eventos disponíveis, realizar inscrições, efetuar pagamentos e interagir com os organizadores.
+Número | Perfil                        | Descrição   |
+------ |------------------------------ | ----------- |
+1 |Gerente da plataforma                  | Responsável pelo gerenciamento geral da plataforma. Possui acesso completo a todas as funcionalidades, principal função é validar e autorizar, organizações, eventos e patrocinadores.
+2 | Organizador de Eventos                 | Usuário responsável pela criação e organização de eventos na plataforma. Pode cadastrar novos eventos, gerenciar participantes, definir agendas e enviar comunicações aos usuários envolvidos no evento.
+3 | Participante                           | Usuário comum, pode visualizar eventos disponíveis, realizar inscrições, comentar no fórum dos eventos, feed da plataforma e interagir com os organizadores. Principal papel é se inscrever em eventos na plataforma.
+
 
 ## Lista de Requisitos Funcionais
 
