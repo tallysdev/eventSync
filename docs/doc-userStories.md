@@ -16,13 +16,33 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 13/03/2024 | 0.0.2   | Detalhamento do User Story US01    | Italo e Lucas |
 | 31/03/2024 | 0.0.3   | Revisão e correção das numerações  | Italo e Lucas |
 | 02/04/2024 | 0.0.4   | Revisão e correção de pontos de função  | Dayanne |
+| 10/04/2024 | 0.1.0   | Correção de Users Stories          | Tallys | 
 
 
+### Tabelas de Users Stories
+| Nome | Descrição |
+|------|-----------|
+| US01 | Manter usuario
+| US02 | Manter Evento  
+| US03 | Gerenciar Participantes 
+| US04 | Calendario de eventos
+| US05 | Gerar Relatório de participantes do evento
+| US06 | Comunicação com Participantes
+| US07 | Seção de avaliação 
+| US08 | Reserva e confirmação
+| US09 | Calendários De eventos
+| US10 | Eventos Relacionados
+| US12 | Feed de comentarios gerais
+| US13 | Manter Local de evento
+| US14 | Avaliação de Eventos
+| US15 | Gerar certificado de participação
+| US16 | Gerar Crachá
+| US17 | Gerar Relatório de participações do evento
+ 
 ### User Story US01 - Manter Usuário
 
-|               |                                                                 |
-| ------------- | :-------------------------------------------------------------- |
 | **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos de permissões. |
+| ------------- | :-------------------------------------------------------------- |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
@@ -81,7 +101,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF03          | Gerenciar Participantes |
 | RF03.1        | Inserir participante   |
-| RF03.2        | Excluir participante   |
+| RF03.2 &&       | Excluir participante   |
 | RF03.3        | Visualizar participante   |
 
 
@@ -97,7 +117,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Italo Maurício                      | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US04 - Controle de Agenda
+### User Story US04 - Calendario de Eventos
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
