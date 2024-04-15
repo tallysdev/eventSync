@@ -68,7 +68,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, consultar, excluir e visualizar os dados do evento.   |
+| **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.   |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
@@ -95,7 +95,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de permitir que os usuários  gerenciem a lista de participantes inscritos em um evento específico, possibilitando adicionar, remover e visualizar participantes, garantindo uma gestão eficiente das inscrições |
+| **Descrição** | O sistema deve ser capaz de permitir que os usuários, gerenciem a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, garantindo uma gestão eficiente das inscrições |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
