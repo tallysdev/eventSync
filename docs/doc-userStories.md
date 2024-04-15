@@ -41,8 +41,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
  
 ### User Story US01 - Manter Usuário
 
-| **Descrição** | O sistema deve ser capaz de cadastrar usuários com vários tipos de permissões. |
-| ------------- | :-------------------------------------------------------------- |
+| **Descrição** | O sistema deve ser capaz de cadastrar, listar, excluir, atualizar, vários tipos de usuários com permissões referente ao seu tipo e mante-los nos sistema. |
+| ------------- | :----------------------------------------------------------------------------- |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
