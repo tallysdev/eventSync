@@ -9,7 +9,41 @@ Data | Versão | Descrição | Autores(as) |
 Este documento descreve a arquitetura proposta, descrevendo os padrões arquiteturais usados, decisões arquiteturais e descrição da tecnologias utilizadas.
 
 ## Visão Geral
-![Model](https://github.com/tallysdev/eventSync/assets/91434644/7bc11a40-8e81-456a-bd53-612034b3338d)
+
+~~~mermaid
+
+graph TD;
+
+subgraph VueJS["Front-End (Vue.js)"]
+    http[Vue Js]
+    style http fill:darkGreen
+end
+
+subgraph Django_REST["Back-End (Django REST)"]
+    urls[URLs/Router]
+    views[Views]
+    serializer[Serializer]
+    models[Models]
+    style urls fill:darkBlue
+    style views fill:darkBlue
+    style serializer fill:darkBlue
+    style models fill:darkBlue
+end
+
+subgraph Database["SGBD"]
+    db[(PostgreSQL)]
+    style db fill:darkRed
+end
+
+http -->|Requisições HTTP| urls
+urls -->|Define rotas e mapeia para views| views
+views -->|Manipula dados utilizando serializers| serializer
+serializer -->|Serializa/deserializa dados| models
+models -->|Interage com o banco de dados| db
+views -->|Se conecta com o Serializer| serializer
+serializer -->|Se conecta com a View| views
+
+~~~
 
 ## Mecanismo de Arquitetura
 ### BackEnd 
