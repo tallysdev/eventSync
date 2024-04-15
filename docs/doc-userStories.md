@@ -117,11 +117,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Italo Maurício                      | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US04 - Calendario de Eventos
+### User Story US04 - Calendário de Eventos
 
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendamentos para eventos. |
+| **Descrição**| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
+|--------------|------------------------------------------------------------------|
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
