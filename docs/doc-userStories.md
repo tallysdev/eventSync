@@ -27,7 +27,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | US03 | Gerenciar Participantes 
 | US04 | Calendario de eventos
 | US05 | Gerar Relatório de participantes do evento
-| US06 | Comunicação com Participantes
+| US06 | Notificações para Usuarios
 | US07 | Seção de avaliação 
 | US08 | Reserva e confirmação
 | US09 | Calendários De eventos
@@ -166,11 +166,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Dayanne Xavier                      | 
 | **Testador**              | Tallys Aureliano                    | 
  
-### User Story US06 - Comunicação com Participantes
+### User Story US06 - Notificações para Usuarios
 
-|               |                                                                |
+| **Descrição** | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuarios do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes. |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
