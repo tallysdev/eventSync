@@ -9,7 +9,54 @@ Data | Versão | Descrição | Autores(as) |
 Este documento descreve a arquitetura proposta, descrevendo os padrões arquiteturais usados, decisões arquiteturais e descrição da tecnologias utilizadas.
 
 ## Visão Geral
-![Model](https://github.com/tallysdev/eventSync/assets/91434644/7bc11a40-8e81-456a-bd53-612034b3338d)
+~~~mermaid
+
+graph TD;
+
+subgraph VueJS["Front-End (Vue.js)"]
+    http[Vue Js]
+    vueComponent[Vue Component]
+    vuex[Vuex Store]
+    axios[Axios HTTP client]
+    style http fill:darkGreen
+    style vueComponent fill:darkGreen
+    style vuex fill:darkGreen
+    style axios fill:darkGreen
+end
+
+subgraph Django_REST["Back-End (Django REST)"]
+    urls[URLs/Router]
+    views[Views]
+    serializer[Serializer]
+    models[Models]
+    style urls fill:darkBlue
+    style views fill:darkBlue
+    style serializer fill:darkBlue
+    style models fill:darkBlue
+end
+
+subgraph Database["SGBD"]
+    db[(PostgreSQL)]
+    style db fill:darkRed
+end
+
+http -->|Requisições HTTP| urls
+urls -->|Define rotas e mapeia para views| views
+views -->|Manipula dados utilizando serializers| serializer
+serializer -->|Serializa/deserializa dados| models
+models -->|Interage com o banco de dados| db
+views -->|Se conecta com o Serializer| serializer
+serializer -->|Se conecta com a View| views
+
+vueComponent -->|Renderiza a interface| vuex
+vuex -->|Acessa e gerencia o estado global| axios
+axios -->|Envia requisições para o back-end| http
+http -->|Retorna dados| axios
+axios -->|Manipula dados| vuex
+vuex -->|Atualiza estado| vueComponent
+
+
+~~~
 
 ## Mecanismo de Arquitetura
 ### BackEnd 
