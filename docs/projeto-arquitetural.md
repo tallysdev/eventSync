@@ -29,10 +29,10 @@ subgraph Django_REST["Back-End (Django REST)"]
     views[Views]
     serializer[Serializer]
     models[Models]
-    style urls fill:darkBlue
-    style views fill:darkBlue
-    style serializer fill:darkBlue
-    style models fill:darkBlue
+    style urls fill:Blue
+    style views fill:Blue
+    style serializer fill:Blue
+    style models fill:Blue
 end
 
 subgraph Database["SGBD"]
@@ -54,6 +54,9 @@ axios -->|Envia requisições para o back-end| http
 http -->|Retorna dados| axios
 axios -->|Manipula dados| vuex
 vuex -->|Atualiza estado| vueComponent
+vueComponent -->|Envia dados para o model| models
+models -->|Se conecta com a Vue component| vueComponent
+
 
 
 ~~~
