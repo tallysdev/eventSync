@@ -262,7 +262,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        |   
 
-### User Story US010 - Eventos Recomendados
+### User Story US010 - Eventos Relacionados
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
