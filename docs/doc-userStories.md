@@ -244,7 +244,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuario, sendo eles publicos e privados caso o usuário esteja convidado para aquele evento |
+| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuario em forma de agenda, sendo eles publicos e privados caso o usuário esteja convidado para aquele evento |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
