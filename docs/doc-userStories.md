@@ -24,8 +24,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------|-----------|
 | US01 | Manter usuario
 | US02 | Formulario de avalaição de evento
-| US03 | Secção do Patrocinador
-| US04 | Manter Evento  
+| US03 | Manter Evento  
+| US04 | Secção do Patrocinador
 | US05 | Gerenciar Participantes 
 | US06 | Calendario de eventos
 | US07 | Gerar Relatório de participantes do evento
@@ -66,12 +66,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Vinicius Maia                       | 
 | **Testador**              | Dayanne Xavier                      | 
 
-### User Story US18 - Formulario de avalaição de evento
+### User Story US02 - Formulario de avalaição de evento
 | **Descrição** | O sistema deve fornecer para o organizador do eventos uma secção de criação de formulario de avalaiação do evento, essa secção será obrigatoria. |
 |-----|----|
 
 
-### User Story US02 - Manter Evento 
+### User Story US03 - Manter Evento 
 
 | **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.   |
 | ------------- | :------------------------------------------------------------- |
@@ -98,11 +98,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
 
-### Usuer Story US Secção do Patrocinador
+### Usuer Story US04 Secção do Patrocinador
 | **Descrição** | O sistema deve conter uma area na tela para os patrocinadores e apaioadores(orgãos gerais que são cadastrados pelo admim) do sistema, na seção particular de eventos deve conter uma mesma area para os patrocinadores e organizadores da plataforma. |
 |-----|----|
 
-### User Story US03 - Gerenciar Participantes
+### User Story US05 - Gerenciar Participantes
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -128,7 +128,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Italo Maurício                      | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US04 - Calendário de Eventos
+### User Story US06 - Calendário de Eventos
 
 | **Descrição**| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |--------------|------------------------------------------------------------------|
@@ -151,7 +151,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US05 - Gerar Relatórios de participantes do evento
+### User Story US07 - Gerar Relatórios de participantes do evento
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -177,7 +177,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Dayanne Xavier                      | 
 | **Testador**              | Tallys Aureliano                    | 
  
-### User Story US06 - Notificações para Usuarios
+### User Story US08 - Notificações para Usuarios
 
 | **Descrição** | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuarios do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
 | ------------- | :------------------------------------------------------------- |
@@ -200,7 +200,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Vinicius Maia                       | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US07 - Seção de avaliação
+### User Story US09 - Seção de avaliação
 
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, na seção do evento em si deve ter uma opção para feedbacks sobre o evento. Em que o usuario possa comentar ou preencher um formulario de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
@@ -222,7 +222,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Dayanne Xavier                      | 
 
-### User Story US08 - Reserva e confirmação 
+### User Story US10 - Reserva e confirmação 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -246,7 +246,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
 
-### User Story US09 - Calendários De eventos
+### User Story US11 - Calendários De eventos
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
@@ -268,7 +268,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        |   
 
-### User Story US010 - Eventos Relacionados
+### User Story US012 - Eventos Relacionados
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
