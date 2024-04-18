@@ -23,22 +23,22 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Nome | Descrição |
 |------|-----------|
 | US01 | Manter usuario
-| US02 | Manter Evento  
-| US03 | Gerenciar Participantes 
-| US04 | Calendario de eventos
-| US05 | Gerar Relatório de participantes do evento
-| US06 | Notificações para Usuarios
-| US07 | Seção de avaliação 
-| US08 | Reserva e confirmação
-| US09 | Calendários De eventos
-| US10 | Eventos Relacionados
+| US02 | Formulario de avalaição de evento
+| US03 | Manter Evento  
+| US04 | Gerenciar Participantes 
+| US05 | Calendario de eventos
+| US06 | Gerar Relatório de participantes do evento
+| US07 | Notificações para Usuarios
+| US08 | Seção de avaliação 
+| US09 | Reserva e confirmação
+| US10 | Calendários De eventos
+| US11 | Eventos Relacionados
 | US12 | Feed de comentarios gerais
 | US13 | Manter Local de evento
 | US14 | Avaliação de Eventos
 | US15 | Gerar certificado de participação
 | US16 | Gerar Crachá
 | US17 | Gerar Relatório de participações do evento
-| US0X | Formularios
  
 ### User Story US01 - Manter Usuário
 
@@ -65,9 +65,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**               | Vinicius Maia                       | 
 | **Testador**              | Dayanne Xavier                      | 
 
-### User Story US0X - Formularios
+### User Story US18 - Formulario de avalaição de evento
 | **Descrição** | O sistema deve fornecer para o organizador do eventos uma secção de criação de formulario de avalaiação do evento, essa secção será obrigatoria. |
 |-----|----|
+
 
 ### User Story US02 - Manter Evento 
 
