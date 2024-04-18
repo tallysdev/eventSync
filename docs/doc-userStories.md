@@ -24,21 +24,22 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------|-----------|
 | US01 | Manter usuario
 | US02 | Formulario de avalaição de evento
-| US03 | Manter Evento  
-| US04 | Gerenciar Participantes 
-| US05 | Calendario de eventos
-| US06 | Gerar Relatório de participantes do evento
-| US07 | Notificações para Usuarios
-| US08 | Seção de avaliação 
-| US09 | Reserva e confirmação
-| US10 | Calendários De eventos
-| US11 | Eventos Relacionados
-| US12 | Feed de comentarios gerais
-| US13 | Manter Local de evento
-| US14 | Avaliação de Eventos
-| US15 | Gerar certificado de participação
-| US16 | Gerar Crachá
-| US17 | Gerar Relatório de participações do evento
+| US03 | Secção do Patrocinador
+| US04 | Manter Evento  
+| US05 | Gerenciar Participantes 
+| US06 | Calendario de eventos
+| US07 | Gerar Relatório de participantes do evento
+| US08 | Notificações para Usuarios
+| US09 | Seção de avaliação 
+| US10 | Reserva e confirmação
+| US11 | Calendários De eventos
+| US12 | Eventos Relacionados
+| US13 | Feed de comentarios gerais
+| US14 | Manter Local de evento
+| US15 | Avaliação de Eventos
+| US16 | Gerar certificado de participação
+| US17 | Gerar Crachá
+| US18 | Gerar Relatório de participações do evento
  
 ### User Story US01 - Manter Usuário
 
@@ -96,6 +97,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**         | Italo Mauricio                      | 
 | **Revisor**               | Tallys Aureliano                    | 
 | **Testador**              | Lucas Mateus                        | 
+
+### Usuer Story US Secção do Patrocinador
+| **Descrição** | O sistema deve conter uma area na tela para os patrocinadores e apaioadores(orgãos gerais que são cadastrados pelo admim) do sistema, na seção particular de eventos deve conter uma mesma area para os patrocinadores e organizadores da plataforma. |
+|-----|----|
 
 ### User Story US03 - Gerenciar Participantes
 
