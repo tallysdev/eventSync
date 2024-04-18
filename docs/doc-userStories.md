@@ -67,8 +67,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US02 - Manter Evento 
 
-| ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.   |
+| ------------- | :------------------------------------------------------------- |
+
+### User Story US0X - Formularios
+| **Descrição** | O sistema deve fornecer para o organizador do eventos uma secção de criação de formulario de avalaiação do evento, essa secção será obrigatoria. |
+|-----|----|
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
