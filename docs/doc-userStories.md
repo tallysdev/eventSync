@@ -38,6 +38,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | US15 | Gerar certificado de participação
 | US16 | Gerar Crachá
 | US17 | Gerar Relatório de participações do evento
+| US0X | Formularios
  
 ### User Story US01 - Manter Usuário
 
@@ -66,7 +67,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US02 - Manter Evento 
 
-|               |                                                                |
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.   |
 
@@ -191,9 +191,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US07 - Seção de avaliação
 
-|               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, e que possa avalia-los, desde que ainda esteja dentro do prazo de avaliação |
+| **Descrição** | O sistema deve pussuir uma seção onde o usuário possa ver os eventos que já participou, na seção do evento em si deve ter uma opção para feedbacks sobre o evento. Em que o usuario possa comentar ou preencher um formulario de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
