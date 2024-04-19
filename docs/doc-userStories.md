@@ -36,10 +36,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | US12 | Eventos Relacionados
 | US13 | Feed de comentarios gerais
 | US14 | Manter Local de evento
-| US15 | Avaliação de Eventos
-| US16 | Gerar certificado de participação
-| US17 | Gerar Crachá
-| US18 | Gerar Relatório de participações do evento
+| US15 | Gerar certificado de participação
+| US16 | Gerar Crachá
+
  
 ### User Story US01 - Manter Usuário
 
@@ -287,4 +286,20 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Analista**              | Taciano                             | 
 | **Testador**              | Dayanne Xavier                      | 
 | **Desenvolvedor**         | Italo Maurício                      | 
-| **Revisor**               | Vinicius Maia                       | 
+| **Revisor**               | Vinicius Maia                       |
+
+### Uuser Story US13 Manter Feed de comentarios gerais
+| **Descrição** | **Deve ter uma secção no sistema para intereações de conversar de texto de todos os usuarios, algo como um forum. O usuario adicionará seu comentario e aparecerá sua foto do perfil, nome e comentario para todos.** 
+|---|---
+
+### User Story US14 Manter Local de evento
+|**Descrição**|O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecera o evento.
+|---|---
+
+### User Story US15 Gerar certificado de participação
+|Descrição| O sistema deve ser capaz de gerar um certificado para o membro que particiopou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuario, CPF do usuario, horas destinadas ao evento, e suas possiveis mensões no evento.
+|---|---
+
+### User Story US16 Gerar Crachá
+| Descrição | O sistema deve ser capaz gerar uma figura de crachá para o usuario cadastrado em um evento ativo com suas informações pessoais publicas e sua atuação no evento. 
+|---|---
