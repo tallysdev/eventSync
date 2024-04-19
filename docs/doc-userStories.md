@@ -1,15 +1,8 @@
-
-
 # Documento Lista de User Stories
-
-
 Documento construído a partir do **Modelo_BSI_-_Doc_001_-_Documento_de_UserStories_SigEvento** que pode ser encontrado no
 link: <https://docs.google.com/document/d/1EZMq4H7l9eXpIhbgYRLK2Zbm6W0_0091QUN5shtL84U/edit>
 
-
 ## Descrição
-
-
 Este documento descreve os User Stories criados a partir da Lista de Requisitos no [Documento 001 - Documento de Visão](doc-visao.md). Este documento também pode ser adaptado para descrever Casos de Uso. O cálculo dos pontos de função podem ser encontrados no link: <https://docs.google.com/document/d/1jk5QUBEMq4GA9Thc2n3ZeyoAplT_dVhXxfaAWZwC7YU/edit?usp=sharing>. Modelo de documento baseado nas características do processo easYProcess (YP).
 
 ## Histórico de revisões
