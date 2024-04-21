@@ -18,11 +18,11 @@ Taciano Silva       | Cliente       | <taciano@bsi.ufrn.br>
 
 Membro     |     Competências   |
 ---------  | ----------- |
-Italo Maurício      | Desenvolvedor Java
-Lucas Mateus        | Desenvolvedor Python
+Italo Maurício      | Java, git, postgresql, comunicação, resolução de problemas.
+Dayanne Xavier      | Javascript, C, python, flutter, canva.
+Lucas Mateus        | Git, python, django, django rest framework, flutter, postgresql, mediação de conflitos, gerencia de pessoas.
+Tallys Aureliano    | Git, javascript, typescript, node, flutter, vue, canva, elaboração de requisitos, gerencia de atividades, mediação de conflitos.
 Vinicius Maia       | Desenvolvedor TypeScript
-Tallys Aureliano    | Desenvolvedor Dart
-Dayanne Xavier      | Desenvolvedor C
 
 ## Perfis dos Usuários
 
