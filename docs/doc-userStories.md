@@ -21,7 +21,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------|-----------|
 | US01 | Manter usuário
 | US02 | Formulário de avaliação de evento
-| US03 | Manter Evento 
+| US03 | Manter Evento
+| US04 | Manter Sala tematica.
+| US05 | Manter Presença.
 | US04 | Secção do Patrocinador
 | US05 | Gerenciar Participantes
 | US06 | Calendário de eventos
@@ -37,14 +39,23 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 ### User Story US01 - Manter Usuário
 | Descrição | O sistema deve ser capaz de cadastrar, listar, excluir, atualizar, vários tipos de usuários com permissões referente ao seu tipo e mantê-los nos sistema. |
-| ------------- | :----------------------------------------------------------------------------- |
+|---|---
+
 
 ### User Story US02 - Formulário de avaliação de evento
 | Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulario feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
 |---|---
 
 ### User Story US03 - Manter Evento
-| Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.   |
+| Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.|
+|---|---
+
+### User Story US04 - Manter Sala tematica.
+| Descrição | Dentro do evento pode ser criando salas tematicas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatoria do organizador, o particiapantes pode se inscrever nas salas dos eventos contato que as salas estejam em horarios separados.
+|---|---
+
+### User Story US05 - Manter Presença.
+| Descrição | Dentro do evento e/ou sala tematica o criador do evento pode adicionar uma lista de prenseça que marca a participação do participante no evento e/ou sala. O organizador tambem pode validar a presença do o usuario no evetno principal se ele tiver uma quantidade X de presença em salas tematicas.
 |---|---
 
 ### User Story US04 Seção do Patrocinador
@@ -52,7 +63,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |---|---
 
 ### User Story US05 - Gerenciar Participantes
-| Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, garantindo uma gestão eficiente das inscrições |
+| Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, marcar presença, garantindo uma gestão eficiente das inscrições |
 |---|---
 
 ### User Story US06 - Calendário de Eventos
