@@ -22,7 +22,7 @@ Italo Maurício      | Java, git, postgresql, comunicação, resolução de prob
 Dayanne Xavier      | Javascript, C, python, flutter, canva.
 Lucas Mateus        | Git, python, django, django rest framework, flutter, postgresql, mediação de conflitos, gerencia de pessoas.
 Tallys Aureliano    | Git, javascript, typescript, node, flutter, vue, canva, elaboração de requisitos, gerencia de atividades, mediação de conflitos.
-Vinicius Maia       | Desenvolvedor TypeScript
+Vinicius Maia       | Git, typescript, node, python, flutter, postgresql, mediação de conflitos, boa comunicação.
 
 ## Perfis dos Usuários
 
