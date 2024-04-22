@@ -39,8 +39,19 @@ Número | Perfil                        | Descrição   |
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos
-RF002 - Manter Eventos | Permitir o cadastro e manutenção de eventos na plataforma, incluindo informações como nome, data, local, descrição e tipo de evento | Organizador de Eventos
+RF001 - Inserir Usuário | O usuario deverá ser capaz de adicionar informações cadastrais para a inserção no sistema. | Todos os Usuarios.
+RF002 Buscar Usuario | O usuario poderar um usuario por meio de busca por pesquisa: nome, idade, genero, cpf, rg. | Gerente e Organizador.
+RF003 - Visualizar Usuario | O usuario deverá ser capaz de ver suas informações na plataforma. | Todos os Usuarios.
+RF003.1 - Visualizar Usuario especifico | O usuario deverá ser capaz de visualizar um usuario espeficio por busca. | Gerente da plataforma.
+RF003.2 - Visualizar Usuario(s) especifico do evento | O usuario deverá ser capaz de visualizar um usuario espeficio por busca, em que ele esteja cadastrado como participante no evento(s) em que o usuario buscador esteja como organizador. | Gerente da plataforma e Organizador.
+RF004 - Alterar Usuario | O usuario poderá alterar suas informações pessoais. | Todos os Usuarios. |
+RF004.1 - Alterar qualquer usuario | O usuario poderá alterar qualquer usuario. | Gerente da Plataforma. |
+RF005 - Excluir conta | O usuario poderá excluir sua conta na plataforma. | Todos os Usuarios. |
+RF005.1 - Excluir conta de usuario | O usuario poderá exluir conta de outro usuario que ele buscar. | Gerente.
+Antigo | Antigo | Antigo.
+RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos e Gerente da Plataforma.
+RF003 - Alterar Usuario | O usuario deverá ser capaz de alterar suas informações pessoais na plataforma
+RF002 - Manter Eventos | Permitir o cadastro e manutenção de eventos na plataforma, incluindo informações como nome, data, local, descrição e tipo de evento | Organizador de Eventos.
 RF003 - Gerenciar Participantes | Possibilitar o controle de participantes inscritos em cada evento, incluindo informações como nome, contato e status de pagamento | Organizador de Eventos
 RF004 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
 RF005 - Geração de Relatórios | Gerar relatórios informativos sobre eventos realizados, participantes, receitas e despesas | Administrador
