@@ -77,10 +77,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 
-### User Story US11 - Calendários De eventos
-|               |                                                                |
-| ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve ser capaz de verificar os eventos cadastrados e exibi-los para o usuário em forma de agenda, sendo eles públicos e privados caso o usuário esteja convidado para aquele evento |
 
 ### User Story US012 - Eventos Relacionados
 |               |                                                                |
