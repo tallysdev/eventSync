@@ -4,6 +4,7 @@
 Data | Versão | Descrição | Autores(as) |
 -----|--------|-----------|-------------|
 29/03/24 | 0.0.1 | Documento Inicial | Tallys |
+21/04/24 | 0.0.2 | Atualização do Documento | Italo |
 
 ## Descrição
 Este documento descreve a arquitetura proposta, descrevendo os padrões arquiteturais usados, decisões arquiteturais e descrição da tecnologias utilizadas.
@@ -13,50 +14,50 @@ Este documento descreve a arquitetura proposta, descrevendo os padrões arquitet
 
 graph TD;
 
+style VueJS fill:#81C784,stroke:#33691E,stroke-width:2px;
+style Django_REST fill:#64B5F6,stroke:#0D47A1,stroke-width:2px;
+style Database fill:#EF5350,stroke:#B71C1C,stroke-width:2px;
+
 subgraph VueJS["Front-End (Vue.js)"]
-    http[Vue Js]
-    vueComponent[Vue Component]
-    vuex[Vuex Store]
-    axios[Axios HTTP client]
-    style http fill:darkGreen
-    style vueComponent fill:darkGreen
-    style vuex fill:darkGreen
-    style axios fill:darkGreen
+    style router fill:#C8E6C9
+    style components fill:#C8E6C9
+    style service fill:#C8E6C9
+    style axios fill:#C8E6C9
+    router[Vue Router]
+    components[Vue Components]
+    service[Services]
+    axios[Axios]
 end
 
 subgraph Django_REST["Back-End (Django REST)"]
-    urls[URLs/Router]
+    style urlPatterns fill:#BBDEFB
+    style views fill:#BBDEFB
+    style serializer fill:#BBDEFB
+    style models fill:#BBDEFB
+    urlPatterns[URL Patterns]
     views[Views]
     serializer[Serializer]
     models[Models]
-    style urls fill:Blue
-    style views fill:Blue
-    style serializer fill:Blue
-    style models fill:Blue
 end
 
 subgraph Database["SGBD"]
+    style db fill:#FFCDD2
     db[(PostgreSQL)]
-    style db fill:darkRed
 end
 
-http -->|Requisições HTTP| urls
-urls -->|Define rotas e mapeia para views| views
-views -->|Manipula dados utilizando serializers| serializer
-serializer -->|Serializa/deserializa dados| models
-models -->|Interage com o banco de dados| db
-views -->|Se conecta com o Serializer| serializer
-serializer -->|Se conecta com a View| views
-
-vueComponent -->|Renderiza a interface| vuex
-vuex -->|Acessa e gerencia o estado global| axios
-axios -->|Envia requisições para o back-end| http
-http -->|Retorna dados| axios
-axios -->|Manipula dados| vuex
-vuex -->|Atualiza estado| vueComponent
-vueComponent -->|Envia dados para o model| models
-models -->|Se conecta com a Vue component| vueComponent
-
+router -->|Rotas| components
+components --> service
+service --> axios
+axios -->|Request| urlPatterns
+urlPatterns --> views
+views -->serializer
+views --> models
+models --> db
+db --> models
+urlPatterns -->|Response| axios
+axios --> service
+components -->|Interface| router
+serializer --> models
 
 
 ~~~
