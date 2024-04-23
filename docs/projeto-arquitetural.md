@@ -59,6 +59,8 @@ urlPatterns -->|Response| axios
 axios --> service
 components -->|Interface| router
 serializer --> models
+models --> serializer
+serializer --> views    
 
 
 ~~~
