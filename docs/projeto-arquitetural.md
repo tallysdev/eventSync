@@ -15,15 +15,8 @@ Este documento descreve a arquitetura proposta, descrevendo os padrões arquitet
 
 graph TD;
 
-style VueJS fill:#81C784,stroke:#33691E,stroke-width:2px;
-style Django_REST fill:#64B5F6,stroke:#0D47A1,stroke-width:2px;
-style Database fill:#EF5350,stroke:#B71C1C,stroke-width:2px;
 
 subgraph VueJS["Front-End (Vue.js)"]
-    style router fill:#C8E6C9
-    style components fill:#C8E6C9
-    style service fill:#C8E6C9
-    style axios fill:#C8E6C9
     router[Vue Router]
     components[Vue Components]
     service[Services]
@@ -31,10 +24,7 @@ subgraph VueJS["Front-End (Vue.js)"]
 end
 
 subgraph Django_REST["Back-End (Django REST)"]
-    style urlPatterns fill:#BBDEFB
-    style views fill:#BBDEFB
-    style serializer fill:#BBDEFB
-    style models fill:#BBDEFB
+
     urlPatterns[URL Patterns]
     views[Views]
     serializer[Serializer]
@@ -42,7 +32,6 @@ subgraph Django_REST["Back-End (Django REST)"]
 end
 
 subgraph Database["SGBD"]
-    style db fill:#FFCDD2
     db[(PostgreSQL)]
 end
 
@@ -60,8 +49,6 @@ axios --> service
 components -->|Interface| router
 serializer --> models
 models --> serializer
-serializer --> views    
-
 
 ~~~
 
