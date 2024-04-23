@@ -13,7 +13,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 02/04/2024 | 0.0.4   | Revisão e correção de pontos de função  | Dayanne |
 | 10/04/2024 | 0.1.0   | Correção de Users Stories          | Tallys |
 | 18/04/2024 | 0.1.1   | Correção de Ortografia             | Tallys |
-| 22/04/2024 | 0.1.2   | Aplicando padrão, removendo duplicatas e remodelando user stories | Tallys
+| 22/04/2024 | 0.1.2   | Aplicando padrão, removendo duplicatas e remodelando user stories | Tallys | 
+| 23/04/2024 | 0.1.3   | Correção de Ortografia             | Tallys |
+
 
 
 ### Tabelas de Users Stories
@@ -22,7 +24,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | US01 | Manter usuário
 | US02 | Formulário de avaliação de evento
 | US03 | Manter Evento
-| US04 | Manter Sala tematica.
+| US04 | Manter Sala temática.
 | US05 | Manter Presença.
 | US06 | Secção do Patrocinador
 | US07 | Gerenciar Participantes
@@ -43,7 +45,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 
 ### User Story US02 - Formulário de avaliação de evento.
-| Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulario feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
+| Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulário feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
 |---|---
 
 ### User Story US03 - Manter Evento.
@@ -51,11 +53,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |---|---
 
 ### User Story US04 - Manter Sala tematica.
-| Descrição | Dentro do evento pode ser criando salas tematicas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatoria do organizador, o particiapantes pode se inscrever nas salas dos eventos contato que as salas estejam em horarios separados.
+| Descrição | Dentro do evento pode ser criando salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
 |---|---
 
 ### User Story US05 - Manter Presença.
-| Descrição | Dentro do evento e/ou sala tematica o criador do evento pode adicionar uma lista de prenseça que marca a participação do participante no evento e/ou sala. O organizador tambem pode validar a presença do o usuario no evetno principal se ele tiver uma quantidade X de presença em salas tematicas.
+| Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
 |---|---
 
 ### User Story US06 - Seção do Patrocinador.
@@ -71,7 +73,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |---|---
 
 ### User Story US09 - Gerar Relatórios de participantes do evento.
-| Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e genero. |
+| Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
 |---|---
 
 ### User Story US10 - Notificações para Usuários.
@@ -79,7 +81,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |---|---
 
 ### User Story US11 - Seção de avaliação.
-| Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na sessão do evento em si deve ter uma opção para feedbacks sobre o evento. Em que o usuário possa comentar ou preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
+| Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na sessão do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa comentar ou preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
 |---|---
 
 ### User Story US12 - Reserva e confirmação.
@@ -104,5 +106,5 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |---|---
 
 ### User Story US17 - Gerar Crachá
-| Descrição | O sistema deve ser capaz de gerar uma figura de crachá para o usuário cadastrado em um evento ativo com suas informações pessoais públicas e sua atuação no eventom e qr code para resgistrar a presença no evento e/ou sala tematica.
+| Descrição | O sistema deve ser capaz de gerar uma figura de crachá para o usuário cadastrado em um evento ativo com suas informações pessoais públicas e sua atuação no evento e qr code para registrar a presença no evento e/ou sala temática.
 |---|---
