@@ -52,6 +52,12 @@ RF006 - Inserir perguntas no formulario | O usuario poderar criar perguntas para
 RF007 - Alterar perguntas no formulario | O usuario poderar alterar as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
 RF008 - Excluir perguntas no formulario | O usuario poderar excluir as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
 RF009 - Alterar formulario | O usuario poderar alterar segmentos do formulario como nome, questões, e banners já criadas no formulario de inscrição | Organizador e Gerente.
+RF010 - Visualizar formulários | O usuário poderá visualizar o formulário no evento para preenchimento. | Todos os usuários.
+RF011 - Inserir evento | O usuário poderá inserir dados para realização de um evento com: nome, data de início e fim, quantidade máxima de inscrições e quantidade mínima, local, endereços eletrônicos, imagens do evento, logo e tipo(privado  ou público). | Organizador e Gerente.
+RF012 - Alterar Evento | O usuário poderá alterar qualquer dado do evento. | Organizador e Gerente.
+RF013 - Excluir eventos | O usuário poderá excluir evento, enviando uma mensagem para o gerente da plataforma aprovar e compartilhar a mensagem de exclusão do evento na plataforma para os inscritos no mesmo | Organizador e Gerente.
+RF015 - Convidar participante | O usuário poderá convidar participantes por meio de email para eventos privados | Organizador e Gerente.
+RF016 - Visualizar Evento | Os eventos poderão ser visualizados por todos os usuários, exceto os privados que podem ser vistos apenas para convidados | Organizador e Gerente.
 Antigo | Antigo | Antigo.
 RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos e Gerente da Plataforma.
 RF003 - Alterar Usuario | O usuario deverá ser capaz de alterar suas informações pessoais na plataforma
