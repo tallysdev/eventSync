@@ -4,12 +4,53 @@
 Data | Versão | Descrição | Autores(as) |
 -----|--------|-----------|-------------|
 29/03/24 | 0.0.1 | Documento Inicial | Tallys |
+21/04/24 | 0.0.2 | Atualização do Documento | Italo |
+22/04/24 | 0.0.3 | Correção do mecanismo de arquitetura | Italo |
 
 ## Descrição
 Este documento descreve a arquitetura proposta, descrevendo os padrões arquiteturais usados, decisões arquiteturais e descrição da tecnologias utilizadas.
 
 ## Visão Geral
-![Model](https://github.com/tallysdev/eventSync/assets/91434644/7bc11a40-8e81-456a-bd53-612034b3338d)
+~~~mermaid
+
+graph TD;
+
+
+subgraph VueJS["Front-End (Vue.js)"]
+    router[Vue Router]
+    components[Vue Components]
+    service[Services]
+    axios[Axios]
+end
+
+subgraph Django_REST["Back-End (Django REST)"]
+
+    urlPatterns[URL Patterns]
+    views[Views]
+    serializer[Serializer]
+    models[Models]
+end
+
+subgraph Database["SGBD"]
+    db[(PostgreSQL)]
+end
+
+router -->|Rotas| components
+components --> service
+service --> axios
+axios -->|Request| urlPatterns
+urlPatterns --> views
+views -->serializer
+views --> models
+models --> db
+db --> models
+urlPatterns -->|Response| axios
+axios --> service
+components -->|Interface| router
+serializer --> models
+models --> serializer
+
+~~~
 
 ## Mecanismo de Arquitetura
 ### BackEnd 
@@ -24,11 +65,10 @@ URL/Router | O framework REST tem suporte para o roteamento automático de URL p
 ### FrontEnd
 | Serviço | Descrição |
 |---------| --------- |
-Componentes | Um componente no Vue.js é uma unidade isolada e reutilizável de interface de usuário que encapsula dados, comportamentos e marcação HTML. Ele permite a construção modular de interfaces interativas, simplificando o desenvolvimento e a manutenção de aplicativos Vue.js. |
-Pages | As "pages" no Vue.js referem-se a componentes que representam páginas específicas em um aplicativo de página única. Cada página geralmente contém uma combinação de componentes menores e é roteada usando um roteador Vue, mas agora também de forma dinamica. Isso facilita a organização e a navegação em aplicativos Vue.js, permitindo a separação clara de funcionalidades e a criação de uma experiência de usuário consistente. |
-Layout | "layout" é um componente que define a estrutura visual básica de uma página ou de um conjunto de páginas em um aplicativo. Ele geralmente inclui elementos comuns, como cabeçalho, navegação, rodapé e áreas de conteúdo variável. Os layouts ajudam na manutenção do design consistente em todo o aplicativo, simplificando a implementação de alterações de estilo ou de layout. Além disso, permitem uma melhor organização do código, separando preocupações de layout de lógica de negócios. |
-Telas | A "tela" em si é usada no desenho apenas para direcionar o usuário sobre o que ele esta vendo na tela, podendo ser diferentes telas em N momentos, mas sempre seguindo essa mesma arquitetura de componentes gráficos. |
-Store | No Vue.js, o "store" refere-se ao Vuex, que é uma biblioteca de gerenciamento de estado. O Vuex permite compartilhar dados entre componentes de forma centralizada, facilitando a comunicação e o gerenciamento do estado de um aplicativo Vue.js. O store contém o estado global da aplicação, bem como métodos para atualizá-lo de forma previsível e reativa. Isso ajuda a manter a consistência dos dados em toda a aplicação e simplifica a depuração e o desenvolvimento de funcionalidades complexas. |
+Vue Components | Um componente no Vue.js é uma unidade isolada e reutilizável de interface de usuário que encapsula dados, comportamentos e marcação HTML. Ele permite a construção modular de interfaces interativas, simplificando o desenvolvimento e a manutenção de aplicativos Vue.js. |
+Services | Os services, ou serviços, são uma maneira de encapsular a lógica de negócios ou a comunicação com o backend em sua aplicação Vue.js. Eles geralmente são usados para fazer solicitações HTTP para o servidor, manipular dados e retornar resultados para os componentes Vue. Isso ajuda a manter seus componentes limpos e focados na interface do usuário, enquanto a lógica de negócios fica isolada em serviços. |
+Vue Router | O Vue Router é uma biblioteca oficial de roteamento para Vue.js. Ele permite que você definia rotas em sua aplicação Vue, o que significa que você pode direcionar os usuários para diferentes páginas ou componentes da sua aplicação com base na URL. Isso é fundamental para criar aplicativos de página única (SPA) ou até mesmo para aplicativos multipágina. |
+Axios | O Axios é uma biblioteca popular para fazer requisições HTTP no navegador e no Node.js. Ele fornece uma interface simples e poderosa para interagir com APIs, facilitando a comunicação entre o frontend e o backend da aplicação. |
 
 ### Referencias
  - https://medium.com/@renatojlelis/entendendo-a-arquitetura-do-django-f4b505773c14
