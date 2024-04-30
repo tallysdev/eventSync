@@ -57,7 +57,14 @@ RF011 - Inserir evento | O usuário poderá inserir dados para realização de u
 RF012 - Alterar Evento | O usuário poderá alterar qualquer dado do evento. | Organizador e Gerente.
 RF013 - Excluir eventos | O usuário poderá excluir evento, enviando uma mensagem para o gerente da plataforma aprovar e compartilhar a mensagem de exclusão do evento na plataforma para os inscritos no mesmo | Organizador e Gerente.
 RF015 - Convidar participante | O usuário poderá convidar participantes por meio de email para eventos privados | Organizador e Gerente.
-RF016 - Visualizar Evento | Os eventos poderão ser visualizados por todos os usuários, exceto os privados que podem ser vistos apenas para convidados | Organizador e Gerente.
+RF016 - Visualizar Evento | Os eventos e suas salas temáticas poderão ser visualizados por todos os usuários, exceto os privados que podem ser vistos apenas para convidados | Organizador e Gerente.
+RF017 - Inserir sala temática no evento | O usuário poderá criar uma sala temática no evento com:  com: nome, data de início e fim, quantidade máxima de inscrições e quantidade mínima, local, endereços eletrônicos, imagens do evento, logo, palestrante e artigos da sala.| Organizador e Gerente.
+RF018 - Alterar Sala temática | O usuário poderá alterar qualquer dado da sala. | Organizador e Gerente.
+RF019 - Excluir eventos | O usuário poderá excluir uma sala, enviando uma mensagem para o gerente da plataforma para aprovação e compartilhar a mensagem de exclusão da sala na plataforma para os inscritos | Organizador e gerente.
+RF020 - Convidar participante | O usuário poderá convidar participantes por meio de email para eventos privados | Organizador e Gerente.
+RF021 - Realizar Inscrição | O usuário poderá realizar inscrição em algum evento. | Todos os usuários.
+RF021.1 - Realizar Inscrição | O usuário poderá ser adicionado a um evento. | Gerente.
+RF022 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.   
 Antigo | Antigo | Antigo.
 RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos e Gerente da Plataforma.
 RF003 - Alterar Usuario | O usuario deverá ser capaz de alterar suas informações pessoais na plataforma
