@@ -48,6 +48,10 @@ RF004 - Alterar Usuario | O usuario poderá alterar suas informações pessoais.
 RF004.1 - Alterar qualquer usuario | O usuario poderá alterar qualquer usuario. | Gerente da Plataforma. |
 RF005 - Excluir conta | O usuario poderá excluir sua conta na plataforma. | Todos os Usuarios. |
 RF005.1 - Excluir conta de usuario | O usuario poderá exluir conta de outro usuario que ele buscar. | Gerente.
+RF006 - Inserir perguntas no formulario | O usuario poderar criar perguntas para o formulario de avaliação do evento| Orgnizador e Gerente.
+RF007 - Alterar perguntas no formulario | O usuario poderar alterar as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
+RF008 - Excluir perguntas no formulario | O usuario poderar excluir as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
+RF009 - Alterar formulario | O usuario poderar alterar segmentos do formulario como nome, questões, e banners já criadas no formulario de inscrição | Organizador e Gerente.
 Antigo | Antigo | Antigo.
 RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos e Gerente da Plataforma.
 RF003 - Alterar Usuario | O usuario deverá ser capaz de alterar suas informações pessoais na plataforma
