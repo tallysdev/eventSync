@@ -39,19 +39,19 @@ Número | Perfil                        | Descrição   |
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Inserir Usuário | O usuario deverá ser capaz de adicionar informações cadastrais para a inserção no sistema. | Todos os Usuarios.
-RF002 Buscar Usuario | O usuario poderar um usuario por meio de busca por pesquisa: nome, idade, genero, cpf, rg. | Gerente e Organizador.
-RF003 - Visualizar Usuario | O usuario deverá ser capaz de ver suas informações na plataforma. | Todos os Usuarios.
-RF003.1 - Visualizar Usuario especifico | O usuario deverá ser capaz de visualizar um usuario espeficio por busca. | Gerente da plataforma.
-RF003.2 - Visualizar Usuario(s) especifico do evento | O usuario deverá ser capaz de visualizar um usuario espeficio por busca, em que ele esteja cadastrado como participante no evento(s) em que o usuario buscador esteja como organizador. | Gerente da plataforma e Organizador.
-RF004 - Alterar Usuario | O usuario poderá alterar suas informações pessoais. | Todos os Usuarios. |
-RF004.1 - Alterar qualquer usuario | O usuario poderá alterar qualquer usuario. | Gerente da Plataforma. |
-RF005 - Excluir conta | O usuario poderá excluir sua conta na plataforma. | Todos os Usuarios. |
-RF005.1 - Excluir conta de usuario | O usuario poderá exluir conta de outro usuario que ele buscar. | Gerente.
-RF006 - Inserir perguntas no formulario | O usuario poderar criar perguntas para o formulario de avaliação do evento| Orgnizador e Gerente.
-RF007 - Alterar perguntas no formulario | O usuario poderar alterar as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
-RF008 - Excluir perguntas no formulario | O usuario poderar excluir as perguntas já criadas no formulario de inscrição | Organizador e Gerente.
-RF009 - Alterar formulario | O usuario poderar alterar segmentos do formulario como nome, questões, e banners já criadas no formulario de inscrição | Organizador e Gerente.
+RF001 - Inserir Usuário | O usuário deverá ser capaz de adicionar informações cadastrais para a inserção no sistema. | Todos os Usuários.
+RF002 Buscar Usuário | O usuário poderá selecionar um usuário por meio de busca por pesquisa: nome, idade, gênero, cpf, rg. | Gerente e Organizador.
+RF003 - Visualizar Usuário | O usuário deverá ser capaz de ver suas informações na plataforma. | Todos os Usuários.
+RF003.1 - Visualizar Usuário específico | O usuário deverá ser capaz de visualizar um usuário específico por busca. | Gerente da plataforma.
+RF003.2 - Visualizar Usuário(s) específico do evento | O usuário deverá ser capaz de visualizar um usuário específico por busca, em que ele esteja cadastrado como participante no evento(s) em que o usuário buscador esteja como organizador. | Gerente da plataforma e Organizador.
+RF004 - Alterar Usuário | O usuário poderá alterar suas informações pessoais. | Todos os Usuários. |
+RF004.1 - Alterar qualquer usuário | O usuário poderá alterar qualquer usuário. | Gerente da Plataforma. |
+RF005 - Excluir conta | O usuário poderá excluir sua conta na plataforma. | Todos os Usuários. |
+RF005.1 - Excluir conta de usuário | O usuário poderá excluir a conta de outro usuário que ele busca. | Gerente.
+RF006 - Inserir perguntas no formulário | O usuário poderá criar perguntas para o formulário de avaliação do evento| Organizador e Gerente.
+RF007 - Alterar perguntas no formulário | O usuário poderá alterar as perguntas já criadas no formulário de inscrição | Organizador e Gerente.
+RF008 - Excluir perguntas no formulário | O usuário poderá excluir as perguntas já criadas no formulário de inscrição | Organizador e Gerente.
+RF009 - Alterar formulário | O usuário poderá alterar segmentos do formulário como nome, questões, e banners já criadas no formulário de inscrição | Organizador e Gerente.
 RF010 - Visualizar formulários | O usuário poderá visualizar o formulário no evento para preenchimento. | Todos os usuários.
 RF011 - Inserir evento | O usuário poderá inserir dados para realização de um evento com: nome, data de início e fim, quantidade máxima de inscrições e quantidade mínima, local, endereços eletrônicos, imagens do evento, logo e tipo(privado  ou público). | Organizador e Gerente.
 RF012 - Alterar Evento | O usuário poderá alterar qualquer dado do evento. | Organizador e Gerente.
