@@ -74,11 +74,13 @@ RF028 - Excluir patrocinador | O usuário poderá excluir uma patrocinador, envi
 RF029 - Listar eventos por datas e locais | O usuario poderá ver seus eventos ou eventos da plataforma em formato de agenda/calendário. | Todos os Usuários.
 RF030 - Listagem geral de participantes no evento | O usuario deve conseguir ver a lista completa de usuarios que se inscreveram no evento. essas busca pode ter filtros de participantes. | Organizador e Gerente.
 RF031 - Mensagem para participantes | O usuario poderá enviar mensagens de email para os participantes do evento. | Organizador e Gerente.
-Antigo | Antigo | Antigo.
-RF004 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
-RF006 - Comunicação com Clientes | Possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes | Organizador de Eventos
-RF0010 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciamento de patrocinadores para eventos, incluindo informações sobre eles | Organizador de eventos  
-RF012 - Recomendações personalizadas | Uma vez cadastrado na plataforma, os usuários podem marcar quais tipos de eventos eles tem interesse, com base nisso e no histórico de eventos já participados, o sistema pode sugerir eventos para ele participar | Cliente
+RF032 - Inserir comentário no forum da plataforma | O usuário poderá incluir seus comentários no fórum da plataforma.| Todos os Usuários.
+RF033 - Alterar comentário | O usuário poderá apagar o comentário já feito | Todos os Usuários.
+RF 034 - Apagar comentario | O usuário poderá apagar comentários já feitos. | Todos os usuários.
+RF034.1 - Apagar comentário de usuário | O usuário poderá apagar comentarios de outros usuarios | Gerente da Plataforma. |
+RF035 - Denunciar comentário  | O usuário poderá denunciar o comentário feito por outro usuário e ele poderá ser apagado pelo Gerente da plataforma | Todos os Usuários.
+RF035.1 - Confirmar denuncia | O usuário poderá confirmar a denúncia do comentário e ele automaticamente será apagado. | Gerente da plataforma.
+
 
 ## Lista de Requisitos Não-Funcionais
 
