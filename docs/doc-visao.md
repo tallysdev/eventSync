@@ -40,7 +40,7 @@ Número | Perfil                        | Descrição   |
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
 RF001 - Inserir Usuário | O usuário deverá ser capaz de adicionar informações cadastrais para a inserção no sistema. | Todos os Usuários.
-RF002 Buscar Usuário | O usuário poderá selecionar um usuário por meio de busca por pesquisa: nome, idade, gênero, cpf, rg. | Gerente e Organizador.
+RF002 - Buscar Usuário | O usuário poderá selecionar um usuário por meio de busca por pesquisa: nome, idade, gênero, cpf, rg. | Gerente e Organizador.
 RF003 - Visualizar Usuário | O usuário deverá ser capaz de ver suas informações na plataforma. | Todos os Usuários.
 RF003.1 - Visualizar Usuário específico | O usuário deverá ser capaz de visualizar um usuário específico por busca. | Gerente da plataforma.
 RF003.2 - Visualizar Usuário(s) específico do evento | O usuário deverá ser capaz de visualizar um usuário específico por busca, em que ele esteja cadastrado como participante no evento(s) em que o usuário buscador esteja como organizador. | Gerente da plataforma e Organizador.
@@ -68,23 +68,24 @@ RF022 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qu
 RF023 - Marcar presença | O usuário pode marcar presença de uma participante em um determinado eventos ou sala | Organizador e Gerente.
 RF024 - Marcar presença automática | O usuário pode escolher quantas presenças em salas temáticas podem garantir a presença no evento principal. | Organizador e Gerente.
 RF025 - Contestar presença. | O usuário pode contestar sua presença não marcada no evento/sala, deve ser enviada uma mensagem para o Organizador com um texto e uma imagem como prova da sua participação. | Participante.
-RF026 - Inserir Patrocinador | O ususario poderá pedir para ser patrocinador do evento, cabendo ao organizador aprovar ou não. O gerente também poderá cadastrar um patrocinador. | Organizador e Gerente.
-RF027 - Alterar Patrocinador | O usuario poderá alterar um patrocinador já existente. | Organizador e Gerente.
-RF028 - Excluir patrocinador | O usuário poderá excluir uma patrocinador, enviando uma mensagem para o gerente da plataforma para aprovação | Organizador e Gerente.
-RF029 - Listar eventos por datas e locais | O usuario poderá ver seus eventos ou eventos da plataforma em formato de agenda/calendário. | Todos os Usuários.
-RF030 - Listagem geral de participantes no evento | O usuario deve conseguir ver a lista completa de usuarios que se inscreveram no evento. essas busca pode ter filtros de participantes. | Organizador e Gerente.
-RF031 - Mensagem para participantes | O usuario poderá enviar mensagens de email para os participantes do evento. | Organizador e Gerente.
+RF026 - Inserir Patrocinador | O usuário poderá pedir para ser patrocinador do evento, cabendo ao organizador aprovar ou não. O gerente também poderá cadastrar um patrocinador. | Organizador e Gerente.
+RF027 - Alterar Patrocinador | O usuário poderá alterar um patrocinador já existente. | Organizador e Gerente.
+RF028 - Excluir patrocinador | O usuário poderá excluir um patrocinador, enviando uma mensagem para o gerente da plataforma para aprovação | Organizador e Gerente.
+RF029 - Listar eventos por datas e locais | O usuário poderá ver seus eventos ou eventos da plataforma em formato de agenda/calendário. | Todos os Usuários.
+RF030 - Listagem geral de participantes no evento | O usuário deve conseguir ver a lista completa de usuários que se inscreveram no evento, essa busca pode ter filtros de participantes. | Organizador e Gerente.
+RF031 - Mensagem para participantes | O usuário poderá enviar mensagens de email para os participantes do evento. | Organizador e Gerente.
 RF032 - Inserir comentário no forum da plataforma | O usuário poderá incluir seus comentários no fórum da plataforma.| Todos os Usuários.
 RF033 - Alterar comentário | O usuário poderá apagar o comentário já feito | Todos os Usuários.
 RF 034 - Apagar comentario | O usuário poderá apagar comentários já feitos. | Todos os usuários.
 RF034.1 - Apagar comentário de usuário | O usuário poderá apagar comentarios de outros usuarios | Gerente da Plataforma. |
 RF035 - Denunciar comentário  | O usuário poderá denunciar o comentário feito por outro usuário e ele poderá ser apagado pelo Gerente da plataforma | Todos os Usuários.
 RF035.1 - Confirmar denuncia | O usuário poderá confirmar a denúncia do comentário e ele automaticamente será apagado. | Gerente da plataforma.
-RF036 - Inserir Local | O ususario poderá inserir dados de um local para seu evento com: nome e endereço. | Organizador e Gerente.
-RF037 - Alterar Local | O usuario poderá alterar um local já existente. | Organizador e Gerente.
-RF038 - Gerar certificado | O usuario deve conseguir ver seu certificado quando obtiver presença no evento principal com suas horas. O certifcado terá: nome do participante, cpf, horas dadas pelo evento e verificação do certificado. | Todos os Usuarios.
-RF039 - Gerar crachá | O usuario poderá visualizar seu crachá com suas informações pessoas e/ou ações que ele vai realizar no evento. | Todos os usuarios.
-RF039.1 - Alterar crachá | O usuario poderá alterar/adicionar informaçẽos para o seu crachá.
+RF036 - Inserir Local | O usuário poderá inserir dados de um local para seu evento com: nome e endereço. | Organizador e Gerente.
+RF037 - Alterar Local | O usuário poderá alterar um local já existente. | Organizador e Gerente.
+RF038 - Gerar certificado | O usuário deve conseguir ver seu certificado quando obtiver presença no evento principal com suas horas. O certificado terá: nome do participante, CPF, horas dadas pelo evento e verificação do certificado. | Todos os Usuários.
+RF039 - Gerar crachá | O usuário poderá visualizar seu crachá com suas informações pessoais e/ou ações que ele vai realizar no evento. | Todos os usuários.
+RF039.1 - Alterar crachá | O usuário poderá alterar/adicionar informaçẽos para o seu crachá.
+
 
 ## Lista de Requisitos Não-Funcionais
 
