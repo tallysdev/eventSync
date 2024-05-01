@@ -71,8 +71,10 @@ RF025 - Contestar presença. | O usuário pode contestar sua presença não marc
 RF026 - Inserir Patrocinador | O ususario poderá pedir para ser patrocinador do evento, cabendo ao organizador aprovar ou não. O gerente também poderá cadastrar um patrocinador. | Organizador e Gerente.
 RF027 - Alterar Patrocinador | O usuario poderá alterar um patrocinador já existente. | Organizador e Gerente.
 RF028 - Excluir patrocinador | O usuário poderá excluir uma patrocinador, enviando uma mensagem para o gerente da plataforma para aprovação | Organizador e Gerente.
+RF029 - Listar eventos por datas e locais | O usuario poderá ver seus eventos ou eventos da plataforma em formato de agenda/calendário. | Todos os Usuários.
+RF030 - Listagem geral de participantes no evento | O usuario deve conseguir ver a lista completa de usuarios que se inscreveram no evento. essas busca pode ter filtros de participantes. | Organizador e Gerente.
+RF031 - Mensagem para participantes | O usuario poderá enviar mensagens de email para os participantes do evento. | Organizador e Gerente.
 Antigo | Antigo | Antigo.
-RF003 - Gerenciar Participantes | Possibilitar o controle de participantes inscritos em cada evento, incluindo informações como nome, contato e status de pagamento | Organizador de Eventos
 RF004 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
 RF006 - Comunicação com Clientes | Possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes | Organizador de Eventos
 RF0010 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciamento de patrocinadores para eventos, incluindo informações sobre eles | Organizador de eventos  
