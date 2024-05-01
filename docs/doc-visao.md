@@ -82,6 +82,9 @@ RF035 - Denunciar comentário  | O usuário poderá denunciar o comentário feit
 RF035.1 - Confirmar denuncia | O usuário poderá confirmar a denúncia do comentário e ele automaticamente será apagado. | Gerente da plataforma.
 RF036 - Inserir Local | O ususario poderá inserir dados de um local para seu evento com: nome e endereço. | Organizador e Gerente.
 RF037 - Alterar Local | O usuario poderá alterar um local já existente. | Organizador e Gerente.
+RF038 - Gerar certificado | O usuario deve conseguir ver seu certificado quando obtiver presença no evento principal com suas horas. O certifcado terá: nome do participante, cpf, horas dadas pelo evento e verificação do certificado. | Todos os Usuarios.
+RF039 - Gerar crachá | O usuario poderá visualizar seu crachá com suas informações pessoas e/ou ações que ele vai realizar no evento. | Todos os usuarios.
+RF039.1 - Alterar crachá | O usuario poderá alterar/adicionar informaçẽos para o seu crachá.
 
 ## Lista de Requisitos Não-Funcionais
 
