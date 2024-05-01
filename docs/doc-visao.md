@@ -80,7 +80,8 @@ RF 034 - Apagar comentario | O usuário poderá apagar comentários já feitos. 
 RF034.1 - Apagar comentário de usuário | O usuário poderá apagar comentarios de outros usuarios | Gerente da Plataforma. |
 RF035 - Denunciar comentário  | O usuário poderá denunciar o comentário feito por outro usuário e ele poderá ser apagado pelo Gerente da plataforma | Todos os Usuários.
 RF035.1 - Confirmar denuncia | O usuário poderá confirmar a denúncia do comentário e ele automaticamente será apagado. | Gerente da plataforma.
-
+RF036 - Inserir Local | O ususario poderá inserir dados de um local para seu evento com: nome e endereço. | Organizador e Gerente.
+RF037 - Alterar Local | O usuario poderá alterar um local já existente. | Organizador e Gerente.
 
 ## Lista de Requisitos Não-Funcionais
 
