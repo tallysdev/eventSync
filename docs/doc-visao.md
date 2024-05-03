@@ -18,38 +18,73 @@ Taciano Silva       | Cliente       | <taciano@bsi.ufrn.br>
 
 Membro     |     Competências   |
 ---------  | ----------- |
-Italo Maurício      | Desenvolvedor Java
-Lucas Mateus        | Desenvolvedor Python
-Vinicius Maia       | Desenvolvedor TypeScript
-Tallys Aureliano    | Desenvolvedor Dart
-Dayanne Xavier      | Desenvolvedor C
+Italo Maurício      | Java, git, postgresql, comunicação, resolução de problemas.
+Dayanne Xavier      | Javascript, C, python, flutter, canva.
+Lucas Mateus        | Git, python, django, django rest framework, flutter, postgresql, mediação de conflitos, gerencia de pessoas.
+Tallys Aureliano    | Git, javascript, typescript, node, flutter, vue, canva, elaboração de requisitos, gerencia de atividades, mediação de conflitos.
+Vinicius Maia       | Git, typescript, node, python, flutter, postgresql, mediação de conflitos, boa comunicação.
 
 ## Perfis dos Usuários
 
 O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
 
-Perfil                                 | Descrição   |
----------                              | ----------- |
-Administrador                          | Responsável pelo gerenciamento geral da plataforma. Possui acesso completo a todas as funcionalidades, incluindo cadastro de eventos, gestão de equipes, geração de relatórios e controle financeiro.
-Organizador de Eventos | Usuário responsável pela criação e organização de eventos na plataforma. Pode cadastrar novos eventos, gerenciar participantes, definir agendas e enviar comunicações aos clientes.
-Perfil Cliente | Usuário que contrata os serviços de organização de eventos através da plataforma. Pode visualizar eventos disponíveis, realizar inscrições, efetuar pagamentos e interagir com os organizadores.
+Número | Perfil                        | Descrição   |
+------ |------------------------------ | ----------- |
+1 |Gerente da plataforma                  | Responsável pelo gerenciamento geral da plataforma. Possui acesso completo a todas as funcionalidades, principal função é validar e autorizar, organizações, eventos e patrocinadores.
+2 | Organizador de Eventos                 | Usuário responsável pela criação e organização de eventos na plataforma. Pode cadastrar novos eventos, gerenciar participantes, definir agendas e enviar comunicações aos usuários envolvidos no evento.
+3 | Participante                           | Usuário comum, pode visualizar eventos disponíveis, realizar inscrições, comentar no fórum dos eventos, feed da plataforma e interagir com os organizadores. Principal papel é se inscrever em eventos na plataforma.
+
 
 ## Lista de Requisitos Funcionais
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Manter Usuários | Permitir o cadastro e manutenção de usuários na plataforma, incluindo a possibilidade de alterar dados do usuário, excluir dados do usuário, cadastrar novos usuários e visualizar usuários. | Organizador de Eventos
-RF002 - Manter Eventos | Permitir o cadastro e manutenção de eventos na plataforma, incluindo informações como nome, data, local, descrição e tipo de evento | Organizador de Eventos
-RF003 - Gerenciar Participantes | Possibilitar o controle de participantes inscritos em cada evento, incluindo informações como nome, contato e status de pagamento | Organizador de Eventos
-RF004 - Controlar Agenda | Permitir o gerenciamento de agenda, com visualização de datas disponíveis e agendadas para eventos | Organizador de Eventos
-RF005 - Geração de Relatórios | Gerar relatórios informativos sobre eventos realizados, participantes, receitas e despesas | Administrador
-RF006 - Comunicação com Clientes | Possibilitar o envio de mensagens e notificações aos clientes sobre novos eventos, atualizações e informações relevantes | Organizador de Eventos
-RF007 - Controle Financeiro | Permitir o registro e controle de pagamentos, incluindo faturamento, recibos, e status de pagamento dos participantes |Administrador
-RF008 - Avaliação dos eventos | Permitir que os participantes avaliem e forneçam feedbacks sobre os eventos após a conclusão do mesmo | Cliente
-RF009 - Sistema de reservas | Permitir que o cliente reserve e confirme sua participação no evento | Cliente  
-RF0010 - Gerenciamento de patrocinadores | Possibilitar o cadastro e gerenciamento de patrocinadores para eventos, incluindo informações sobre eles | Organizador de eventos  
-RF011 - Calendário de eventos | Disponibilizar um calendário público de eventos, permitindo que os participantes visualizem e acompanhem os eventos futuros, e os participantes convidados podem visualizar no calendário os eventos privados | Cliente
-RF012 - Recomendações personalizadas | Uma vez cadastrado na plataforma, os usuários podem marcar quais tipos de eventos eles tem interesse, com base nisso e no histórico de eventos já participados, o sistema pode sugerir eventos para ele participar | Cliente
+RF001 - Inserir Usuário | O usuário deverá ser capaz de adicionar informações cadastrais para a inserção no sistema. | Todos os Usuários.
+RF002 - Buscar Usuário | O usuário poderá selecionar um usuário por meio de busca por pesquisa: nome, idade, gênero, cpf, rg. | Gerente e Organizador.
+RF003 - Visualizar Usuário | O usuário deverá ser capaz de ver suas informações na plataforma. | Todos os Usuários.
+RF003.1 - Visualizar Usuário específico | O usuário deverá ser capaz de visualizar um usuário específico por busca. | Gerente da plataforma.
+RF003.2 - Visualizar Usuário(s) específico do evento | O usuário deverá ser capaz de visualizar um usuário específico por busca, em que ele esteja cadastrado como participante no evento(s) em que o usuário buscador esteja como organizador. | Gerente da plataforma e Organizador.
+RF004 - Alterar Usuário | O usuário poderá alterar suas informações pessoais. | Todos os Usuários. |
+RF004.1 - Alterar qualquer usuário | O usuário poderá alterar qualquer usuário. | Gerente da Plataforma. |
+RF005 - Excluir conta | O usuário poderá excluir sua conta na plataforma. | Todos os Usuários. |
+RF005.1 - Excluir conta de usuário | O usuário poderá excluir a conta de outro usuário que ele busca. | Gerente.
+RF006 - Inserir perguntas no formulário | O usuário poderá criar perguntas para o formulário de avaliação do evento| Organizador e Gerente.
+RF007 - Alterar perguntas no formulário | O usuário poderá alterar as perguntas já criadas no formulário de inscrição | Organizador e Gerente.
+RF008 - Excluir perguntas no formulário | O usuário poderá excluir as perguntas já criadas no formulário de inscrição | Organizador e Gerente.
+RF009 - Alterar formulário | O usuário poderá alterar segmentos do formulário como nome, questões, e banners já criadas no formulário de inscrição | Organizador e Gerente.
+RF010 - Visualizar formulários | O usuário poderá visualizar o formulário no evento para preenchimento. | Todos os usuários.
+RF011 - Inserir evento | O usuário poderá inserir dados para realização de um evento com: nome, data de início e fim, quantidade máxima de inscrições e quantidade mínima, local, endereços eletrônicos, imagens do evento, logo e tipo(privado  ou público). | Organizador e Gerente.
+RF012 - Alterar Evento | O usuário poderá alterar qualquer dado do evento. | Organizador e Gerente.
+RF013 - Excluir eventos | O usuário poderá excluir evento, enviando uma mensagem para o gerente da plataforma aprovar e compartilhar a mensagem de exclusão do evento na plataforma para os inscritos no mesmo | Organizador e Gerente.
+RF015 - Convidar participante | O usuário poderá convidar participantes por meio de email para eventos privados | Organizador e Gerente.
+RF016 - Visualizar Evento | Os eventos e suas salas temáticas poderão ser visualizados por todos os usuários, exceto os privados que podem ser vistos apenas para convidados | Organizador e Gerente.
+RF017 - Inserir sala temática no evento | O usuário poderá criar uma sala temática no evento com: nome, data de início e fim, quantidade máxima de inscrições e quantidade mínima, local, endereços eletrônicos, imagens do evento, logo, palestrante e artigos da sala.| Organizador e Gerente.
+RF018 - Alterar Sala temática | O usuário poderá alterar qualquer dado da sala. | Organizador e Gerente.
+RF019 - Excluir sala tematica | O usuário poderá excluir uma sala, enviando uma mensagem para o gerente da plataforma para aprovação e compartilhar a mensagem de exclusão da sala na plataforma para os inscritos. | Organizador e gerente.
+RF020 - Realizar Inscrição | O usuário poderá realizar inscrição em algum evento. | Todos os usuários.
+RF020.1 - Inscrição Adicionada | O usuário poderá ser adicionado a um evento. | Gerente.
+RF021 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.   
+RF022 - Marcar presença | O usuário pode marcar presença de uma participante em um determinado eventos ou sala | Organizador e Gerente.
+RF023 - Marcar presença automática | O usuário pode escolher quantas presenças em salas temáticas podem garantir a presença no evento principal. | Organizador e Gerente.
+RF024 - Contestar presença. | O usuário pode contestar sua presença não marcada no evento/sala, deve ser enviada uma mensagem para o Organizador com um texto e uma imagem como prova da sua participação. | Participante.
+RF025 - Inserir Patrocinador | O usuário poderá pedir para ser patrocinador do evento, cabendo ao organizador aprovar ou não. O gerente também poderá cadastrar um patrocinador. | Organizador e Gerente.
+RF026 - Alterar Patrocinador | O usuário poderá alterar um patrocinador já existente. | Organizador e Gerente.
+RF027 - Excluir patrocinador | O usuário poderá excluir um patrocinador, enviando uma mensagem para o gerente da plataforma para aprovação | Organizador e Gerente.
+RF028 - Listagem de patrocinadores no evento | O usuário deve conseguir ver a lista completa de patrocinadores no evento, essa busca pode ter filtros de patrocinadores. | Organizador e Gerente.
+RF029 - Listar eventos por datas e locais | O usuário poderá ver seus eventos ou eventos da plataforma em formato de agenda/calendário. | Todos os Usuários.
+RF030 - Listagem geral de participantes no evento | O usuário deve conseguir ver a lista completa de usuários que se inscreveram no evento, essa busca pode ter filtros de participantes. | Organizador e Gerente.
+RF031 - Mensagem para participantes | O usuário poderá enviar mensagens de email para os participantes do evento. | Organizador e Gerente.
+RF032 - Inserir comentário no forum da plataforma | O usuário poderá incluir seus comentários no fórum da plataforma.| Todos os Usuários.
+RF033 - Alterar comentário | O usuário poderá apagar o comentário já feito | Todos os Usuários.
+RF034 - Apagar comentario | O usuário poderá apagar comentários já feitos. | Todos os usuários.
+RF034.1 - Apagar comentário de usuário | O usuário poderá apagar comentarios de outros usuarios | Gerente da Plataforma. |
+RF035 - Denunciar comentário  | O usuário poderá denunciar o comentário feito por outro usuário e ele poderá ser apagado pelo Gerente da plataforma | Todos os Usuários.
+RF035.1 - Confirmar denuncia | O usuário poderá confirmar a denúncia do comentário e ele automaticamente será apagado. | Gerente da plataforma.
+RF036 - Inserir Local | O usuário poderá inserir dados de um local para seu evento com: nome e endereço. | Organizador e Gerente.
+RF037 - Alterar Local | O usuário poderá alterar um local já existente. | Organizador e Gerente.
+RF038 - Gerar certificado | O usuário deve conseguir ver seu certificado quando obtiver presença no evento principal com suas horas. O certificado terá: nome do participante, CPF, horas dadas pelo evento e verificação do certificado. | Todos os Usuários.
+RF039 - Gerar crachá | O usuário poderá visualizar seu crachá com suas informações pessoais e/ou ações que ele vai realizar no evento. | Todos os usuários.
+RF039.1 - Alterar crachá | O usuário poderá alterar/adicionar informaçẽos para o seu crachá.
 
 ## Lista de Requisitos Não-Funcionais
 
@@ -66,9 +101,9 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários
-07/03/2024 | Risco de Falha no Sistema de Pagamentos | Média | Gerente | Vigente | Realizar testes extensivos do sistema de pagamentos, implementar soluções de backup e suporte técnico adequado
-07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância
+07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários.
+07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância.
+08/04/2024 | Falta de pessoal ativo na gerencia da plataforma, em virtude de processos que necessitam da sua avaliação | Média | Gerente | Futura | Comprometimento de pessoas responsáveis e fixas na gerencia da plataforma.  
 
 
 ## Modelos
