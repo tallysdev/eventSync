@@ -154,7 +154,12 @@ erDiagram
         string cep
         string referencia
         strint nome_local
+    }
 
+    PATROCINIO {
+        int id pk
+        int id_evento fk
+        int id_patrocinador fk
     }
 
 ```
