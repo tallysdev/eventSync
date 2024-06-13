@@ -162,4 +162,13 @@ erDiagram
         int id_patrocinador fk
     }
 
+    PATROCINADOR {
+        int id pk
+        string nome
+        string logo
+        string telefone
+        string email
+        string descricao
+    }
+
 ```
