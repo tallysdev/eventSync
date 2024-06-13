@@ -125,5 +125,10 @@ erDiagram
         string tipo
     }
 
-```
+    INSCRICAO_EVENTO {
+        int id pk
+        int id_usuario fk
+        int id_evento fk
+    }
 
+```
