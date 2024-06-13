@@ -193,6 +193,14 @@ erDiagram
         int id pk
         bool presenca
         string tipo
+        int id_usuario fk
+    }
+
+    FORMULARIO {
+        int id pk
+        string nome
+        string descricao
+        int id_usuario fk
     }
 
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
