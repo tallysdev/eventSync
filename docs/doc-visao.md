@@ -209,6 +209,14 @@ erDiagram
         int id_formulario fk
     }
 
+    QUESTAO {
+        int id pk
+        string descricao
+        string resposta
+        string tipo
+        int id_formulario fk
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
