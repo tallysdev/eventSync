@@ -189,6 +189,12 @@ erDiagram
         int id_sala fk
     }
 
+    PRESENCA {
+        int id pk
+        bool presenca
+        string tipo
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
