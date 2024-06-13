@@ -145,4 +145,16 @@ erDiagram
         int id_local fk
     }
 
+    LOCAL {
+        int id pk
+        string nome_rua
+        string numero
+        string cidade
+        string estado
+        string cep
+        string referencia
+        strint nome_local
+
+    }
+
 ```
