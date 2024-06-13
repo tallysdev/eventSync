@@ -183,6 +183,12 @@ erDiagram
         string[] artigos
     }
 
+    INSCRICAO_SALA {
+        int id pk
+        int id_usuario fk
+        int id_sala fk
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
