@@ -171,4 +171,13 @@ erDiagram
         string descricao
     }
 
+    USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
+
+    EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
+
+    LOCAL ||--o{ EVENTO : "tem"
+
+    EVENTO ||--o{ PATROCINIO : "tem"
+
+    PATROCINADOR ||--o{ PATROCINIO : "patrocina"
 ```
