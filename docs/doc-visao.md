@@ -131,4 +131,18 @@ erDiagram
         int id_evento fk
     }
 
+    EVENTO {
+        int id pk
+        string nome
+        date data_inicio
+        date data_fim
+        int quantidade_max
+        int quantidade_min
+        int quantidade_horas
+        string status
+        string descricao
+        string tipo
+        int id_local fk
+    }
+
 ```
