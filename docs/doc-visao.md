@@ -194,6 +194,7 @@ erDiagram
         bool presenca
         string tipo
         int id_usuario fk
+        int id_evento fk
     }
 
     FORMULARIO {
@@ -236,6 +237,8 @@ erDiagram
     EVENTO ||--o{ SALA_TEMATICA : "tem"
 
     USUARIO ||--o{ PRESENCA : "tem"
+
+    EVENTO ||--o{ PRESENCA : "tem"
 
     USUARIO ||--o{ FORMULARIO : "cria"
 
