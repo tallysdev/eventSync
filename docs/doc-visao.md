@@ -203,6 +203,12 @@ erDiagram
         int id_usuario fk
     }
 
+    PREENCHIMENTO {
+        int id pk
+        int id_usuario fk
+        int id_formulario fk
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
