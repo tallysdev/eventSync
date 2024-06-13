@@ -171,6 +171,12 @@ erDiagram
         string descricao
     }
 
+    COMENTARIO {
+        int id pk
+        int like
+        int id_usuario fk
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
