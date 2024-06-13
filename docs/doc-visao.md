@@ -198,4 +198,13 @@ erDiagram
     EVENTO ||--o{ PATROCINIO : "tem"
 
     PATROCINADOR ||--o{ PATROCINIO : "patrocina"
+
+    USUARIO ||--o{ COMENTARIO : "faz"
+
+    USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
+
+    SALA_TEMATICA ||--o{ INSCRICAO_SALA : "tem"
+
+    EVENTO ||--o{ SALA_TEMATICA : "tem"
+
 ```
