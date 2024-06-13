@@ -235,4 +235,14 @@ erDiagram
 
     EVENTO ||--o{ SALA_TEMATICA : "tem"
 
+    USUARIO ||--o{ PRESENCA : "tem"
+
+    USUARIO ||--o{ FORMULARIO : "cria"
+
+    USUARIO ||--o{ PREENCHIMENTO : "faz"
+
+    FORMULARIO ||--o{ PREENCHIMENTO : "tem"
+
+    FORMULARIO ||--o{ QUESTAO : "tem"
+
 ```
