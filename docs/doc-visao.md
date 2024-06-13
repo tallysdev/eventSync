@@ -177,6 +177,12 @@ erDiagram
         int id_usuario fk
     }
 
+    SALA_TEMATICA {
+        int id pk
+        string[] participante
+        string[] artigos
+    }
+
     USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
 
     EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
