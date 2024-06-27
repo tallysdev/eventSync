@@ -63,7 +63,7 @@ RF018 - Alterar Sala temática | O usuário poderá alterar qualquer dado da sal
 RF019 - Excluir sala tematica | O usuário poderá excluir uma sala, enviando uma mensagem para o gerente da plataforma para aprovação e compartilhar a mensagem de exclusão da sala na plataforma para os inscritos. | Organizador e gerente.
 RF020 - Realizar Inscrição | O usuário poderá realizar inscrição em algum evento. | Todos os usuários.
 RF020.1 - Inscrição Adicionada | O usuário poderá ser adicionado a um evento. | Gerente.
-RF021 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.   
+RF021 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.
 RF022 - Marcar presença | O usuário pode marcar presença de uma participante em um determinado eventos ou sala | Organizador e Gerente.
 RF023 - Marcar presença automática | O usuário pode escolher quantas presenças em salas temáticas podem garantir a presença no evento principal. | Organizador e Gerente.
 RF024 - Contestar presença. | O usuário pode contestar sua presença não marcada no evento/sala, deve ser enviada uma mensagem para o Organizador com um texto e uma imagem como prova da sua participação. | Participante.
@@ -103,7 +103,7 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
 07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários.
 07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância.
-08/04/2024 | Falta de pessoal ativo na gerencia da plataforma, em virtude de processos que necessitam da sua avaliação | Média | Gerente | Futura | Comprometimento de pessoas responsáveis e fixas na gerencia da plataforma.  
+08/04/2024 | Falta de pessoal ativo na gerencia da plataforma, em virtude de processos que necessitam da sua avaliação | Média | Gerente | Futura | Comprometimento de pessoas responsáveis e fixas na gerencia da plataforma.
 
 
 ## Modelos
@@ -218,38 +218,38 @@ erDiagram
         int id_formulario fk
     }
 
-    USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
-
-    EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
-
-    LOCAL ||--o{ EVENTO : "tem"
-
-    EVENTO ||--o{ PATROCINIO : "tem"
-
-    PATROCINADOR ||--o{ PATROCINIO : "patrocina"
-
-    USUARIO ||--o{ COMENTARIO : "faz"
-
-    EVENTO ||--o{ COMENTARIO : "tem"
-
-    EVENTO ||--o{ FORMULARIO : "tem"
-
-    USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
+    EVENTO ||--o{ ATIVIDADES : "tem"
 
     ATIVIDADES ||--o{ INSCRICAO_SALA : "tem"
 
-    EVENTO ||--o{ ATIVIDADES : "tem"
-
-    USUARIO ||--o{ PRESENCA : "tem"
-
-    EVENTO ||--o{ PRESENCA : "tem"
+    EVENTO ||--o{ FORMULARIO : "tem"
 
     USUARIO ||--o{ FORMULARIO : "cria"
 
-    USUARIO ||--o{ RESPOSTAS : "faz"
+    FORMULARIO ||--o{ QUESTAO : "tem"
 
     FORMULARIO ||--o{ RESPOSTAS : "tem"
 
-    FORMULARIO ||--o{ QUESTAO : "tem"
+    USUARIO ||--o{ RESPOSTAS : "faz"
+
+    EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
+
+    USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
+
+    EVENTO ||--o{ COMENTARIO : "tem"
+
+    USUARIO ||--o{ COMENTARIO : "faz"
+
+    EVENTO ||--o{ PRESENCA : "tem"
+
+    USUARIO ||--o{ PRESENCA : "tem"
+
+    USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
+
+    PATROCINADOR ||--o{ PATROCINIO : "patrocina"
+
+    EVENTO ||--o{ PATROCINIO : "tem"
+
+    LOCAL ||--o{ EVENTO : "tem"
 
 ```
