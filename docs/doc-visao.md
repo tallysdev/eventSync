@@ -153,7 +153,7 @@ erDiagram
         string estado
         string cep
         string referencia
-        strint nome_local
+        string nome_local
     }
 
     PATROCINIO {
@@ -173,13 +173,14 @@ erDiagram
 
     COMENTARIO {
         int id pk
-        int like
+        int likes
         int id_usuario fk
+        int id_evento fk
     }
 
     ATIVIDADES {
         int id pk
-        string[] participante
+        string[] participantes
         string[] artigos
     }
 
@@ -202,6 +203,7 @@ erDiagram
         string nome
         string descricao
         int id_usuario fk
+        int id_evento fk
     }
 
     RESPOSTAS {
