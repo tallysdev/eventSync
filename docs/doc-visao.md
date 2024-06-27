@@ -230,6 +230,10 @@ erDiagram
 
     USUARIO ||--o{ COMENTARIO : "faz"
 
+    EVENTO ||--o{ COMENTARIO : "tem"
+
+    EVENTO ||--o{ FORMULARIO : "tem"
+
     USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
 
     SALA_TEMATICA ||--o{ INSCRICAO_SALA : "tem"
