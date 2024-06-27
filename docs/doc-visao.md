@@ -177,7 +177,7 @@ erDiagram
         int id_usuario fk
     }
 
-    SALA_TEMATICA {
+    ATIVIDADES {
         int id pk
         string[] participante
         string[] artigos
@@ -204,7 +204,7 @@ erDiagram
         int id_usuario fk
     }
 
-    PREENCHIMENTO {
+    RESPOSTAS {
         int id pk
         int id_usuario fk
         int id_formulario fk
@@ -236,9 +236,9 @@ erDiagram
 
     USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
 
-    SALA_TEMATICA ||--o{ INSCRICAO_SALA : "tem"
+    ATIVIDADES ||--o{ INSCRICAO_SALA : "tem"
 
-    EVENTO ||--o{ SALA_TEMATICA : "tem"
+    EVENTO ||--o{ ATIVIDADES : "tem"
 
     USUARIO ||--o{ PRESENCA : "tem"
 
@@ -246,9 +246,9 @@ erDiagram
 
     USUARIO ||--o{ FORMULARIO : "cria"
 
-    USUARIO ||--o{ PREENCHIMENTO : "faz"
+    USUARIO ||--o{ RESPOSTAS : "faz"
 
-    FORMULARIO ||--o{ PREENCHIMENTO : "tem"
+    FORMULARIO ||--o{ RESPOSTAS : "tem"
 
     FORMULARIO ||--o{ QUESTAO : "tem"
 
