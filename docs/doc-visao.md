@@ -63,7 +63,7 @@ RF018 - Alterar Sala temática | O usuário poderá alterar qualquer dado da sal
 RF019 - Excluir sala tematica | O usuário poderá excluir uma sala, enviando uma mensagem para o gerente da plataforma para aprovação e compartilhar a mensagem de exclusão da sala na plataforma para os inscritos. | Organizador e gerente.
 RF020 - Realizar Inscrição | O usuário poderá realizar inscrição em algum evento. | Todos os usuários.
 RF020.1 - Inscrição Adicionada | O usuário poderá ser adicionado a um evento. | Gerente.
-RF021 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.   
+RF021 - Cancelar Inscrição | O usuário poderá cancelar sua inscrição em qualquer eventos | Todos os Usuários.
 RF022 - Marcar presença | O usuário pode marcar presença de uma participante em um determinado eventos ou sala | Organizador e Gerente.
 RF023 - Marcar presença automática | O usuário pode escolher quantas presenças em salas temáticas podem garantir a presença no evento principal. | Organizador e Gerente.
 RF024 - Contestar presença. | O usuário pode contestar sua presença não marcada no evento/sala, deve ser enviada uma mensagem para o Organizador com um texto e uma imagem como prova da sua participação. | Participante.
@@ -103,7 +103,7 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
 07/03/2024 | Possibilidade de não compreensão total das funcionalidades da plataforma | Alta | Gerente | Vigente | Realizar treinamentos e oferecer suporte contínuo aos usuários.
 07/03/2024 | Risco de Sobrecarga do Servidor |Alta | Gerente | Vigente | Monitoramento constante da carga do servidor, implementação de escalabilidade e redundância.
-08/04/2024 | Falta de pessoal ativo na gerencia da plataforma, em virtude de processos que necessitam da sua avaliação | Média | Gerente | Futura | Comprometimento de pessoas responsáveis e fixas na gerencia da plataforma.  
+08/04/2024 | Falta de pessoal ativo na gerencia da plataforma, em virtude de processos que necessitam da sua avaliação | Média | Gerente | Futura | Comprometimento de pessoas responsáveis e fixas na gerencia da plataforma.
 
 
 ## Modelos
@@ -115,58 +115,143 @@ Para criar modelos ER é possível usar o BrModelo e gerar uma imagem. Contudo, 
 ```mermaid
 erDiagram
     USUARIO {
-        string id pk
+        int id pk
         string cpf
-        string rg
-        string permissoes
+        string nome
         date data_nascimento
+        string email
+        string telefone
+        string senha
+        string tipo
     }
-    
-    ADM
 
-    ORGANIZADOR 
-    
-    PARTICIPANTE {
-        string[] interesse
-    }
-    
-    TIPO {
-        string id pk
-        string descricao
+    INSCRICAO_EVENTO {
+        int id pk
+        int id_usuario fk
+        int id_evento fk
     }
 
     EVENTO {
-        string id pk
-        date data
-        string titulo
-        string local
+        int id pk
+        string nome
+        date data_inicio
+        date data_fim
+        int quantidade_max
+        int quantidade_min
+        int quantidade_horas
+        string status
         string descricao
-        boolean ativo
-        boolean autorizado
+        string tipo
+        int id_local fk
     }
 
-    PATROCINADOR{
-        string cnpj
+    LOCAL {
+        int id pk
+        string nome_rua
+        string numero
+        string cidade
+        string estado
+        string cep
+        string referencia
+        string nome_local
     }
-    
-    CRIACAO {
-        string evento_id pk
-        string organizador_id pk
-    }
-    
-    %% PARTICIPA {
-    %%     string evento_id pk
-    %%     string participante_id pk
-    %% }
 
-    USUARIO ||--|| ORGANIZADOR : "é um"
-    USUARIO ||--|| PARTICIPANTE : "é um"
-    USUARIO ||--|| ADM : "é um"
-    %% Na duvida se isso se mantém PARTICIPANTE ||--|{ PARTICIPA : participa
-    PARTICIPANTE }|--o{ EVENTO : "participa"
-    ORGANIZADOR ||--|{ CRIACAO : cria
-    EVENTO ||--|| CRIACAO : "é criado por"
-    EVENTO }|--||TIPO : "é de tipo"
-    EVENTO }|--|{ PATROCINADOR : "patrocina"
+    PATROCINIO {
+        int id pk
+        int id_evento fk
+        int id_patrocinador fk
+    }
+
+    PATROCINADOR {
+        int id pk
+        string nome
+        string logo
+        string telefone
+        string email
+        string descricao
+    }
+
+    COMENTARIO {
+        int id pk
+        int likes
+        int id_usuario fk
+        int id_evento fk
+    }
+
+    ATIVIDADES {
+        int id pk
+        string[] participantes
+        string[] artigos
+    }
+
+    INSCRICAO_SALA {
+        int id pk
+        int id_usuario fk
+        int id_sala fk
+    }
+
+    PRESENCA {
+        int id pk
+        bool presenca
+        string tipo
+        int id_usuario fk
+        int id_evento fk
+    }
+
+    FORMULARIO {
+        int id pk
+        string nome
+        string descricao
+        int id_usuario fk
+        int id_evento fk
+    }
+
+    RESPOSTAS {
+        int id pk
+        int id_usuario fk
+        int id_formulario fk
+    }
+
+    QUESTAO {
+        int id pk
+        string descricao
+        string resposta
+        string tipo
+        int id_formulario fk
+    }
+
+    EVENTO ||--o{ ATIVIDADES : "tem"
+
+    ATIVIDADES ||--o{ INSCRICAO_SALA : "tem"
+
+    EVENTO ||--o{ FORMULARIO : "tem"
+
+    USUARIO ||--o{ FORMULARIO : "cria"
+
+    FORMULARIO ||--o{ QUESTAO : "tem"
+
+    FORMULARIO ||--o{ RESPOSTAS : "tem"
+
+    USUARIO ||--o{ RESPOSTAS : "faz"
+
+    EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
+
+    USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
+
+    EVENTO ||--o{ COMENTARIO : "tem"
+
+    USUARIO ||--o{ COMENTARIO : "faz"
+
+    EVENTO ||--o{ PRESENCA : "tem"
+
+    USUARIO ||--o{ PRESENCA : "tem"
+
+    USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
+
+    PATROCINADOR ||--o{ PATROCINIO : "patrocina"
+
+    EVENTO ||--o{ PATROCINIO : "tem"
+
+    LOCAL ||--o{ EVENTO : "tem"
+
 ```
-
