@@ -1,7 +1,7 @@
 from core.models import ESUser
 from django.http import Http404
 from rest_framework import status
-from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -15,7 +15,7 @@ class UserList(APIView):
     List all users, or create a new EventSyncUser.
     """
     permission_classes = [IsAuthenticated | ReadOnly]
-    pagination_class = LimitOffsetPagination
+    pagination_class = PageNumberPagination
 
     def get(self, request, format=None):
         if not request.user.is_authenticated:
@@ -25,7 +25,7 @@ class UserList(APIView):
         paginator = self.pagination_class()
         result_page = paginator.paginate_queryset(users, request)
         serializer = ESUserSerializer(result_page, many=True)
-        return Response(serializer.data)
+        return paginator.get_paginated_response(serializer.data)
 
 
 class UserDetail(APIView):
