@@ -11,7 +11,7 @@ class ESUserSerializer(serializers.ModelSerializer):
         model = ESUser
         fields = [
             'id', 'email', 'password', 'is_staff', 'is_active', 'date_joined',
-            'cpf', 'name', 'birth_date', 'phone', 'user_type'
+            'cpf', 'name', 'birth_date', 'phone'
         ]
 
     def create(self, validated_data):
@@ -22,7 +22,6 @@ class ESUserSerializer(serializers.ModelSerializer):
             name=validated_data['name'],
             birth_date=validated_data['birth_date'],
             phone=validated_data['phone'],
-            user_type=validated_data['user_type'],
             is_staff=validated_data.get('is_staff', False),
             is_active=validated_data.get('is_active', True)
         )
@@ -43,7 +42,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ESUser
-        fields = ('email', 'cpf', 'name', 'birth_date', 'phone', 'user_type', 'password', 'password2')
+        fields = ('email', 'cpf', 'name', 'birth_date', 'phone', 'password', 'password2')
         extra_kwargs = {
             'password': {'write_only': True},
             'password2': {'write_only': True}
@@ -61,7 +60,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             name=validated_data['name'],
             birth_date=validated_data['birth_date'],
             phone=validated_data['phone'],
-            user_type=validated_data['user_type']
         )
         
         user.set_password(validated_data['password'])
