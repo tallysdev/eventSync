@@ -1,10 +1,14 @@
 from django.urls import path
-from .views.root_view import ApiRootView
 from rest_framework_simplejwt import views as jwt_views
+
 from .views import auth_view as authv
+from .views import users_view as userv
+from .views.root_view import ApiRootView
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
+    path('users/', userv.UserList.as_view(), name='user_list'),
+    path('users/<int:pk>/', userv.UserList.as_view(), name='user_detail')
 ]
 
 # auth urls 
