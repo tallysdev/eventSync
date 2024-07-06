@@ -1,11 +1,11 @@
 import csv
 from django.core.management.base import BaseCommand
-from eventsync_api.core.models import ESUser
+from core.models import ESUser
 
 class Command(BaseCommand):
     help = 'Create multiple users from a CSV file'
 
-    # apos criar o csv muda o path no codigo
+    # apos criar o csv mudar o path no codigo
     def handle(self, *args, **kwargs):
         csv_file_path = '/path/to/your/users.csv'
         
