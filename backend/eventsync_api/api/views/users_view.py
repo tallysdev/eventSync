@@ -30,7 +30,7 @@ class UserList(APIView):
 
 class UserDetail(APIView):
     """
-    Retrieve, update or delete a EventSyncUser.
+    Retrieve, update or delete an ESUser.
     """
     permission_classes = [IsAuthenticated | ReadOnly]
 
@@ -42,30 +42,24 @@ class UserDetail(APIView):
 
     def get(self, request, pk, format=None):
         user = self.get_object(pk)
-        serializer = ESUserSerializer(data=user)
+        serializer = ESUserSerializer(user)
         return Response(serializer.data)
-    
 
     def patch(self, request, pk, format=None):
         user = self.get_object(pk)
-
         user_data = request.data.copy()
-
         serializer = ESUserSerializer(user, data=user_data, partial=True)
 
         if not serializer.is_valid():
             errors = serializer.errors
             for field, field_errors in errors.items():
-                print(f"Error in field '{field_errors}'")
-                for error in field_errors:
-                    print(f"Error in field '{field}': {error}")
-
+                print(f"Error in field '{field}': {field_errors}")
+        
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
     def delete(self, request, pk, format=None):
         user = self.get_object(pk)

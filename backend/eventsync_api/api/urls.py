@@ -8,7 +8,7 @@ from .views.root_view import ApiRootView
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
     path('users/', userv.UserList.as_view(), name='user_list'),
-    path('users/<int:pk>/', userv.UserList.as_view(), name='user_detail')
+    path('users/<int:pk>/', userv.UserDetail.as_view(), name='user_detail')
 ]
 
 # auth urls 
