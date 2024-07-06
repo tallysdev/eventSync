@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand
 from core.models import ESUser
 
 class Command(BaseCommand):
-    help = 'Create multiple users from a CSV file'
+    help = 'Command Function: Create multiple users from a CSV file'
 
     # apos criar o csv mudar o path no codigo
     def handle(self, *args, **kwargs):

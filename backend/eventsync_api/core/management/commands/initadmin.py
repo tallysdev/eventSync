@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand, CommandError
 from core.models import ESUser
 
 class Command(BaseCommand):
-    help = 'Create a new superuser'
+    help = 'Command Function: Create a new superuser'
 
     def add_arguments(self, parser):
         parser.add_argument('email', type=str, help='Superuser email')
