@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FooterVue.vue > renders correctly 1`] = `
+"<v-footer data-v-4896eafd="" color="secondary" class="py-6" width="auto" height="auto">
+  <v-container data-v-4896eafd="">
+    <v-row data-v-4896eafd="" class="footer-row" align="center" justify="space-between">
+      <v-col data-v-4896eafd="" cols="12" md="2" class="d-flex align-center justify-center mb-4 mb-md-0">
+        <v-img data-v-4896eafd="" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+      </v-col>
+      <v-col data-v-4896eafd="" cols="12" md="3" class="text-center text-md-left">
+        <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Encontre Eventos</h3>
+        <v-list data-v-4896eafd="" dense="">
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Hoje</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Amanhã</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Esta Semana</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Próxima Semana</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-col>
+      <v-col data-v-4896eafd="" cols="12" md="3" class="text-center text-md-left">
+        <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Mapa do site</h3>
+        <v-list data-v-4896eafd="" dense="">
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Home</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Eventos</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Login</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Contato</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-col>
+      <v-col data-v-4896eafd="" cols="12" md="4" class="text-center text-md-left">
+        <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Contato</h3>
+        <v-list data-v-4896eafd="" dense="">
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Email: fakeemail@gmail.com</v-list-item-title>
+          </v-list-item>
+          <v-list-item data-v-4896eafd="">
+            <v-list-item-title data-v-4896eafd="">Celular: 213214124124</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-col>
+    </v-row>
+  </v-container>
+</v-footer>"
+`;

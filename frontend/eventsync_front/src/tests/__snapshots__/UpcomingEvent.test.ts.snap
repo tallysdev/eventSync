@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UpcomingEvents.vue > renders correctly 1`] = `
+"<section data-v-19c29f04="" class="d-block">
+  <!-- TODO: Make the event clickable and redirect to the event -->
+  <v-row data-v-19c29f04="" justify="center">
+    <v-col data-v-19c29f04="" cols="12" lg="10">
+      <h2 data-v-19c29f04="" class="text-h4 text-start mb-6 font-weight-bold">Eventos próximos</h2>
+      <v-carousel data-v-19c29f04="" height="500" show-arrows="hover" class="rounded-xl position-relative">
+        <v-carousel-item data-v-19c29f04="">
+          <v-row data-v-19c29f04="" class="no-gutters">
+            <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+              <div data-v-19c29f04="" class="h-100 w-100"></div>
+            </v-col>
+            <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+              <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                  <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">Sex, 30 ago - 19:00 - 21:00</p>
+                  <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Titulo para encher linguiça e preencher o espaço para mostrar o texto</h1>
+                  <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">UFRN/Ceres - Caicó, RN</p>
+                </div>
+                <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </v-carousel-item>
+        <v-carousel-item data-v-19c29f04="">
+          <v-row data-v-19c29f04="" class="no-gutters">
+            <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+              <div data-v-19c29f04="" class="h-100 w-100"></div>
+            </v-col>
+            <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+              <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                  <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">15 de Julho - 16:00 - 18:00</p>
+                  <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Partida de Futebol</h1>
+                  <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">Estádio ABC</p>
+                </div>
+                <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </v-carousel-item>
+        <v-carousel-item data-v-19c29f04="">
+          <v-row data-v-19c29f04="" class="no-gutters">
+            <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+              <div data-v-19c29f04="" class="h-100 w-100"></div>
+            </v-col>
+            <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+              <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                  <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">20 de Julho - 20:00 - 22:00</p>
+                  <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Peça de Teatro</h1>
+                  <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">Teatro 123</p>
+                </div>
+                <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+              </div>
+            </v-col>
+          </v-row>
+        </v-carousel-item>
+      </v-carousel>
+    </v-col>
+  </v-row>
+</section>"
+`;
