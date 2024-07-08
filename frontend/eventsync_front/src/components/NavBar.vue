@@ -86,9 +86,19 @@
         </v-toolbar>
         <v-list>
           <v-list-item v-for="(item, index) in menuItems" :key="index" @click="dialog = false">
-            <v-icon>{{ item.icon }}</v-icon>
+            <template v-slot:prepend>
+              <v-icon :icon="item.icon"></v-icon>
+            </template>
             <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item>
+          <v-list-group>
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" prepend-icon="mdi-map-marker" title="Localizações"></v-list-item>
+            </template>
+            <v-list-item v-for="(location, index) in locations" :key="index">
+              <v-list-item-title>{{ location }}</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
         </v-list>
       </v-card>
     </v-dialog>
@@ -107,7 +117,6 @@ const locations = ref(['Localização 1', 'Localização 2', 'Localização 3'])
 // Menu items for the navigation drawer
 const menuItems = ref([
   { text: 'Pesquisar eventos', icon: 'mdi-magnify' },
-  { text: 'Localizações', icon: 'mdi-map-marker' },
   { text: 'Crie seu evento', icon: 'mdi-plus' },
   { text: 'Acesse sua conta', icon: 'mdi-login' },
   { text: 'Cadastre-se', icon: 'mdi-account-plus' }
