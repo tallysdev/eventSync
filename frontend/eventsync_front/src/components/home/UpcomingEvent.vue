@@ -4,13 +4,13 @@
     <v-row justify="center">
       <v-col cols="12" lg="10">
         <h2 class="text-h4 text-start mb-6 font-weight-bold">Eventos próximos</h2>
-        <v-carousel height="500" show-arrows="hover" class="rounded-xl no-gap-carousel">
+        <v-carousel height="500" show-arrows="hover" class="rounded-xl position-relative">
           <v-carousel-item v-for="event in upcomingEvents" :key="event.id">
-            <v-row>
-              <v-col cols="8" class="bg-primary hidden-sm-and-down">
-                <div class="event-image-placeholder"></div>
+            <v-row class="no-gutters">
+              <v-col cols="12" md="8" class="bg-primary d-none d-md-flex">
+                <div class="h-100 w-100"></div>
               </v-col>
-              <v-col cols="12" lg="4" class="m-0 pa-4 event-details bg-white">
+              <v-col cols="12" md="4" class="m-0 pa-4 event-details bg-white">
                 <div class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
                   <div class="d-flex flex-column h-75 mt-4">
                     <p class="primary--text text-h6 font-weight-bold">
@@ -49,23 +49,17 @@ defineProps({
 :deep(.v-carousel__controls) {
   bottom: 0 !important;
   align-items: center !important;
-  /* margin-bottom: 38px !important; */
   width: 100% !important;
-  /* border-radius: 0px 0px 24px 24px !important;
-  background-color: transparent !important; */
   color: white !important;
 }
 
-.event-image-placeholder {
-  width: 100%;
-  height: 400px;
-}
 
 .event-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  height: 100%;
 }
 
 .event-details h3 {
@@ -86,4 +80,5 @@ defineProps({
     font-size: 1.5rem !important;
   }
 }
+
 </style>
