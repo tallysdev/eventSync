@@ -1,13 +1,13 @@
 <template>
-  <v-app class="d-flex flex-column justify-center align-center h-100 w-100">
+  <v-app class="d-flex flex-column h-100 w-100">
     <NavBar />
-    <v-main class="d-flex flex-column align-center justify-space-around h-100 w-100 pa-16 mt-10 mb-16 main-content">
+    <v-main class="flex-grow-1 pa-16 mt-10">
       <v-container fluid class="pa-4 d-flex flex-column h-100 w-100">
         <EventType :event-types="eventTypes" />
         <UpcomingEvents :upcoming-events="upcomingEvents" />
       </v-container>
     </v-main>
-    <Footer  class="pt-16 mt-16"/>
+    <FooterVue />
   </v-app>
 </template>
 
@@ -16,7 +16,7 @@ import { ref } from 'vue'
 import NavBar from './NavBar.vue'
 import EventType from './home/EventType.vue'
 import UpcomingEvents from './home/UpcomingEvent.vue'
-import Footer from './Footer.vue'
+import FooterVue from './Footer.vue'
 
 // Event types for the event type slider
 const eventTypes = ref([
@@ -62,22 +62,17 @@ const upcomingEvents = ref([
   color: #ffffff;
 }
 
+/* Usando essa notação pra alterar a estilização de uma classe interna no vuetify*/
+:deep(.v-application__wrap) {
+  min-width: 100% !important;
+  margin: 0 auto !important;
+}
+
 .v-main {
   flex-grow: 1;
 }
 
 .v-footer {
   flex-shrink: 0;
-}
-
-:deep(.v-application__wrap) {
-  min-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-@media (max-width: 600px) {
-  .v-main {
-    padding-bottom: 120px; /* Increase padding for smaller screens */
-  }
 }
 </style>
