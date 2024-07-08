@@ -1,11 +1,12 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-width: 100vw;
+  min-height: 100vh;
   font-weight: normal;
+  background-color: #2F3640;
 }
+
 
 a,
 .green {
@@ -30,6 +31,5 @@ a,
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }
