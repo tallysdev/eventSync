@@ -9,6 +9,7 @@
           </v-col>
           <v-col cols="3">
             <v-text-field
+              v-model="searchQuery"
               color="primary"
               bg-color="complementary"
               placeholder="Pesquisar eventos..."
@@ -85,6 +86,12 @@
           </v-btn>
         </v-toolbar>
         <v-list>
+          <v-list-item @click="toggleSearchField">
+            <template v-slot:prepend>
+              <v-icon>mdi-magnify</v-icon>
+            </template>
+            <v-list-item-title>Pesquisar eventos</v-list-item-title>
+          </v-list-item>
           <v-list-item v-for="(item, index) in menuItems" :key="index" @click="dialog = false">
             <template v-slot:prepend>
               <v-icon :icon="item.icon"></v-icon>
@@ -100,6 +107,20 @@
             </v-list-item>
           </v-list-group>
         </v-list>
+        <v-card v-if="showSearchField" class="mx-4 my-2 pa-6">
+          <v-text-field
+            v-model="searchQuery"
+            color="primary"
+            bg-color="complementary"
+            placeholder="Pesquisar eventos..."
+            prepend-inner-icon="mdi-magnify"
+            variant="outlined"
+            flat
+            hide-details
+            rounded
+          ></v-text-field>
+          <v-btn @click="searchEvents" class="mx-1 my-2">Search</v-btn>
+        </v-card>
       </v-card>
     </v-dialog>
   </div>
@@ -110,15 +131,24 @@ import { ref } from 'vue'
 
 // Sidebar state for mobile menu
 const dialog = ref(false)
+const showSearchField = ref(false)
+const searchQuery = ref('')
 
 // Locations for the select dropdown
 const locations = ref(['Localização 1', 'Localização 2', 'Localização 3'])
 
 // Menu items for the navigation drawer
 const menuItems = ref([
-  { text: 'Pesquisar eventos', icon: 'mdi-magnify' },
   { text: 'Crie seu evento', icon: 'mdi-plus' },
   { text: 'Acesse sua conta', icon: 'mdi-login' },
   { text: 'Cadastre-se', icon: 'mdi-account-plus' }
 ])
+
+const toggleSearchField = () => {
+  showSearchField.value = !showSearchField.value
+}
+
+const searchEvents = () => {
+  console.log('Searching for events with query:', searchQuery.value)
+}
 </script>
