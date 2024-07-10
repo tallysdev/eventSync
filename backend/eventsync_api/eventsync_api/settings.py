@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'api.apps.ApiConfig',
     'core.apps.CoreConfig',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -148,4 +149,12 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
     'ACCESS_TOKEN_LIFETIME': timedelta(days=3),
     'ROTATE_REFRESH_TOKENS': True,
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'EventSync API',
+    'DESCRIPTION': 'API dedicada ao projeto nomeado EventSync da disciplina de Engenharia de Software II',
+    'VERSION': '0.0.1',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }

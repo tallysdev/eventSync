@@ -7,3 +7,6 @@ python-decouple==3.8
 
 # dependencia de login
 djangorestframework-simplejwt==5.3.1
+
+# dependencia de documentacao
+drf-spectacular==0.27.2
