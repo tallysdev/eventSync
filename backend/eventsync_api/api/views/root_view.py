@@ -11,6 +11,9 @@ class ApiRootView(APIView):
             'register': reverse('register', request=request, format=format),
             'login-token': reverse('token_obtain_pair', request=request, format=format),
             'refresh-token': reverse('token_refresh', request=request, format=format),
+            'swagger-json': reverse('schema', request=request, format=format),
+            'swagger-ui': reverse('swagger-ui', request=request, format=format),
+            'redoc-ui': reverse('redoc', request=request, format=format),
             # adicione mais endpoints aqui
         }
         return Response(data)
