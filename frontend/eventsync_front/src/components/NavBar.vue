@@ -3,11 +3,11 @@
     <!-- Desktop Navbar -->
     <v-app-bar app color="secondary" dense flat class="py-2 mb-2 hidden-sm-and-down fill-width">
       <v-container>
-        <v-row class="d-flex align-center justify-space-around">
+        <v-row class="d-flex align-center justify-space-evenly">
           <v-col cols="1">
             <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
           </v-col>
-          <v-col cols="3">
+          <v-col cols="2">
             <v-text-field
               v-model="searchQuery"
               color="primary"
@@ -33,6 +33,7 @@
               flat
               rounded
               hide-details
+              class="pr-6"
             ></v-select>
           </v-col>
           <v-col cols="3" class="d-flex align-center justify-space-around">
