@@ -6,7 +6,7 @@
         <h2 class="text-h4 text-start mb-6 font-weight-bold">Eventos próximos</h2>
         <v-carousel height="500" show-arrows="hover" class="rounded-xl position-relative">
           <v-carousel-item v-for="event in upcomingEvents" :key="event.id">
-            <v-row class="no-gutters">
+            <v-row class="no-gutters height93">
               <v-col cols="12" md="8" class="bg-primary d-none d-md-flex">
                 <div class="h-100 w-100"></div>
               </v-col>
@@ -16,8 +16,8 @@
                     <p class="primary--text text-h6 font-weight-bold">
                       {{ event.date }} - {{ event.time }}
                     </p>
-                    <h1 class="text-h4 font-weight-bold text-left event-title">{{ event.name }}</h1>
-                    <p class="text-h6 font-weight-light" color="primary">{{ event.location }}</p>
+                    <h1 class="text-h4 font-weight-bold text-left event-title">{{ truncateText(event.name, 90) }}</h1>
+                    <p class="text-h6 font-weight-light" color="primary">{{ truncateText(event.location, 40) }}</p>
                   </div>
                   <v-btn color="primary black--text mt-14" variant="outlined" dark>
                     <b>Ver detalhes</b>
@@ -39,13 +39,19 @@ defineProps({
     required: true
   }
 })
+const truncateText = (text: string, length: number): string => {
+  return text.length > length ? text.substring(0, length) + '...' : text;
+};
+
 </script>
 
 <style scoped>
 .no-gap-carousel {
   position: relative;
 }
-
+.height93 {
+  height: 93%;
+}
 :deep(.v-carousel__controls) {
   bottom: 0 !important;
   align-items: center !important;
