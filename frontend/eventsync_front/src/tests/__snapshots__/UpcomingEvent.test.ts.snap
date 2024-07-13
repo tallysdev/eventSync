@@ -8,7 +8,7 @@ exports[`UpcomingEvents.vue > renders correctly 1`] = `
       <h2 data-v-19c29f04="" class="text-h4 text-start mb-6 font-weight-bold">Eventos próximos</h2>
       <v-carousel data-v-19c29f04="" height="500" show-arrows="hover" class="rounded-xl position-relative">
         <v-carousel-item data-v-19c29f04="">
-          <v-row data-v-19c29f04="" class="no-gutters">
+          <v-row data-v-19c29f04="" class="no-gutters height93">
             <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
               <div data-v-19c29f04="" class="h-100 w-100"></div>
             </v-col>
@@ -25,7 +25,7 @@ exports[`UpcomingEvents.vue > renders correctly 1`] = `
           </v-row>
         </v-carousel-item>
         <v-carousel-item data-v-19c29f04="">
-          <v-row data-v-19c29f04="" class="no-gutters">
+          <v-row data-v-19c29f04="" class="no-gutters height93">
             <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
               <div data-v-19c29f04="" class="h-100 w-100"></div>
             </v-col>
@@ -42,7 +42,7 @@ exports[`UpcomingEvents.vue > renders correctly 1`] = `
           </v-row>
         </v-carousel-item>
         <v-carousel-item data-v-19c29f04="">
-          <v-row data-v-19c29f04="" class="no-gutters">
+          <v-row data-v-19c29f04="" class="no-gutters height93">
             <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
               <div data-v-19c29f04="" class="h-100 w-100"></div>
             </v-col>
