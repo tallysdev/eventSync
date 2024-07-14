@@ -7,7 +7,7 @@
           <v-col cols="1">
             <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
           </v-col>
-          <v-col cols="2">
+          <v-col cols="3">
             <v-text-field
               v-model="searchQuery"
               color="primary"
@@ -20,7 +20,7 @@
               rounded
             ></v-text-field>
           </v-col>
-          <v-col cols="2">
+          <v-col cols="3">
             <v-select
               :items="locations"
               item-text="name"
@@ -36,7 +36,7 @@
               class="pr-6"
             ></v-select>
           </v-col>
-          <v-col cols="3" class="d-flex align-center justify-space-around">
+          <v-col cols="4" class="d-flex align-center justify-space-around">
             <v-btn>Crie seu evento</v-btn>
             <v-btn>Acesse sua conta</v-btn>
             <v-btn
