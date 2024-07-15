@@ -1,0 +1,229 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home.vue > renders correctly 1`] = `
+"<v-app data-v-08e32229="" class="d-flex flex-column h-100 w-100">
+  <div data-v-08e32229="">
+    <!-- Desktop Navbar -->
+    <v-app-bar app="" color="secondary" dense="" flat="" class="py-2 mb-2 hidden-sm-and-down fill-width">
+      <v-container>
+        <v-row class="d-flex align-center justify-space-evenly">
+          <v-col cols="1">
+            <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+          </v-col>
+          <v-col cols="2">
+            <v-text-field modelvalue="" color="primary" bg-color="complementary" placeholder="Pesquisar eventos..." prepend-inner-icon="mdi-magnify" variant="outlined" flat="" hide-details="" rounded=""></v-text-field>
+          </v-col>
+          <v-col cols="2">
+            <v-select items="Localização 1,Localização 2,Localização 3" item-text="name" item-value="id" label="Localizações" prepend-inner-icon="mdi-map-marker" variant="solo" density="comfortable" bg-color="transparent" flat="" rounded="" hide-details="" class="pr-6"></v-select>
+          </v-col>
+          <v-col cols="3" class="d-flex align-center justify-space-around">
+            <v-btn>Crie seu evento</v-btn>
+            <v-btn>Acesse sua conta</v-btn>
+            <v-btn class="text-none" color="primary" variant="flat" style="border: 1px solid white;" rounded="xs"><b>Cadastre-se</b></v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app-bar><!-- Mobile Navbar -->
+    <v-app-bar app="" color="secondary" dense="" flat="" class="py-2 mb-0 hidden-md-and-up" style="position: fixed; top: 0px; left: 0px; right: 0px;">
+      <v-container>
+        <v-row class="d-flex align-center justify-space-between">
+          <v-col cols="2">
+            <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+          </v-col>
+          <v-col cols="2" class="d-flex align-center justify-end">
+            <v-btn icon="">
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-app-bar><!-- Mobile Navigation Dialog -->
+    <v-dialog modelvalue="false" fullscreen="" hide-overlay="" transition="dialog-bottom-transition">
+      <v-card>
+        <v-toolbar flat="" color="secondary">
+          <v-toolbar-title>Mobile Menu</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn icon="">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-list>
+          <v-list-item>
+            <v-list-item-title>Pesquisar eventos</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Crie seu evento</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Acesse sua conta</v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>Cadastre-se</v-list-item-title>
+          </v-list-item>
+          <v-list-group>
+            <v-list-item>
+              <v-list-item-title>Localização 1</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Localização 2</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Localização 3</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
+        </v-list>
+        <!--v-if-->
+      </v-card>
+    </v-dialog>
+  </div>
+  <v-main data-v-08e32229="" class="flex-grow-1 pa-16 mt-10">
+    <v-container data-v-08e32229="" fluid="" class="pa-4 d-flex flex-column h-100 w-100">
+      <section data-v-08e32229="" class="d-block my-10">
+        <!-- TODO: Make the type clickable and redirect to events of this type -->
+        <v-row justify="center">
+          <v-col cols="12" lg="10">
+            <h2 class="text-h4 text-start mb-6 font-weight-bold">Escolha o seu tipo de evento</h2>
+            <v-row class="d-flex justify-center">
+              <v-col cols="auto" lg="2" class="text-center">
+                <v-avatar size="100" color="primary">
+                  <v-icon size="50">mdi-music</v-icon>
+                </v-avatar><span class="d-block mt-6 text-h6">Show</span>
+              </v-col>
+              <v-col cols="auto" lg="2" class="text-center">
+                <v-avatar size="100" color="primary">
+                  <v-icon size="50">mdi-basketball</v-icon>
+                </v-avatar><span class="d-block mt-6 text-h6">Esporte</span>
+              </v-col>
+              <v-col cols="auto" lg="2" class="text-center">
+                <v-avatar size="100" color="primary">
+                  <v-icon size="50">mdi-drama-masks</v-icon>
+                </v-avatar><span class="d-block mt-6 text-h6">Teatro</span>
+              </v-col>
+              <v-col cols="auto" lg="2" class="text-center">
+                <v-avatar size="100" color="primary">
+                  <v-icon size="50">mdi-movie</v-icon>
+                </v-avatar><span class="d-block mt-6 text-h6">Cinema</span>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+      </section>
+      <section data-v-19c29f04="" data-v-08e32229="" class="d-block">
+        <!-- TODO: Make the event clickable and redirect to the event -->
+        <v-row data-v-19c29f04="" justify="center">
+          <v-col data-v-19c29f04="" cols="12" lg="10">
+            <h2 data-v-19c29f04="" class="text-h4 text-start mb-6 font-weight-bold">Eventos próximos</h2>
+            <v-carousel data-v-19c29f04="" height="500" show-arrows="hover" class="rounded-xl position-relative">
+              <v-carousel-item data-v-19c29f04="">
+                <v-row data-v-19c29f04="" class="no-gutters height93">
+                  <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+                    <div data-v-19c29f04="" class="h-100 w-100"></div>
+                  </v-col>
+                  <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+                    <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                      <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                        <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">Sex, 30 ago - 19:00 - 21:00</p>
+                        <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Titulo para encher linguiça e preencher o espaço para mostrar o texto</h1>
+                        <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">UFRN/Ceres - Caicó, RN</p>
+                      </div>
+                      <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-carousel-item>
+              <v-carousel-item data-v-19c29f04="">
+                <v-row data-v-19c29f04="" class="no-gutters height93">
+                  <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+                    <div data-v-19c29f04="" class="h-100 w-100"></div>
+                  </v-col>
+                  <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+                    <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                      <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                        <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">15 de Julho - 16:00 - 18:00</p>
+                        <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Partida de Futebol</h1>
+                        <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">Estádio ABC</p>
+                      </div>
+                      <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-carousel-item>
+              <v-carousel-item data-v-19c29f04="">
+                <v-row data-v-19c29f04="" class="no-gutters height93">
+                  <v-col data-v-19c29f04="" cols="12" md="8" class="bg-primary d-none d-md-flex">
+                    <div data-v-19c29f04="" class="h-100 w-100"></div>
+                  </v-col>
+                  <v-col data-v-19c29f04="" cols="12" md="4" class="m-0 pa-4 event-details bg-white">
+                    <div data-v-19c29f04="" class="d-flex flex-column align-start justify-flex-start h-100 pl-4">
+                      <div data-v-19c29f04="" class="d-flex flex-column h-75 mt-4">
+                        <p data-v-19c29f04="" class="primary--text text-h6 font-weight-bold">20 de Julho - 20:00 - 22:00</p>
+                        <h1 data-v-19c29f04="" class="text-h4 font-weight-bold text-left event-title">Peça de Teatro</h1>
+                        <p data-v-19c29f04="" class="text-h6 font-weight-light" color="primary">Teatro 123</p>
+                      </div>
+                      <v-btn data-v-19c29f04="" color="primary black--text mt-14" variant="outlined" dark=""><b data-v-19c29f04="">Ver detalhes</b></v-btn>
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-carousel-item>
+            </v-carousel>
+          </v-col>
+        </v-row>
+      </section>
+    </v-container>
+  </v-main>
+  <v-footer data-v-4896eafd="" data-v-08e32229="" color="secondary" class="py-6" width="auto" height="auto">
+    <v-container data-v-4896eafd="">
+      <v-row data-v-4896eafd="" class="footer-row" align="center" justify="space-between">
+        <v-col data-v-4896eafd="" cols="12" md="2" class="d-flex align-center justify-center mb-4 mb-md-0">
+          <v-img data-v-4896eafd="" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+        </v-col>
+        <v-col data-v-4896eafd="" cols="12" md="3" class="text-center text-md-left">
+          <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Encontre Eventos</h3>
+          <v-list data-v-4896eafd="" dense="">
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Hoje</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Amanhã</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Esta Semana</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Próxima Semana</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-col>
+        <v-col data-v-4896eafd="" cols="12" md="3" class="text-center text-md-left">
+          <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Mapa do site</h3>
+          <v-list data-v-4896eafd="" dense="">
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Home</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Eventos</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Login</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Contato</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-col>
+        <v-col data-v-4896eafd="" cols="12" md="4" class="text-center text-md-left">
+          <h3 data-v-4896eafd="" class="text-h6 font-weight-bold">Contato</h3>
+          <v-list data-v-4896eafd="" dense="">
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Email: fakeemail@gmail.com</v-list-item-title>
+            </v-list-item>
+            <v-list-item data-v-4896eafd="">
+              <v-list-item-title data-v-4896eafd="">Celular: 213214124124</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
+</v-app>"
+`;
