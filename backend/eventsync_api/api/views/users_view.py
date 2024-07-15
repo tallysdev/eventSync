@@ -30,7 +30,7 @@ class UserList(APIView):
         if not request.user.is_authenticated:
             return Response("Acesso negado. É necessário autenticação para acessar este recurso.", status=status.HTTP_403_FORBIDDEN)
 
-        users = ESUser.objects.all()
+        users = ESUser.objects.all().order_by("id")
         paginator = self.pagination_class()
         result_page = paginator.paginate_queryset(users, request)
         serializer = ESUserSerializer(result_page, many=True)
