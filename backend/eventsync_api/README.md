@@ -38,3 +38,8 @@
 
 <li>Abra o navegador e acesse o endereço http://localhost:8000 para acessar a aplicação.</li>
 </ol>
+
+<h2>TESTES</h2>
+
+<p>Para rodar os testes do projeto use o seguinte comando:</p>
+<pre>python manage.py test</pre>
