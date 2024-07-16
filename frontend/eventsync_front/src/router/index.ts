@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CreateEventPage from '../views/CreateEventPage.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,8 +12,8 @@ const router = createRouter({
     },
     {
       path: '/create-event',
-      name: 'CreateEvent',
-      component: CreateEventPage
+      name: 'create-event',
+      component: () => import('../views/CreateEventPage.vue')
     },
     {
       path: '/about',
