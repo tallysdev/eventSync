@@ -13,8 +13,8 @@ Para o frontend, optamos pelo Vue.js, um framework JavaScript progressivo utiliz
 
 # Documentos do projeto:
 
-- [Documento de visão](https://github.com/tallysdev/eventSync/blob/doc/issue21-atualizar-readme/docs/doc-visao.md)
+- [Documento de visão](https://github.com/tallysdev/eventSync/blob/main/docs/doc-visao.md)
 
-- [User Stories](https://github.com/tallysdev/eventSync/blob/doc/issue21-atualizar-readme/docs/doc-userStories.md)
+- [User Stories](https://github.com/tallysdev/eventSync/blob/main/docs/doc-userStories.md)
 
-- [Projeto arquitetural](https://github.com/tallysdev/eventSync/blob/doc/issue21-atualizar-readme/docs/projeto-arquitetural.md)
+- [Projeto arquitetural](https://github.com/tallysdev/eventSync/blob/main/docs/projeto-arquitetural.md)
