@@ -10,3 +10,6 @@ djangorestframework-simplejwt==5.3.1
 
 # dependencia de documentacao
 drf-spectacular==0.27.2
+
+#cobertura
+coverage==7.6.0
