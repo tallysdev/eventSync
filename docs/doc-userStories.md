@@ -93,6 +93,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF022         | Marcar presença
+| RF023         | Marcar presença automática
+| RF024         | Contestar presença
+
 ### User Story US06 - Seção do Patrocinador.
 | Descrição | O sistema deve conter uma área na tela para os patrocinadores e apoiadores(órgãos gerais que são cadastrados pelo administrador) do sistema, na seção particular de eventos deve conter uma mesma área para os patrocinadores e organizadores da plataforma. |
 |---|---
