@@ -136,6 +136,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF009         | Relatórios de participantes
+| RF030         | Listagem geral de participantes no evento
+
 ### User Story US10 - Notificações para Usuários.
 | Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
 |---|---
