@@ -223,6 +223,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF031         | Mensagem para participantes
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA10.01 | O sistema deve permitir o envio de notificações por email para os usuários sobre novos eventos. |
+| TA10.02 | O sistema deve permitir o envio de notificações por email para os usuários sobre eventos favoritos. |
+| TA10.03 | O sistema deve permitir o envio de atualizações e informações relevantes para os usuários via email. |
+
 ### User Story US11 - Seção de avaliação.
 | Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na sessão do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa comentar ou preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
 |---|---
