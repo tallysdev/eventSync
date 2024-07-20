@@ -347,6 +347,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF006         | Inserir perguntas no formulário
 | RF010         | Visualizar formulários
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Média                                   |
+| **Estimativa**              | 4 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 3 PF                                    |
+| **Analista**                | Vinícius                                |
+| **Desenvolvedor**           | Ítalo                                   |
+| **Revisor**                 | Lucas                                   |
+| **Testador**                | Dayanne                                 |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA11.01 | O sistema deve permitir ao usuário visualizar os eventos que já participou.                  |
