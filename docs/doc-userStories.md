@@ -55,6 +55,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF005         | Excluir conta
 | RF005.1       | Excluir conta de usuário
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Essencial                               |
+| **Estimativa**              | 8 h                                    |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 7 PF                                   |
+| **Analista**                | Ítalo                                  |
+| **Desenvolvedor**           | Lucas                                  |
+| **Revisor**                 | Dayanne                                |
+| **Testador**                | Tallys                                 |
 
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
