@@ -405,6 +405,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF016         | Visualizar Evento
 | RF017         | Inserir sala temática no evento
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Média                                   |
+| **Estimativa**              | 6 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 5 PF                                    |
+| **Analista**                | Tallys                                  |
+| **Desenvolvedor**           | Lucas                                   |
+| **Revisor**                 | Vinícius                                |
+| **Testador**                | Ítalo                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA13.01 | O sistema deve analisar o histórico de eventos do usuário e sugerir eventos relacionados.    |
