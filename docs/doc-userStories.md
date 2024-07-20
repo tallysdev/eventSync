@@ -114,6 +114,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, marcar presença, garantindo uma gestão eficiente das inscrições |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF015         | Convidar participante
+| RF016         | Visualizar Evento
+| RF020         | Realizar Inscrição
+| RF020.1         | Inscrição Adicionada
+| RF021         | Cancelar Inscrição
+| RF030         | Listagem geral de participantes no evento
+| RF031         | Mensagem para participantes
+
 ### User Story US08 - Calendário de Eventos.
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |---|---
