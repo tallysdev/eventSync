@@ -467,6 +467,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF036         | Inserir Local
 | RF037         | Alterar Local
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Média                                   |
+| **Estimativa**              | 4 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 3 PF                                    |
+| **Analista**                | Dayanne                                 |
+| **Desenvolvedor**           | Tallys                                  |
+| **Revisor**                 | Vinícius                                |
+| **Testador**                | Lucas                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA15.01 | O sistema deve permitir o cadastro de um novo local para eventos com todas as informações obrigatórias. |
