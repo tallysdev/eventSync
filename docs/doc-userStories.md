@@ -238,6 +238,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF006         | Inserir perguntas no formulário
 | RF010         | Visualizar formulários
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA11.01 | O sistema deve permitir ao usuário visualizar os eventos que já participou.                  |
+| TA11.02 | O sistema deve fornecer uma opção para o usuário fornecer feedback sobre o evento.           |
+| TA11.03 | O sistema deve permitir ao usuário comentar sobre o evento, se dentro do prazo de avaliação. |
+| TA11.04 | O sistema deve permitir ao usuário preencher um formulário de avaliação do evento.           |
+| TA11.05 | O sistema deve garantir que o formulário de avaliação esteja acessível somente durante o prazo de avaliação. |
+
 ### User Story US12 - Reserva e confirmação.
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 |---|---
