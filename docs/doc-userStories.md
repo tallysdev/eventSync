@@ -60,6 +60,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulário feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF006         | Inserir perguntas no formulário
+| RF007         | Alterar perguntas no formulário
+| RF008         | Excluir perguntas no formulário
+| RF009         | Alterar formulário
+| RF010         | Visualizar formulários
+
 ### User Story US03 - Manter Evento.
 | Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.|
 |---|---
