@@ -116,6 +116,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF018         | Alterar Sala temática
 | RF019         | Excluir sala temática
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA04.01 | O sistema deve permitir a criação de uma nova sala temática dentro de um evento existente.            |
+| TA04.02 | O sistema deve permitir a alteração dos dados de uma sala temática existente.                         |
+| TA04.03 | O sistema deve permitir a exclusão de uma sala temática existente.                                    |
+| TA04.04 | O sistema deve garantir que as salas temáticas sejam criadas com horários distintos e não se sobreponham. |
+| TA04.05 | O sistema deve listar todas as salas temáticas de um evento de forma clara e organizada.              |
+
 ### User Story US05 - Manter Presença.
 | Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
 |---|---
