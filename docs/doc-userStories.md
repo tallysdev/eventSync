@@ -192,6 +192,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF029         | Listar eventos por datas e locais
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA08.01 | O sistema deve permitir visualizar um calendário com as datas disponíveis para eventos.      |
+| TA08.02 | O sistema deve permitir agendar novos eventos em datas específicas.                          |
+| TA08.03 | O sistema deve permitir visualizar os eventos agendados por data e local.                   |
+| TA08.04 | O sistema deve permitir editar a data e o local de um evento já agendado.                   |
+| TA08.05 | O sistema deve permitir cancelar um evento agendado.                                         |
+
 ### User Story US09 - Gerar Relatórios de participantes do evento.
 | Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
 |---|---
