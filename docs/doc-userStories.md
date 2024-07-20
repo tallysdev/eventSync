@@ -520,6 +520,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF039         | Gerar crachá
 | RF039.1       | Alterar crachá
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 6 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 5 PF                                    |
+| **Analista**                | Vinícius                                |
+| **Desenvolvedor**           | Dayanne                                 |
+| **Revisor**                 | Tallys                                  |
+| **Testador**                | Lucas                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA17.01 | O sistema deve gerar um crachá com as informações pessoais públicas do usuário, sua atuação no evento e um QR code. |
