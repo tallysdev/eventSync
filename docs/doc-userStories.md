@@ -209,6 +209,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF009         | Relatórios de participantes
 | RF030         | Listagem geral de participantes no evento
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA09.01 | O sistema deve permitir gerar relatórios detalhados sobre os participantes de um evento.     |
+| TA09.02 | O sistema deve permitir filtrar os participantes do evento por instituição, região, raça, sexo, idade e gênero. |
+| TA09.03 | O sistema deve exibir os relatórios gerados de forma clara e organizada para fácil interpretação. |
+
 ### User Story US10 - Notificações para Usuários.
 | Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
 |---|---
