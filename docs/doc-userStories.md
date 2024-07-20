@@ -148,6 +148,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF018         | Alterar Sala temática
 | RF019         | Excluir sala temática
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Essencial                               |
+| **Estimativa**              | 6 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 5 PF                                    |
+| **Analista**                | Lucas                                   |
+| **Desenvolvedor**           | Dayanne                                 |
+| **Revisor**                 | Tallys                                  |
+| **Testador**                | Vinícius                                |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA04.01 | O sistema deve permitir a criação de uma nova sala temática dentro de um evento existente.            |
