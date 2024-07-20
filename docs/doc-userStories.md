@@ -175,6 +175,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF030         | Listagem geral de participantes no evento
 | RF031         | Mensagem para participantes
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA07.01 | O sistema deve permitir que um usuário convide participantes para um evento específico.      |
+| TA07.02 | O sistema deve permitir visualizar a lista de participantes inscritos em um evento.          |
+| TA07.03 | O sistema deve permitir que um usuário realize a inscrição de novos participantes no evento. |
+| TA07.04 | O sistema deve permitir que um usuário cancele a inscrição de um participante no evento.     |
+| TA07.05 | O sistema deve listar todos os participantes inscritos em um evento de forma clara e organizada. |
+| TA07.06 | O sistema deve permitir o envio de mensagens para os participantes do evento.                |
+
 ### User Story US08 - Calendário de Eventos.
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |---|---
