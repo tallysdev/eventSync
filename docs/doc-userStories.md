@@ -321,6 +321,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF031         | Mensagem para participantes
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 6 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 5 PF                                    |
+| **Analista**                | Tallys                                  |
+| **Desenvolvedor**           | Vinícius                                |
+| **Revisor**                 | Ítalo                                   |
+| **Testador**                | Lucas                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA10.01 | O sistema deve permitir o envio de notificações por email para os usuários sobre novos eventos. |
