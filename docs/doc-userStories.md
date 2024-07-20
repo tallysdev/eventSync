@@ -493,6 +493,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF038         | Gerar certificado
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 5 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 4 PF                                    |
+| **Analista**                | Tallys                                  |
+| **Desenvolvedor**           | Ítalo                                   |
+| **Revisor**                 | Lucas                                   |
+| **Testador**                | Vinícius                                |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA16.01 | O sistema deve permitir a geração de um certificado de participação para um usuário específico, contendo nome, CPF, horas e menções. |
