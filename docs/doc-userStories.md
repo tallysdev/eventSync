@@ -98,6 +98,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF013         | Excluir eventos
 | RF016         | Visualizar Evento
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA03.01 | O sistema deve permitir o cadastro de um novo evento com todos os campos obrigatórios preenchidos. |
+| TA03.02 | O sistema deve permitir a visualização dos detalhes de um evento específico cadastrado.         |
+| TA03.03 | O sistema deve permitir a alteração dos dados de um evento existente.                           |
+| TA03.04 | O sistema deve permitir a exclusão de um evento específico.                                      |
+| TA03.05 | O sistema deve listar todos os eventos cadastrados de forma organizada.                         |
+
 ### User Story US04 - Manter Sala tematica.
 | Descrição | Dentro do evento pode ser criando salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
 |---|---
