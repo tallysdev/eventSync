@@ -376,6 +376,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF020.1       | Inscrição Adicionada
 | RF012         | Alterar Evento
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 5 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 4 PF                                    |
+| **Analista**                | Ítalo                                   |
+| **Desenvolvedor**           | Dayanne                                 |
+| **Revisor**                 | Tallys                                  |
+| **Testador**                | Vinícius                                |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA12.01 | O sistema deve permitir ao usuário fazer uma reserva para um evento futuro.                  |
