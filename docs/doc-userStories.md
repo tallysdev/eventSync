@@ -344,3 +344,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF039         | Gerar crachá
 | RF039.1       | Alterar crachá
+
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA17.01 | O sistema deve gerar um crachá com as informações pessoais públicas do usuário, sua atuação no evento e um QR code. |
+| TA17.02 | O sistema deve permitir a visualização e o download do crachá gerado em formato de imagem.   |
+| TA17.03 | O sistema deve garantir que o QR code no crachá seja funcional para registrar a presença no evento ou sala temática. |
+| TA17.04 | O sistema deve permitir a atualização das informações no crachá caso haja alterações nos dados do evento ou do usuário. |
