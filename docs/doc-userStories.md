@@ -274,6 +274,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF016         | Visualizar Evento
 | RF017         | Inserir sala temática no evento
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA13.01 | O sistema deve analisar o histórico de eventos do usuário e sugerir eventos relacionados.    |
+| TA13.02 | O sistema deve exibir sugestões de eventos que estão nas mesmas categorias dos eventos anteriores. |
+| TA13.03 | O sistema deve permitir ao usuário visualizar detalhes dos eventos relacionados sugeridos.  |
+| TA13.04 | O sistema deve permitir que o usuário se inscreva nos eventos relacionados sugeridos.        |
+| TA13.05 | O sistema deve atualizar as sugestões de eventos relacionados com base no histórico de eventos mais recente do usuário. |
+
 ### User Story US14 - Manter Feed de comentários gerais.
 | Descrição | Deve ter uma seção no sistema para interações de conversar de texto de todos os usuários, algo como um fórum. O usuário adiciona seu comentário e aparecerá sua foto do perfil, nome e comentário para todos.
 |---|---
