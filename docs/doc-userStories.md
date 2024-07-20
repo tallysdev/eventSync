@@ -128,6 +128,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF029         | Listar eventos por datas e locais
+
 ### User Story US09 - Gerar Relatórios de participantes do evento.
 | Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
 |---|---
