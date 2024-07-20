@@ -437,6 +437,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF035         | Denunciar comentário
 | RF035.1         | Confirmar denuncia
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 7 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 6 PF                                    |
+| **Analista**                | Lucas                                   |
+| **Desenvolvedor**           | Vinícius                                |
+| **Revisor**                 | Dayanne                                 |
+| **Testador**                | Tallys                                  |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA14.01 | O sistema deve permitir ao usuário inserir um comentário no feed geral.                      |
