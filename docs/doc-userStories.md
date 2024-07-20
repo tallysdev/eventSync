@@ -208,6 +208,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF027         | Excluir patrocinador
 | RF028         | Listagem de patrocinadores no evento
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 6 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 5 PF                                    |
+| **Analista**                | Tallys                                  |
+| **Desenvolvedor**           | Vinícius                                |
+| **Revisor**                 | Ítalo                                   |
+| **Testador**                | Lucas                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA06.01 | O sistema deve permitir ao administrador inserir um novo patrocinador na plataforma.         |
