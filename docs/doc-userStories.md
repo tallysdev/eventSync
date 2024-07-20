@@ -256,6 +256,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF020.1       | Inscrição Adicionada
 | RF012         | Alterar Evento
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA12.01 | O sistema deve permitir ao usuário fazer uma reserva para um evento futuro.                  |
+| TA12.02 | O sistema deve permitir ao usuário confirmar sua presença em eventos privados.               |
+| TA12.03 | O sistema deve enviar uma confirmação de reserva ou presença para o usuário.                 |
+| TA12.04 | O sistema deve permitir que o usuário visualize suas reservas e confirmações de eventos.     |
+| TA12.05 | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença.          |
 
 ### User Story US13 - Eventos Relacionados.
 | Descrição | O sistema deve possuir uma seção que a partir do histórico de eventos do usuário logado, ele possa fornecer indicações outros eventos próximos que estejam nas mesma categorias dos eventos anteriores. |
