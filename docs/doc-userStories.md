@@ -295,6 +295,16 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF035         | Denunciar comentário
 | RF035.1         | Confirmar denuncia
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA14.01 | O sistema deve permitir ao usuário inserir um comentário no feed geral.                      |
+| TA14.02 | O sistema deve exibir o comentário inserido com a foto do perfil, nome e texto do comentário.|
+| TA14.03 | O sistema deve permitir ao usuário alterar um comentário que ele fez anteriormente.           |
+| TA14.04 | O sistema deve permitir ao usuário apagar um comentário que ele fez anteriormente.            |
+| TA14.05 | O sistema deve permitir ao usuário denunciar um comentário.                                  |
+| TA14.06 | O sistema deve permitir ao administrador confirmar uma denúncia de comentário.               |
+| TA14.07 | O sistema deve garantir que somente o autor do comentário possa apagá-lo, a menos que o comentário tenha sido denunciado e confirmado para remoção. |
+
 ### User Story US15 - Manter Local de evento.
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
 |---|---
