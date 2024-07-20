@@ -15,6 +15,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 18/04/2024 | 0.1.1   | Correção de Ortografia             | Tallys |
 | 22/04/2024 | 0.1.2   | Aplicando padrão, removendo duplicatas e remodelando user stories | Tallys | 
 | 23/04/2024 | 0.1.3   | Correção de Ortografia             | Tallys |
+| 20/07/2024 | 0.1.4   | Adição de Testes de aceitação             | Dayanne|
 
 
 
