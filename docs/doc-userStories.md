@@ -153,6 +153,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na sessão do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa comentar ou preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF006         | Inserir perguntas no formulário
+| RF010         | Visualizar formulários
+
 ### User Story US12 - Reserva e confirmação.
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 |---|---
