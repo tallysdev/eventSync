@@ -87,6 +87,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF009         | Alterar formulário
 | RF010         | Visualizar formulários
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Essencial                               |
+| **Estimativa**              | 10 h                                    |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 8 PF                                    |
+| **Analista**                | Lucas                                  |
+| **Desenvolvedor**           | Dayanne                                |
+| **Revisor**                 | Tallys                                 |
+| **Testador**                | Vinícius                               |                                |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA02.01 | O sistema deve permitir ao organizador criar um novo formulário de avaliação para um evento. |
