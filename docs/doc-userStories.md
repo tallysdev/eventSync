@@ -154,6 +154,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF027         | Excluir patrocinador
 | RF028         | Listagem de patrocinadores no evento
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA06.01 | O sistema deve permitir ao administrador inserir um novo patrocinador na plataforma.         |
+| TA06.02 | O sistema deve permitir ao administrador alterar os dados de um patrocinador existente.       |
+| TA06.03 | O sistema deve permitir ao administrador excluir um patrocinador existente.                  |
+| TA06.04 | O sistema deve listar todos os patrocinadores cadastrados de forma organizada na seção de eventos. |
+
 ### User Story US07 - Gerenciar Participantes.
 | Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, marcar presença, garantindo uma gestão eficiente das inscrições |
 |---|---
