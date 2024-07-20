@@ -195,12 +195,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 ### User Story US15 - Manter Local de evento.
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
 |---|---
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
 | RF036         | Inserir Local
 | RF037         | Alterar Local
 
 ### User Story US16 - Gerar certificado de participação.
 | Descrição | O sistema deve ser capaz de gerar um certificado para o membro que participou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuário, CPF do usuário, horas destinadas ao evento, e suas possíveis menções no evento.
 |---|---
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF038         | Gerar certificado
 
 ### User Story US17 - Gerar Crachá
 | Descrição | O sistema deve ser capaz de gerar uma figura de crachá para o usuário cadastrado em um evento ativo com suas informações pessoais públicas e sua atuação no evento e qr code para registrar a presença no evento e/ou sala temática.
