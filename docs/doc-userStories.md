@@ -183,6 +183,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | Deve ter uma seção no sistema para interações de conversar de texto de todos os usuários, algo como um fórum. O usuário adiciona seu comentário e aparecerá sua foto do perfil, nome e comentário para todos.
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF032         | Inserir comentário no forum da plataforma
+| RF033         | Alterar comentário
+| RF034         | Apagar comentário
+| RF034.1         | Apagar comentário de usuário
+| RF035         | Denunciar comentário
+| RF035.1         | Confirmar denuncia
+
 ### User Story US15 - Manter Local de evento.
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
 |---|---
