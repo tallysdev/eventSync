@@ -314,6 +314,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF036         | Inserir Local
 | RF037         | Alterar Local
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA15.01 | O sistema deve permitir o cadastro de um novo local para eventos com todas as informações obrigatórias. |
+| TA15.02 | O sistema deve permitir a atualização das informações de um local já cadastrado.             |
+| TA15.03 | O sistema deve permitir a exclusão de um local cadastrado, caso não esteja associado a eventos futuros. |
+| TA15.04 | O sistema deve listar todos os locais cadastrados com suas informações detalhadas.          |
+
 ### User Story US16 - Gerar certificado de participação.
 | Descrição | O sistema deve ser capaz de gerar um certificado para o membro que participou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuário, CPF do usuário, horas destinadas ao evento, e suas possíveis menções no evento.
 |---|---
