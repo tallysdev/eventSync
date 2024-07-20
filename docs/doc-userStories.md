@@ -103,6 +103,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve conter uma área na tela para os patrocinadores e apoiadores(órgãos gerais que são cadastrados pelo administrador) do sistema, na seção particular de eventos deve conter uma mesma área para os patrocinadores e organizadores da plataforma. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF025         | Inserir Patrocinador
+| RF026         | Alterar Patrocinador
+| RF027         | Excluir patrocinador
+| RF028         | Listagem de patrocinadores no evento
+
 ### User Story US07 - Gerenciar Participantes.
 | Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, marcar presença, garantindo uma gestão eficiente das inscrições |
 |---|---
