@@ -212,3 +212,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 ### User Story US17 - Gerar Crachá
 | Descrição | O sistema deve ser capaz de gerar uma figura de crachá para o usuário cadastrado em um evento ativo com suas informações pessoais públicas e sua atuação no evento e qr code para registrar a presença no evento e/ou sala temática.
 |---|---
+
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF039         | Gerar crachá
+| RF039.1       | Alterar crachá
