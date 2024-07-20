@@ -162,6 +162,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro, ou confirmar presença em algum evento privado no qual tenha sido convidado |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF020         | Realizar Inscrição
+| RF020.1       | Inscrição Adicionada
+| RF012         | Alterar Evento
+
 
 ### User Story US13 - Eventos Relacionados.
 | Descrição | O sistema deve possuir uma seção que a partir do histórico de eventos do usuário logado, ele possa fornecer indicações outros eventos próximos que estejam nas mesma categorias dos eventos anteriores. |
