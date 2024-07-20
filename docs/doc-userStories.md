@@ -134,6 +134,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF023         | Marcar presença automática
 | RF024         | Contestar presença
 
+| **Testes de Aceitação (TA)** | **Descrição** |
+| ----------- | --------- |
+| TA05.01 | O sistema deve permitir que o criador do evento adicione uma lista de presença para o evento e/ou sala temática. |
+| TA05.02 | O sistema deve permitir que o criador do evento marque a presença de um participante manualmente. |
+| TA05.03 | O sistema deve permitir que a presença seja marcada automaticamente para os participantes que se inscreveram nas salas temáticas. |
+| TA05.04 | O sistema deve permitir que o participante conteste a presença registrada em um evento ou sala temática. |
+| TA05.05 | O sistema deve permitir que o organizador valide a presença de um usuário no evento principal com base na quantidade de presenças em salas temáticas. |
+| TA05.06 | O sistema deve gerar relatórios de presença para análise e verificação. |
+
 ### User Story US06 - Seção do Patrocinador.
 | Descrição | O sistema deve conter uma área na tela para os patrocinadores e apoiadores(órgãos gerais que são cadastrados pelo administrador) do sistema, na seção particular de eventos deve conter uma mesma área para os patrocinadores e organizadores da plataforma. |
 |---|---
