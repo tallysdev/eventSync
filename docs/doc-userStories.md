@@ -296,6 +296,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF009         | Relatórios de participantes
 | RF030         | Listagem geral de participantes no evento
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 7 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 6 PF                                    |
+| **Analista**                | Dayanne                                 |
+| **Desenvolvedor**           | Tallys                                  |
+| **Revisor**                 | Vinícius                                |
+| **Testador**                | Ítalo                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA09.01 | O sistema deve permitir gerar relatórios detalhados sobre os participantes de um evento.     |
