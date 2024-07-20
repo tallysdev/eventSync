@@ -268,6 +268,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | RF029         | Listar eventos por datas e locais
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Média                                   |
+| **Estimativa**              | 5 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 4 PF                                    |
+| **Analista**                | Lucas                                   |
+| **Desenvolvedor**           | Dayanne                                 |
+| **Revisor**                 | Tallys                                  |
+| **Testador**                | Vinícius                                |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA08.01 | O sistema deve permitir visualizar um calendário com as datas disponíveis para eventos.      |
