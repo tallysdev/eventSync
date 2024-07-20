@@ -83,6 +83,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | Dentro do evento pode ser criando salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF017         | Inserir sala temática no evento
+| RF018         | Alterar Sala temática
+| RF019         | Excluir sala temática
+
 ### User Story US05 - Manter Presença.
 | Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
 |---|---
