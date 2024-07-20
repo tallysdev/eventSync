@@ -240,6 +240,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF030         | Listagem geral de participantes no evento
 | RF031         | Mensagem para participantes
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Essencial                               |
+| **Estimativa**              | 8 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 7 PF                                    |
+| **Analista**                | Vinícius                                |
+| **Desenvolvedor**           | Ítalo                                   |
+| **Revisor**                 | Lucas                                   |
+| **Testador**                | Dayanne                                 |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA07.01 | O sistema deve permitir que um usuário convide participantes para um evento específico.      |
