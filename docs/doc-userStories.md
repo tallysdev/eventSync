@@ -119,6 +119,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF013         | Excluir eventos
 | RF016         | Visualizar Evento
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Essencial                               |
+| **Estimativa**              | 8 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 7 PF                                    |
+| **Analista**                | Tallys                                  |
+| **Desenvolvedor**           | Vinícius                                |
+| **Revisor**                 | Ítalo                                   |
+| **Testador**                | Lucas                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA03.01 | O sistema deve permitir o cadastro de um novo evento com todos os campos obrigatórios preenchidos. |
