@@ -177,6 +177,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF023         | Marcar presença automática
 | RF024         | Contestar presença
 
+| Informação                   | Detalhes                                |
+|------------------------------|----------------------------------------|
+| **Prioridade**              | Alta                                    |
+| **Estimativa**              | 7 h                                     |
+| **Tempo Gasto (real):**     |                                        |
+| **Tamanho Funcional**       | 6 PF                                    |
+| **Analista**                | Dayanne                                 |
+| **Desenvolvedor**           | Tallys                                  |
+| **Revisor**                 | Vinícius                                |
+| **Testador**                | Ítalo                                   |
+
 | **Testes de Aceitação (TA)** | **Descrição** |
 | ----------- | --------- |
 | TA05.01 | O sistema deve permitir que o criador do evento adicione uma lista de presença para o evento e/ou sala temática. |
