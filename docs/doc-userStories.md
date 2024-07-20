@@ -43,6 +43,18 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Descrição | O sistema deve ser capaz de cadastrar, listar, excluir, atualizar, vários tipos de usuários com permissões referente ao seu tipo e mantê-los nos sistema. |
 |---|---
 
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF001         | Inserir Usuário        |
+| RF002         | Buscar Usuário         |
+| RF003         | Visualizar Usuário
+| RF003.1       | Visualizar Usuário específico
+| RF003.2       | Visualizar Usuário(s) específico do evento
+| RF004         | Alterar Usuário
+| RF004.1       | Alterar qualquer usuário
+| RF005         | Excluir conta
+| RF005.1       | Excluir conta de usuário
+
 
 ### User Story US02 - Formulário de avaliação de evento.
 | Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulário feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
