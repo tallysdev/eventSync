@@ -1,6 +1,7 @@
 # dependencia de projeto
 Django==5.0.4
 djangorestframework==3.15.1
+django-cors-headers==4.3.1
 
 # dependencia de ambiente
 python-decouple==3.8
