@@ -40,21 +40,49 @@ const eventLocation = ref('')
 const router = useRouter()
 
 const submitForm = async () => {
+  // Verificação simples dos campos
+  if (!eventName.value.trim()) {
+    alert('Nome do Evento é obrigatório')
+    return
+  }
+  if (!eventDate.value) {
+    alert('Data do Evento é obrigatória')
+    return
+  }
+  if (!eventPublic.value.trim()) {
+    alert('Público Alvo é obrigatório')
+    return
+  }
+  if (!eventLocation.value.trim()) {
+    alert('Local do Evento é obrigatório')
+    return
+  }
+  if (!eventDescription.value.trim()) {
+    alert('Descrição do Evento é obrigatória')
+    return
+  }
+
   try {
     const response = await axios.post('http://localhost:8000/api/eventos/', {
       nome: eventName.value,
       data: eventDate.value,
       public: eventPublic.value,
       location: eventLocation.value,
-      descrição: eventDescription.value
+      descricao: eventDescription.value
     })
     console.log('Evento criado:', response.data)
     alert('Evento criado com sucesso!')
   } catch (error) {
-    console.error('Erro ao criar evento:', error)
-    alert('Erro ao criar evento')
+    if (error.response) {
+      console.error('Erro ao criar evento:', error.response.data)
+      alert(`Erro ao criar evento: ${JSON.stringify(error.response.data)}`)
+    } else {
+      console.error('Erro ao criar evento:', error)
+      alert('Erro ao criar evento')
+    }
   }
 }
+
 
 const goBack = () => {
   router.push({ name: 'home' })
