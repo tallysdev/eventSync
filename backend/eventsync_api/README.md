@@ -43,3 +43,7 @@
 
 <p>Para rodar os testes do projeto use o seguinte comando:</p>
 <pre>python manage.py test</pre>
+
+<p>Para rodar os testes verificando a localmente a cobertura use:</p>
+<pre>coverage run manage.py test
+coverage report</pre>
