@@ -59,6 +59,17 @@
                                   
                             </div>
                         </v-card-subtitle>
+
+                        <v-card-subtitle>
+                            <div class="d-flex align-center">
+                                <v-btn @click="moveQuestion(index, -1)" icon :disabled="index === 0" class="move-btn">
+                                  <v-icon>mdi-arrow-up</v-icon>
+                                </v-btn>
+                                <v-btn @click="moveQuestion(index, 1)" icon :disabled="index === questions.length - 1" class="move-btn">
+                                  <v-icon>mdi-arrow-down</v-icon>
+                                </v-btn>
+                              </div>
+                        </v-card-subtitle>
                             
                     </v-card>
                                   
@@ -98,6 +109,13 @@ const addOption = (index) => {
   }
 }
 
+const moveQuestion = (index, direction) => {
+  const newIndex = index + direction
+  if (newIndex < 0 || newIndex >= questions.value.length) return
+  const movedQuestion = questions.value.splice(index, 1)[0]
+  questions.value.splice(newIndex, 0, movedQuestion)
+}
+
 const removeOption = (questionIndex, optionIndex) => {
   questions.value[questionIndex].optionList.splice(optionIndex, 1)
 }
@@ -127,12 +145,12 @@ const removeOption = (questionIndex, optionIndex) => {
     margin-top: 16px;
 }
 
-.mb-4 {
-    margin-bottom: 16px;
-}
-
 .ml-2 {
     color: red;
+}
+
+.move-btn {
+    margin-bottom: 16px;
 }
 
 </style>
