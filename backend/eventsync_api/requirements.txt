@@ -1,6 +1,7 @@
 # dependencia de projeto
 Django==5.0.4
 djangorestframework==3.15.1
+django-cors-headers==4.3.1
 
 # dependencia de ambiente
 python-decouple==3.8
@@ -10,3 +11,6 @@ djangorestframework-simplejwt==5.3.1
 
 # dependencia de documentacao
 drf-spectacular==0.27.2
+
+#cobertura
+coverage==7.6.0
