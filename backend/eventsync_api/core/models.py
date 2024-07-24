@@ -35,3 +35,30 @@ class ESUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+class Local(models.Model):
+    street_name = models.CharField(max_length=255)
+    street_number = models.CharField(max_length=50)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    cep = models.CharField(max_length=20)
+    reference = models.CharField(max_length=255, blank=True, null=True)
+    local_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.local_name} - {self.street_name}, {self.street_number}, {self.city}, {self.state}, {self.cep}"
+
+    class Meta:
+        verbose_name = "Local"
+        verbose_name_plural = "Locals"
+
+# class Event(models.Model):
+#     name = models.CharField(max_length=150)
+#     start_date = models.DateField()
+#     end_date = models.DateField()
+#     max_quantity = models.IntegerField()
+#     min_quantity = models.IntegerField()
+#     hours_quantity = models.IntegerField()
+
+
+
+
