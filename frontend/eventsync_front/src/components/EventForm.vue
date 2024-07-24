@@ -7,23 +7,59 @@
                 <h1 class="form-title">Criar formulário</h1>
                 
                 <div v-for="(question, index) in questions" :key="index" class="field-size">
-                    <v-card class="question-card" outlined elevation="0">
+                    <v-card class="question-card" outlined elevation="4">
                         <v-card-title class="d-flex justify-space-between align-center">
-                            Pergunta {{ index + 1 }}
+                            <v-select
+                                v-model="question.type"
+                                :items="['Discursiva', 'Múltipla escolha']"
+                                label="Tipo de Pergunta"
+                                outlined
+                                class="mt-2"
+                            ></v-select>
+                            
                             <v-btn @click="removeQuestion(index)" icon class="ml-2">
                                 <v-icon>mdi-delete</v-icon>
                             </v-btn>
+
                         </v-card-title>
 
                         <v-card-subtitle>
                             <v-textarea
-                                v-model="question.text"
+                                v-model="question.Discursiva"
+                                label="Texto da Pergunta"
                                 outlined
                                 required
                                 rows="4"
                             ></v-textarea>
                         </v-card-subtitle>
 
+                        <v-card-subtitle> 
+                            <div v-if="question.type === 'Múltipla escolha'">
+                                <v-text-field
+                                    v-model="question.optionInput"
+                                    label="Adicionar Opção"
+                                    outlined
+                                    class="mt-2"
+                                ></v-text-field>
+
+                                <v-btn @click="addOption(index)" color="primary" class="mt-2">Adicionar Opção</v-btn>
+
+                                <div v-for="(option, optIndex) in question.optionList" :key="optIndex" class="option-container d-flex align-center mt-2">
+                                    <v-textarea
+                                        :value="option"
+                                        readonly
+                                        outlined
+                                        class="option-text mr-2"
+                                    ></v-textarea>
+
+                                    <v-btn @click="removeOption(index, optIndex)" icon class="ml-2">
+                                        <v-icon>mdi-delete</v-icon>
+                                    </v-btn>
+                                </div>
+                                  
+                            </div>
+                        </v-card-subtitle>
+                            
                     </v-card>
                                   
                 </div>
@@ -43,14 +79,27 @@
     import FooterVue from '../components/Footer.vue'
     import { ref } from 'vue'
 
-const questions = ref([{ text: '', type: 'text', options: [], optionList: [] }])
+const questions = ref([{ text: '', type: 'Discursiva', options: [], optionList: [] }])
 
 const addQuestion = () => {
-  questions.value.push({ text: '', type: 'text', options: [], optionList: [] })
+  questions.value.push({ text: '', type: 'Discursiva', options: [], optionList: [] })
 }
 
 const removeQuestion = (index) => {
   questions.value.splice(index, 1)
+}
+
+const addOption = (index) => {
+  if (questions.value[index].optionInput.trim()) {
+    questions.value[index].optionList.push(questions.value[index].optionInput.trim())
+    questions.value[index].optionInput = ''
+  } else {
+    alert('Digite uma opção válida')
+  }
+}
+
+const removeOption = (questionIndex, optionIndex) => {
+  questions.value[questionIndex].optionList.splice(optionIndex, 1)
 }
 
 </script>
