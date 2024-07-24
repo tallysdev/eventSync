@@ -7,16 +7,28 @@
                 <h1 class="form-title">Criar formulário</h1>
                 
                 <div v-for="(question, index) in questions" :key="index" class="field-size">
-                    <v-textarea
-                        v-model="question.text"
-                        :label="'Pergunta ' + (index + 1)"
-                        outlined
-                        required
-                    ></v-textarea>
-               
+                    <v-card class="question-card" outlined elevation="0">
+                        <v-card-title class="d-flex justify-space-between align-center">
+                            Pergunta {{ index + 1 }}
+                            <v-btn @click="removeQuestion(index)" icon class="ml-2">
+                                <v-icon>mdi-delete</v-icon>
+                            </v-btn>
+                        </v-card-title>
+
+                        <v-card-subtitle>
+                            <v-textarea
+                                v-model="question.text"
+                                outlined
+                                required
+                                rows="4"
+                            ></v-textarea>
+                        </v-card-subtitle>
+
+                    </v-card>
+                                  
                 </div>
-        
-                <v-btn @click="addQuestion" color="primary">Adicionar Pergunta</v-btn>
+                
+                <v-btn @click="addQuestion" color="primary"  class="mt-4">Adicionar Pergunta</v-btn>
                 <v-btn type="submit" color="primary" class="mt-4">Salvar Formulário</v-btn>
                 
             </v-form>
@@ -37,6 +49,10 @@ const addQuestion = () => {
   questions.value.push({ text: '', type: 'text', options: [], optionList: [] })
 }
 
+const removeQuestion = (index) => {
+  questions.value.splice(index, 1)
+}
+
 </script>
   
 <style scoped>
@@ -52,6 +68,22 @@ const addQuestion = () => {
     margin-bottom: auto;
     font-size: 1.2rem;
 }
-  
+
+.question-card {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.ml-2 {
+    color: red;
+}
+
 </style>
-  
