@@ -50,6 +50,7 @@ class Local(models.Model):
     class Meta:
         verbose_name = "Local"
         verbose_name_plural = "Locals"
+        ordering = ['id']
 
 # class Event(models.Model):
 #     name = models.CharField(max_length=150)
