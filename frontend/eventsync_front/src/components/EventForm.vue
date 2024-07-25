@@ -81,6 +81,12 @@
                 <v-btn color="primary" class="mt-4">Salvar Formulário</v-btn>
                 
             </v-form>
+
+            <v-divider class="my-4"></v-divider>
+
+            <h2 class="form-title">Visualizar Formulário</h2>
+            <FormPreview :questions="questions" />
+
         </v-container>
     </v-main>
     <FooterVue />
@@ -92,6 +98,7 @@
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 import { ref } from 'vue'
+import FormPreview from '../components/FormPreview.vue'
 
 const questions = ref([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
 
@@ -161,10 +168,13 @@ const validateQuestions = () => {
 }
 
 .field-size {
-    max-width: 100%; 
+    max-width: 450px; 
+    min-width: 450px;
     width: 100%;
     margin-bottom: auto;
     font-size: 1.2rem;
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 .question-card {
