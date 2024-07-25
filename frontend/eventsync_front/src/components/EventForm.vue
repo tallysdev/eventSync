@@ -5,9 +5,9 @@
         <v-container fluid class="pa-6 d-flex flex-column align-center">
             <v-form class="d-flex flex-column align-center">
                 <h1 class="form-title">Criar formulário</h1>
-                
+             
                 <div v-for="(question, index) in questions" :key="index" class="field-size">
-                    <v-card class="question-card" outlined elevation="4">
+                    <v-card :class="['question-card', { 'invalid-card': !question.isValid }]" outlined elevation="4">
                         <v-card-title class="d-flex justify-space-between align-center">
                             <v-select
                                 v-model="question.type"
@@ -15,6 +15,7 @@
                                 label="Tipo de Pergunta"
                                 outlined
                                 class="mt-2"
+                                @change="(value) => handleTypeChange(index, value)"                               
                             ></v-select>
                             
                             <v-btn @click="removeQuestion(index)" icon class="ml-2">
@@ -25,14 +26,15 @@
 
                         <v-card-subtitle>
                             <v-textarea
-                                v-model="question.Discursiva"
+                                v-model="question.text"
                                 label="Texto da Pergunta"
                                 outlined
                                 required
                                 rows="4"
+                                @input="validateQuestion(index)"          
                             ></v-textarea>
                         </v-card-subtitle>
-
+                        
                         <v-card-subtitle> 
                             <div v-if="question.type === 'Múltipla escolha' || question.type === 'Objetiva'">
                                 <v-text-field
@@ -72,52 +74,81 @@
                         </v-card-subtitle>
                             
                     </v-card>
-                                  
+                               
                 </div>
-                
+
                 <v-btn @click="addQuestion" color="primary"  class="mt-4">Adicionar Pergunta</v-btn>
-                <v-btn type="submit" color="primary" class="mt-4">Salvar Formulário</v-btn>
+                <v-btn color="primary" class="mt-4">Salvar Formulário</v-btn>
                 
             </v-form>
         </v-container>
     </v-main>
     <FooterVue />
+    
     </v-app>
 </template>
   
 <script setup>
-    import NavBar from '../components/NavBar.vue'
-    import FooterVue from '../components/Footer.vue'
-    import { ref } from 'vue'
+import NavBar from '../components/NavBar.vue'
+import FooterVue from '../components/Footer.vue'
+import { ref } from 'vue'
 
-const questions = ref([{ text: '', type: 'Discursiva', options: [], optionList: [] }])
+const questions = ref([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
 
 const addQuestion = () => {
-  questions.value.push({ text: '', type: 'Discursiva', options: [], optionList: [] })
+    questions.value.push({ text: '', type: 'Discursiva', optionList: [], isValid: true })
+    validateQuestions()
 }
 
 const removeQuestion = (index) => {
-  questions.value.splice(index, 1)
+    questions.value.splice(index, 1)
 }
 
 const addOption = (index) => {
-  if (questions.value[index].optionInput.trim()) {
-    questions.value[index].optionList.push(questions.value[index].optionInput.trim())
-    questions.value[index].optionInput = ''
-  } else {
-    alert('Digite uma opção válida')
-  }
+    if (questions.value[index].optionInput.trim()) {
+        questions.value[index].optionList.push(questions.value[index].optionInput.trim())
+        questions.value[index].optionInput = ''
+        validateQuestion(index);
+    } else {
+        alert('Digite uma opção válida')
+    }
 }
 
 const moveQuestion = (index, direction) => {
-  const newIndex = index + direction
-  if (newIndex < 0 || newIndex >= questions.value.length) return
-  const movedQuestion = questions.value.splice(index, 1)[0]
-  questions.value.splice(newIndex, 0, movedQuestion)
+    const newIndex = index + direction
+    if (newIndex < 0 || newIndex >= questions.value.length) return
+    const movedQuestion = questions.value.splice(index, 1)[0]
+    questions.value.splice(newIndex, 0, movedQuestion)
 }
 
 const removeOption = (questionIndex, optionIndex) => {
-  questions.value[questionIndex].optionList.splice(optionIndex, 1)
+    questions.value[questionIndex].optionList.splice(optionIndex, 1)
+    validateQuestion(questionIndex)
+}
+
+const handleTypeChange = (index, type) => {
+    const question = questions.value[index]
+    question.type = type
+
+    if (type === 'Discursiva') {
+        question.optionList = []
+    } 
+    validateQuestion(index)
+}
+
+const validateQuestion = (index) => {
+    const question = questions.value[index]
+    
+    if(question.type === 'Discursiva') {
+        question.isValid = question.text.trim() !== ''
+    }
+    else {
+        question.isValid = question.text.trim() !== '' && question.optionList.length > 0
+    }
+}
+
+const validateQuestions = () => {
+    questions.value.forEach((_, index) => validateQuestion(index))
 }
 
 </script>
@@ -139,6 +170,12 @@ const removeOption = (questionIndex, optionIndex) => {
 .question-card {
     width: 100%;
     margin-top: 16px;
+}
+
+.invalid-card {
+    background-color: #fa8a93;
+    border-color: #55010a;
+    color: #721c24;
 }
 
 .mt-4 {
