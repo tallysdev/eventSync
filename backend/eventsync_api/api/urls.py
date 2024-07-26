@@ -6,7 +6,8 @@ from rest_framework_simplejwt import views as jwt_views
 from .views import auth_view as authv
 from .views import users_view as userv
 from .views.root_view import ApiRootView
-from .views import locals_views as locv
+from .views import locals_view as locv
+from .views import event_view as evtview
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -14,6 +15,8 @@ urlpatterns = [
     path('users/<int:pk>/', userv.UserDetail.as_view(), name='user_detail'),
     path('locals/', locv.LocalListView.as_view(), name='local_list'),
     path('locals/<int:pk>/', locv.LocalDetailView.as_view(), name='local_detail'),
+    path('events/', evtview.EventListView.as_view(), name='event_list'),
+    path('events/<int:pk>/', evtview.EventDetailView.as_view(), name='event_detail'),
 ]
 
 # auth urls 

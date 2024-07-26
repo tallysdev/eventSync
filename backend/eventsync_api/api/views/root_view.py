@@ -16,6 +16,8 @@ class ApiRootView(APIView):
             'redoc-ui': reverse('redoc', request=request, format=format),
             'locals-list': reverse('local_list', request=request, format=format),
             'locals-detail': reverse('local_detail', request=request, args=[1], format=format),
+            'events-list': reverse('event_list', request=request, format=format),
+            'events-detail': reverse('event_detail', request=request, args=[1], format=format),
             # adicione mais endpoints aqui
         }
         return Response(data)
