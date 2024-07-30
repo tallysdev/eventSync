@@ -5,13 +5,21 @@
       <v-container fluid class="pa-6 d-flex flex-column align-center">
         <h1 class="form-title">Crie seu Evento</h1>
         <v-form @submit.prevent="submitForm" class="pa-3 d-flex flex-column align-center max-width-form">
-          <v-text-field v-model="eventName" label="Nome do Evento" required class="field-size"></v-text-field>
-          <v-text-field v-model="eventStartDate" label="Data de Início do Evento" type="date" required class="field-size"></v-text-field>
-          <v-text-field v-model="eventEndDate" label="Data de Fim do Evento" type="date" required class="field-size"></v-text-field>
-          <v-text-field v-model="eventPublic" label="Público Alvo" required class="field-size"></v-text-field>
-          <v-text-field v-model="eventLocation" label="Local do Evento" required class="field-size"></v-text-field>
+          <v-text-field v-model="name" label="Nome do Evento" required class="field-size"></v-text-field>
+          <v-text-field v-model="start_date" label="Data de Início do Evento" type="date" required class="field-size"></v-text-field>
+          <v-text-field v-model="end_date" label="Data de Fim do Evento" type="date" required class="field-size"></v-text-field>
+          <v-select
+            v-model="local"
+            :items="locations"
+            item-text="local_name"
+            item-value="id"
+            label="Local do Evento"
+            required
+            class="field-size"
+          ></v-select>
+          <v-text-field v-model="status" label="Status" required class="field-size"></v-text-field>
           <v-text-field 
-            v-model="eventMinParticipants" 
+            v-model="min_quantity" 
             label="Quantidade Mínima de Participantes" 
             type="number" 
             required 
@@ -20,7 +28,7 @@
             @keypress="validateNumberInput"
           ></v-text-field>
           <v-text-field 
-            v-model="eventMaxParticipants" 
+            v-model="max_quantity" 
             label="Quantidade Máxima de Participantes" 
             type="number" 
             required 
@@ -29,7 +37,7 @@
             @keypress="validateNumberInput"
           ></v-text-field>
           <v-text-field 
-            v-model="eventHours" 
+            v-model="hours_quantity" 
             label="Quantidade de Horas" 
             type="number" 
             required 
@@ -37,8 +45,8 @@
             min="1"
             @keypress="validateNumberInput"
           ></v-text-field>
-          <v-text-field v-model="eventType" label="Tipo do Evento" required class="field-size"></v-text-field>
-          <v-textarea v-model="eventDescription" label="Descrição do Evento" required class="field-size"></v-textarea>
+          <v-text-field v-model="event_type" label="Tipo do Evento" required class="field-size"></v-text-field>
+          <v-textarea v-model="description" label="Descrição do Evento" required class="field-size"></v-textarea>
           <v-row class="mt-4">
             <v-col cols="6" class="d-flex justify-start">
               <v-btn @click="goBack" color="secondary" class="btn-size btn-style voltar-btn" elevation="2">Voltar</v-btn>
@@ -55,22 +63,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 
-const eventName = ref('')
-const eventStartDate = ref('')
-const eventEndDate = ref('')
-const eventDescription = ref('')
-const eventPublic = ref('')
-const eventLocation = ref('')
-const eventMinParticipants = ref('')
-const eventMaxParticipants = ref('')
-const eventHours = ref('')
-const eventType = ref('')
+const name = ref('')
+const start_date = ref('')
+const end_date = ref('')
+const max_quantity = ref('')
+const min_quantity = ref('')
+const hours_quantity = ref('')
+const description = ref('')
+const status = ref('')
+const event_type = ref('')
+const local = ref('')
+const locations = ref([])
 const router = useRouter()
 
 const validateNumberInput = (event) => {
@@ -82,16 +91,16 @@ const validateNumberInput = (event) => {
 
 const validateFields = () => {
   const fields = [
-    { value: eventName.value, message: 'Nome do Evento é obrigatório' },
-    { value: eventStartDate.value, message: 'Data de Início do Evento é obrigatória' },
-    { value: eventEndDate.value, message: 'Data de Fim do Evento é obrigatória' },
-    { value: eventPublic.value, message: 'Público Alvo é obrigatório' },
-    { value: eventLocation.value, message: 'Local do Evento é obrigatório' },
-    { value: eventMinParticipants.value && eventMinParticipants.value > 0, message: 'Quantidade Mínima de Participantes é obrigatória e deve ser maior que 0' },
-    { value: eventMaxParticipants.value && eventMaxParticipants.value > 0, message: 'Quantidade Máxima de Participantes é obrigatória e deve ser maior que 0' },
-    { value: eventHours.value && eventHours.value > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
-    { value: eventType.value, message: 'Tipo do Evento é obrigatório' },
-    { value: eventDescription.value, message: 'Descrição do Evento é obrigatória' },
+    { value: name.value, message: 'Nome do Evento é obrigatório' },
+    { value: start_date.value, message: 'Data de Início do Evento é obrigatória' },
+    { value: end_date.value, message: 'Data de Fim do Evento é obrigatória' },
+    { value: local.value, message: 'Local do Evento é obrigatório' },
+    { value: min_quantity.value && min_quantity.value > 0, message: 'Quantidade Mínima de Participantes é obrigatória e deve ser maior que 0' },
+    { value: max_quantity.value && max_quantity.value > 0, message: 'Quantidade Máxima de Participantes é obrigatória e deve ser maior que 0' },
+    { value: hours_quantity.value && hours_quantity.value > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
+    { value: event_type.value, message: 'Tipo do Evento é obrigatório' },
+    { value: description.value, message: 'Descrição do Evento é obrigatória' },
+    { value: status.value, message: 'Status do evento é obrigatório' },
   ]
 
   for (const field of fields) {
@@ -103,23 +112,34 @@ const validateFields = () => {
   return true
 }
 
+const fetchLocations = async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/eventsync/api/v1/locals')
+    console.log('Dados da API:', response.data.results)
+    locations.value = response.data.results.map(local => local.local_name)
+  } catch (error) {
+    console.error('Erro ao buscar locais:', error)
+  }
+}
+
+
 const submitForm = async () => {
   if (!validateFields()) {
     return
   }
 
   try {
-    const response = await axios.post('http://localhost:8000/api/eventos/', {
-      nome: eventName.value,
-      dataInicio: eventStartDate.value,
-      dataFim: eventEndDate.value,
-      public: eventPublic.value,
-      location: eventLocation.value,
-      descricao: eventDescription.value,
-      minParticipants: eventMinParticipants.value,
-      maxParticipants: eventMaxParticipants.value,
-      horas: eventHours.value,
-      tipo: eventType.value
+    const response = await axios.post('http://127.0.0.1:8000/eventsync/api/v1/events/', {
+      name: name.value,
+      start_date: start_date.value,
+      end_date: end_date.value,
+      status: status.value,
+      local: locations.value,
+      description: description.value,
+      min_quantity: min_quantity.value,
+      max_quantity: max_quantity.value,
+      hours_quantity: hours_quantity.value,
+      event_type: event_type.value
     })
     console.log('Evento criado:', response.data)
     alert('Evento criado com sucesso!')
@@ -137,6 +157,10 @@ const submitForm = async () => {
 const goBack = () => {
   router.push({ name: 'home' })
 }
+
+onMounted(() => {
+  fetchLocations()
+})
 </script>
 
 <style scoped>
