@@ -6,9 +6,38 @@
         <h1 class="form-title">Crie seu Evento</h1>
         <v-form @submit.prevent="submitForm" class="pa-3 d-flex flex-column align-center max-width-form">
           <v-text-field v-model="eventName" label="Nome do Evento" required class="field-size"></v-text-field>
-          <v-text-field v-model="eventDate" label="Data do Evento" type="date" required class="field-size"></v-text-field>
+          <v-text-field v-model="eventStartDate" label="Data de Início do Evento" type="date" required class="field-size"></v-text-field>
+          <v-text-field v-model="eventEndDate" label="Data de Fim do Evento" type="date" required class="field-size"></v-text-field>
           <v-text-field v-model="eventPublic" label="Público Alvo" required class="field-size"></v-text-field>
           <v-text-field v-model="eventLocation" label="Local do Evento" required class="field-size"></v-text-field>
+          <v-text-field 
+            v-model="eventMinParticipants" 
+            label="Quantidade Mínima de Participantes" 
+            type="number" 
+            required 
+            class="field-size" 
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-text-field 
+            v-model="eventMaxParticipants" 
+            label="Quantidade Máxima de Participantes" 
+            type="number" 
+            required 
+            class="field-size" 
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-text-field 
+            v-model="eventHours" 
+            label="Quantidade de Horas" 
+            type="number" 
+            required 
+            class="field-size" 
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-text-field v-model="eventType" label="Tipo do Evento" required class="field-size"></v-text-field>
           <v-textarea v-model="eventDescription" label="Descrição do Evento" required class="field-size"></v-textarea>
           <v-row class="mt-4">
             <v-col cols="6" class="d-flex justify-start">
@@ -33,42 +62,64 @@ import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 
 const eventName = ref('')
-const eventDate = ref('')
+const eventStartDate = ref('')
+const eventEndDate = ref('')
 const eventDescription = ref('')
 const eventPublic = ref('')
 const eventLocation = ref('')
+const eventMinParticipants = ref('')
+const eventMaxParticipants = ref('')
+const eventHours = ref('')
+const eventType = ref('')
 const router = useRouter()
 
+const validateNumberInput = (event) => {
+  const key = event.key
+  if (!/[0-9]/.test(key)) {
+    event.preventDefault()
+  }
+}
+
+const validateFields = () => {
+  const fields = [
+    { value: eventName.value, message: 'Nome do Evento é obrigatório' },
+    { value: eventStartDate.value, message: 'Data de Início do Evento é obrigatória' },
+    { value: eventEndDate.value, message: 'Data de Fim do Evento é obrigatória' },
+    { value: eventPublic.value, message: 'Público Alvo é obrigatório' },
+    { value: eventLocation.value, message: 'Local do Evento é obrigatório' },
+    { value: eventMinParticipants.value && eventMinParticipants.value > 0, message: 'Quantidade Mínima de Participantes é obrigatória e deve ser maior que 0' },
+    { value: eventMaxParticipants.value && eventMaxParticipants.value > 0, message: 'Quantidade Máxima de Participantes é obrigatória e deve ser maior que 0' },
+    { value: eventHours.value && eventHours.value > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
+    { value: eventType.value, message: 'Tipo do Evento é obrigatório' },
+    { value: eventDescription.value, message: 'Descrição do Evento é obrigatória' },
+  ]
+
+  for (const field of fields) {
+    if (!field.value) {
+      alert(field.message)
+      return false
+    }
+  }
+  return true
+}
+
 const submitForm = async () => {
-  // Verificação simples dos campos
-  if (!eventName.value.trim()) {
-    alert('Nome do Evento é obrigatório')
-    return
-  }
-  if (!eventDate.value) {
-    alert('Data do Evento é obrigatória')
-    return
-  }
-  if (!eventPublic.value.trim()) {
-    alert('Público Alvo é obrigatório')
-    return
-  }
-  if (!eventLocation.value.trim()) {
-    alert('Local do Evento é obrigatório')
-    return
-  }
-  if (!eventDescription.value.trim()) {
-    alert('Descrição do Evento é obrigatória')
+  if (!validateFields()) {
     return
   }
 
   try {
     const response = await axios.post('http://localhost:8000/api/eventos/', {
       nome: eventName.value,
-      data: eventDate.value,
+      dataInicio: eventStartDate.value,
+      dataFim: eventEndDate.value,
       public: eventPublic.value,
       location: eventLocation.value,
-      descricao: eventDescription.value
+      descricao: eventDescription.value,
+      minParticipants: eventMinParticipants.value,
+      maxParticipants: eventMaxParticipants.value,
+      horas: eventHours.value,
+      tipo: eventType.value
     })
     console.log('Evento criado:', response.data)
     alert('Evento criado com sucesso!')
@@ -82,7 +133,6 @@ const submitForm = async () => {
     }
   }
 }
-
 
 const goBack = () => {
   router.push({ name: 'home' })
