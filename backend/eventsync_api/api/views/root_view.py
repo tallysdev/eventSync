@@ -14,6 +14,10 @@ class ApiRootView(APIView):
             'swagger-json': reverse('schema', request=request, format=format),
             'swagger-ui': reverse('swagger-ui', request=request, format=format),
             'redoc-ui': reverse('redoc', request=request, format=format),
+            'locals-list': reverse('local_list', request=request, format=format),
+            'locals-detail': reverse('local_detail', request=request, args=[1], format=format),
+            'events-list': reverse('event_list', request=request, format=format),
+            'events-detail': reverse('event_detail', request=request, args=[1], format=format),
             # adicione mais endpoints aqui
         }
         return Response(data)
