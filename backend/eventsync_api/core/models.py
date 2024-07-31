@@ -107,3 +107,14 @@ class Sponsor(models.Model):
         return self.nome
 
 
+class Sponsorship(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsors"
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.sponsor.name} - {self.event.name}"
