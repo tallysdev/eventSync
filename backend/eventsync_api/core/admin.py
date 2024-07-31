@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import ESUser
+from .models import ESUser, Local, Event
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 class ESUserAdmin(UserAdmin):
@@ -26,3 +26,15 @@ class ESUserAdmin(UserAdmin):
     ordering = ('email',)
 
 admin.site.register(ESUser, ESUserAdmin)
+
+@admin.register(Local)
+class LocalAdmin(admin.ModelAdmin):
+    list_display = ('local_name', 'street_name', 'street_number', 'city', 'state', 'cep')
+    search_fields = ('local_name', 'city', 'state', 'cep')
+
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('name', 'start_date', 'end_date', 'local', 'status', 'event_type')
+    list_filter = ('status', 'event_type', 'local')
+    search_fields = ('name', 'description')
+    date_hierarchy = 'start_date'
