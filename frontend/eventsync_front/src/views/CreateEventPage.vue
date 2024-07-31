@@ -61,13 +61,13 @@
     <FooterVue />
   </v-app>
 </template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
+import { validateFields, validateNumberInput } from '../stores/validatorEvent.ts'
 
 const name = ref('')
 const start_date = ref('')
@@ -82,36 +82,6 @@ const local = ref('')
 const locations = ref([])
 const router = useRouter()
 
-const validateNumberInput = (event) => {
-  const key = event.key
-  if (!/[0-9]/.test(key)) {
-    event.preventDefault()
-  }
-}
-
-const validateFields = () => {
-  const fields = [
-    { value: name.value, message: 'Nome do Evento é obrigatório' },
-    { value: start_date.value, message: 'Data de Início do Evento é obrigatória' },
-    { value: end_date.value, message: 'Data de Fim do Evento é obrigatória' },
-    { value: local.value, message: 'Local do Evento é obrigatório' },
-    { value: min_quantity.value && min_quantity.value > 0, message: 'Quantidade Mínima de Participantes é obrigatória e deve ser maior que 0' },
-    { value: max_quantity.value && max_quantity.value > 0, message: 'Quantidade Máxima de Participantes é obrigatória e deve ser maior que 0' },
-    { value: hours_quantity.value && hours_quantity.value > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
-    { value: event_type.value, message: 'Tipo do Evento é obrigatório' },
-    { value: description.value, message: 'Descrição do Evento é obrigatória' },
-    { value: status.value, message: 'Status do evento é obrigatório' },
-  ]
-
-  for (const field of fields) {
-    if (!field.value) {
-      alert(field.message)
-      return false
-    }
-  }
-  return true
-}
-
 const fetchLocations = async () => {
   try {
     const response = await axios.get('http://127.0.0.1:8000/eventsync/api/v1/locals')
@@ -122,9 +92,17 @@ const fetchLocations = async () => {
   }
 }
 
-
 const submitForm = async () => {
-  if (!validateFields()) {
+  if (!validateFields({ name: name.value, 
+    start_date: start_date.value, 
+    end_date: end_date.value, 
+    local: local.value, 
+    min_quantity: min_quantity.value, 
+    max_quantity: max_quantity.value, 
+    hours_quantity: hours_quantity.value, 
+    event_type: event_type.value, 
+    description: description.value, 
+    status: status.value })) {
     return
   }
 
@@ -134,7 +112,7 @@ const submitForm = async () => {
       start_date: start_date.value,
       end_date: end_date.value,
       status: status.value,
-      local: locations.value,
+      local: local.value, // Ajuste conforme necessário
       description: description.value,
       min_quantity: min_quantity.value,
       max_quantity: max_quantity.value,
@@ -162,7 +140,6 @@ onMounted(() => {
   fetchLocations()
 })
 </script>
-
 <style scoped>
 .fill-height {
   min-height: 100vh;

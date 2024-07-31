@@ -15,7 +15,7 @@ class EventListView(APIView):
     """
     List all events, or create a new event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    # permission_classes = [IsAuthenticated | ReadOnly]
     pagination_class = PageNumberPagination
 
     @extend_schema(
@@ -48,7 +48,7 @@ class EventDetailView(APIView):
     """
     Retrieve, update or delete an event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+ #   permission_classes = [IsAuthenticated | ReadOnly]
 
     def get_object(self, pk):
         try:
