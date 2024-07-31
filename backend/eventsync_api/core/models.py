@@ -16,13 +16,15 @@ phone_validator = RegexValidator(
     message=_("Phone number must be 11 digits.")
 )
 
+
 class ESUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_("email address"), unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
-    cpf = models.CharField(max_length=11, unique=True, validators=[cpf_validator])
+    cpf = models.CharField(max_length=11, unique=True,
+                           validators=[cpf_validator])
     name = models.CharField(max_length=150)
     birth_date = models.DateField()
     phone = models.CharField(max_length=11, validators=[phone_validator])
@@ -34,6 +36,7 @@ class ESUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
 
 class Local(models.Model):
     street_name = models.CharField(max_length=255)
@@ -77,8 +80,10 @@ class Event(models.Model):
     hours_quantity = models.IntegerField()
     description = models.TextField()
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
-    status = models.CharField(max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
-    event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
+    status = models.CharField(
+        max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
+    event_type = models.CharField(
+        max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
 
     class Meta:
         verbose_name = "Event"
@@ -86,5 +91,19 @@ class Event(models.Model):
         ordering = ['id']
 
 
+class Sponsor(models.Model):
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    phone = models.CharField(max_length=11, validators=[phone_validator])
+    email = models.EmailField(_("email address"), unique=True)
+    description = models.TextField()
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsors"
+        ordering = ['id']
+
+    def __str__(self):
+        return self.nome
 
 
