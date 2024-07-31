@@ -11,12 +11,16 @@ from ..permissions import ReadOnly
 from ..serializers.sponsor_serializers import SponsorSerializer
 
 
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size_query_param = 'page_size'
+
+
 class SponsorListView(APIView):
     """
     List all sponsors, or create a new sponsor.
     """
     permission_classes = [IsAuthenticated | ReadOnly]
-    pagination_class = PageNumberPagination
+    pagination_class = CustomPageNumberPagination
 
     @extend_schema(
         summary='List all sponsors',
