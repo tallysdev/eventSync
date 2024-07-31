@@ -37,21 +37,24 @@
             required
           ></v-file-input>
         </v-form>
+        <v-alert v-if="errorMessage" type="error" dismissible v-model="showError">
+          {{ errorMessage }}
+        </v-alert>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
-        <v-btn color="blue darken-1" text @click="addSponsor" :disabled="!valid">Salvar</v-btn>
+        <v-btn color="blue darken-1" text @click="addSponsorData" :disabled="!valid">Salvar</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script setup lang="ts">
+import { addSponsor } from '@/services/sponsorService'
 import { emailValidation, requiredValidation } from '@/utils/validation'
 import { ref, watch } from 'vue'
 import { type Sponsor } from '@/types/sponsor'
-import api from '@/services/api'
 
 const props = defineProps({
   dialog: {
@@ -76,6 +79,9 @@ const newSponsor = ref<Sponsor>({
   logo: ''
 })
 
+const errorMessage = ref<string | null>(null)
+const showError = ref(false)
+
 const closeDialog = () => {
   emit('update:dialog', false)
 }
@@ -84,7 +90,7 @@ const updateDialog = (value: boolean) => {
   emit('update:dialog', value)
 }
 
-const addSponsor = async () => {
+const addSponsorData = async () => {
   const formData = new FormData()
   formData.append('name', newSponsor.value.name)
   formData.append('email', newSponsor.value.email)
@@ -93,11 +99,7 @@ const addSponsor = async () => {
   formData.append('logo', newSponsor.value.logo || '')
 
   try {
-    await api.post('sponsors/', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
+    addSponsor(formData)
     closeDialog()
     newSponsor.value = {
       name: '',
@@ -108,6 +110,9 @@ const addSponsor = async () => {
     }
   } catch (error) {
     console.error(error)
+    errorMessage.value =
+      'Ocorreu um erro ao tentar adicionar o patrocinador. Por favor, tente novamente.'
+    showError.value = true
   }
 }
 
@@ -122,6 +127,8 @@ watch(
         description: '',
         logo: ''
       }
+      showError.value = false
+      errorMessage.value = null
     }
   }
 )
