@@ -1,5 +1,3 @@
-// src/utils/validators.js
-
 export interface FormValues {
   name: string;
   start_date: string;
@@ -26,7 +24,6 @@ export const validateFields = (formValues: FormValues) => {
     { value: hours_quantity && hours_quantity > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
     { value: event_type, message: 'Tipo do Evento é obrigatório' },
     { value: description, message: 'Descrição do Evento é obrigatória' },
-    { value: status, message: 'Status do evento é obrigatório' },
   ];
 
   for (const field of fields) {
