@@ -3,27 +3,45 @@
         <v-container class="">
             <h1>Evento: Nome do Evento</h1>
             <h1 class="text-center">Criar sala temática.</h1>
-                <v-form class="mb-10">
-                    <v-text-field label="Local da sala"></v-text-field>
-                    <v-text-field label="Nome da sala"></v-text-field>
-                    <v-text-field label="Descrição"></v-text-field>
-                    <v-text-field label="Público Alvo"></v-text-field>
-                    <v-text-field label="Data" type="date" ></v-text-field>
-                    <v-text-field label="Horário"></v-text-field>
-                    <v-text-field label="Número Min. de Participantes"></v-text-field>
-                    <v-text-field label="Número Máx. de Participantes"></v-text-field>
-                    <v-container grid-list-xs class="d-flex justify-center ga-10">
-                        <v-btn color="primary">Criar</v-btn>
-                        <v-btn color="secondary">Voltar</v-btn>
-                    </v-container>
-                </v-form>
+            <v-form class="mb-10">
+                <v-text-field variant="outlined" label="Local da sala"></v-text-field>
+                <v-text-field variant="outlined" label="Nome da sala"></v-text-field>
+                <v-text-field variant="outlined" label="Descrição"></v-text-field>
+                <v-text-field variant="outlined" label="Público Alvo"></v-text-field>
+                <v-text-field variant="outlined" label="Data Inicial" type="date"></v-text-field>
+                <v-text-field variant="outlined" label="Data Final" type="date"></v-text-field>
+                <v-text-field variant="outlined"
+                    name="name"
+                    label="Horario inicial da sala."
+                    id="id"
+                    type="time"
+                ></v-text-field>
+                <v-text-field variant="outlined"
+                    name="name"
+                    label="Horario final da sala."
+                    id="id"
+                    type="time"
+                ></v-text-field>
+                <v-text-field variant="outlined" label="Número Min. de Participantes"></v-text-field>
+                <v-text-field variant="outlined" label="Número Máx. de Participantes"></v-text-field>
+                <v-container grid-list-xs class="d-flex justify-center ga-10">
+                    <v-btn color="primary">Criar</v-btn>
+                    <v-btn color="secondary">Voltar</v-btn>
+                </v-container>
+            </v-form>
         </v-container>
     </v-main>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            time: null,
+            menu2: false,
+            modal2: false,
+        }
+    },
 }
 </script>
 <style lang="">
