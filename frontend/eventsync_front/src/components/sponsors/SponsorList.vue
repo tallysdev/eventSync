@@ -35,7 +35,6 @@
         <b> Adicionar Patrocinador </b>
       </v-btn>
       <SponsorForm :dialog="dialog" @update:dialog="dialog = $event" />
-      <v-alert v-if="errorMessage" type="error" dismissible>{{ errorMessage }}</v-alert>
     </v-col>
   </v-row>
 </template>
@@ -67,8 +66,6 @@ const fetchSponsorsData = async () => {
     totalPages.value = Math.ceil(response.data.count / itemsPerPage)
   } catch (error) {
     console.error('Error fetching sponsors:', error)
-    errorMessage.value =
-      'Ocorreu um erro ao tentar buscar os patrocinadores. Por favor, tente novamente.'
   }
   loading.value = false
 }
