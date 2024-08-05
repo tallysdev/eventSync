@@ -8,6 +8,7 @@ from .views import users_view as userv
 from .views.root_view import ApiRootView
 from .views import locals_view as locv
 from .views import event_view as evtview
+from .views import theme_room_view as themerv
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -17,6 +18,8 @@ urlpatterns = [
     path('locals/<int:pk>/', locv.LocalDetailView.as_view(), name='local_detail'),
     path('events/', evtview.EventListView.as_view(), name='event_list'),
     path('events/<int:pk>/', evtview.EventDetailView.as_view(), name='event_detail'),
+    path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
+    path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
 ]
 
 # auth urls 
