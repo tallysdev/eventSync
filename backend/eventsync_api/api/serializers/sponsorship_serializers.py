@@ -5,4 +5,4 @@ from core.models import Sponsorship
 class SponsorshipSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponsorship
-        fields = ['event', 'sponsor']
+        fields = ['id', 'event', 'sponsor']
