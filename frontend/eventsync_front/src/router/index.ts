@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: '/create-event',
       name: 'create-event',
-      component: () => import('../views/CreateEventPage.vue')
+      component: () => import('../components/CreateEventPage.vue')
     },
     {
       path: '/about',

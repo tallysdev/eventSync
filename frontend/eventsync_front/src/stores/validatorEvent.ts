@@ -1,18 +1,31 @@
+import { ref } from 'vue'
+
 export interface FormValues {
-  name: string;
-  start_date: string;
-  end_date: string;
-  local: string;
-  min_quantity: number;
-  max_quantity: number;
-  hours_quantity: number;
-  event_type: string;
-  description: string;
-  status: string;
+  name: string
+  start_date: string
+  end_date: string
+  local: string
+  min_quantity: number
+  max_quantity: number
+  hours_quantity: number
+  event_type: string
+  description: string
+  status: string
 }
 
-export const validateFields = (formValues: FormValues) => {
-  const { name, start_date, end_date, local, min_quantity, max_quantity, hours_quantity, event_type, description, status } = formValues;
+// Snackbar states
+export const snackbar = ref(false)
+export const snackbarText = ref('')
+export const snackbarColor = ref('')
+
+const showSnackbar = (message: string, type: string) => {
+  snackbarText.value = message
+  snackbarColor.value = type === 'success' ? 'green' : 'red'
+  snackbar.value = true
+}
+
+export const validateFields = (formValues: FormValues): boolean => {
+  const { name, start_date, end_date, local, min_quantity, max_quantity, hours_quantity, event_type, description, status } = formValues
 
   const fields = [
     { value: name, message: 'Nome do Evento é obrigatório' },
@@ -24,20 +37,20 @@ export const validateFields = (formValues: FormValues) => {
     { value: hours_quantity && hours_quantity > 0, message: 'Quantidade de Horas é obrigatória e deve ser maior que 0' },
     { value: event_type, message: 'Tipo do Evento é obrigatório' },
     { value: description, message: 'Descrição do Evento é obrigatória' },
-  ];
+  ]
 
   for (const field of fields) {
     if (!field.value) {
-      alert(field.message);
-      return false;
+      showSnackbar(field.message, 'error')
+      return false
     }
   }
-  return true;
-};
+  return true
+}
 
 export const validateNumberInput = (event: KeyboardEvent) => {
-  const key = event.key;
+  const key = event.key
   if (!/[0-9]/.test(key)) {
-    event.preventDefault();
+    event.preventDefault()
   }
-};
+}

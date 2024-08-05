@@ -97,6 +97,14 @@
       </v-container>
     </v-main>
     <FooterVue />
+    <v-snackbar
+      v-model="snackbar"
+      :color="snackbarColor"
+      timeout="3000"
+      top
+    >
+      {{ snackbarText }}
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -106,7 +114,7 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
-import { validateFields, validateNumberInput } from '../stores/validatorEvent'
+import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../stores/validatorEvent'
 
 const name = ref('')
 const start_date = ref('')
@@ -128,6 +136,7 @@ const fetchLocations = async () => {
     console.log(locations.value)
   } catch (error) {
     console.error('Erro ao buscar locais:', error)
+    showSnackbar('Erro ao buscar locais', 'error')
   }
 }
 
@@ -137,15 +146,15 @@ const submitForm = async () => {
       name: name.value,
       start_date: start_date.value,
       end_date: end_date.value,
-      location: location.value,
+      local: location.value,
       min_quantity: min_quantity.value,
       max_quantity: max_quantity.value,
       hours_quantity: hours_quantity.value,
       event_type: event_type.value,
-      description: description.value
+      description: description.value,
+      status: 'upcoming'
     })
   ) {
-    alert('Por favor, preencha todos os campos obrigatórios corretamente.')
     return
   }
 
@@ -155,7 +164,7 @@ const submitForm = async () => {
       start_date: start_date.value,
       end_date: end_date.value,
       status: 'upcoming',
-      location: location.value.id,
+      local: location.value,
       description: description.value,
       min_quantity: min_quantity.value,
       max_quantity: max_quantity.value,
@@ -163,17 +172,35 @@ const submitForm = async () => {
       event_type: event_type.value
     })
     console.log('Evento criado:', response.data)
-    alert('Evento criado com sucesso!')
-    router.push({ name: 'home' })
+    showSnackbar('Evento criado com sucesso!', 'success')
+    resetForm()
   } catch (error) {
     if (error.response) {
       console.error('Erro ao criar evento:', error.response.data)
-      alert(`Erro ao criar evento: ${JSON.stringify(error.response.data)}`)
+      showSnackbar(`Erro ao criar evento: ${JSON.stringify(error.response.data)}`, 'error')
     } else {
       console.error('Erro ao criar evento:', error)
-      alert('Erro ao criar evento')
+      showSnackbar('Erro ao criar evento', 'error')
     }
   }
+}
+
+const showSnackbar = (message: string, type: string) => {
+  snackbarText.value = message
+  snackbarColor.value = type === 'success' ? 'green' : 'red'
+  snackbar.value = true
+}
+
+const resetForm = () => {
+  name.value = ''
+  start_date.value = ''
+  end_date.value = ''
+  max_quantity.value = ''
+  min_quantity.value = ''
+  hours_quantity.value = ''
+  description.value = ''
+  event_type.value = ''
+  location.value = ''
 }
 
 const goBack = () => {
@@ -184,6 +211,8 @@ onMounted(() => {
   fetchLocations()
 })
 </script>
+
+
 
 <style scoped>
 .fill-height {
