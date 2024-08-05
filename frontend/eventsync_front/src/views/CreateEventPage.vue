@@ -1,54 +1,112 @@
-  <template>
-    <v-app class="d-flex flex-column w-100">
-      <NavBar />
-      <v-main class="flex-grow-1 pa-16 mb-10">
-        <v-container fluid class="pa-6 d-flex flex-column align-center">
-          <h1 class="form-title">Crie seu Evento</h1>
-          <v-form @submit.prevent="submitForm" class="pa-3 d-flex flex-column align-center max-width-form">
-            <v-text-field v-model="name" label="Nome do Evento" required class="field-size"></v-text-field>
-            <v-text-field v-model="start_date" label="Data de Início do Evento" type="date" required
-              class="field-size"></v-text-field>
-            <v-text-field v-model="end_date" label="Data de Fim do Evento" type="date" required
-              class="field-size"></v-text-field>
-            <v-select class="field-size">
-              <option v-for="loc in locations" 
-              :key="loc.id" 
-              :value="loc.id" 
-              :selected="local.value === loc.id"> {{
-                loc.local_name }}</option>
-            </v-select>
-            <v-select v-model="event_type" :items="eventTypeOptions" label="Tipo do Evento" required
-              class="field-size"></v-select>
-            <v-text-field v-model="min_quantity" label="Quantidade Mínima de Participantes" type="number" required
-              class="field-size" min="1" @keypress="validateNumberInput"></v-text-field>
-            <v-text-field v-model="max_quantity" label="Quantidade Máxima de Participantes" type="number" required
-              class="field-size" min="1" @keypress="validateNumberInput"></v-text-field>
-            <v-text-field v-model="hours_quantity" label="Quantidade de Horas" type="number" required class="field-size"
-              min="1" @keypress="validateNumberInput"></v-text-field>
-            <v-textarea v-model="description" label="Descrição do Evento" required class="field-size"></v-textarea>
-            <v-row class="mt-4">
-              <v-col cols="6" class="d-flex justify-start">
-                <v-btn @click="goBack" color="secondary" class="btn-size btn-style voltar-btn"
-                  elevation="2">Voltar</v-btn>
-              </v-col>
-              <v-col cols="6" class="d-flex justify-end">
-                <v-btn type="submit" color="primary" class="btn-size btn-style" elevation="2">Criar Evento</v-btn>
-              </v-col>
-            </v-row>
-          </v-form>
-        </v-container>
-      </v-main>
-      <FooterVue />
-    </v-app>
-  </template>
+<template>
+  <v-app class="d-flex flex-column w-100">
+    <NavBar />
+    <v-main class="flex-grow-1 pa-16 mb-10">
+      <v-container fluid class="pa-6 d-flex flex-column align-center">
+        <h1 class="form-title">Crie seu Evento</h1>
+        <v-form
+          @submit.prevent="submitForm"
+          class="pa-3 d-flex flex-column align-center max-width-form"
+        >
+          <v-text-field
+            v-model="name"
+            label="Nome do Evento"
+            required
+            class="field-size"
+          ></v-text-field>
+          <v-text-field
+            v-model="start_date"
+            label="Data de Início do Evento"
+            type="date"
+            required
+            class="field-size"
+          ></v-text-field>
+          <v-text-field
+            v-model="end_date"
+            label="Data de Fim do Evento"
+            type="date"
+            required
+            class="field-size"
+          ></v-text-field>
+          <v-select
+            class="field-size"
+            :label="'Localização do Evento'"
+            v-model="location"
+            :items="locations"
+            item-title="local_name"
+            item-value="id"
+            required
+          ></v-select>
+          <v-select
+            v-model="event_type"
+            :items="eventTypeOptions"
+            label="Tipo do Evento"
+            required
+            class="field-size"
+          ></v-select>
+          <v-text-field
+            v-model="min_quantity"
+            label="Quantidade Mínima de Participantes"
+            type="number"
+            required
+            class="field-size"
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-text-field
+            v-model="max_quantity"
+            label="Quantidade Máxima de Participantes"
+            type="number"
+            required
+            class="field-size"
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-text-field
+            v-model="hours_quantity"
+            label="Quantidade de Horas"
+            type="number"
+            required
+            class="field-size"
+            min="1"
+            @keypress="validateNumberInput"
+          ></v-text-field>
+          <v-textarea
+            v-model="description"
+            label="Descrição do Evento"
+            required
+            class="field-size"
+          ></v-textarea>
+          <v-row class="mt-4">
+            <v-col cols="6" class="d-flex justify-start">
+              <v-btn
+                @click="goBack"
+                color="secondary"
+                class="btn-size btn-style voltar-btn"
+                elevation="2"
+                >Voltar</v-btn
+              >
+            </v-col>
+            <v-col cols="6" class="d-flex justify-end">
+              <v-btn type="submit" color="primary" class="btn-size btn-style" elevation="2"
+                >Criar Evento</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-container>
+    </v-main>
+    <FooterVue />
+  </v-app>
+</template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
-import { validateFields, validateNumberInput } from '../stores/validatorEvent.ts'
+import { validateFields, validateNumberInput } from '../stores/validatorEvent'
 
 const name = ref('')
 const start_date = ref('')
@@ -58,16 +116,14 @@ const min_quantity = ref('')
 const hours_quantity = ref('')
 const description = ref('')
 const event_type = ref('')
-const local = ref('')
+const location = ref('')
 const locations = ref([])
 const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const router = useRouter()
 
-
 const fetchLocations = async () => {
   try {
     const response = await axios.get('http://127.0.0.1:8000/eventsync/api/v1/locals')
-    console.log('Dados da API:', response.data.results)
     locations.value = response.data.results
     console.log(locations.value)
   } catch (error) {
@@ -76,7 +132,20 @@ const fetchLocations = async () => {
 }
 
 const submitForm = async () => {
-  if (!validateFields({ name: name.value, start_date: start_date.value, end_date: end_date.value, local: local.value, min_quantity: min_quantity.value, max_quantity: max_quantity.value, hours_quantity: hours_quantity.value, event_type: event_type.value, description: description.value })) {
+  if (
+    !validateFields({
+      name: name.value,
+      start_date: start_date.value,
+      end_date: end_date.value,
+      location: location.value,
+      min_quantity: min_quantity.value,
+      max_quantity: max_quantity.value,
+      hours_quantity: hours_quantity.value,
+      event_type: event_type.value,
+      description: description.value
+    })
+  ) {
+    alert('Por favor, preencha todos os campos obrigatórios corretamente.')
     return
   }
 
@@ -86,7 +155,7 @@ const submitForm = async () => {
       start_date: start_date.value,
       end_date: end_date.value,
       status: 'upcoming',
-      local: local.id,
+      location: location.value.id,
       description: description.value,
       min_quantity: min_quantity.value,
       max_quantity: max_quantity.value,
@@ -95,6 +164,7 @@ const submitForm = async () => {
     })
     console.log('Evento criado:', response.data)
     alert('Evento criado com sucesso!')
+    router.push({ name: 'home' })
   } catch (error) {
     if (error.response) {
       console.error('Erro ao criar evento:', error.response.data)
