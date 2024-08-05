@@ -15,7 +15,7 @@
                                 label="Tipo de Pergunta"
                                 outlined
                                 class="mt-2"
-                                @change="(value) => handleTypeChange(index, value)"                               
+                                @change="(value: any) => handleTypeChange(index, value)"                               
                             ></v-select>
                             
                             <v-btn @click="removeQuestion(index)" icon class="ml-2">
@@ -94,46 +94,55 @@
     </v-app>
 </template>
   
-<script setup>
+<script setup lang="ts">
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
-import { ref } from 'vue'
 import FormPreview from '../components/FormPreview.vue'
+import { ref } from 'vue'
 
-const questions = ref([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
-
-const addQuestion = () => {
-    questions.value.push({ text: '', type: 'Discursiva', optionList: [], isValid: true })
-    validateQuestions()
+interface Question {
+    text: string;
+    type: 'Discursiva' | 'Múltipla escolha' | 'Objetiva';
+    optionList: string[];
+    optionInput?: string;
+    isValid: boolean;
 }
 
-const removeQuestion = (index) => {
+const questions = ref<Question[]>([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
+
+const addQuestion = () => {
+    validateQuestions()
+    questions.value.push({ text: '', type: 'Discursiva', optionList: [], isValid: true })
+}
+
+const removeQuestion = (index: number) => {
     questions.value.splice(index, 1)
 }
 
-const addOption = (index) => {
-    if (questions.value[index].optionInput.trim()) {
-        questions.value[index].optionList.push(questions.value[index].optionInput.trim())
-        questions.value[index].optionInput = ''
+const addOption = (index: number) => {
+    const question = questions.value[index];
+    if (question.optionInput?.trim()) {
+        question.optionList.push(question.optionInput.trim())
+        question.optionInput = ''
         validateQuestion(index);
     } else {
         alert('Digite uma opção válida')
     }
 }
 
-const moveQuestion = (index, direction) => {
+const moveQuestion = (index: number, direction: any) => {
     const newIndex = index + direction
     if (newIndex < 0 || newIndex >= questions.value.length) return
     const movedQuestion = questions.value.splice(index, 1)[0]
     questions.value.splice(newIndex, 0, movedQuestion)
 }
 
-const removeOption = (questionIndex, optionIndex) => {
+const removeOption = (questionIndex: number, optionIndex: number) => {
     questions.value[questionIndex].optionList.splice(optionIndex, 1)
     validateQuestion(questionIndex)
 }
 
-const handleTypeChange = (index, type) => {
+const handleTypeChange = (index: number, type: 'Discursiva' | 'Múltipla escolha' | 'Objetiva') => {
     const question = questions.value[index]
     question.type = type
 
@@ -143,7 +152,7 @@ const handleTypeChange = (index, type) => {
     validateQuestion(index)
 }
 
-const validateQuestion = (index) => {
+const validateQuestion = (index: number) => {
     const question = questions.value[index]
     
     if(question.type === 'Discursiva') {
@@ -198,6 +207,7 @@ const validateQuestions = () => {
 
 .move-btn {
     margin-bottom: 16px;
+    margin-left: 8px;
 }
 
 </style>
