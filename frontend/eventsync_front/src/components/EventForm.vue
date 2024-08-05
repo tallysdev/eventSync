@@ -98,17 +98,10 @@
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 import FormPreview from '../components/FormPreview.vue'
+import type { QuestionCreate } from '@/types/types';
 import { ref } from 'vue'
 
-interface Question {
-    text: string;
-    type: 'Discursiva' | 'Múltipla escolha' | 'Objetiva';
-    optionList: string[];
-    optionInput?: string;
-    isValid: boolean;
-}
-
-const questions = ref<Question[]>([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
+const questions = ref<QuestionCreate[]>([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
 
 const addQuestion = () => {
     validateQuestions()
@@ -164,7 +157,7 @@ const validateQuestion = (index: number) => {
 }
 
 const validateQuestions = () => {
-    questions.value.forEach((_, index) => validateQuestion(index))
+    questions.value.forEach((_: any, index: number) => validateQuestion(index))
 }
 
 </script>
