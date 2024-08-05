@@ -11,25 +11,30 @@
             </v-card-subtitle>
     
             <v-card-subtitle v-if="question.type === 'Múltipla escolha'">
-                <v-checkbox-group v-model="question.selectedOptions" column>
                 <v-checkbox v-for="(option, optIndex) in question.optionList" :key="optIndex" :label="option" :value="option"></v-checkbox>
-                </v-checkbox-group>
             </v-card-subtitle>
     
             <v-card-subtitle v-if="question.type === 'Objetiva'">
-                <v-radio-group v-model="question.selectedOption" column>
                 <v-radio v-for="(option, optIndex) in question.optionList" :key="optIndex" :label="option" :value="option"></v-radio>
-                </v-radio-group>
             </v-card-subtitle>
             </v-card>
         </div>
     </v-form>
 </template>
   
-<script setup> 
-const props = defineProps({
-    questions: Array
-})
+<script setup lang="ts"> 
+
+interface Question {
+  text: string;
+  type: 'Discursiva' | 'Múltipla escolha' | 'Objetiva';
+  optionList?: string[];
+  selectedOptions?: string[];
+  selectedOption?: string;
+}
+
+const props = defineProps<{
+    questions: Question[]
+}>()
 </script>
   
 <style scoped>
