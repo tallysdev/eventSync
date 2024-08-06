@@ -161,7 +161,7 @@ const validateQuestions = () => {
 }
 
 </script>
-  
+
 <style scoped>
 .form-title {
     text-align: center;
@@ -171,7 +171,7 @@ const validateQuestions = () => {
 
 .field-size {
     max-width: 450px; 
-    min-width: 450px;
+    min-width: 300px;
     width: 100%;
     margin-bottom: auto;
     font-size: 1.2rem;

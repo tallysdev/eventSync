@@ -3,7 +3,7 @@
         <div v-for="(question, index) in questions" :key="index" class="field-size">
             <v-card outlined elevation="4">
             <v-card-title class="d-flex justify-space-between align-center">
-                <h3>{{ question.text }}</h3>
+                <p class="question-text">{{ question.text }}</p>
             </v-card-title>
     
             <v-card-subtitle v-if="question.type === 'Discursiva'">
@@ -34,13 +34,18 @@ const props = defineProps<{
   
 <style scoped>
 .field-size {
-    max-width: 450px;
-    min-width: 450px;
+    max-width: 350px;
+    min-width: 300px;
     width: 100%;
     margin-bottom: auto;
     font-size: 1.2rem;
-    margin-left: auto;
-    margin-right: auto; 
+
+}
+
+.question-text {
+    word-wrap: break-word; /* Garante que o texto longo seja quebrado */
+    overflow-wrap: break-word; /* Garante que o texto longo seja quebrado */
+    white-space: pre-wrap; /* Mantém espaços e quebras de linha */
 }
 </style>
   
