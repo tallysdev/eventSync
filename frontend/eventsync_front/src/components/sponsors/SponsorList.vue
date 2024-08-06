@@ -34,8 +34,11 @@
       <v-btn @click="openDialog" color="primary" class="mt-4">
         <b> Adicionar Patrocinador </b>
       </v-btn>
-      <SponsorForm :dialog="dialog" @update:dialog="dialog = $event" />
+      <SponsorForm :dialog="dialog" @update:dialog="dialog = $event" @sponsor-added="onSponsorAdded" />
     </v-col>
+    <v-snackbar v-model="snackbar" :timeout="4000" top :color="snackbarColor" p>
+      {{ snackbarMessage }}
+    </v-snackbar>
   </v-row>
 </template>
 
@@ -52,6 +55,9 @@ const itemsPerPage = 6
 const dialog = ref(false)
 const loading = ref(false)
 const errorMessage = ref<string | null>(null)
+const snackbar = ref(false)
+const snackbarMessage = ref('')
+const snackbarColor = ref('')
 
 const openDialog = () => {
   dialog.value = true
@@ -60,14 +66,22 @@ const openDialog = () => {
 const fetchSponsorsData = async () => {
   loading.value = true
   errorMessage.value = null
+
+  const loadingTimeout = setTimeout(() => {
+    loading.value = false
+    errorMessage.value = 'O tempo de carregamento expirou. Tente novamente.'
+  }, 10000) // 10 seconds timeout
+
   try {
     const response = await fetchSponsors(currentPage.value, itemsPerPage)
     sponsors.value = response.data.results
     totalPages.value = Math.ceil(response.data.count / itemsPerPage)
+    clearTimeout(loadingTimeout)
   } catch (error) {
     console.error('Error fetching sponsors:', error)
+  } finally {
+    loading.value = false
   }
-  loading.value = false
 }
 
 onMounted(() => {
@@ -77,6 +91,14 @@ onMounted(() => {
 watch(currentPage, () => {
   fetchSponsorsData()
 })
+
+const onSponsorAdded = (message: string) => {
+  snackbarMessage.value = message
+  snackbarColor.value = 'success'
+  snackbar.value = true
+  fetchSponsorsData()
+}
 </script>
 
 <style scoped></style>
+u

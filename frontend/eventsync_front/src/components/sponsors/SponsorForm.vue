@@ -63,7 +63,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:dialog'])
+const emit = defineEmits(['update:dialog', 'sponsor-added'])
 
 const rules = {
   required: requiredValidation,
@@ -99,7 +99,7 @@ const addSponsorData = async () => {
   formData.append('logo', newSponsor.value.logo || '')
 
   try {
-    addSponsor(formData)
+    await addSponsor(formData)
     closeDialog()
     newSponsor.value = {
       name: '',
@@ -108,6 +108,7 @@ const addSponsorData = async () => {
       description: '',
       logo: ''
     }
+    emit('sponsor-added', 'Patrocinador adicionado com sucesso!')
   } catch (error) {
     console.error(error)
     errorMessage.value =
