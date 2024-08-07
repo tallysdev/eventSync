@@ -13,7 +13,7 @@ from ..serializers.local_serializers import LocalSerializer
 class LocalListView(generics.ListCreateAPIView):
     queryset = Local.objects.all()
     serializer_class = LocalSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
 @extend_schema_view(
     get=extend_schema(summary='Retrieve a local', tags=['Local']),
@@ -23,4 +23,4 @@ class LocalListView(generics.ListCreateAPIView):
 class LocalDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Local.objects.all()
     serializer_class = LocalSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
