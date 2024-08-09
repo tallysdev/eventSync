@@ -115,6 +115,9 @@ import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../stores/validatorEvent'
+import { addEvent } from '@/services/eventService'
+
+
 
 const name = ref('')
 const start_date = ref('')
@@ -158,19 +161,20 @@ const submitForm = async () => {
     return
   }
 
+  const formData = new FormData()
+  formData.append('name', name.value)
+  formData.append('start_date', start_date.value)
+  formData.append('end_date', end_date.value)
+  formData.append('status', 'upcoming')
+  formData.append('local', location.value)
+  formData.append('description', description.value)
+  formData.append('min_quantity', min_quantity.value)
+  formData.append('max_quantity', max_quantity.value)
+  formData.append('hours_quantity', hours_quantity.value)
+  formData.append('event_type', event_type.value)
+
   try {
-    const response = await axios.post('http://127.0.0.1:8000/eventsync/api/v1/events/', {
-      name: name.value,
-      start_date: start_date.value,
-      end_date: end_date.value,
-      status: 'upcoming',
-      local: location.value,
-      description: description.value,
-      min_quantity: min_quantity.value,
-      max_quantity: max_quantity.value,
-      hours_quantity: hours_quantity.value,
-      event_type: event_type.value
-    })
+    const response = await addEvent(formData)
     console.log('Evento criado:', response.data)
     showSnackbar('Evento criado com sucesso!', 'success')
     resetForm()

@@ -15,10 +15,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-<<<<<<< HEAD
     "@vuepic/vue-datepicker": "^9.0.0",
-=======
->>>>>>> dcfb5bd6133ed6c96cda63404d3cc310c7344370
     "axios": "^1.7.2",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",

@@ -1,17 +1,6 @@
+import type { FormValuesEvent } from '@/types/event'
 import { ref } from 'vue'
 
-export interface FormValues {
-  name: string
-  start_date: string
-  end_date: string
-  local: string
-  min_quantity: number
-  max_quantity: number
-  hours_quantity: number
-  event_type: string
-  description: string
-  status: string
-}
 
 // Snackbar states
 export const snackbar = ref(false)
@@ -24,7 +13,7 @@ const showSnackbar = (message: string, type: string) => {
   snackbar.value = true
 }
 
-export const validateFields = (formValues: FormValues): boolean => {
+export const validateFields = (formValues: FormValuesEvent): boolean => {
   const { name, start_date, end_date, local, min_quantity, max_quantity, hours_quantity, event_type, description, status } = formValues
 
   const fields = [
