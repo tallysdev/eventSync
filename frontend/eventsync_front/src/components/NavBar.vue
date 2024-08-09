@@ -37,7 +37,7 @@
             ></v-select>
           </v-col>
           <v-col cols="4" class="d-flex align-center justify-space-around">
-            <v-btn>Crie seu evento</v-btn>
+            <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
             <v-btn>Acesse sua conta</v-btn>
             <v-btn
               class="text-none"
