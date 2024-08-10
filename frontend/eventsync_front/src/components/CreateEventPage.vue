@@ -3,7 +3,7 @@
     <NavBar />
     <v-main class="flex-grow-1 pa-16 mb-10">
       <v-container fluid class="pa-6 d-flex flex-column align-center">
-        <h1 class="form-title">Crie seu Evento</h1>
+        <h1 class="text-h3 mb-10">Crie seu Evento</h1>
         <v-form
           @submit.prevent="submitForm"
           class="pa-3 d-flex flex-column align-center max-width-form"
@@ -79,30 +79,21 @@
           ></v-textarea>
           <v-row class="mt-4">
             <v-col cols="6" class="d-flex justify-start">
-              <v-btn
-                @click="goBack"
-                color="secondary"
-                class="btn-size btn-style voltar-btn"
-                elevation="2"
-                >Voltar</v-btn
-              >
+              <v-btn @click="goBack" color="secondary" class="mt-4 px-10" elevation="2">
+                <b> Voltar </b>
+              </v-btn>
             </v-col>
             <v-col cols="6" class="d-flex justify-end">
-              <v-btn type="submit" color="primary" class="btn-size btn-style" elevation="2"
-                >Criar Evento</v-btn
-              >
+              <v-btn type="submit" color="primary" class="mt-4 px-10" elevation="2">
+                <b> Criar </b>
+              </v-btn>
             </v-col>
           </v-row>
         </v-form>
       </v-container>
     </v-main>
     <FooterVue />
-    <v-snackbar
-      v-model="snackbar"
-      :color="snackbarColor"
-      timeout="3000"
-      top
-    >
+    <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top>
       {{ snackbarText }}
     </v-snackbar>
   </v-app>
@@ -114,10 +105,14 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
-import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../stores/validatorEvent'
+import {
+  validateFields,
+  validateNumberInput,
+  snackbar,
+  snackbarText,
+  snackbarColor
+} from '../stores/validatorEvent'
 import { addEvent } from '@/services/eventService'
-
-
 
 const name = ref('')
 const start_date = ref('')
@@ -216,57 +211,7 @@ onMounted(() => {
 })
 </script>
 
-
-
 <style scoped>
-.fill-height {
-  min-height: 100vh;
-  background-color: #2f3640;
-  color: #ffffff;
-}
-
-:deep(.v-application__wrap) {
-  min-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-.v-main {
-  flex-grow: 1;
-}
-
-.v-footer {
-  flex-shrink: 0;
-}
-
-.btn-size {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 10px;
-}
-
-.btn-style {
-  font-weight: bold;
-  border-radius: 2px;
-  padding: 5px 24px;
-  font-size: 1.2rem;
-}
-
-.voltar-btn {
-  font-weight: bold;
-  background-color: #ff6f61;
-  color: #ffffff;
-}
-
-.form-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.8rem;
-}
-
-.mt-4 {
-  margin-top: 2rem;
-}
-
 .field-size {
   max-width: 100%;
   width: 100%;
