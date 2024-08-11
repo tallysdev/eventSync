@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import ESUser, Local, Event, Sponsor, Sponsorship
-from .models import ESUser, Local, Event, ThemeRoom
+from .models import ESUser, Local, Event, ThemeRoom, Sponsor, Sponsorship
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
@@ -47,7 +46,6 @@ class EventAdmin(admin.ModelAdmin):
     list_filter = ('status', 'event_type', 'local')
     search_fields = ('name', 'description')
     date_hierarchy = 'start_date'
-
 
 @admin.register(Sponsor)
 class SponsorAdmin(admin.ModelAdmin):

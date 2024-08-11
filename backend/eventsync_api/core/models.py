@@ -119,6 +119,7 @@ class ThemeRoom(models.Model):
         # Ensure start_date and end_date are within the Event's date range
         if self.start_date < self.event.start_date or self.end_date > self.event.end_date:
             raise ValidationError('The start date and end date of the Theme Room must be within the Event\'s date range.')
+
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)

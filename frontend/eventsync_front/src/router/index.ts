@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SponsorsView from '@/views/SponsorsView.vue'
 
+import SponsorsView from '@/views/SponsorsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +15,7 @@ const router = createRouter({
       path: '/create-form',
       name: 'create-form',
       component: () => import('../views/CreateForm.vue')
+
     },
     {
       path: '/create-form',
@@ -35,6 +36,7 @@ const router = createRouter({
       component: SponsorsView
     },
     {
+
       path: '/events/:id/theme-room',
       name: 'theme-room',
       component: () => import('../views/ThemeRoomView.vue')
