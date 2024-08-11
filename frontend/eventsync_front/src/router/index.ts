@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SponsorsView from '@/views/SponsorsView.vue'
 
 
 const router = createRouter({
@@ -11,9 +12,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/create-event',
-      name: 'create-event',
-      component: () => import('../views/CreateEventPage.vue')
+      path: '/create-form',
+      name: 'create-form',
+      component: () => import('../views/CreateForm.vue')
     },
     {
       path: '/create-form',
@@ -27,6 +28,11 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/sponsors',
+      name: 'sponsors',
+      component: SponsorsView
     },
     {
       path: '/events/:id/theme-room',
