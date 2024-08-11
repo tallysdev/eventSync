@@ -47,3 +47,30 @@
 <p>Para rodar os testes verificando a localmente a cobertura use:</p>
 <pre>coverage run manage.py test
 coverage report</pre>
+
+<h2>Popular Banco</h2>
+Para popular o banco de dados com dados iniciais, você pode usar os seguintes comandos de gerenciamento localizados em `core/management/commands`:
+
+<ol>
+<li>Para criar um usuário administrador:
+    <pre>python manage.py initadmin</pre>
+</li>
+
+<li>Para adicionar eventos iniciais:
+    <pre>python manage.py initevents</pre>
+</li>
+
+<li>Para adicionar patrocínios iniciais:
+    <pre>python manage.py initsponsorships</pre>
+</li>
+
+<li>Para adicionar patrocinadores iniciais:
+    <pre>python manage.py initsponsors</pre>
+</li>
+
+<li>Para adicionar usuários iniciais a partir de um arquivo CSV:
+    <pre>python manage.py initusers --path=&lt;path/to/your/csvfile&gt;</pre>
+</li>
+</ol>
+
+Certifique-se de substituir `<path/to/your/csvfile>` pelo caminho real do seu arquivo CSV contendo os dados dos usuários.
