@@ -14,7 +14,7 @@ const router = createRouter({
     {
       path: '/create-event',
       name: 'create-event',
-      component: () => import('../components/CreateEventPage.vue')
+      component: () => import('../views/EventPageView.vue')
     },
     {
       path: '/create-form',

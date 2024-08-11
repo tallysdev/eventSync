@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CreateEventPage from '@/components/CreateEventPage.vue';
+import CreateEventPage from '@/components/events/CreateEventPage.vue';
 </script>
 
 <template>

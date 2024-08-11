@@ -2,7 +2,6 @@ import type { FormValuesEvent } from '@/types/event'
 import { ref } from 'vue'
 
 
-// Snackbar states
 export const snackbar = ref(false)
 export const snackbarText = ref('')
 export const snackbarColor = ref('')
@@ -28,12 +27,22 @@ export const validateFields = (formValues: FormValuesEvent): boolean => {
     { value: description, message: 'Descrição do Evento é obrigatória' },
   ]
 
+
   for (const field of fields) {
     if (!field.value) {
       showSnackbar(field.message, 'error')
       return false
     }
   }
+
+
+  const startDate = new Date(start_date)
+  const endDate = new Date(end_date)
+  if (startDate > endDate) {
+    showSnackbar('A Data de Início do Evento deve ser antes da Data Final do Evento', 'error')
+    return false
+  }
+
   return true
 }
 

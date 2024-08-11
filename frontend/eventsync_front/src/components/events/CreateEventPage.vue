@@ -3,8 +3,8 @@
     <NavBar />
     <v-main class="flex-grow-1 pa-16 mb-10">
       <v-container fluid class="pa-6 d-flex flex-column align-center">
-        <h1 class="text-h3 mb-10">Crie seu Evento</h1>
-        <v-form
+        <h1 class="form-title">Crie seu Evento</h1>
+        <v-form ref="form" v-model="valid" lazy-validation 
           @submit.prevent="submitForm"
           class="pa-3 d-flex flex-column align-center max-width-form"
         >
@@ -36,6 +36,8 @@
             item-title="local_name"
             item-value="id"
             required
+            :hint="locations.length === 0 ? 'Nenhum local disponível' : ''"
+            :persistent-hint="true"
           ></v-select>
           <v-select
             v-model="event_type"
@@ -77,42 +79,35 @@
             required
             class="field-size"
           ></v-textarea>
-          <v-row class="mt-4">
-            <v-col cols="6" class="d-flex justify-start">
-              <v-btn @click="goBack" color="secondary" class="mt-4 px-10" elevation="2">
-                <b> Voltar </b>
-              </v-btn>
-            </v-col>
-            <v-col cols="6" class="d-flex justify-end">
-              <v-btn type="submit" color="primary" class="mt-4 px-10" elevation="2">
-                <b> Criar </b>
-              </v-btn>
-            </v-col>
-          </v-row>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn class="btn-cancel" @click="goBack">Cancelar</v-btn>
+            <v-btn class="btn-create" @click="submitForm" :disabled="!isFormValid">Criar Evento</v-btn>
+          </v-card-actions>
         </v-form>
       </v-container>
     </v-main>
     <FooterVue />
-    <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top>
+    <v-snackbar
+      v-model="snackbar"
+      :color="snackbarColor"
+      timeout="3000"
+      top
+    >
       {{ snackbarText }}
     </v-snackbar>
   </v-app>
 </template>
 
+// src/views/CreateEventPage.vue
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
-import NavBar from '../components/NavBar.vue'
-import FooterVue from '../components/Footer.vue'
-import {
-  validateFields,
-  validateNumberInput,
-  snackbar,
-  snackbarText,
-  snackbarColor
-} from '../stores/validatorEvent'
-import { addEvent } from '@/services/eventService'
+import NavBar from '../NavBar.vue'
+import FooterVue from '../Footer.vue'
+import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../../stores/validatorEvent'
+import { addEvent, fetchLocations } from '@/services/eventService'
+
 
 const name = ref('')
 const start_date = ref('')
@@ -123,17 +118,22 @@ const hours_quantity = ref('')
 const description = ref('')
 const event_type = ref('')
 const location = ref('')
-const locations = ref([])
+const locations = ref<any[]>([]) 
 const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const router = useRouter()
+const valid = ref(false)
 
-const fetchLocations = async () => {
+const errorMessage = ref<string | null>(null)
+const showError = ref(false)
+
+const fetchLocationsData = async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:8000/eventsync/api/v1/locals')
+    const response = await fetchLocations()
     locations.value = response.data.results
-    console.log(locations.value)
+    if (locations.value.length === 0) {
+      showSnackbar('Nenhum local encontrado', 'info')
+    }
   } catch (error) {
-    console.error('Erro ao buscar locais:', error)
     showSnackbar('Erro ao buscar locais', 'error')
   }
 }
@@ -169,18 +169,14 @@ const submitForm = async () => {
   formData.append('event_type', event_type.value)
 
   try {
-    const response = await addEvent(formData)
-    console.log('Evento criado:', response.data)
+    await addEvent(formData)
     showSnackbar('Evento criado com sucesso!', 'success')
     resetForm()
   } catch (error) {
-    if (error.response) {
-      console.error('Erro ao criar evento:', error.response.data)
-      showSnackbar(`Erro ao criar evento: ${JSON.stringify(error.response.data)}`, 'error')
-    } else {
-      console.error('Erro ao criar evento:', error)
-      showSnackbar('Erro ao criar evento', 'error')
-    }
+    console.error(error)
+    errorMessage.value =
+      'Erro ao criar Evento!'
+    showError.value = true
   }
 }
 
@@ -206,21 +202,15 @@ const goBack = () => {
   router.push({ name: 'home' })
 }
 
+const isFormValid = computed(() => {
+  return name.value && start_date.value && end_date.value && location.value &&
+    min_quantity.value && max_quantity.value && hours_quantity.value &&
+    description.value && event_type.value
+})
+
 onMounted(() => {
-  fetchLocations()
+  fetchLocationsData()
 })
 </script>
 
-<style scoped>
-.field-size {
-  max-width: 100%;
-  width: 100%;
-  margin-bottom: auto;
-  font-size: 1.2rem;
-}
-
-.max-width-form {
-  max-width: 1000px;
-  width: 100%;
-}
-</style>
+<style scoped src="../styles/event.css"></style>

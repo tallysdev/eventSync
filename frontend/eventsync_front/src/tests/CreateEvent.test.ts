@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import EventForm from '@/components/CreateEventPage.vue'
+import EventForm from '@/components/events/CreateEventPage.vue'
 import axios from 'axios'
 import { snackbar, snackbarColor, snackbarText } from '@/stores/validatorEvent'
 

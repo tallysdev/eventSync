@@ -11,3 +11,7 @@ export const addEvent = (formData: FormData) => {
     headers: { 'Content-Type': 'multipart/form-data' }
   })
 }
+
+export const fetchLocations = () => {
+  return api.get('http://127.0.0.1:8000/eventsync/api/v1/locals');
+}
