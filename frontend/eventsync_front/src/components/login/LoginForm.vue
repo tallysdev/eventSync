@@ -40,7 +40,7 @@
               Login
             </v-btn>
             <v-card-text class="text-center">
-              <router-link to="/register" class="text-blue-darken-2 text-decoration-none text-subtitle-1">
+              <router-link to="/" class="text-blue-darken-2 text-decoration-none text-subtitle-1">
                 Cadastre-se <v-icon icon="mdi-chevron-right"></v-icon>
               </router-link>
             </v-card-text>
@@ -102,9 +102,9 @@ const handleSubmit = async () => {
       if (authStore.isAuthenticated) {
         emit('login-success', 'Login realizado com sucesso!')
         closeDialog()
-        setTimeout(() => {
-          router.push('/')
-        }, 2000)
+        // setTimeout(() => {
+        //   router.push('/')
+        // }, 2000)
       } else {
         console.error('Login falhou')
         errorMessage.value = 'Login falhou. Usuário ou senha incorretos.'
