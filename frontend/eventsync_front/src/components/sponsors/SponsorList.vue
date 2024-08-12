@@ -101,4 +101,3 @@ const onSponsorAdded = (message: string) => {
 </script>
 
 <style scoped></style>
-u
