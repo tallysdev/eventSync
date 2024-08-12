@@ -4,48 +4,6 @@
   color: #ffffff;
 }
 
-:deep(.v-application__wrap) {
-  min-width: 100% !important;
-  margin: 0 auto !important;
-}
-
-.v-main {
-  flex-grow: 1;
-}
-
-.v-footer {
-  flex-shrink: 0;
-}
-
-.btn-size {
-  width: 100%;
-  max-width: 300px;
-  margin-top: 10px;
-}
-
-.btn-style {
-  font-weight: bold;
-  border-radius: 2px;
-  padding: 5px 24px;
-  font-size: 1.2rem;
-}
-
-.voltar-btn {
-  font-weight: bold;
-  background-color: #ff6f61;
-  color: #ffffff;
-}
-
-.form-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.8rem;
-}
-
-.mt-4 {
-  margin-top: 2rem;
-}
-
 .field-size {
   max-width: 100%;
   width: 100%;
@@ -56,30 +14,4 @@
 .max-width-form {
   max-width: 1000px;
   width: 100%;
-}
-
-.btn-create {
-  background-color: #009688; 
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 24px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-cancel {
-  background-color: #f44336; 
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 24px;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

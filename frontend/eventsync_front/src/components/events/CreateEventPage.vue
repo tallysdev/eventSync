@@ -4,34 +4,37 @@
     <v-main class="flex-grow-1 pa-16 mb-10">
       <v-container fluid class="pa-6 d-flex flex-column align-center">
         <h1 class="form-title">Crie seu Evento</h1>
-        <v-form ref="form" v-model="valid" lazy-validation 
+        <v-form
+          ref="form"
+          v-model="valid"
+          lazy-validation
           @submit.prevent="submitForm"
           class="pa-3 d-flex flex-column align-center max-width-form"
         >
           <v-text-field
-            v-model="name"
+            v-model="eventForm.name"
             label="Nome do Evento"
             required
             class="field-size"
           ></v-text-field>
           <v-text-field
-            v-model="start_date"
+            v-model="eventForm.start_date"
             label="Data de Início do Evento"
             type="date"
             required
             class="field-size"
           ></v-text-field>
           <v-text-field
-            v-model="end_date"
+            v-model="eventForm.end_date"
             label="Data de Fim do Evento"
             type="date"
             required
             class="field-size"
           ></v-text-field>
           <v-select
-            class="field-size"
+            class="field-size pb-2"
             :label="'Localização do Evento'"
-            v-model="location"
+            v-model="eventForm.location"
             :items="locations"
             item-title="local_name"
             item-value="id"
@@ -40,14 +43,14 @@
             :persistent-hint="true"
           ></v-select>
           <v-select
-            v-model="event_type"
+            v-model="eventForm.event_type"
             :items="eventTypeOptions"
             label="Tipo do Evento"
             required
             class="field-size"
           ></v-select>
           <v-text-field
-            v-model="min_quantity"
+            v-model="eventForm.min_quantity"
             label="Quantidade Mínima de Participantes"
             type="number"
             required
@@ -56,7 +59,7 @@
             @keypress="validateNumberInput"
           ></v-text-field>
           <v-text-field
-            v-model="max_quantity"
+            v-model="eventForm.max_quantity"
             label="Quantidade Máxima de Participantes"
             type="number"
             required
@@ -65,7 +68,7 @@
             @keypress="validateNumberInput"
           ></v-text-field>
           <v-text-field
-            v-model="hours_quantity"
+            v-model="eventForm.hours_quantity"
             label="Quantidade de Horas"
             type="number"
             required
@@ -74,51 +77,68 @@
             @keypress="validateNumberInput"
           ></v-text-field>
           <v-textarea
-            v-model="description"
+            v-model="eventForm.description"
             label="Descrição do Evento"
             required
             class="field-size"
           ></v-textarea>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn class="btn-cancel" @click="goBack">Cancelar</v-btn>
-            <v-btn class="btn-create" @click="submitForm" :disabled="!isFormValid">Criar Evento</v-btn>
-          </v-card-actions>
+          <v-row class="mt-4">
+            <v-col cols="6" class="d-flex justify-start">
+              <v-btn @click="goBack" color="secondary" class="mt-4 px-10" elevation="2">
+                <b> Voltar </b>
+              </v-btn>
+            </v-col>
+            <v-col cols="6" class="d-flex justify-end">
+              <v-btn
+                type="submit"
+                color="primary"
+                class="mt-4 px-10"
+                elevation="2"
+                @click="submitForm"
+                :disabled="!isFormValid"
+              >
+                <b> Criar </b>
+              </v-btn>
+            </v-col>
+          </v-row>
         </v-form>
       </v-container>
     </v-main>
     <FooterVue />
-    <v-snackbar
-      v-model="snackbar"
-      :color="snackbarColor"
-      timeout="3000"
-      top
-    >
+    <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top>
       {{ snackbarText }}
     </v-snackbar>
   </v-app>
 </template>
 
-// src/views/CreateEventPage.vue
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import NavBar from '../NavBar.vue'
 import FooterVue from '../Footer.vue'
-import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../../stores/validatorEvent'
+import {
+  validateFields,
+  validateNumberInput,
+  snackbar,
+  snackbarText,
+  snackbarColor
+} from '../../stores/validatorEvent'
 import { addEvent, fetchLocations } from '@/services/eventService'
 
+class EventForm {
+  name = ''
+  start_date = ''
+  end_date = ''
+  location = ''
+  event_type = ''
+  min_quantity = ''
+  max_quantity = ''
+  hours_quantity = ''
+  description = ''
+}
 
-const name = ref('')
-const start_date = ref('')
-const end_date = ref('')
-const max_quantity = ref('')
-const min_quantity = ref('')
-const hours_quantity = ref('')
-const description = ref('')
-const event_type = ref('')
-const location = ref('')
-const locations = ref<any[]>([]) 
+const eventForm = ref(new EventForm())
+const locations = ref<any[]>([])
 const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const router = useRouter()
 const valid = ref(false)
@@ -141,15 +161,15 @@ const fetchLocationsData = async () => {
 const submitForm = async () => {
   if (
     !validateFields({
-      name: name.value,
-      start_date: start_date.value,
-      end_date: end_date.value,
-      local: location.value,
-      min_quantity: min_quantity.value,
-      max_quantity: max_quantity.value,
-      hours_quantity: hours_quantity.value,
-      event_type: event_type.value,
-      description: description.value,
+      name: eventForm.value.name,
+      start_date: eventForm.value.start_date,
+      end_date: eventForm.value.end_date,
+      local: eventForm.value.location,
+      min_quantity: eventForm.value.min_quantity,
+      max_quantity: eventForm.value.max_quantity,
+      hours_quantity: eventForm.value.hours_quantity,
+      event_type: eventForm.value.event_type,
+      description: eventForm.value.description,
       status: 'upcoming'
     })
   ) {
@@ -157,16 +177,16 @@ const submitForm = async () => {
   }
 
   const formData = new FormData()
-  formData.append('name', name.value)
-  formData.append('start_date', start_date.value)
-  formData.append('end_date', end_date.value)
+  formData.append('name', eventForm.value.name)
+  formData.append('start_date', eventForm.value.start_date)
+  formData.append('end_date', eventForm.value.end_date)
   formData.append('status', 'upcoming')
-  formData.append('local', location.value)
-  formData.append('description', description.value)
-  formData.append('min_quantity', min_quantity.value)
-  formData.append('max_quantity', max_quantity.value)
-  formData.append('hours_quantity', hours_quantity.value)
-  formData.append('event_type', event_type.value)
+  formData.append('local', eventForm.value.location)
+  formData.append('description', eventForm.value.description)
+  formData.append('min_quantity', eventForm.value.min_quantity)
+  formData.append('max_quantity', eventForm.value.max_quantity)
+  formData.append('hours_quantity', eventForm.value.hours_quantity)
+  formData.append('event_type', eventForm.value.event_type)
 
   try {
     await addEvent(formData)
@@ -174,8 +194,7 @@ const submitForm = async () => {
     resetForm()
   } catch (error) {
     console.error(error)
-    errorMessage.value =
-      'Erro ao criar Evento!'
+    errorMessage.value = 'Erro ao criar Evento!'
     showError.value = true
   }
 }
@@ -187,15 +206,7 @@ const showSnackbar = (message: string, type: string) => {
 }
 
 const resetForm = () => {
-  name.value = ''
-  start_date.value = ''
-  end_date.value = ''
-  max_quantity.value = ''
-  min_quantity.value = ''
-  hours_quantity.value = ''
-  description.value = ''
-  event_type.value = ''
-  location.value = ''
+  eventForm.value = new EventForm()
 }
 
 const goBack = () => {
@@ -203,9 +214,17 @@ const goBack = () => {
 }
 
 const isFormValid = computed(() => {
-  return name.value && start_date.value && end_date.value && location.value &&
-    min_quantity.value && max_quantity.value && hours_quantity.value &&
-    description.value && event_type.value
+  return (
+    eventForm.value.name &&
+    eventForm.value.start_date &&
+    eventForm.value.end_date &&
+    eventForm.value.location &&
+    eventForm.value.min_quantity &&
+    eventForm.value.max_quantity &&
+    eventForm.value.hours_quantity &&
+    eventForm.value.description &&
+    eventForm.value.event_type
+  )
 })
 
 onMounted(() => {
