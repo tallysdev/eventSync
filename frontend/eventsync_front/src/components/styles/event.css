@@ -1,0 +1,17 @@
+.fill-height {
+  min-height: 100vh;
+  background-color: #2f3640;
+  color: #ffffff;
+}
+
+.field-size {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: auto;
+  font-size: 1.2rem;
+}
+
+.max-width-form {
+  max-width: 1000px;
+  width: 100%;
+}
