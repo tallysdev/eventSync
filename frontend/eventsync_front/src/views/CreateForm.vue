@@ -17,4 +17,3 @@ import EventForm from '@/components/EventForm.vue';
   }
 }
 </style>
-  
