@@ -39,7 +39,7 @@ export const validateFields = (formValues: FormValuesEvent): boolean => {
   const startDate = new Date(start_date)
   const endDate = new Date(end_date)
   if (startDate > endDate) {
-    showSnackbar('A Data de Início do Evento deve ser antes da Data Final do Evento', 'error')
+    showSnackbar('A Data de Início do Evento deve ser anterior à Data de Fim', 'error')
     return false
   }
 
