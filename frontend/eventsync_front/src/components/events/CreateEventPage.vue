@@ -94,8 +94,7 @@
                 color="primary"
                 class="mt-4 px-10"
                 elevation="2"
-                @click="submitForm"
-                :disabled="!isFormValid"
+                :disabled="!isFormValid || submitting"
               >
                 <b> Criar </b>
               </v-btn>
@@ -142,6 +141,7 @@ const locations = ref<any[]>([])
 const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const router = useRouter()
 const valid = ref(false)
+const submitting = ref(false)
 
 const errorMessage = ref<string | null>(null)
 const showError = ref(false)
@@ -159,6 +159,9 @@ const fetchLocationsData = async () => {
 }
 
 const submitForm = async () => {
+  if (submitting.value) return // Se já está enviando, não fazer nada
+  submitting.value = true
+
   if (
     !validateFields({
       name: eventForm.value.name,
@@ -173,6 +176,7 @@ const submitForm = async () => {
       status: 'upcoming'
     })
   ) {
+    submitting.value = false
     return
   }
 
@@ -196,6 +200,8 @@ const submitForm = async () => {
     console.error(error)
     errorMessage.value = 'Erro ao criar Evento!'
     showError.value = true
+  } finally {
+    submitting.value = false
   }
 }
 
