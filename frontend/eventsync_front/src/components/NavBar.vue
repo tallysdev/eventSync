@@ -38,16 +38,34 @@
           </v-col>
           <v-col cols="4" class="d-flex align-center justify-space-around">
             <v-btn>Crie seu evento</v-btn>
-            <v-btn>Acesse sua conta</v-btn>
-            <v-btn
-              class="text-none"
-              color="primary"
-              variant="flat"
-              style="border: 1px solid white"
-              rounded="xs"
-            >
-              <b>Cadastre-se</b>
-            </v-btn>
+            <!-- Conditionally display based on whether user is logged in -->
+            <template v-if="isAuthenticated">
+              <v-btn class="text-none" color="primary" variant="flat">
+                {{ userName }}
+              </v-btn>
+              <v-btn
+                class="text-none"
+                color="primary"
+                variant="flat"
+                style="border: 1px solid white"
+                rounded="xs"
+                @click="handleLogout"
+              >
+                <b>Logout</b>
+              </v-btn>
+            </template>
+            <template v-else>
+              <v-btn to="/login">Acesse sua conta</v-btn>
+              <v-btn
+                class="text-none"
+                color="primary"
+                variant="flat"
+                style="border: 1px solid white"
+                rounded="xs"
+              >
+                <b>Cadastre-se</b>
+              </v-btn>
+            </template>
           </v-col>
         </v-row>
       </v-container>
@@ -129,6 +147,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
+import { useRouter } from 'vue-router'
 
 // Sidebar state for mobile menu
 const dialog = ref(false)
@@ -152,4 +172,34 @@ const toggleSearchField = () => {
 const searchEvents = () => {
   console.log('Searching for events with query:', searchQuery.value)
 }
+
+// Authentication state
+const authStore = useAuthStore()
+const isAuthenticated = ref(authStore.isAuthenticated)
+const router = useRouter()
+
+// Função para extrair o primeiro nome
+const getFirstName = (fullName: string) => {
+  return fullName.split(' ')[0] // Divide o nome completo e retorna o primeiro nome
+}
+
+const userName = ref(getFirstName(authStore.getUser?.name || ''))
+
+// Watch for changes in authentication state
+authStore.$subscribe(() => {
+  isAuthenticated.value = authStore.isAuthenticated
+  userName.value = getFirstName(authStore.getUser?.name || '')
+})
+
+const handleLogout = () => {
+  authStore.logout() // Chama o método de logout
+  router.push('/')
+  setTimeout(() => {
+    router.go(0)
+  }, 100)
+}
+
+
 </script>
+
+<style scoped></style>
