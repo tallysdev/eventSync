@@ -30,8 +30,6 @@ urlpatterns = [
          name='sponsorship_list'),
     path('sponsorships/<int:pk>/',
          spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
-    path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
-    path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
 
 ]
 
