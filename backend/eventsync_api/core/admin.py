@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 from .models import ESUser, Local, Event, ThemeRoom, Sponsor, Sponsorship
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56323fd (fix: admin #42)
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
@@ -51,7 +55,6 @@ class EventAdmin(admin.ModelAdmin):
 class SponsorAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'email')
     search_fields = ('name', 'phone', 'email')
-
 
 @admin.register(Sponsorship)
 class SponsorshipAdmin(admin.ModelAdmin):
