@@ -64,10 +64,3 @@ class SponsorshipAdmin(admin.ModelAdmin):
     list_display = ('event', 'sponsor')
     list_filter = ('event', 'sponsor')
     search_fields = ('event_name', 'sponsor_name')
-
-@admin.register(ThemeRoom)
-class ThemeRoomAdmin(admin.ModelAdmin):
-    list_display = ('event', 'start_time', 'name', 'start_date', 'end_date', 'local', 'status', 'event_type')
-    list_filter = ('status', 'event_type', 'local')
-    search_fields = ('name', 'description',)
-    date_hierarchy = 'start_date'
