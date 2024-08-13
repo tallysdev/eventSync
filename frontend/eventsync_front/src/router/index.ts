@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SponsorsView from '@/views/SponsorsView.vue'
 
+import SponsorsView from '@/views/SponsorsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,14 +30,19 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/events/:id/theme-room',
-      name: 'theme-room',
-      component: () => import('../views/ThemeRoomView.vue')
+      path: '/sponsors',
+      name: 'sponsors',
+      component: SponsorsView
     },
     {
       path: '/sponsors',
       name: 'sponsors',
       component: SponsorsView
+    },
+    {
+      path: '/events/:id/theme-room',
+      name: 'theme-room',
+      component: () => import('../views/ThemeRoomView.vue')
     }
   ]
 })
