@@ -3,7 +3,7 @@
       <NavBar />
       <v-main class="flex-grow-1 pa-16 mb-10">
         <v-container fluid class="d-flex justify-center align-center" style="height: 100vh">
-          <v-card class="mx-auto pa-16 py-8 responsive-card" elevation="8" max-width="400" rounded="lg">
+          <v-card class="mx-auto pa-16 py-8 responsive-card" elevation="8" max-width="600" min-width="400" rounded="lg">
             <h3 class="text-subtitle-1 font-weight-bold">Login</h3>
             <v-responsive class="mx-auto pb-2" max-width="344">
               <v-text-field
@@ -101,5 +101,5 @@ const handleSubmit = async () => {
 
 </script>
   
-  <style scoped></style>
+<style scoped></style>
   
