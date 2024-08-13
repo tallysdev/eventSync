@@ -40,12 +40,12 @@
             <v-btn>Crie seu evento</v-btn>
             <!-- Conditionally display based on whether user is logged in -->
             <template v-if="isAuthenticated">
-              <v-btn class="text-none" color="primary" variant="flat">
+              <v-btn class="text-none" color="success" variant="flat">
                 {{ userName }}
               </v-btn>
               <v-btn
                 class="text-none"
-                color="primary"
+                color="primary-darken-1"
                 variant="flat"
                 style="border: 1px solid white"
                 rounded="xs"
