@@ -11,6 +11,7 @@ from .views import event_view as evtview
 from .views import theme_room_view as themerv
 from .views import sponsor_view as spview
 from .views import sponsorship_view as spsview
+from .views import theme_room_view as themerv
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -29,6 +30,9 @@ urlpatterns = [
          name='sponsorship_list'),
     path('sponsorships/<int:pk>/',
          spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
+    path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
+    path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
+
 ]
 
 # auth urls
