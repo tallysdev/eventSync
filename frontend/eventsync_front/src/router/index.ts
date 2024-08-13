@@ -35,7 +35,6 @@ const router = createRouter({
       component: SponsorsView
     },
     {
-
       path: '/events/:id/theme-room',
       name: 'theme-room',
       component: () => import('../views/ThemeRoomView.vue')
