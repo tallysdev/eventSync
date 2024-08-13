@@ -85,7 +85,7 @@ const handleSubmit = async () => {
       if (authStore.isAuthenticated) {
          setTimeout(() => {
            router.push('/')
-         }, 2000)
+         }, 1000)
       } else {
         console.error('Login falhou')
         errorMessage.value = 'Login falhou. Usuário ou senha incorretos.'

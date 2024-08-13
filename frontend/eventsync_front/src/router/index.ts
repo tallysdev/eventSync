@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SponsorsView from '@/views/SponsorsView.vue'
 import LoginView from '@/views/LoginView.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,9 @@ const router = createRouter({
     {
       path: '/sponsors',
       name: 'sponsors',
-      component: SponsorsView
+      component: SponsorsView,
+      // para views que sejam privadas usar esse exemplo
+      // meta: { requiresAuth: true }
     },
     {
       path: '/login',
@@ -36,5 +39,29 @@ const router = createRouter({
     }
   ]
 })
+
+router.beforeEach(async (to, from, next) => {
+  const authStore = useAuthStore() // Obtenha a instância do store de autenticação
+
+  await authStore.checkAuth() // Verifique a autenticação do usuário antes de continuar
+
+  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    // Se a rota requer autenticação e o usuário não está autenticado,
+    // redirecione para a página de login
+    next({ name: 'login' })
+  } else if (to.name === 'admin' && !authStore.hasAdminPerm) {
+    // Se a rota é a página de admin e o usuário não tem permissões de admin,
+    // redirecione para a página inicial ou exiba uma mensagem de erro
+    console.error('Usuário não tem permissão de administrador.')
+    // Você pode redirecionar para a página inicial assim:
+    next({ name: 'home' });
+    // Ou mostrar uma mensagem de erro e redirecionar para uma página relevante:
+    // next(false) // Isso impede a navegação para a página de admin
+  } else {
+    // Caso contrário, permita o acesso à rota
+    next()
+  }
+})
+
 
 export default router
