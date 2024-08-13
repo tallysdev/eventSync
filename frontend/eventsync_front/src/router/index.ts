@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import SponsorsView from '@/views/SponsorsView.vue'
 
 
 const router = createRouter({
@@ -13,7 +14,7 @@ const router = createRouter({
     {
       path: '/create-event',
       name: 'create-event',
-      component: () => import('../views/CreateEventPage.vue')
+      component: () => import('../views/EventPageView.vue')
     },
     {
       path: '/create-form',
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/events/:id/theme-room',
       name: 'theme-room',
       component: () => import('../views/ThemeRoomView.vue')
+    },
+    {
+      path: '/sponsors',
+      name: 'sponsors',
+      component: SponsorsView
     }
   ]
 })

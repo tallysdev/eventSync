@@ -17,13 +17,15 @@ phone_validator = RegexValidator(
     message=_("Phone number must be 11 digits.")
 )
 
+
 class ESUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_("email address"), unique=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
-    cpf = models.CharField(max_length=11, unique=True, validators=[cpf_validator])
+    cpf = models.CharField(max_length=11, unique=True,
+                           validators=[cpf_validator])
     name = models.CharField(max_length=150)
     birth_date = models.DateField()
     phone = models.CharField(max_length=11, validators=[phone_validator])
@@ -35,6 +37,7 @@ class ESUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
 
 class Local(models.Model):
     street_name = models.CharField(max_length=255)
@@ -78,8 +81,10 @@ class Event(models.Model):
     hours_quantity = models.IntegerField()
     description = models.TextField()
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
-    status = models.CharField(max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
-    event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
+    status = models.CharField(
+        max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
+    event_type = models.CharField(
+        max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
 
     class Meta:
         verbose_name = "Event"
@@ -114,3 +119,30 @@ class ThemeRoom(models.Model):
         # Ensure start_date and end_date are within the Event's date range
         if self.start_date < self.event.start_date or self.end_date > self.event.end_date:
             raise ValidationError('The start date and end date of the Theme Room must be within the Event\'s date range.')
+class Sponsor(models.Model):
+    name = models.CharField(max_length=100)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    phone = models.CharField(max_length=11, validators=[phone_validator])
+    email = models.EmailField(_("email address"), unique=True)
+    description = models.TextField()
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsors"
+        ordering = ['id']
+
+    def __str__(self):
+        return self.nome
+
+
+class Sponsorship(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    sponsor = models.ForeignKey(Sponsor, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Sponsor"
+        verbose_name_plural = "Sponsors"
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.sponsor.name} - {self.event.name}"

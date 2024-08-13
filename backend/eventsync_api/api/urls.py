@@ -9,6 +9,8 @@ from .views.root_view import ApiRootView
 from .views import locals_view as locv
 from .views import event_view as evtview
 from .views import theme_room_view as themerv
+from .views import sponsor_view as spview
+from .views import sponsorship_view as spsview
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -20,18 +22,26 @@ urlpatterns = [
     path('events/<int:pk>/', evtview.EventDetailView.as_view(), name='event_detail'),
     path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
     path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
-]
+    path('sponsors/', spview.SponsorListView.as_view(), name='sponsor_list'),
+    path('sponsors/<int:pk>/', spview.SponsorDetailView.as_view(),
+         name='sponsor_detail'),
+    path('sponsorships/', spsview.SponsorShipListView.as_view(),
+         name='sponsorship_list'),
+    path('sponsorships/<int:pk>/',
+         spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),]
 
-# auth urls 
+# auth urls
 urlpatterns += [
     path('register/', authv.RegisterView.as_view(), name='register'),
-    path('login/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/', jwt_views.TokenObtainPairView.as_view(),
+         name='token_obtain_pair'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 # doc urls
 urlpatterns += [
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
-    path('schema/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('schema/swagger/',
+         SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
