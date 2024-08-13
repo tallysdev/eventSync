@@ -52,28 +52,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useAuthStore, type User } from '@/stores/auth'
+import { useAuthStore } from '@/stores/auth'
 import { emailValidation, passwordValidation } from '@/utils/validation'
 import NavBar from '../../components/NavBar.vue'
 import FooterVue from '../../components/Footer.vue'
-
-const props = defineProps({
-  dialog: {
-    type: Boolean,
-    required: true
-  }
-})
-
-const emit = defineEmits(['update:dialog', 'login-success'])
+import {type User} from '@/types/users'
 
 const router = useRouter()
 const authStore = useAuthStore()
 const visible = ref(false)
 const email = ref('')
 const password = ref('')
-const valid = ref(false)
 
 const rules = {
   email: emailValidation,
@@ -82,14 +73,6 @@ const rules = {
 
 const errorMessage = ref<string | null>(null)
 const showError = ref(false)
-
-const closeDialog = () => {
-  emit('update:dialog', false)
-}
-
-const updateDialog = (value: boolean) => {
-  emit('update:dialog', value)
-}
 
 const handleSubmit = async () => {
   if (email.value && password.value) {
@@ -100,11 +83,9 @@ const handleSubmit = async () => {
       }
       await authStore.login(user)
       if (authStore.isAuthenticated) {
-        emit('login-success', 'Login realizado com sucesso!')
-        closeDialog()
-        // setTimeout(() => {
-        //   router.push('/')
-        // }, 2000)
+         setTimeout(() => {
+           router.push('/')
+         }, 2000)
       } else {
         console.error('Login falhou')
         errorMessage.value = 'Login falhou. Usuário ou senha incorretos.'
@@ -118,17 +99,6 @@ const handleSubmit = async () => {
   }
 }
 
-watch(
-  () => props.dialog,
-  (newValue) => {
-    if (!newValue) {
-      email.value = ''
-      password.value = ''
-      showError.value = false
-      errorMessage.value = null
-    }
-  }
-)
 </script>
   
   <style scoped></style>
