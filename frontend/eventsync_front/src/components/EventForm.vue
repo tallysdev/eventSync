@@ -78,7 +78,7 @@
                 </div>
 
                 <v-btn @click="addQuestion" color="primary"  class="mt-4">Adicionar Pergunta</v-btn>
-                <v-btn color="primary" class="mt-4">Salvar Formulário</v-btn>
+                <v-btn @click="submitForm" color="primary" class="mt-4">Salvar Formulário</v-btn>
                 
             </v-form>
 
@@ -100,6 +100,8 @@ import FooterVue from '../components/Footer.vue'
 import FormPreview from '../components/FormPreview.vue'
 import type { QuestionCreate } from '@/types/types';
 import { ref } from 'vue'
+import { addForm } from '@/services/formService';
+import { addQuestions } from '@/services/questionService';
 
 const questions = ref<QuestionCreate[]>([{ text: '', type: 'Discursiva', optionList: [], isValid: true}])
 
@@ -159,6 +161,44 @@ const validateQuestion = (index: number) => {
 const validateQuestions = () => {
     questions.value.forEach((_: any, index: number) => validateQuestion(index))
 }
+
+const submitForm = async () => {
+    validateQuestions();
+    
+    if (questions.value.some((question: any) => !question.isValid)) {
+        alert('Preencha todas as perguntas corretamente');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', "Avaliação do Evento 1");
+    formData.append('description', "Forms do evento 1");
+
+    //Isso vai ser pego depois do id do evento clicado e do usuário logado
+    formData.append('event', 1);
+    formData.append('user', 1);
+
+    try {
+        const formResponse = await addForm(formData);
+        const formId = formResponse.data.id;
+
+        for (const question of questions.value) {
+            const questionData = new FormData();
+            questionData.append('text', question.text);
+            questionData.append('type', question.type);
+            questionData.append('options', JSON.stringify(question.optionList));
+            questionData.append('form', formId);
+
+            await addQuestions(questionData);
+        }
+
+        alert('Formulário salvo com sucesso!');
+    } catch (error) {
+        alert('Erro ao salvar o formulário e questões. Por favor, tente novamente.');
+    }
+};
+
+
 
 </script>
 
