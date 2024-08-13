@@ -78,6 +78,16 @@ const submitForm = () => {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.8rem;
+<<<<<<< HEAD
+=======
+}
+
+.field-size {
+    max-width: 100%; 
+    width: 100%;
+    margin-bottom: auto;
+    font-size: 1.2rem;
+>>>>>>> c247bdd (feat: add of insert questions #43)
 }
 
 .question-card {
