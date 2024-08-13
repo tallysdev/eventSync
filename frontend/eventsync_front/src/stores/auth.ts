@@ -19,6 +19,7 @@ export const useAuthStore = defineStore({
     isAuthenticated: (state): boolean => !!state.token,
     hasAdminPerm: (state): boolean => !!state.profile?.is_staff,
     hasProfile: (state): boolean => !!state.profile,
+    getToken: (state): String | null => state.token,
   },
   actions: {
     async login(user: User) {
