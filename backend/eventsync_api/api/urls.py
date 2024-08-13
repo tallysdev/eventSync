@@ -29,7 +29,7 @@ urlpatterns = [
     path('sponsorships/<int:pk>/',
          spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
      path('forms/', formview.FormsRegisterList.as_view(), name='form_list'),
-     path('forms/<int:pk>/', formview.FormsRegisterDetail.as_view(), name='forms-detail'),
+     path('forms/<int:pk>/', formview.FormsRegisterDetail.as_view(), name='forms_detail'),
      path('questions/', qview.QuestionList.as_view(), name='question_list'),
      path('questions/<int:pk>/', qview.QuestionDetail.as_view(), name='question_detail'),     
      
