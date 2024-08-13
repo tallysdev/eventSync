@@ -147,3 +147,4 @@ class Sponsorship(models.Model):
 
     def __str__(self):
         return f"{self.sponsor.name} - {self.event.name}"
+
