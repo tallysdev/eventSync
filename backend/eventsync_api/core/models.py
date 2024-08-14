@@ -94,16 +94,21 @@ class Event(models.Model):
 
 class ThemeRoom(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    start_time = models.TimeField()
     
-    name = models.CharField(max_length=150)
     start_date = models.DateField()
     end_date = models.DateField()
+    start_time = models.TimeField()
+    
+    speaker = models.CharField(max_length=100)
+    name = models.CharField(max_length=150)
+    description = models.TextField()
+    hours_quantity = models.IntegerField()
+    audiences = models.TextField()
+    
     max_quantity = models.IntegerField()
     min_quantity = models.IntegerField()
-    hours_quantity = models.IntegerField()
-    description = models.TextField()
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
+    
     status = models.CharField(max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
     event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
 
