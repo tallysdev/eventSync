@@ -132,8 +132,8 @@
             </template>
             <v-list-item-title>Acesse sua conta</v-list-item-title>
           </v-list-item>
-
-          <v-list-item v-if="!isAuthenticated" to="/register">
+          <!-- login por enquanto mas vai ser resgister -->
+          <v-list-item v-if="!isAuthenticated" to="/login">
             <template v-slot:prepend>
               <v-icon>mdi-account-plus</v-icon>
             </template>
