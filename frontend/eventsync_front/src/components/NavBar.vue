@@ -37,7 +37,7 @@
             ></v-select>
           </v-col>
           <v-col cols="4" class="d-flex align-center justify-space-around">
-            <v-btn>Crie seu evento</v-btn>
+            <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
             <!-- Conditionally display based on whether user is logged in -->
             <template v-if="isAuthenticated">
               <v-btn class="text-none" color="success" variant="flat">
@@ -98,7 +98,14 @@
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <v-card>
         <v-toolbar flat color="secondary">
-          <v-toolbar-title>Mobile Menu</v-toolbar-title>
+          <v-toolbar-title>
+            <template v-if="isAuthenticated">
+              Olá, {{ userName }}
+            </template>
+            <template v-else>
+              Mobile Menu
+            </template>
+          </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialog = false">
             <v-icon>mdi-close</v-icon>
@@ -111,20 +118,34 @@
             </template>
             <v-list-item-title>Pesquisar eventos</v-list-item-title>
           </v-list-item>
-          <v-list-item v-for="(item, index) in menuItems" :key="index" @click="dialog = false">
+
+          <v-list-item @click="() => router.push({ name: 'create-event' })">
             <template v-slot:prepend>
-              <v-icon :icon="item.icon"></v-icon>
+              <v-icon>mdi-plus</v-icon>
             </template>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
+            <v-list-item-title>Crie seu evento</v-list-item-title>
           </v-list-item>
-          <v-list-group>
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" prepend-icon="mdi-map-marker" title="Localizações"></v-list-item>
+
+          <v-list-item v-if="!isAuthenticated" to="/login">
+            <template v-slot:prepend>
+              <v-icon>mdi-login</v-icon>
             </template>
-            <v-list-item v-for="(location, index) in locations" :key="index">
-              <v-list-item-title>{{ location }}</v-list-item-title>
-            </v-list-item>
-          </v-list-group>
+            <v-list-item-title>Acesse sua conta</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item v-if="!isAuthenticated" to="/register">
+            <template v-slot:prepend>
+              <v-icon>mdi-account-plus</v-icon>
+            </template>
+            <v-list-item-title>Cadastre-se</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item v-if="isAuthenticated" @click="handleLogout">
+            <template v-slot:prepend>
+              <v-icon>mdi-logout</v-icon>
+            </template>
+            <v-list-item-title>Logout</v-list-item-title>
+          </v-list-item>
         </v-list>
         <v-card v-if="showSearchField" class="mx-4 my-2 pa-6">
           <v-text-field
@@ -198,7 +219,6 @@ const handleLogout = () => {
     router.go(0)
   }, 100)
 }
-
 
 </script>
 
