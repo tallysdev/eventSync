@@ -125,7 +125,14 @@
             </template>
             <v-list-item-title>Crie seu evento</v-list-item-title>
           </v-list-item>
-
+          <v-list-group>
+            <template v-slot:activator="{ props }">
+              <v-list-item v-bind="props" prepend-icon="mdi-map-marker" title="Localizações"></v-list-item>
+            </template>
+            <v-list-item v-for="(location, index) in locations" :key="index">
+              <v-list-item-title>{{ location }}</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
           <v-list-item v-if="!isAuthenticated" to="/login">
             <template v-slot:prepend>
               <v-icon>mdi-login</v-icon>
