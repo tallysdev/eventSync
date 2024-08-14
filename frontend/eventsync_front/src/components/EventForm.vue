@@ -191,7 +191,8 @@ const submitForm = async () => {
 
             await addQuestions(questionData);
         }
-
+        
+        questions.value = [{ text: '', type: 'Discursiva', optionList: [], isValid: true}];
         alert('Formulário salvo com sucesso!');
     } catch (error) {
         alert('Erro ao salvar o formulário e questões. Por favor, tente novamente.');
