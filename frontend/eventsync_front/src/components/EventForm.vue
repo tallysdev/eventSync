@@ -98,7 +98,7 @@
 import NavBar from '../components/NavBar.vue'
 import FooterVue from '../components/Footer.vue'
 import FormPreview from '../components/FormPreview.vue'
-import type { QuestionCreate } from '@/types/types';
+import type { QuestionCreate } from '@/types/questions';
 import { ref } from 'vue'
 import { addForm } from '@/services/formService';
 import { addQuestions } from '@/services/questionService';
