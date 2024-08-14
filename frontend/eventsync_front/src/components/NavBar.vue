@@ -179,13 +179,6 @@ const searchQuery = ref('')
 // Locations for the select dropdown
 const locations = ref(['Localização 1', 'Localização 2', 'Localização 3'])
 
-// Menu items for the navigation drawer
-const menuIstem = ref([
-  { text: 'Crie seu evento', icon: 'mdi-plus' },
-  { text: 'Acesse sua conta', icon: 'mdi-login' },
-  { text: 'Cadastre-se', icon: 'mdi-account-plus' }
-])
-
 const toggleSearchField = () => {
   showSearchField.value = !showSearchField.value
 }
