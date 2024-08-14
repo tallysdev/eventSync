@@ -35,10 +35,20 @@ const router = createRouter({
       component: SponsorsView
     },
     {
-      path: '/events/:id/theme-room',
-      name: 'theme-room',
-      component: () => import('../views/ThemeRoomView.vue')
-    }
+      path: '/events/:id/create/theme-room',
+      name: 'create-theme-room',
+      component: () => import('../views/ThemeRoomViews/CreateViewTR.vue')
+    },
+    {
+      path: '/events/:id/list/theme-room',
+      name: 'list-theme-room',
+      component: () => import('../views/ThemeRoomViews/ListViewTR.vue')
+    },
+    {
+      path: '/events/:id/edit/theme-room/:id',
+      name: 'edit-theme-room',
+      component: () => import('../views/ThemeRoomViews/EditViewTR.vue')
+    },
   ]
 })
 
