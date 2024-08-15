@@ -12,6 +12,7 @@ from .views import sponsor_view as spview
 from .views import sponsorship_view as spsview
 from .views import form_view as formview
 from .views import question_view as qview
+from .views import event_signup_view as evtsigview
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -31,8 +32,8 @@ urlpatterns = [
      path('forms/', formview.FormsRegisterList.as_view(), name='form_list'),
      path('forms/<int:pk>/', formview.FormsRegisterDetail.as_view(), name='forms_detail'),
      path('questions/', qview.QuestionList.as_view(), name='question_list'),
-     path('questions/<int:pk>/', qview.QuestionDetail.as_view(), name='question_detail'),     
-     
+     path('questions/<int:pk>/', qview.QuestionDetail.as_view(), name='question_detail'),
+         path('events/signup/', evtsigview.EventSignupView.as_view(), name='event_signup'),
 ]
 
 # auth urls
