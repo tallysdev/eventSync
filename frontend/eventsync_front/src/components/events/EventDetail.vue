@@ -4,9 +4,9 @@
       <v-col cols="12" lg="10">
         <!-- Event Header Section -->
         <v-row class="mb-4 align-center">
-          <v-col cols="6" class="text-start">
-            <h1 class="text-h4 mb-2">{{ event.name }}</h1>
-            <div class="d-flex align-center mb-2">
+          <v-col cols="12" md="6" class="text-start">
+            <h1 class="text-h4 mb-4">{{ event.name }}</h1>
+            <div class="d-flex align-center mb-4">
               <v-icon class="mr-1">mdi-calendar</v-icon>
               <span>{{ formatDate(event.start_date) }} - {{ formatDate(event.end_date) }}</span>
             </div>
@@ -18,8 +18,15 @@
               >
             </div>
           </v-col>
-          <v-col cols="6" class="d-flex justify-end align-end">
-            <v-btn color="primary" class="text-no-wrap">Inscrever-se</v-btn>
+          <v-col cols="12" md="6" class="d-flex justify-end align-end">
+            <v-btn
+              v-if="canSubscribe"
+              @click="handleSubscription"
+              color="primary"
+              class="text-no-wrap"
+            >
+              <b> Inscrever-se </b>
+            </v-btn>
           </v-col>
         </v-row>
 
@@ -37,22 +44,38 @@
         </v-alert>
       </v-col>
     </v-row>
+
+    <!-- Snackbar -->
+    <v-snackbar v-model="showSnackbar" :color="snackbarColor" timeout="4000" top>
+      {{ snackbarMessage }}
+    </v-snackbar>
   </v-container>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { fetchEvent } from '@/services/eventService'
-import { fetchLocal } from '@/services/eventService'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth'
+import { fetchEvent, fetchLocal, signupForEvent } from '@/services/eventService'
 import { type Event } from '@/types/event'
-import { type Local } from '@/types/event'
+import { type Local } from '@/types/local'
+import type { AxiosError } from 'axios'
 
 const route = useRoute()
+const router = useRouter()
+const authStore = useAuthStore()
 const event = ref<Event | null>(null)
 const local = ref<Local | null>(null)
 
-// Fetch event detail based on route parameter
+const showSnackbar = ref(false)
+const snackbarMessage = ref('')
+const snackbarColor = ref('')
+
+// Computed property to check if the event is ongoing or upcoming
+const canSubscribe = computed(() => {
+  return event.value?.status === 'ongoing' || event.value?.status === 'upcoming'
+})
+
 const fetchEventDetailData = async () => {
   const eventId = Number(route.params.id)
   try {
@@ -64,12 +87,10 @@ const fetchEventDetailData = async () => {
   }
 }
 
-// Fetch local detail based on event's local_id
 const fetchLocalData = async (localId: string) => {
   try {
     const localIdNumber = Number(localId)
     const response = await fetchLocal(localIdNumber)
-    console.log(response, localIdNumber)
     local.value = response.data
   } catch (error) {
     console.error('Error fetching local detail:', error)
@@ -82,6 +103,47 @@ const formatDate = (date: string) => {
     hour: '2-digit',
     minute: '2-digit'
   })
+}
+
+const handleSubscription = async () => {
+  if (authStore.isAuthenticated) {
+    try {
+      await signupForEvent(event.value.id, authStore.getUser.id)
+      snackbarMessage.value = 'Inscrição realizada com sucesso!'
+      snackbarColor.value = 'success'
+    } catch (error) {
+      console.error('Error signing up for event:', error)
+      const axiosError = error as AxiosError
+
+      interface ErrorResponse {
+        non_field_errors?: string[]
+      }
+
+      if (axiosError.response?.data) {
+        const responseData = axiosError.response.data as ErrorResponse
+
+        if (responseData.non_field_errors) {
+          if (
+            responseData.non_field_errors.includes(
+              'Os campos user, event devem criar um set único.'
+            )
+          ) {
+            snackbarMessage.value = 'Usuário já está cadastrado nesse evento.'
+          }
+        }
+      } else {
+        snackbarMessage.value = 'Erro ao realizar inscrição.'
+      }
+      snackbarColor.value = 'error'
+    }
+  } else {
+    snackbarMessage.value = 'Você precisa estar logado para se inscrever.'
+    snackbarColor.value = 'error'
+    setTimeout(() => {
+      router.push('/login')
+    }, 2000)
+  }
+  showSnackbar.value = true
 }
 
 onMounted(() => {
