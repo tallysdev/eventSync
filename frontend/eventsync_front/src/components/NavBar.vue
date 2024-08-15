@@ -63,7 +63,7 @@
                 style="border: 1px solid white"
                 rounded="xs"
               >
-                <b>Cadastre-se</b>
+                <v-btn to="/register">Cadastre-se</v-btn>
               </v-btn>
             </template>
           </v-col>
@@ -139,8 +139,8 @@
             </template>
             <v-list-item-title>Acesse sua conta</v-list-item-title>
           </v-list-item>
-          <!-- login por enquanto mas vai ser resgister -->
-          <v-list-item v-if="!isAuthenticated" to="/login">
+
+          <v-list-item v-if="!isAuthenticated" to="/register">
             <template v-slot:prepend>
               <v-icon>mdi-account-plus</v-icon>
             </template>
