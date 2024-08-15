@@ -12,6 +12,8 @@ from .views import theme_room_view as themerv
 from .views import sponsor_view as spview
 from .views import sponsorship_view as spsview
 from .views import theme_room_view as themerv
+from .views import form_view as formview
+from .views import question_view as qview
 
 urlpatterns = [
     path('', ApiRootView.as_view(), name='api-root'),
@@ -30,7 +32,6 @@ urlpatterns = [
          name='sponsorship_list'),
     path('sponsorships/<int:pk>/',
          spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
-
 ]
 
 # auth urls

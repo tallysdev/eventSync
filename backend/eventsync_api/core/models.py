@@ -151,3 +151,36 @@ class Sponsorship(models.Model):
 
     def __str__(self):
         return f"{self.sponsor.name} - {self.event.name}"
+
+class FormsRegister(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.TextField()
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    user = models.ForeignKey(ESUser, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Form"
+        verbose_name_plural = "Forms"
+        ordering = ['id']
+
+    def __str__(self):
+        return self.name
+
+QUESTION_TYPES = [
+    ('Discursiva', 'Discursiva'),
+    ('Múltipla escolha', 'Múltipla escolha'),
+    ('Objetiva', 'Objetiva'),
+]
+ 
+class Question(models.Model):
+    text = models.TextField()
+    type = models.CharField(max_length=20, choices=QUESTION_TYPES, default='Discursiva')
+    options = models.JSONField(default=list, blank=True)    
+    form = models.ForeignKey(FormsRegister, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = "Question"
+        verbose_name_plural = "Questions"
+        ordering = ['id']
+
+    def __str__(self):
+        return self.text

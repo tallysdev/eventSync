@@ -25,7 +25,7 @@
 </template>
   
 <script setup lang="ts"> 
-import type { QuestionView } from '@/types/types';
+import type { QuestionView } from '@/types/questions';
 
 const props = defineProps<{
     questions: QuestionView[]
