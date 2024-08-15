@@ -1,9 +1,21 @@
 import api from '@/services/api'
+import { useAuthStore } from '@/stores/auth'
+import { AxiosError } from 'axios'
 
-export const fetchEvents = (page: number, pageSize: number) => {
+export const fetchEvents = (
+  page: number = 1,
+  pageSize: number = 10,
+  status?: string,
+  type?: string,
+  name?: string
+) => {
   return api.get('events/', {
-    params: { page, page_size: pageSize }
+    params: { page, page_size: pageSize, status, event_type: type, name }
   })
+}
+
+export const fetchEvent = (id: number) => {
+  return api.get(`events/${id}/`)
 }
 
 export const addEvent = (formData: FormData) => {
@@ -13,5 +25,25 @@ export const addEvent = (formData: FormData) => {
 }
 
 export const fetchLocations = () => {
-  return api.get('locals');
+  return api.get('locals')
+}
+
+export const fetchLocal = (id: number) => {
+  return api.get(`locals/${id}/`)
+}
+
+export const signupForEvent = async (eventId: number, userId: number) => {
+  const { token } = useAuthStore()
+  try {
+    const response = await api.post(`events/signup/`, null, {
+      params: { event_id: eventId, user_id: userId },
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+
+    console.error('Error signing up for event:', axiosError.response?.data || axiosError.message)
+    throw error
+  }
 }
