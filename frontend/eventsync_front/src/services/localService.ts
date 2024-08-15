@@ -1,7 +1,7 @@
 import api from '@/services/api'
 
 export const fetchLocations = (page: number, pageSize: number) => {
-  return api.get('events/', {
+  return api.get('locals/', {
     params: { page, page_size: pageSize }
   })
 }
