@@ -1,7 +1,41 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" lg="10">
-      <h2 class="text-h4 text-start mb-6 font-weight-bold">Eventos</h2>
+      <!-- New row for filters and header -->
+      <v-row class="mb-6 align-center">
+        <v-col cols="6" class="text-start">
+          <h2 class="text-h4 font-weight-bold">Eventos</h2>
+        </v-col>
+        <v-col cols="6" class="d-flex justify-end">
+          <v-text-field
+            v-model="searchQuery"
+            label="Buscar Evento"
+            dense
+            outlined
+            hide-details
+            class="mr-4"
+            @keydown="handleKeydown"
+          ></v-text-field>
+          <v-select
+            v-model="selectedStatus"
+            :items="statuses"
+            label="Status"
+            dense
+            outlined
+            hide-details
+            class="mr-4"
+          ></v-select>
+          <v-select
+            v-model="selectedType"
+            :items="eventTypes"
+            label="Tipo de Evento"
+            dense
+            outlined
+            hide-details
+          ></v-select>
+        </v-col>
+      </v-row>
+
       <template v-if="loading">
         <v-progress-circular indeterminate color="primary"></v-progress-circular>
       </template>
@@ -12,13 +46,15 @@
       </template>
       <v-row v-else>
         <v-col cols="12" md="6" v-for="event in events" :key="event.id">
-          <v-card class="event-card pa-4 d-flex flex-column align-start">
+          <v-card
+            class="event-card pa-4 d-flex flex-column align-start"
+            @click="goToEvent(event.id)"
+          >
             <v-card-title>{{ event.name }}</v-card-title>
             <v-card-subtitle>
               {{ formatDate(event.start_date) }} - {{ formatDate(event.end_date) }}
             </v-card-subtitle>
             <v-card-text>{{ event.description }}</v-card-text>
-            <!-- Applied Vuetify gap class for chips -->
             <div class="d-flex pl-3">
               <v-chip :color="getStatusColor(event.status)" class="mr-2" variant="elevated">
                 {{ event.status }}
@@ -49,6 +85,9 @@
 import { fetchEvents } from '@/services/eventService'
 import { ref, onMounted, watch, nextTick } from 'vue'
 import { type Event } from '@/types/event'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const events = ref<Event[]>([])
 const currentPage = ref(1)
@@ -56,8 +95,16 @@ const totalPages = ref(1)
 const itemsPerPage = 6
 const loading = ref(false)
 const snackbar = ref(false)
+const searchQuery = ref('')
 const snackbarMessage = ref('')
 const snackbarColor = ref('')
+
+// Filter variables
+const selectedStatus = ref<string | null>(null)
+const selectedType = ref<string | null>(null)
+
+const statuses = ['upcoming', 'ongoing', 'completed', 'cancelled']
+const eventTypes = ['conference', 'workshop', 'seminar', 'meetup']
 
 // Fetch events data
 const fetchEventsData = async () => {
@@ -70,10 +117,15 @@ const fetchEventsData = async () => {
   }, 10000) // 10 seconds timeout
 
   try {
-    const response = await fetchEvents(currentPage.value, itemsPerPage)
+    const response = await fetchEvents(
+      currentPage.value,
+      itemsPerPage,
+      selectedStatus.value,
+      selectedType.value,
+      searchQuery.value
+    )
     events.value = response.data.results
     totalPages.value = Math.ceil(response.data.count / itemsPerPage)
-    console.log(totalPages.value)
     await nextTick()
     clearTimeout(loadingTimeout)
   } catch (error) {
@@ -83,6 +135,12 @@ const fetchEventsData = async () => {
     snackbar.value = true
   } finally {
     loading.value = false
+  }
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Enter') {
+    fetchEventsData()
   }
 }
 
@@ -107,11 +165,15 @@ const getStatusColor = (status: string) => {
   }
 }
 
+const goToEvent = (id: number) => {
+  router.push(`/events/${id}`)
+}
+
 onMounted(() => {
   fetchEventsData()
 })
 
-watch(currentPage, () => {
+watch([currentPage, selectedStatus, selectedType], () => {
   fetchEventsData()
 })
 </script>
