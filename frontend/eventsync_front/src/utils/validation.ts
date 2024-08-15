@@ -1,35 +1,35 @@
 
 // Lista de siglas de estados válidos
 // Adiciona um mapeamento de estados para CEPs padrões
-export const defaultCEPs = {
-  'AC': '69900-000',
-  'AL': '57000-000',
-  'AP': '68900-000',
-  'AM': '69000-000',
-  'BA': '40000-000',
-  'CE': '60000-000',
-  'DF': '70000-000',
-  'ES': '29000-000',
-  'GO': '74000-000',
-  'MA': '65000-000',
-  'MT': '78000-000',
-  'MS': '79000-000',
-  'MG': '30000-000',
-  'PA': '66000-000',
-  'PB': '58000-000',
-  'PR': '80000-000',
-  'PE': '50000-000',
-  'PI': '64000-000',
-  'RJ': '20000-000',
-  'RN': '59000-000',
-  'RS': '90000-000',
-  'RO': '76800-000',
-  'RR': '69300-000',
-  'SC': '88000-000',
-  'SP': '01000-000',
-  'SE': '49000-000',
-  'TO': '77000-000'
-};
+export const UFs = [
+  { value: 'AC', label: 'Acre' },
+  { value: 'AL', label: 'Alagoas' },
+  { value: 'AP', label: 'Amapá' },
+  { value: 'AM', label: 'Amazonas' },
+  { value: 'BA', label: 'Bahia' },
+  { value: 'CE', label: 'Ceará' },
+  { value: 'DF', label: 'Distrito Federal' },
+  { value: 'ES', label: 'Espírito Santo' },
+  { value: 'GO', label: 'Goiás' },
+  { value: 'MA', label: 'Maranhão' },
+  { value: 'MT', label: 'Mato Grosso' },
+  { value: 'MS', label: 'Mato Grosso do Sul' },
+  { value: 'MG', label: 'Minas Gerais' },
+  { value: 'PA', label: 'Pará' },
+  { value: 'PB', label: 'Paraíba' },
+  { value: 'PR', label: 'Paraná' },
+  { value: 'PE', label: 'Pernambuco' },
+  { value: 'PI', label: 'Piauí' },
+  { value: 'RJ', label: 'Rio de Janeiro' },
+  { value: 'RN', label: 'Rio Grande do Norte' },
+  { value: 'RS', label: 'Rio Grande do Sul' },
+  { value: 'RO', label: 'Rondônia' },
+  { value: 'RR', label: 'Roraima' },
+  { value: 'SC', label: 'Santa Catarina' },
+  { value: 'SP', label: 'São Paulo' },
+  { value: 'SE', label: 'Sergipe' },
+  { value: 'TO', label: 'Tocantins' }
+];
 
 export const emailValidation = (value: string): string | true => {
   if (!value) {
@@ -92,16 +92,18 @@ export const requiredValidation = (value: string): string | true => {
   return true;
 }
 
-// Função para validar se uma string não é vazia
-export const isNotEmpty = (value: string): boolean => {
-  return value.trim().length > 0;
-};
+export function isNotEmpty(value: any): boolean {
+  // Verifica se o valor é uma string e não está vazio
+  return typeof value === 'string' && value.trim().length > 0;
+}
 
-// Função para validar se o número da rua é um número
-export const isValidStreetNumber = (value: string): boolean => {
-  return /^\d+$/.test(value);
-};
 
+export const validateNumberInput = (value: string): string | null => {
+  if (!/^\d+$/.test(value)) {
+    return 'O campo deve conter apenas números.';
+  }
+  return null;
+};
 
 // Função para validar o CEP
 export const isValidCEP = (value: string): boolean => {
