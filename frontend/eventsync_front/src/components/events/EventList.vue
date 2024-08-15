@@ -3,17 +3,17 @@
     <v-col cols="12" lg="10">
       <!-- New row for filters and header -->
       <v-row class="mb-6 align-center">
-        <v-col cols="6" class="text-start">
+        <v-col cols="12" sm="6" class="text-start">
           <h2 class="text-h4 font-weight-bold">Eventos</h2>
         </v-col>
-        <v-col cols="6" class="d-flex justify-end">
+        <v-col cols="12" sm="6" class="d-flex justify-end flex-column flex-sm-row">
           <v-text-field
             v-model="searchQuery"
             label="Buscar Evento"
             dense
             outlined
             hide-details
-            class="mr-4"
+            class="mr-sm-4 mb-4 mb-sm-0"
             @keydown="handleKeydown"
           ></v-text-field>
           <v-select
@@ -23,7 +23,7 @@
             dense
             outlined
             hide-details
-            class="mr-4"
+            class="mr-sm-4 mb-4 mb-sm-0"
           ></v-select>
           <v-select
             v-model="selectedType"
@@ -103,8 +103,21 @@ const snackbarColor = ref('')
 const selectedStatus = ref<string | null>(null)
 const selectedType = ref<string | null>(null)
 
-const statuses = ['upcoming', 'ongoing', 'completed', 'cancelled']
-const eventTypes = ['conference', 'workshop', 'seminar', 'meetup']
+const statuses = [
+  { title: 'Todos', value: null },
+  { title: 'Próximos', value: 'upcoming' },
+  { title: 'Em andamento', value: 'ongoing' },
+  { title: 'Concluídos', value: 'completed' },
+  { title: 'Cancelados', value: 'cancelled' }
+]
+
+const eventTypes = [
+  { title: 'Todos', value: null },
+  { title: 'Conferência', value: 'conference' },
+  { title: 'Oficina', value: 'workshop' },
+  { title: 'Seminário', value: 'seminar' },
+  { title: 'Encontro', value: 'meetup' }
+]
 
 // Fetch events data
 const fetchEventsData = async () => {
@@ -138,19 +151,19 @@ const fetchEventsData = async () => {
   }
 }
 
-const handleKeydown = (event: KeyboardEvent) => {
+const handleKeydown = (event: KeyboardEvent): void => {
   if (event.key === 'Enter') {
     fetchEventsData()
   }
 }
 
 // Format the date to a more readable format
-const formatDate = (date: string) => {
+const formatDate = (date: string): string => {
   return new Date(date).toLocaleDateString()
 }
 
 // Get the chip color based on event status
-const getStatusColor = (status: string) => {
+const getStatusColor = (status: string): string => {
   switch (status) {
     case 'upcoming':
       return 'yellow'
@@ -165,7 +178,7 @@ const getStatusColor = (status: string) => {
   }
 }
 
-const goToEvent = (id: number) => {
+const goToEvent = (id: number): void => {
   router.push(`/events/${id}`)
 }
 
