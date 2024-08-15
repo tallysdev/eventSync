@@ -22,11 +22,11 @@ export const passwordValidation = (value: string): string | true => {
   return true;
 };
 
-export const confirmPasswordValidation = (password: string) => (value: string): string | true => {
-  if (!value) {
+export const confirmPasswordValidation = (password1: string, password2: string): string | true => {
+  if (!password2) {
     return 'Confirmação de senha é necessária';
   }
-  if (value !== password) {
+  if (password2 !== password1) {
     return 'As senhas não coincidem';
   }
   return true;

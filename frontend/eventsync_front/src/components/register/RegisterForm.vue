@@ -2,9 +2,9 @@
     <v-app class="d-flex flex-column h-100 w-100">
       <NavBar />
       <v-main class="flex-grow-1 pa-16 mb-10">
-        <v-container fluid class="d-flex justify-center align-center" style="height: 100vh">
+        <v-container fluid class="pa-6 d-flex flex-column align-center">
           <v-card class="mx-auto pa-16 py-8 responsive-card" elevation="8" max-width="600" min-width="400" rounded="lg">
-            <h3 class="text-subtitle-1 font-weight-bold">Registro</h3>
+            <h3 class="text-subtitle-1 font-weight-bold mx-auto">Registro</h3>
   
             <v-responsive class="mx-auto pb-2" max-width="344">
               <v-text-field
@@ -21,8 +21,8 @@
               <v-text-field
                 v-model="cpf"
                 density="compact"
-                placeholder="CPF"
-                prepend-inner-icon="mdi-account-card-details-outline"
+                placeholder="CPF - apenas numeros"
+                prepend-inner-icon="mdi-account"
                 variant="outlined"
                 :rules="[rules.cpf]"
               ></v-text-field>
@@ -54,7 +54,7 @@
               <v-text-field
                 v-model="phone"
                 density="compact"
-                placeholder="Telefone"
+                placeholder="Telefone - apenas numeros"
                 prepend-inner-icon="mdi-phone"
                 variant="outlined"
                 :rules="[rules.phone]"
@@ -85,7 +85,7 @@
                 prepend-inner-icon="mdi-lock-outline"
                 variant="outlined"
                 @click:append-inner="visible = !visible"
-                :rules="[rules.confirmPassword]"
+                :rules="[confirmPasswordRule]"
               ></v-text-field>
             </v-responsive>
   
@@ -139,7 +139,7 @@
     birthDate: (value: string) => !!value || 'Data de nascimento é necessária',
     phone: isValidPhoneNumber,
     password: passwordValidation,
-    confirmPassword: confirmPasswordValidation(password.value)
+    confirmPassword: confirmPasswordValidation,
   }
   
   const errorMessage = ref<string | null>(null)
@@ -154,7 +154,7 @@
       rules.birthDate(birthDate.value) === true &&
       rules.phone(phone.value) === true &&
       rules.password(password.value) === true &&
-      rules.confirmPassword(password2.value) === true
+      rules.confirmPassword(password.value, password2.value) === true
     )
   })
   
@@ -179,6 +179,12 @@
       }
     }
   }
+
+// Dentro do seu script
+const confirmPasswordRule = computed(() => {
+  return () => rules.confirmPassword(password.value, password2.value)
+})
+
   
   </script>
   
