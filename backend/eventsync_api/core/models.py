@@ -138,11 +138,11 @@ QUESTION_TYPES = [
     ('Múltipla escolha', 'Múltipla escolha'),
     ('Objetiva', 'Objetiva'),
 ]
- 
+
 class Question(models.Model):
     text = models.TextField()
     type = models.CharField(max_length=20, choices=QUESTION_TYPES, default='Discursiva')
-    options = models.JSONField(default=list, blank=True)    
+    options = models.JSONField(default=list, blank=True)
     form = models.ForeignKey(FormsRegister, on_delete=models.CASCADE)
     class Meta:
         verbose_name = "Question"
@@ -151,3 +151,15 @@ class Question(models.Model):
 
     def __str__(self):
         return self.text
+
+class EventRegistration(models.Model):
+    user = models.ForeignKey(ESUser, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = "Event Registration"
+        verbose_name_plural = "Event Registrations"
+        unique_together = ('user', 'event')  # Prevents the same user from signing up for the same event multiple times
+
+    def __str__(self):
+        return f"{self.user.name} - {self.event.name}"
