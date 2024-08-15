@@ -16,7 +16,9 @@
               class="mb-4 hover-elevation"
               @click="openDetailDialog(local)"
             >
-              <v-card-title class="text-h6">{{ local.local_name }}</v-card-title>
+              <v-card-title class="text-h6">
+                <strong>{{ local.local_name }}</strong>
+              </v-card-title>
               <v-card-text>
                 <div><strong>Rua:</strong> {{ local.street_name }}</div>
                 <div><strong>Cidade:</strong> {{ local.city }}</div>
