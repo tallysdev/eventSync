@@ -7,7 +7,7 @@ export const fetchLocations = (page: number, pageSize: number) => {
 }
 
 export const addLocal = (formData: FormData) => {
-  return api.post('events/', formData, {
+  return api.post('locals/', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   })
 }
