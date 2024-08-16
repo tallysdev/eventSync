@@ -103,6 +103,11 @@
             </router-link>
           </v-card-text>
         </v-form>
+
+        <!-- Snackbar -->
+        <v-snackbar v-model="showSnackbar" :color="snackbarColor" timeout="4000" top>
+          {{ snackbarMessage }}
+        </v-snackbar>
       </v-container>
     </v-main>
     <FooterVue />
@@ -140,6 +145,9 @@ const rules = {
 
 const errorMessage = ref<string | null>(null)
 const showError = ref(false)
+const showSnackbar = ref(false)
+const snackbarMessage = ref('')
+const snackbarColor = ref('')
 
 const isFormValid = computed(() => {
   return (
@@ -166,11 +174,19 @@ const handleSubmit = async () => {
         password2: password2.value
       }
       await registerUserInDB(newUser)
-      router.push('/login')
+      snackbarMessage.value = 'Registro realizado com sucesso!'
+      snackbarColor.value = 'success'
+      showSnackbar.value = true
+      setTimeout(() => {
+        router.push('/login')
+      }, 2000)
     } catch (error) {
       console.error('Erro no registro:', error)
       errorMessage.value = 'Erro no registro. Por favor, tente novamente.'
       showError.value = true
+      snackbarMessage.value = 'Erro ao realizar o registro.'
+      snackbarColor.value = 'error'
+      showSnackbar.value = true
     }
   }
 }
