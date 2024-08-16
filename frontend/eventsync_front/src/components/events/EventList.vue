@@ -70,7 +70,7 @@
             :key="totalPages"
             v-model="currentPage"
             :length="totalPages"
-            @input="fetchEvents"
+            @input="fetchEventsData"
           ></v-pagination>
         </v-col>
       </v-row>
@@ -85,9 +85,10 @@
 import { fetchEvents } from '@/services/eventService'
 import { ref, onMounted, watch, nextTick } from 'vue'
 import { type Event } from '@/types/event'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
+const route = useRoute()
 
 const events = ref<Event[]>([])
 const currentPage = ref(1)
@@ -182,7 +183,14 @@ const goToEvent = (id: number): void => {
   router.push(`/events/${id}`)
 }
 
+// Check if the query parameter for type exists and is valid
 onMounted(() => {
+  const queryType = route.query.type as string | null
+
+  if (queryType && eventTypes.some((type) => type.value === queryType)) {
+    selectedType.value = queryType
+  }
+
   fetchEventsData()
 })
 
