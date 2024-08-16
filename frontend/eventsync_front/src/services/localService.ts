@@ -23,5 +23,5 @@ export const updateLocal = async (local: Local) => {
 }
 
 export const deleteLocal = async (id: number) => {
-    await api.delete(`/api/locals/${id}/`)
+    await api.delete(`locals/${id}/`)
 }
