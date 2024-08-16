@@ -128,7 +128,7 @@ const handleSubscription = async () => {
               'Os campos user, event devem criar um set único.'
             )
           ) {
-            snackbarMessage.value = 'Usuário já está cadastrado nesse evento.'
+            snackbarMessage.value = 'Usuário já está inscrito nesse evento.'
           }
         }
       } else {
