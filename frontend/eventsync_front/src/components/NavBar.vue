@@ -36,7 +36,7 @@
               class="pr-6"
             ></v-select>
           </v-col>
-          <v-col cols="4" class="d-flex align-center justify-space-around">
+          <v-col cols="5" class="d-flex align-center justify-space-around">
             <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
             <!-- Conditionally display based on whether user is logged in -->
             <template v-if="isAuthenticated">
