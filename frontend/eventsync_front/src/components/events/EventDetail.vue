@@ -60,6 +60,7 @@ import { fetchEvent, fetchLocal, signupForEvent } from '@/services/eventService'
 import { type Event } from '@/types/event'
 import { type Local } from '@/types/local'
 import type { AxiosError } from 'axios'
+import { formatDate } from '@/utils/formatDate'
 
 const route = useRoute()
 const router = useRouter()
@@ -95,14 +96,6 @@ const fetchLocalData = async (localId: string) => {
   } catch (error) {
     console.error('Error fetching local detail:', error)
   }
-}
-
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString(undefined, {
-    weekday: 'long',
-    hour: '2-digit',
-    minute: '2-digit'
-  })
 }
 
 const handleSubscription = async () => {
