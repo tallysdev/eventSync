@@ -152,14 +152,23 @@ class Question(models.Model):
     def __str__(self):
         return self.text
 
-class EventRegistration(models.Model):
+REGISTRATION_TYPE = [
+    ('participant', _('Participant')),
+    ('organizer', _('Organizer')),
+]
+
+class RegistrationPresence(models.Model):
     user = models.ForeignKey(ESUser, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    presence = models.BooleanField(default=False)
+    type = models.CharField(max_length=20, choices=REGISTRATION_TYPE, default='participant') #change to enum
+    date_inscription = models.DateTimeField(auto_now_add=True)
+    date_presence = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = "Event Registration"
-        verbose_name_plural = "Event Registrations"
+        verbose_name = "Registration Presence"
+        verbose_name_plural = "Registration Presences"
         unique_together = ('user', 'event')  # Prevents the same user from signing up for the same event multiple times
 
     def __str__(self):
-        return f"{self.user.name} - {self.event.name}"
+        return f"{self.user.name} - {self.event.name} - {self.presence} - {self.type}"
