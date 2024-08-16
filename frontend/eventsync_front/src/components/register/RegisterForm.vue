@@ -87,7 +87,6 @@
           ></v-text-field>
 
           <v-btn
-            block
             class="mb-4"
             color="blue-darken-2"
             size="large"
