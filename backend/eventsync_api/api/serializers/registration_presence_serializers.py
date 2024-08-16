@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from core.models import EventRegistration
+from core.models import RegistrationPresence
 
-class EventRegistrationSerializer(serializers.ModelSerializer):
+class RegistrationPresenceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = EventRegistration
+        model = RegistrationPresence
         fields = '__all__'
 
     def validate(self, data):
@@ -11,7 +11,7 @@ class EventRegistrationSerializer(serializers.ModelSerializer):
         user = data['user']
         event = data['event']
 
-        if EventRegistration.objects.filter(user=user, event=event).exists():
+        if RegistrationPresence.objects.filter(user=user, event=event).exists():
             raise serializers.ValidationError("User is already signed up for this event.")
 
         if (event.status != 'upcoming') and (event.status != 'ongoing'):
