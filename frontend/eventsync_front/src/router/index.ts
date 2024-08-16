@@ -5,7 +5,6 @@ import EventListView from '@/views/EventListView.vue'
 import LoginView from '@/views/LoginView.vue'
 import { useAuthStore } from '@/stores/auth'
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -54,6 +53,11 @@ const router = createRouter({
       name: 'login',
       component: LoginView
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      redirect: { name: 'home' }
+    }
   ]
 })
 
@@ -71,7 +75,7 @@ router.beforeEach(async (to, from, next) => {
     // redirecione para a página inicial ou exiba uma mensagem de erro
     console.error('Usuário não tem permissão de administrador.')
     // Você pode redirecionar para a página inicial assim:
-    next({ name: 'home' });
+    next({ name: 'home' })
     // Ou mostrar uma mensagem de erro e redirecionar para uma página relevante:
     // next(false) // Isso impede a navegação para a página de admin
   } else {
