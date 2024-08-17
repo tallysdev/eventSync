@@ -107,7 +107,7 @@ class ThemeRoom(models.Model):
     
     max_quantity = models.IntegerField()
     min_quantity = models.IntegerField()
-    local = models.ForeignKey(Local, on_delete=models.CASCADE)
+    local = models.TextField()
     
     status = models.CharField(max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
     event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
