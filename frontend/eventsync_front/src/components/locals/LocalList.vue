@@ -23,9 +23,9 @@
                 <div><strong>Referência:</strong> {{ local.reference }}</div>
               </v-card-text>
               <v-card-actions>
-                <v-btn @click.stop="openDetailDialog(local)" color="primary">Ver</v-btn>
-                <v-btn @click.stop="openEditDialog(local)" color="primary">Editar</v-btn>
-                <v-btn @click.stop="openDeleteDialog(local)" color="red">Excluir</v-btn>
+                <v-btn @click.stop="openDetailDialog(local)" color="light-blue lighten-3" text-color="white" class="custom-btn">Ver</v-btn>
+                <v-btn @click.stop="openEditDialog(local)" color="amber lighten-3" text-color="black" class="custom-btn">Editar</v-btn>
+                <v-btn @click.stop="openDeleteDialog(local)" color="red lighten-4" text-color="black" class="custom-btn">Excluir</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -43,19 +43,13 @@
           <b>Adicionar Locais</b>
         </v-btn>
         <LocalForm :dialog="dialog" @update:dialog="dialog = $event" @local-added="onLocalAdded" />
-  
-        <!-- Dialog para detalhes do local -->
         <LocalDetailDialog :dialog="detailDialog" :local="selectedLocal" @update:dialog="detailDialog = $event" />
-  
-        <!-- Dialog para edição do local -->
         <LocalEditDialog
           :dialog="editDialog"
           :local="selectedLocal"
           @update:dialog="editDialog = $event"
           @local-updated="onLocalUpdated"
         />
-  
-        <!-- Dialog para confirmação de exclusão -->
         <LocalDeleteDialog :dialog="deleteDialog" :local="selectedLocal" @update:dialog="deleteDialog = $event" @local-deleted="onLocalDeleted" />
       </v-col>
       <v-snackbar v-model="snackbar" :timeout="4000" top :color="snackbarColor">
@@ -159,12 +153,14 @@
   </script>
   
   <style scoped>
-  .hover-elevation {
-    transition: box-shadow 0.3s ease-in-out;
+  .custom-btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  .hover-elevation:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  .custom-btn:hover {
+    background-color: lighten(#ffffff, 10%); /* Ou ajuste a cor que quiser ao passar o mouse */
+    color: darken(#000000, 10%);
   }
   </style>
+  
   
