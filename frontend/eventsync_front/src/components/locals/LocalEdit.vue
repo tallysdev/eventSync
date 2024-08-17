@@ -48,8 +48,8 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn @click="saveChanges" :disabled="!formValid" color="primary">Salvar</v-btn>
-          <v-btn @click="closeDialog" color="secondary">Cancelar</v-btn>
+          <v-btn @click="saveChanges" :disabled="!formValid" color="light-blue lighten-2" text-color="white">Salvar</v-btn>
+          <v-btn @click="closeDialog" color="grey lighten-2" text-color="black">Cancelar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -135,16 +135,20 @@ const fetchCities = async (state: string) => {
     }
 );
 
-
   onMounted(async () => {
     await fetchCities;
 });
-
   </script>
   
   <style scoped>
-  .v-form {
-    width: 100%;
+  .v-btn {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .v-btn:hover {
+    background-color: lighten(#ffffff, 10%);
+    color: darken(#000000, 10%);
   }
   </style>
+  
   
