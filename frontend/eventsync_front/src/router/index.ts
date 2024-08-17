@@ -42,17 +42,17 @@ const router = createRouter({
     {
       path: '/events/:id/create/theme-room',
       name: 'create-theme-room',
-      component: () => import('../views/ThemeRoomViews/CreateViewTR.vue')
+      component: () => import('../views/ThemeRoomViews/CreateTrView.vue')
     },
     {
       path: '/events/:id/list/theme-room',
       name: 'list-theme-room',
-      component: () => import('../views/ThemeRoomViews/ListViewTR.vue')
+      component: () => import('../views/ThemeRoomViews/ListTrView.vue')
     },
     {
       path: '/events/:id/edit/theme-room/:id',
       name: 'edit-theme-room',
-      component: () => import('../views/ThemeRoomViews/EditViewTR.vue')
+      component: () => import('../views/ThemeRoomViews/EditTrView.vue')
     },
     {
       path: '/login',
