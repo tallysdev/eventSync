@@ -39,21 +39,21 @@ const router = createRouter({
       // para views que sejam privadas usar esse exemplo
       // meta: { requiresAuth: true }
     },
-  {
-    path: '/events/:id/create/theme-room',
-    name: 'create-theme-room',
-    component: () => import('../views/ThemeRoomViews/CreateViewTR.vue')
-  },
-  {
-    path: '/events/:id/list/theme-room',
-    name: 'list-theme-room',
-    component: () => import('../views/ThemeRoomViews/ListViewTR.vue')
-  },
-  {
-    path: '/events/:id/edit/theme-room/:id',
-    name: 'edit-theme-room',
-    component: () => import('../views/ThemeRoomViews/EditViewTR.vue')
-  },
+    {
+      path: '/events/:id/create/theme-room',
+      name: 'create-theme-room',
+      component: () => import('../views/ThemeRoomViews/CreateViewTR.vue')
+    },
+    {
+      path: '/events/:id/list/theme-room',
+      name: 'list-theme-room',
+      component: () => import('../views/ThemeRoomViews/ListViewTR.vue')
+    },
+    {
+      path: '/events/:id/edit/theme-room/:id',
+      name: 'edit-theme-room',
+      component: () => import('../views/ThemeRoomViews/EditViewTR.vue')
+    },
     {
       path: '/login',
       name: 'login',
