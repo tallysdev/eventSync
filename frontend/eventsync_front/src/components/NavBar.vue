@@ -36,7 +36,7 @@
               class="pr-6"
             ></v-select>
           </v-col>
-          <v-col cols="4" class="d-flex align-center justify-space-around">
+          <v-col cols="5" class="d-flex align-center justify-space-around">
             <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
             <!-- Conditionally display based on whether user is logged in -->
             <template v-if="isAuthenticated">
@@ -63,7 +63,7 @@
                 style="border: 1px solid white"
                 rounded="xs"
               >
-                <b>Cadastre-se</b>
+                <v-btn to="/register">Cadastre-se</v-btn>
               </v-btn>
             </template>
           </v-col>
@@ -139,8 +139,8 @@
             </template>
             <v-list-item-title>Acesse sua conta</v-list-item-title>
           </v-list-item>
-          <!-- login por enquanto mas vai ser resgister -->
-          <v-list-item v-if="!isAuthenticated" to="/login">
+
+          <v-list-item v-if="!isAuthenticated" to="/register">
             <template v-slot:prepend>
               <v-icon>mdi-account-plus</v-icon>
             </template>
