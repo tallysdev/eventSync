@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/CreateForm.vue')
     },
     {
+      path: '/local-form',
+      name: 'local-form',
+      component: () => import('../views/LocalView.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
