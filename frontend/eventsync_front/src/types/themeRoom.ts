@@ -1,7 +1,7 @@
 export interface ThemeRoom {
     id?: number
     event?: number,
-    star_time: string,
+    start_time: string,
     name: string,
     speaker: string,
     start_date: string,
@@ -13,8 +13,5 @@ export interface ThemeRoom {
     local: number,
     status: string,
     event_type: string,
-    audiences: string
+    audiences: string,
 }
-
-// audiences = models.TextField()
-// event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
