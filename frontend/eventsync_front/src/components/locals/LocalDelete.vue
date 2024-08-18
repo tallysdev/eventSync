@@ -26,7 +26,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: 'update:dialog', value: boolean): void;
-  (e: 'local-deleted', message: string): void;
+  (e: 'local-deleted', message: string, color: string): void;
 }>();
 
 const dialog = ref(props.dialog);
@@ -36,10 +36,10 @@ const confirmDelete = async () => {
   if (local.value) {
     try {
       await deleteLocal(local.value.id);
-      emit('local-deleted', 'Local excluído com sucesso');
+      emit('local-deleted', 'Local excluído com sucesso', 'green');
     } catch (error) {
       console.error('Error deleting local:', error);
-      emit('local-deleted', 'Erro ao excluir local');
+      emit('local-deleted', 'Erro ao excluir local', 'red');
     } finally {
       dialog.value = false;
       emit('update:dialog', dialog.value);
