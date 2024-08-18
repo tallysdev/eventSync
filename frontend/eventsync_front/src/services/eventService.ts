@@ -36,7 +36,7 @@ export const fetchLocal = (id: number) => {
 export const signupForEvent = async (eventId: number, userId: number) => {
   const { token } = useAuthStore()
   try {
-    const response = await api.post(`events/signup/`, null, {
+    const response = await api.post(`events/registration/`, null, {
       params: { event_id: eventId, user_id: userId },
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -45,6 +45,42 @@ export const signupForEvent = async (eventId: number, userId: number) => {
     const axiosError = error as AxiosError
 
     console.error('Error signing up for event:', axiosError.response?.data || axiosError.message)
+    throw error
+  }
+}
+
+export const cancelSubscription = async (eventId: number, userId: number) => {
+  const { token } = useAuthStore()
+  try {
+    const response = await api.delete(`events/registration/${eventId}/${userId}/`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+
+    console.error(
+      'Error canceling subscription for event:',
+      axiosError.response?.data || axiosError.message
+    )
+    throw error
+  }
+}
+
+export const checkUserSubscription = async (eventId: number, userId: number) => {
+  const { token } = useAuthStore()
+  try {
+    const response = await api.get(`events/registration/${eventId}/${userId}/`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+
+    console.error(
+      'Error checking subscription status:',
+      axiosError.response?.data || axiosError.message
+    )
     throw error
   }
 }
