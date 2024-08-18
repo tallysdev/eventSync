@@ -50,7 +50,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="blue darken-1" text @click="closeDialog">Cancelar</v-btn>
-                <v-btn color="blue darken-1" text @click="addLocalData" :disabled="!valid || hasErrors">Salvar</v-btn>
+                <v-btn color="green" text @click="addLocalData" :disabled="!valid || hasErrors">Salvar</v-btn>
             </v-card-actions>
         </v-card>
     </v-dialog>
@@ -70,7 +70,7 @@ const props = defineProps({
     }
 });
 
-const emit = defineEmits(['update:dialog', 'local-added']);
+const emit = defineEmits(['update:dialog', 'local-added',]);
 
 const citiesOptions = ref<any[]>([]);
 const errorMessages = ref<{ [key: string]: string[] }>({
@@ -156,7 +156,7 @@ const addLocalData = async () => {
             cep: '',
             reference: ''
         };
-        emit('local-added', 'Local adicionado com sucesso!');
+        emit('local-added', 'Local adicionado com sucesso!', 'green');
     } catch (error) {
         console.error(error);
         errorMessage.value = 'Ocorreu um erro ao tentar adicionar o local. Por favor, tente novamente.';
@@ -165,16 +165,16 @@ const addLocalData = async () => {
 };
 
 const formatCEP = () => {
-    let value = newLocal.value.cep.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    let value = newLocal.value.cep.replace(/\D/g, ''); 
     if (value.length > 5) {
         value = `${value.slice(0, 5)}-${value.slice(5, 8)}`;
     }
     newLocal.value.cep = value;
-    rules.cep(newLocal.value.cep); // Aplicar a validação do CEP
+    rules.cep(newLocal.value.cep); 
 };
 
 const validateNumberField = () => {
-    userInteracted.value = true; // Indica que o usuário tentou interagir com o campo
+    userInteracted.value = true; 
     rules.validateNumberInput(newLocal.value.street_number);
 };
 
