@@ -14,7 +14,7 @@ class ThemeRoomListView(APIView):
     """
     List all Theme Rooms for a specific Event, or create a new Theme Room for that Event.
     """
-    # permission_classes = [IsAuthenticated | ReadOnly]  
+    permission_classes = [IsAuthenticated | ReadOnly]  
 
     @extend_schema(
         responses={200: ThemeRoomSerializer(many=True)},
