@@ -51,7 +51,7 @@ const router = createRouter({
       component: () => import('../views/ThemeRoomViews/ListTrView.vue')
     },
     {
-      path: '/events/:id/edit/theme-room/:id',
+      path: '/events/:id/edit/theme-room/:room_id',
       name: 'edit-theme-room',
       component: () => import('../views/ThemeRoomViews/EditTrView.vue')
     },

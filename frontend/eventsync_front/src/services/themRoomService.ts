@@ -1,9 +1,10 @@
 import api from '@/services/api'
 
-export const fetchThemeRooms = (page: number, pageSize: number) => {
+export const fetchThemeRooms = (eventId: number) => {
     return api.get('themeRoom/', {
-        params: { page, page_size: pageSize }
+        params: { event_id: eventId }
     })
+
 }
 
 export const fetchThemeRoom = (id: number) => {
