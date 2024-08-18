@@ -1,7 +1,6 @@
 import api from '@/services/api'
 import { type Local } from '@/types/local'
 import { useAuthStore } from '@/stores/auth'
-import { AxiosError } from 'axios'
 
 export const fetchLocations = (page: number, pageSize: number) => {
 return api.get('locals/', {
@@ -21,9 +20,15 @@ return api.get('locals');
 }
 
 export const updateLocal = async (local: Local) => {
-    await api.put(`locals/${local.id}/`, local)
+    const { token } = useAuthStore()
+    return api.put(`locals/${local.id}/`, local, {
+        headers: { Authorization: `Bearer ${token}` }
+    })
 }
 
 export const deleteLocal = async (id: number) => {
-    await api.delete(`locals/${id}/`)
+    const { token } = useAuthStore()
+    return api.delete(`locals/${id}/`, {
+        headers: { Authorization: `Bearer ${token}` }
+    })
 }
