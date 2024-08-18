@@ -19,13 +19,16 @@
             </div>
           </v-col>
           <v-col cols="12" md="6" class="d-flex justify-end align-end">
-            <v-btn
-              v-if="canSubscribe"
-              @click="handleSubscription"
-              color="primary"
-              class="text-no-wrap"
-            >
-              <b> Inscrever-se </b>
+            <template v-if="isSubscribed">
+              <v-btn color="success" class="text-no-wrap mr-2" disabled>
+                <b>Inscrito</b>
+              </v-btn>
+              <v-btn @click="handleUnsubscription" color="error" class="text-no-wrap">
+                <b>Cancelar Inscrição</b>
+              </v-btn>
+            </template>
+            <v-btn v-else @click="handleSubscription" color="primary" class="text-no-wrap">
+              <b>Inscrever-se</b>
             </v-btn>
           </v-col>
         </v-row>
@@ -53,10 +56,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-import { fetchEvent, fetchLocal, signupForEvent } from '@/services/eventService'
+import {
+  fetchEvent,
+  fetchLocal,
+  signupForEvent,
+  cancelSubscription,
+  checkUserSubscription
+} from '@/services/eventService'
 import { type Event } from '@/types/event'
 import { type Local } from '@/types/local'
 import type { AxiosError } from 'axios'
@@ -67,15 +76,11 @@ const router = useRouter()
 const authStore = useAuthStore()
 const event = ref<Event | null>(null)
 const local = ref<Local | null>(null)
+const isSubscribed = ref(false) // Track subscription status
 
 const showSnackbar = ref(false)
 const snackbarMessage = ref('')
 const snackbarColor = ref('')
-
-// Computed property to check if the event is ongoing or upcoming
-const canSubscribe = computed(() => {
-  return event.value?.status === 'ongoing' || event.value?.status === 'upcoming'
-})
 
 const fetchEventDetailData = async () => {
   const eventId = Number(route.params.id)
@@ -98,36 +103,28 @@ const fetchLocalData = async (localId: string) => {
   }
 }
 
+const checkSubscriptionStatus = async () => {
+  if (authStore.isAuthenticated && event.value) {
+    try {
+      console.log(authStore.token)
+      const response = await checkUserSubscription(event.value.id, authStore.getUser.id)
+      console.log('Subscription status:', response.data)
+      isSubscribed.value = await checkUserSubscription(event.value.id, authStore.getUser.id)
+    } catch (error) {
+      console.error('Error checking subscription status:', error)
+    }
+  }
+}
+
 const handleSubscription = async () => {
   if (authStore.isAuthenticated) {
     try {
       await signupForEvent(event.value.id, authStore.getUser.id)
       snackbarMessage.value = 'Inscrição realizada com sucesso!'
       snackbarColor.value = 'success'
+      isSubscribed.value = true
     } catch (error) {
-      console.error('Error signing up for event:', error)
-      const axiosError = error as AxiosError
-
-      interface ErrorResponse {
-        non_field_errors?: string[]
-      }
-
-      if (axiosError.response?.data) {
-        const responseData = axiosError.response.data as ErrorResponse
-
-        if (responseData.non_field_errors) {
-          if (
-            responseData.non_field_errors.includes(
-              'Os campos user, event devem criar um set único.'
-            )
-          ) {
-            snackbarMessage.value = 'Usuário já está inscrito nesse evento.'
-          }
-        }
-      } else {
-        snackbarMessage.value = 'Erro ao realizar inscrição.'
-      }
-      snackbarColor.value = 'error'
+      handleSubscriptionError(error)
     }
   } else {
     snackbarMessage.value = 'Você precisa estar logado para se inscrever.'
@@ -139,8 +136,52 @@ const handleSubscription = async () => {
   showSnackbar.value = true
 }
 
-onMounted(() => {
-  fetchEventDetailData()
+const handleUnsubscription = async () => {
+  if (authStore.isAuthenticated) {
+    try {
+      await cancelSubscription(event.value.id, authStore.getUser.id)
+      snackbarMessage.value = 'Inscrição cancelada com sucesso!'
+      snackbarColor.value = 'success'
+      isSubscribed.value = false
+    } catch (error) {
+      snackbarMessage.value = 'Erro ao cancelar inscrição.'
+      snackbarColor.value = 'error'
+    }
+  } else {
+    snackbarMessage.value = 'Você precisa estar logado para cancelar a inscrição.'
+    snackbarColor.value = 'error'
+  }
+  showSnackbar.value = true
+}
+
+const handleSubscriptionError = (error: unknown) => {
+  console.error('Error signing up for event:', error)
+  const axiosError = error as AxiosError
+
+  interface ErrorResponse {
+    non_field_errors?: string[]
+  }
+
+  if (axiosError.response?.data) {
+    const responseData = axiosError.response.data as ErrorResponse
+
+    if (responseData.non_field_errors) {
+      if (
+        responseData.non_field_errors.includes('Os campos user, event devem criar um set único.')
+      ) {
+        snackbarMessage.value = 'Usuário já está inscrito nesse evento.'
+        isSubscribed.value = true
+      }
+    }
+  } else {
+    snackbarMessage.value = 'Erro ao realizar inscrição.'
+  }
+  snackbarColor.value = 'error'
+}
+
+onMounted(async () => {
+  await fetchEventDetailData()
+  await checkSubscriptionStatus() // Check if the user is already subscribed after fetching event details
 })
 </script>
 
