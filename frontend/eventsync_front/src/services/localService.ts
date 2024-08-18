@@ -1,6 +1,7 @@
 import api from '@/services/api'
 import { type Local } from '@/types/local'
-import axios from 'axios'
+import { useAuthStore } from '@/stores/auth'
+import { AxiosError } from 'axios'
 
 export const fetchLocations = (page: number, pageSize: number) => {
 return api.get('locals/', {
@@ -9,8 +10,9 @@ return api.get('locals/', {
 }
 
 export const addLocal = (formData: FormData) => {
+const { token } = useAuthStore()
 return api.post('locals/', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
+    headers: { Authorization: `Bearer ${token}` }
 })
 }
 
