@@ -1,4 +1,5 @@
 import api from '@/services/api'
+import { useAuthStore } from '@/stores/auth'
 
 export const fetchEvents = (page: number, pageSize: number) => {
   return api.get('events/', {
@@ -7,11 +8,13 @@ export const fetchEvents = (page: number, pageSize: number) => {
 }
 
 export const addEvent = (formData: FormData) => {
+  const { token } = useAuthStore()
   return api.post('events/', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
+    headers: { Authorization: `Bearer ${token}` }
   })
 }
 
 export const fetchLocations = () => {
-  return api.get('locals');
+  return api.get('locals/');
+  
 }
