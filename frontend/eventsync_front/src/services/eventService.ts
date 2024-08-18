@@ -19,8 +19,9 @@ export const fetchEvent = (id: number) => {
 }
 
 export const addEvent = (formData: FormData) => {
+  const { token } = useAuthStore()
   return api.post('events/', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' }
+    headers: { Authorization: `Bearer ${token}` }
   })
 }
 

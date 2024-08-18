@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import SponsorsView from '@/views/SponsorsView.vue'
 import EventListView from '@/views/EventListView.vue'
 import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const router = createRouter({
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/create-form',
       name: 'create-form',
       component: () => import('../views/CreateForm.vue')
+    },
+    {
+      path: '/local-form',
+      name: 'local-form',
+      component: () => import('../views/LocalView.vue')
     },
     {
       path: '/about',
@@ -52,6 +58,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterView
     },
     {
       path: '/:pathMatch(.*)*',

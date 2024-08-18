@@ -47,7 +47,7 @@
             Login
           </v-btn>
           <v-card-text class="text-center">
-            <router-link to="/" class="text-blue-darken-2 text-decoration-none text-subtitle-1">
+            <router-link to="/register" class="text-blue-darken-2 text-decoration-none text-subtitle-1">
               Cadastre-se <v-icon icon="mdi-chevron-right"></v-icon>
             </router-link>
           </v-card-text>

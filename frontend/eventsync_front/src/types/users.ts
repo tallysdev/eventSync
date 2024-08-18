@@ -21,3 +21,13 @@ export interface Profile {
     phone: String
     email: string
 }
+
+export interface RegisterUser {
+    email: string
+    cpf: string
+    name: string
+    birth_date: string
+    phone: String
+    password: String
+    password2: String
+}
