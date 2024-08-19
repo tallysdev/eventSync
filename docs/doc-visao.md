@@ -125,10 +125,14 @@ erDiagram
         string tipo
     }
 
-    INSCRICAO_EVENTO {
+    INSCRICAO_PRESENCA {
         int id pk
         int id_usuario fk
         int id_evento fk
+        bool presenca
+        string tipo
+        date data_inscricao
+        date data_presenca
     }
 
     EVENTO {
@@ -190,14 +194,6 @@ erDiagram
         int id_sala fk
     }
 
-    PRESENCA {
-        int id pk
-        bool presenca
-        string tipo
-        int id_usuario fk
-        int id_evento fk
-    }
-
     FORMULARIO {
         int id pk
         string nome
@@ -234,17 +230,13 @@ erDiagram
 
     USUARIO ||--o{ RESPOSTAS : "faz"
 
-    EVENTO ||--o{ INSCRICAO_EVENTO : "tem"
+    EVENTO ||--o{ INSCRICAO_PRESENCA : "tem"
 
-    USUARIO ||--o{ INSCRICAO_EVENTO : "se inscreve"
+    USUARIO ||--o{ INSCRICAO_PRESENCA : "participa"
 
     EVENTO ||--o{ COMENTARIO : "tem"
 
     USUARIO ||--o{ COMENTARIO : "faz"
-
-    EVENTO ||--o{ PRESENCA : "tem"
-
-    USUARIO ||--o{ PRESENCA : "tem"
 
     USUARIO ||--o{ INSCRICAO_SALA : "se inscreve"
 
