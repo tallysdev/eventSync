@@ -4,8 +4,8 @@
             <h1>Evento: Nome do Evento</h1>
             <h1 class="text-center">Criar sala temática.</h1>
             <v-form 
-            ref="form"
             v-model="valid"
+            ref="form"
             lazy-validation
             @submit.prevent="submitForm" 
             class="mb-10">
@@ -74,7 +74,7 @@
                 required></v-textarea>
 
                 <v-text-field 
-                v-model="roomForm.certification_hours" 
+                v-model="roomForm.hours_quantity" 
                 variant="outlined"
                 min="1"
                 @keypress="validateNumberInput"
@@ -99,7 +99,7 @@
                     type="submit" 
                     color="primary"
                     :disabled="!isFormValid || submitting"
-                    >Criar {{ submitting }} {{ !isFormValid }}</v-btn>
+                    >Criar</v-btn>
                     <v-btn color="secondary" @click="goBack">Voltar</v-btn>
                 </v-container>
             </v-form>
@@ -122,19 +122,19 @@ import {
 const router = useRouter();
 
 class ThemeRoomForm {
-    name: string = '';
-    start_time: string = '';
-    start_date: string = '';
-    end_date: string = '';
-    local: string = '';
-    min_quantity: number = 0;
-    max_quantity: number = 0;
-    speaker: string = '';
-    description: string = '';
-    hours_quantity: number = 0;
-    audiences: string = '';
-    event_type: string = '';
-    status: string = 'upcoming';
+    name = "";
+    start_time = "";
+    start_date = "";
+    end_date = "";
+    local = "";
+    min_quantity = '';
+    max_quantity = '';
+    speaker = "";
+    description = "";
+    hours_quantity = '';
+    audiences = "";
+    event_type = "";
+    status = "upcoming";
 }
 
 const roomForm = ref(new ThemeRoomForm());
@@ -159,19 +159,19 @@ const submitForm = async () => {
             max_quantity: roomForm.value.max_quantity,
             speaker: roomForm.value.speaker,
             description: roomForm.value.description,
-            hours_quantity: roomForm.value.certification_hours,
+            hours_quantity: roomForm.value.hours_quantity,
             audiences: roomForm.value.audiences,
             event_type: roomForm.value.event_type,
             status: 'upcoming'
         })
     ) {
+        // console.log('Campos validados:', validateFields(roomForm.value.value));
         errorMessage.value = 'Por favor, preencha todos os campos obrigatórios.'
         submitting.value = false
         return
     }
-
+    console.log('174');
     const form = new FormData();
-    form.append('event', roomForm.value.event.toString());
     form.append('name', roomForm.value.name);
     form.append('start_time', roomForm.value.start_time);
     form.append('start_date', roomForm.value.start_date);
@@ -184,9 +184,12 @@ const submitForm = async () => {
     form.append('hours_quantity', roomForm.value.hours_quantity.toString());
     form.append('audiences', roomForm.value.audiences);
     form.append('event_type', roomForm.value.event_type);
-    console.log(form.values())
+    form.append('status', 'upcoming');
+    form.append('event', router.currentRoute.value.params.id.toString());
     try {
+        console.log('teste');
         await addThemeRoom(form);
+        console.log('Sala criada com sucesso');
         showSnackbar('Sala criada com sucesso', 'success');
         resetForm();
         // console.log('Sala criada com sucesso:', response.data);
@@ -227,6 +230,7 @@ const isFormValid = computed(() => {
 const goBack = () => {
     router.back();  // Volta para a página anterior
 };
+
 </script>
 
 <style scoped></style>
