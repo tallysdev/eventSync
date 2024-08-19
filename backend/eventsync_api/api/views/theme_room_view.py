@@ -14,7 +14,7 @@ class ThemeRoomListView(APIView):
     """
     List all Theme Rooms for a specific Event, or create a new Theme Room for that Event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]  
+    #permission_classes = [IsAuthenticated | ReadOnly]  
 
     @extend_schema(
         responses={200: ThemeRoomSerializer(many=True)},
@@ -44,20 +44,13 @@ class ThemeRoomListView(APIView):
         responses={201: ThemeRoomSerializer},
     )
     def post(self, request, format=None):
-        # Obtenha o ID do evento da query string ou do corpo da requisição
-        event_id = request.data.get('event_id')
-        
-        if not event_id:
-            return Response({"detail": "Event ID is required."}, status=status.HTTP_400_BAD_REQUEST)
-        
-        # Adicione o evento aos dados de criação
-        request.data['event'] = event_id
+        # Deixe a serialização lidar com o campo event_id se estiver no corpo da requisição
         serializer = ThemeRoomSerializer(data=request.data)
         
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -65,7 +58,7 @@ class ThemeRoomDetailView(APIView):
     """
     Retrieve, update or delete a Theme Room.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    #permission_classes = [IsAuthenticated | ReadOnly]
 
     def get_object(self, pk):
         try:
