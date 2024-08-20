@@ -1,13 +1,20 @@
-<template lang="">
-    <div>
-        <h1>Edit View</h1>
-    </div>
+<template>
+    <v-app>
+        <NavBar />
+        <v-main>
+            <ThemeRoom />
+        </v-main>
+        <FooterVue />
+    </v-app>
 </template>
-<script>
-export default {
-    
-}
-</script>
-<style lang="">
-    
+
+<style scoped>
+
 </style>
+
+<script setup lang="ts">
+import ThemeRoom from '@/components/ThemeRoom/CreateComponentTR.vue';
+import NavBar from '@/components/NavBar.vue';
+import FooterVue from '@/components/Footer.vue';
+
+</script>
