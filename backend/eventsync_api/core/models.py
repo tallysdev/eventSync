@@ -21,6 +21,7 @@ class ESUser(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_("email address"), unique=True)
     is_staff = models.BooleanField(default=False)
+    username = None
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
     cpf = models.CharField(max_length=11, unique=True,
@@ -30,7 +31,7 @@ class ESUser(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=11, validators=[phone_validator])
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ['cpf', 'name', 'birth_date', 'phone', 'user_type']
+    REQUIRED_FIELDS = ['cpf', 'name', 'birth_date', 'phone']
 
     objects = ESUserManager()
 
