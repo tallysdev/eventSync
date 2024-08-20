@@ -103,24 +103,26 @@
                     <v-btn color="secondary" @click="goBack">Voltar</v-btn>
                 </v-container>
             </v-form>
+
+            <!-- Snackbar para mensagens de sucesso ou erro -->
+            <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top right>
+                {{ snackbarText }}
+                <template v-slot:action="{ attrs }">
+                    <v-btn color="white" text v-bind="attrs" @click="snackbar = false">Fechar</v-btn>
+                </template>
+            </v-snackbar>
         </v-container>
     </v-main>
 </template>
 
+
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { addThemeRoom } from '@/services/themRoomService';
-import {
-    validateFields,
-    validateNumberInput,
-    snackbar,
-    snackbarText,
-    snackbarColor
-} from '../../stores/validatorRoom';
+import { addThemeRoom, updateThemeRoom } from '@/services/themRoomService';
+import { validateFields, validateNumberInput, snackbar, snackbarText, snackbarColor } from '../../stores/validatorRoom';
 
-const router = useRouter();
-
+// Classe do formulário
 class ThemeRoomForm {
     name = "";
     start_time = "";
@@ -138,99 +140,86 @@ class ThemeRoomForm {
 }
 
 const roomForm = ref(new ThemeRoomForm());
-const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const valid = ref(false);
 const submitting = ref(false);
 const errorMessage = ref<string | null>(null);
 const showError = ref(false);
+const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup'];
+
+const router = useRouter();
+
+const isFormValid = computed(() => {
+    return Object.values(roomForm.value).every(field => field);
+});
+
+const showSnackbar = (message: string, type: string) => {
+    snackbarText.value = message;
+    snackbarColor.value = type === 'success' ? 'green' : 'red';
+    snackbar.value = true;
+};
+
+const resetForm = () => {
+    roomForm.value = new ThemeRoomForm();
+};
+
+const buildFormData = () => {
+    const form = new FormData();
+    Object.entries(roomForm.value).forEach(([key, value]) => {
+        form.append(key, value.toString());
+        console.log(key, value);
+    });
+    form.append('event_id', router.currentRoute.value.params.id.toString());
+    return form;
+};
+
+const addRoom = async (form: FormData) => {
+    await addThemeRoom(form);
+    showSnackbar('Sala criada com sucesso', 'success');
+};
+
+const updateRoom = async (roomId: number, form: FormData) => {
+    await updateThemeRoom(roomId, form);
+    showSnackbar('Sala atualizada com sucesso', 'success');
+};
 
 const submitForm = async () => {
-    if (submitting.value) return
-    submitting.value = true
+    if (submitting.value || !isFormValid.value) return;
 
-    if (
-        !validateFields({
-            name: roomForm.value.name,
-            start_time: roomForm.value.start_time,
-            start_date: roomForm.value.start_date,
-            end_date: roomForm.value.end_date,
-            local: roomForm.value.local,
-            min_quantity: roomForm.value.min_quantity,
-            max_quantity: roomForm.value.max_quantity,
-            speaker: roomForm.value.speaker,
-            description: roomForm.value.description,
-            hours_quantity: roomForm.value.hours_quantity,
-            audiences: roomForm.value.audiences,
-            event_type: roomForm.value.event_type,
-            status: 'upcoming'
-        })
-    ) {
-        // console.log('Campos validados:', validateFields(roomForm.value.value));
-        errorMessage.value = 'Por favor, preencha todos os campos obrigatórios.'
-        submitting.value = false
-        return
+    submitting.value = true;
+
+    if (!validateFields(roomForm.value)) {
+        errorMessage.value = 'Por favor, preencha todos os campos obrigatórios.';
+        submitting.value = false;
+        return;
     }
-    console.log('174');
-    const form = new FormData();
-    form.append('name', roomForm.value.name);
-    form.append('start_time', roomForm.value.start_time);
-    form.append('start_date', roomForm.value.start_date);
-    form.append('end_date', roomForm.value.end_date);
-    form.append('local', roomForm.value.local);
-    form.append('min_quantity', roomForm.value.min_quantity.toString());
-    form.append('max_quantity', roomForm.value.max_quantity.toString());
-    form.append('speaker', roomForm.value.speaker);
-    form.append('description', roomForm.value.description);
-    form.append('hours_quantity', roomForm.value.hours_quantity.toString());
-    form.append('audiences', roomForm.value.audiences);
-    form.append('event_type', roomForm.value.event_type);
-    form.append('status', 'upcoming');
-    form.append('event', router.currentRoute.value.params.id.toString());
+
+    const form = buildFormData();
+
     try {
-        console.log('teste');
-        await addThemeRoom(form);
-        console.log('Sala criada com sucesso');
-        showSnackbar('Sala criada com sucesso', 'success');
+        const roomId = router.currentRoute.value.params.room_id;
+        if (roomId) {
+            await updateRoom(Number(roomId), form);
+        } else {
+            await addRoom(form);
+        }
+        
         resetForm();
-        // console.log('Sala criada com sucesso:', response.data);
-        router.push('/success-page');
+        router.back();
+
     } catch (error) {
-        console.error('Erro ao criar sala:', error);
-        errorMessage.value = 'Erro ao criar sala. Por favor, tente novamente.', 'error';
+        console.error('Erro ao processar sala:', error);
+        showSnackbar(error.response.data.detail.toString() ?? 'Erro ao processar sala', 'error');
+        errorMessage.value = 'Erro ao processar sala. Por favor, tente novamente.';
         showError.value = true;
     } finally {
         submitting.value = false;
     }
 };
 
-const showSnackbar = (message: string, type: string) => {
-    snackbarText.value = message
-    snackbarColor.value = type === 'success' ? 'green' : 'red'
-    snackbar.value = true
-}
-
-const resetForm = () => {
-    roomForm.value = new ThemeRoomForm()
-}
-const isFormValid = computed(() => {
-    return (
-        roomForm.value.name &&
-        roomForm.value.start_time &&
-        roomForm.value.start_date &&
-        roomForm.value.end_date &&
-        roomForm.value.local &&
-        roomForm.value.min_quantity &&
-        roomForm.value.max_quantity &&
-        roomForm.value.description &&
-        roomForm.value.hours_quantity &&
-        roomForm.value.event_type
-    )
-})
-
 const goBack = () => {
-    router.back();  // Volta para a página anterior
+    router.back();
 };
-
 </script>
+
 
 <style scoped></style>
