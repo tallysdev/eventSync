@@ -21,7 +21,9 @@ class ThemeRoomListView(APIView):
         responses={200: ThemeRoomSerializer(many=True)},
         parameters=[
             OpenApiParameter(name='event_id', description='Event ID', required=True, type=int),
+
             OpenApiParameter(name='page', description='Page number', required=False, type=int),
+
             OpenApiParameter(name='page_size', description='Page size', required=False, type=int),
         ],
     )
@@ -42,33 +44,40 @@ class ThemeRoomListView(APIView):
 
     @extend_schema(
         request=ThemeRoomSerializer,
+
         responses={201: ThemeRoomSerializer},
     )
     def post(self, request, format=None):
         # Obtenha o ID do evento do corpo da requisição
-        event_id = request.data.get('event_id')
+        event_id = request.data.get('event')
 
-        if not event_id:
-            return Response({"detail": "Event ID is required."}, status=status.HTTP_400_BAD_REQUEST)
+        # if not event_id:
+        #     return Response({"detail": "Event ID is required."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             # Busque o evento pelo ID
             event = Event.objects.get(id=event_id)
+
         except Event.DoesNotExist:
+
             return Response({"detail": "Event not found."}, status=status.HTTP_404_NOT_FOUND)
 
         # Obtenha as datas do evento
         event_start_date = event.start_date
+
         event_end_date = event.end_date
 
         # Obtenha a data de início e fim da Theme Room
         theme_room_start_date = request.data.get('start_date')
+
         theme_room_end_date = request.data.get('end_date')
 
         # Valide se as datas da Theme Room estão dentro do intervalo do evento
         if theme_room_start_date and theme_room_end_date:
+
             # Converta as datas para objetos date, se necessário
             theme_room_start_date = date.fromisoformat(theme_room_start_date)
+
             theme_room_end_date = date.fromisoformat(theme_room_end_date)
 
             if theme_room_start_date < event_start_date or theme_room_end_date > event_end_date:
@@ -85,6 +94,8 @@ class ThemeRoomListView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
 class ThemeRoomDetailView(APIView):
     """
     Retrieve, update or delete a Theme Room.
@@ -94,6 +105,7 @@ class ThemeRoomDetailView(APIView):
     def get_object(self, pk):
         try:
             return ThemeRoom.objects.get(pk=pk)
+        
         except ThemeRoom.DoesNotExist:
             raise Http404
 
@@ -104,6 +116,7 @@ class ThemeRoomDetailView(APIView):
         themeRoom = self.get_object(pk)
         serializer = ThemeRoomSerializer(themeRoom)
         return Response(serializer.data)
+
 
     @extend_schema(
         request=ThemeRoomSerializer,
@@ -117,16 +130,19 @@ class ThemeRoomDetailView(APIView):
         
         # Obtenha as datas do evento
         event_start_date = event.start_date
+
         event_end_date = event.end_date
 
         # Obtenha a data de início e fim da Theme Room do request
         theme_room_start_date = request.data.get('start_date', themeRoom.start_date)
+
         theme_room_end_date = request.data.get('end_date', themeRoom.end_date)
 
         # Valide se as novas datas da Theme Room estão dentro do intervalo do evento
         if theme_room_start_date and theme_room_end_date:
             # Converta as datas para objetos date, se necessário
             theme_room_start_date = date.fromisoformat(theme_room_start_date) if isinstance(theme_room_start_date, str) else theme_room_start_date
+            
             theme_room_end_date = date.fromisoformat(theme_room_end_date) if isinstance(theme_room_end_date, str) else theme_room_end_date
 
             if theme_room_start_date < event_start_date or theme_room_end_date > event_end_date:
