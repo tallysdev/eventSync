@@ -15,7 +15,7 @@ class ThemeRoomListView(APIView):
     """
     List all Theme Rooms for a specific Event, or create a new Theme Room for that Event.
     """
-    # permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsAuthenticated | ReadOnly]
 
     @extend_schema(
         responses={200: ThemeRoomSerializer(many=True)},
@@ -50,7 +50,7 @@ class ThemeRoomListView(APIView):
     def post(self, request, format=None):
         # Obtenha o ID do evento do corpo da requisição
         event_id = request.data.get('event')
-
+        
         # if not event_id:
         #     return Response({"detail": "Event ID is required."}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -100,7 +100,7 @@ class ThemeRoomDetailView(APIView):
     """
     Retrieve, update or delete a Theme Room.
     """
-    # permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsAuthenticated | ReadOnly]
 
     def get_object(self, pk):
         try:
@@ -142,7 +142,7 @@ class ThemeRoomDetailView(APIView):
         if theme_room_start_date and theme_room_end_date:
             # Converta as datas para objetos date, se necessário
             theme_room_start_date = date.fromisoformat(theme_room_start_date) if isinstance(theme_room_start_date, str) else theme_room_start_date
-            
+
             theme_room_end_date = date.fromisoformat(theme_room_end_date) if isinstance(theme_room_end_date, str) else theme_room_end_date
 
             if theme_room_start_date < event_start_date or theme_room_end_date > event_end_date:
