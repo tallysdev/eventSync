@@ -3,11 +3,11 @@ from django.http import Http404
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from ..permissions import ReadOnly
+from ..permissions import IsOrganizerOrReadOnly
 from ..serializers.event_serializers import EventSerializer
 
 from ..utils.register import save_current_user_registration
@@ -20,7 +20,7 @@ class EventListView(APIView):
     """
     List all events, or create a new event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     pagination_class = CustomPageNumberPagination
 
     @extend_schema(
@@ -75,7 +75,7 @@ class EventDetailView(APIView):
     """
     Retrieve, update or delete an event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsOrganizerOrReadOnly]
 
     def get_object(self, pk):
         try:
