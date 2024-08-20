@@ -58,7 +58,8 @@
                             <v-row class="pa-2">
                                 <v-card-text>
                                     Público Alvo: {{ room.audiences }}
-                                    <br>
+                                </v-card-text>
+                                <v-card-text>
                                     Descrição: {{ room.description }}
                                 </v-card-text>
                             </v-row>

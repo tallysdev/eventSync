@@ -105,12 +105,12 @@
             </v-form>
 
             <!-- Snackbar para mensagens de sucesso ou erro -->
-            <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top right>
+            <!-- <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="3000" top right>
                 {{ snackbarText }}
                 <template v-slot:action="{ attrs }">
                     <v-btn color="white" text v-bind="attrs" @click="snackbar = false">Fechar</v-btn>
                 </template>
-            </v-snackbar>
+            </v-snackbar> -->
         </v-container>
     </v-main>
 </template>
@@ -168,7 +168,7 @@ const buildFormData = () => {
         form.append(key, value.toString());
         console.log(key, value);
     });
-    form.append('event_id', router.currentRoute.value.params.id.toString());
+    form.append('event', router.currentRoute.value.params.id.toString());
     return form;
 };
 
