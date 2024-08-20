@@ -4,14 +4,17 @@
         <h1 class="text-center">Evento {{ EventId }}</h1>
         <h1 class="mx-10">Programação:</h1>
         <v-container fluid class="d-flex flex-column align-center">
-            <v-btn :to="`/events/${EventId}/create/theme-room`" color="success">
-                Cadastrar Sala Tematica</v-btn>
+            <v-btn 
+            :to="`/events/${EventId}/create/theme-room`" 
+            color="success"
+            >Cadastrar Sala Tematica
+            </v-btn>
             <h2 v-if="rooms.length === 0">Nenhuma Sala Cadastrada ainda...</h2>
             <v-container fluid class="d-flex flex-wrap ga-5 justify-center">
                 <v-card class="mx-2 my-2 justify-center w-75" variant="outlined" elevation="20" max-width="400"
                     min-width="50" v-for="(room, id) in rooms" :key="id">
                     <v-card-actions v-if="admin" class="d-flex flex-wrap w-100 justify-space-between">
-                        <v-btn color="yellow" variant="text" :to="`/events/${EventId}/theme-room/${room.id}`">Editar</v-btn>
+                        <v-btn color="yellow" variant="text" :to="`/events/${EventId}/edit/theme-room/${room.id}`">Editar</v-btn>
                         <v-btn color="red" variant="text" @click="fetchDeleteRoom(room.id)">Exluir</v-btn>
                     </v-card-actions>
                     <v-card-title class="font-weight-bold text-h5 text-center">{{ room.name }}</v-card-title>
