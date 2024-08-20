@@ -9,8 +9,8 @@ from rest_framework.views import APIView
 
 from ..permissions import IsOrganizerOrReadOnly
 from ..serializers.event_serializers import EventSerializer
-
 from ..utils.register import save_current_user_registration
+
 
 class CustomPageNumberPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
@@ -20,7 +20,7 @@ class EventListView(APIView):
     """
     List all events, or create a new event.
     """
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsAuthenticatedOrReadOnly,]
     pagination_class = CustomPageNumberPagination
 
     @extend_schema(
@@ -75,7 +75,7 @@ class EventDetailView(APIView):
     """
     Retrieve, update or delete an event.
     """
-    permission_classes = [IsOrganizerOrReadOnly]
+    permission_classes = [IsOrganizerOrReadOnly,]
 
     def get_object(self, pk):
         try:

@@ -1,13 +1,14 @@
-from ..permissions import ReadOnly
-from ..serializers.registration_presence_serializers import RegistrationPresenceSerializer
-from core.models import RegistrationPresence, Event, ESUser
+from core.models import ESUser, Event, RegistrationPresence
+from django.http import Http404
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.http import Http404
+
+from ..permissions import IsOrganizerForPatch, ReadOnly
+from ..serializers.registration_presence_serializers import \
+    RegistrationPresenceSerializer
 
 
 class RegistrationPresenceList(APIView):
@@ -56,7 +57,7 @@ class RegistrationPresenceDetail(APIView):
     """
     Handle retrieving and deleting a specific registration for an event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsOrganizerForPatch,]
 
     def get_object(self, event, user):
         try:
