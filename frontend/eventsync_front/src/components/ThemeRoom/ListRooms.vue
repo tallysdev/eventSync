@@ -1,16 +1,14 @@
 <template>
     <v-container fluid class="d-flex flex-column align-center">
-        <v-btn 
-        :to="`/events/${EventId}/create/theme-room`" 
-        color="success"
-        >Cadastrar Sala Tematica
+        <v-btn v-if="admin" :to="`/events/${EventId}/create/theme-room`" color="success">Cadastrar Sala Tematica
         </v-btn>
         <h2 v-if="rooms.length === 0">Nenhuma Sala Cadastrada ainda...</h2>
         <v-container fluid class="d-flex flex-wrap ga-5 justify-center">
             <v-card class="mx-2 my-2 justify-center w-100" variant="outlined" elevation="20" max-width="400"
                 min-width="50" v-for="(room, id) in rooms" :key="id">
                 <v-card-actions v-if="admin" class="d-flex flex-wrap w-100 justify-space-between">
-                    <v-btn color="yellow" variant="text" :to="`/events/${EventId}/edit/theme-room/${room.id}`">Editar</v-btn>
+                    <v-btn color="yellow" variant="text"
+                        :to="`/events/${EventId}/edit/theme-room/${room.id}`">Editar</v-btn>
                     <v-btn color="red" variant="text" @click="fetchDeleteRoom(room.id)">Exluir</v-btn>
                 </v-card-actions>
                 <v-card-title class="font-weight-bold text-h5 text-center">{{ room.name }}</v-card-title>
@@ -44,10 +42,16 @@
                         </v-col>
                     </v-row>
                 </v-card-text>
-                <v-card-actions class="d-flex flex-wrap w-100 justify-center">
-                    <v-btn color="blue" variant="text" @click="toggleDetails(room.id)">Ver Detalhes</v-btn>
-                    <v-btn color="green" variant="text">Participar</v-btn>
-                    <v-btn color="red" variant="text">Deixar de Ir</v-btn>
+                <v-card-actions class="d-flex flex-wrap w-100 justify-space-between">
+                    <v-btn color="blue" text @click="room.showDetails = !room.showDetails">Ver detalhes</v-btn>
+                    <template v-if="isSubscribed">
+                        <v-btn @click="handleUnsubscription" color="error" class="text-no-wrap">
+                            <b>Cancelar Inscrição</b>
+                        </v-btn>
+                    </template>
+                    <v-btn v-else @click="handleSubscription" color="success" class="text-no-wrap">
+                        Participar
+                    </v-btn>
                 </v-card-actions>
                 <v-expand-transition>
                     <div v-show="room.showDetails">
@@ -63,6 +67,9 @@
                     </div>
                 </v-expand-transition>
             </v-card>
+            <v-snackbar v-model="showSnackbar" :color="snackbarColor" timeout="4000" top>
+                {{ snackbarMessage }}
+            </v-snackbar>
         </v-container>
     </v-container>
 </template>
@@ -71,15 +78,59 @@
 
 import { ref, onMounted } from 'vue'
 import { fetchThemeRooms, deleteThemeRoom } from '@/services/themRoomService';
+import { useAuthStore } from '@/stores/auth';
+import {
+    signupForEvent,
+    cancelSubscription,
+    checkUserSubscription
+} from '@/services/eventService';
 import { type ThemeRoom } from '@/types/themeRoom';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute()
+const router = useRouter()
 const EventId = Number(route.params.id)
 const rooms = ref<ThemeRoom[]>([])
 const loading = ref(false)
 const errorMessage = ref<string | null>(null)
-const admin = true
+const admin = false
+const authStore = useAuthStore()
+const isSubscribed = ref(false)
+const showSnackbar = ref(false)
+const snackbarMessage = ref('')
+const snackbarColor = ref('')
+
+const checkSubscriptionStatus = async () => {
+    if (authStore.isAuthenticated) {
+        try {
+            console.log(authStore.token)
+            const response = await checkUserSubscription(rooms.value.id, authStore.getUser.id)
+            console.log('Subscription status:', response.data)
+            isSubscribed.value = await checkUserSubscription(rooms.value.id, authStore.getUser.id)
+        } catch (error) {
+            console.error('Error checking subscription status:', error)
+        }
+    }
+}
+
+const handleSubscription = async () => {
+    if (authStore.isAuthenticated) {
+        try {
+            await signupForEvent(rooms.value.id, authStore.getUser.id)
+            snackbarMessage.value = 'Inscrição realizada com sucesso!'
+            snackbarColor.value = 'success'
+            isSubscribed.value = true
+        } catch (error) {
+            console.error('Error subscribing:', error)
+        }
+    } else {
+        snackbarMessage.value = 'Você precisa estar logado para se inscrever.'
+        snackbarColor.value = 'error'
+        setTimeout(() => {
+            router.push('/login')
+        }, 2000)
+    }
+}
 
 // Função para alternar o estado 'showDetails' para cada sala individualmente
 const toggleDetails = (id: number) => {
