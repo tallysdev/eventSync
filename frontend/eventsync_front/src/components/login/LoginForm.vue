@@ -3,7 +3,13 @@
     <NavBar />
     <v-main class="flex-grow-1 pa-16 mb-10">
       <v-container fluid class="d-flex justify-center align-center" style="height: 100vh">
-        <v-card class="mx-auto pa-16 py-8 responsive-card" elevation="8" max-width="600" min-width="400" rounded="lg">
+        <v-card
+          class="mx-auto pa-16 py-8 responsive-card"
+          elevation="8"
+          max-width="600"
+          min-width="400"
+          rounded="lg"
+        >
           <h3 class="text-subtitle-1 font-weight-bold">Login</h3>
           <v-responsive class="mx-auto pb-2" max-width="344">
             <v-text-field
@@ -49,6 +55,11 @@
       </v-container>
     </v-main>
     <FooterVue />
+
+    <!-- Snackbar -->
+    <v-snackbar v-model="showSnackbar" :color="snackbarColor" timeout="2000" top>
+      {{ snackbarMessage }}
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -74,13 +85,13 @@ const rules = {
 
 const errorMessage = ref<string | null>(null)
 const showError = ref(false)
+const showSnackbar = ref(false)
+const snackbarMessage = ref('')
+const snackbarColor = ref('')
 
 // Computed property to determine if the form is valid
 const isFormValid = computed(() => {
-  return (
-    rules.email(email.value) === true &&
-    rules.password(password.value) === true
-  )
+  return rules.email(email.value) === true && rules.password(password.value) === true
 })
 
 const handleSubmit = async () => {
@@ -92,20 +103,28 @@ const handleSubmit = async () => {
       }
       await authStore.login(user)
       if (authStore.isAuthenticated) {
+        snackbarMessage.value = 'Login realizado com sucesso!'
+        snackbarColor.value = 'success'
+        showSnackbar.value = true
+        setTimeout(() => {
           router.push('/')
+        }, 2000)
       } else {
-        console.error('Login falhou')
         errorMessage.value = 'Login falhou. Usuário ou senha incorretos.'
         showError.value = true
+        snackbarMessage.value = errorMessage.value
+        snackbarColor.value = 'error'
+        showSnackbar.value = true
       }
     } catch (error) {
-      console.error('Erro no login:', error)
       errorMessage.value = 'Erro no login. Por favor, tente novamente.'
       showError.value = true
+      snackbarMessage.value = errorMessage.value
+      snackbarColor.value = 'error'
+      showSnackbar.value = true
     }
   }
 }
-
 </script>
 
 <style scoped></style>

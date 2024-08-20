@@ -5,7 +5,7 @@
       <v-container>
         <v-row class="d-flex align-center justify-space-evenly">
           <v-col cols="1">
-            <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img @click="navigateTo('/')" class="cursor-pointer" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
           </v-col>
           <v-col cols="3">
             <v-text-field
@@ -83,7 +83,7 @@
       <v-container>
         <v-row class="d-flex align-center justify-space-between">
           <v-col cols="2">
-            <v-img src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img @click="navigateTo('/')" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
           </v-col>
           <v-col cols="2" class="d-flex align-center justify-end">
             <v-btn icon @click="dialog = true">
@@ -192,6 +192,10 @@ const toggleSearchField = () => {
 
 const searchEvents = () => {
   console.log('Searching for events with query:', searchQuery.value)
+}
+
+const navigateTo = (route: string) => {
+  router.push(route)
 }
 
 // Authentication state

@@ -26,6 +26,7 @@
         <v-col cols="auto">
           <v-pagination
             v-model="currentPage"
+            :key="totalPages"
             :length="totalPages"
             @input="fetchSponsors"
           ></v-pagination>
@@ -34,7 +35,11 @@
       <v-btn @click="openDialog" color="primary" class="mt-4">
         <b> Adicionar Patrocinador </b>
       </v-btn>
-      <SponsorForm :dialog="dialog" @update:dialog="dialog = $event" @sponsor-added="onSponsorAdded" />
+      <SponsorForm
+        :dialog="dialog"
+        @update:dialog="dialog = $event"
+        @sponsor-added="onSponsorAdded"
+      />
     </v-col>
     <v-snackbar v-model="snackbar" :timeout="4000" top :color="snackbarColor" p>
       {{ snackbarMessage }}
@@ -44,7 +49,7 @@
 
 <script setup lang="ts">
 import { fetchSponsors } from '@/services/sponsorService'
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, nextTick } from 'vue'
 import { type Sponsor } from '@/types/sponsor'
 import SponsorForm from './SponsorForm.vue'
 
@@ -76,6 +81,7 @@ const fetchSponsorsData = async () => {
     const response = await fetchSponsors(currentPage.value, itemsPerPage)
     sponsors.value = response.data.results
     totalPages.value = Math.ceil(response.data.count / itemsPerPage)
+    await nextTick()
     clearTimeout(loadingTimeout)
   } catch (error) {
     console.error('Error fetching sponsors:', error)

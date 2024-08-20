@@ -14,24 +14,31 @@ from .views import sponsorship_view as spsview
 from .views import theme_room_view as themerv
 from .views import form_view as formview
 from .views import question_view as qview
+from .views import registration_presence_view as rpview
 
 urlpatterns = [
-    path('', ApiRootView.as_view(), name='api-root'),
-    path('users/', userv.UserList.as_view(), name='user_list'),
-    path('users/<int:pk>/', userv.UserDetail.as_view(), name='user_detail'),
-    path('locals/', locv.LocalListView.as_view(), name='local_list'),
-    path('locals/<int:pk>/', locv.LocalDetailView.as_view(), name='local_detail'),
-    path('events/', evtview.EventListView.as_view(), name='event_list'),
-    path('events/<int:pk>/', evtview.EventDetailView.as_view(), name='event_detail'),
-    path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
-    path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
-    path('sponsors/', spview.SponsorListView.as_view(), name='sponsor_list'),
-    path('sponsors/<int:pk>/', spview.SponsorDetailView.as_view(),
-         name='sponsor_detail'),
-    path('sponsorships/', spsview.SponsorShipListView.as_view(),
-         name='sponsorship_list'),
-    path('sponsorships/<int:pk>/',
-         spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
+     path('', ApiRootView.as_view(), name='api-root'),
+     path('users/', userv.UserList.as_view(), name='user_list'),
+     path('users/<int:pk>/', userv.UserDetail.as_view(), name='user_detail'),
+     path('locals/', locv.LocalListView.as_view(), name='local_list'),
+     path('locals/<int:pk>/', locv.LocalDetailView.as_view(), name='local_detail'),
+     path('events/', evtview.EventListView.as_view(), name='event_list'),
+     path('events/<int:pk>/', evtview.EventDetailView.as_view(), name='event_detail'),
+     path('themeRoom/', themerv.ThemeRoomListView.as_view(), name='theme_room_list'),
+     path('themeRoom/<int:pk>/', themerv.ThemeRoomDetailView.as_view(), name='theme_room_detail'),
+     path('sponsors/', spview.SponsorListView.as_view(), name='sponsor_list'),
+     path('sponsors/<int:pk>/', spview.SponsorDetailView.as_view(),
+     name='sponsor_detail'),
+     path('sponsorships/', spsview.SponsorShipListView.as_view(),
+          name='sponsorship_list'),
+     path('sponsorships/<int:pk>/',
+          spsview.SponsorShipDetailView.as_view(), name='sponsorship_detail'),
+     path('forms/', formview.FormsRegisterList.as_view(), name='form_list'),
+     path('forms/<int:pk>/', formview.FormsRegisterDetail.as_view(), name='forms_detail'),
+     path('questions/', qview.QuestionList.as_view(), name='question_list'),
+     path('questions/<int:pk>/', qview.QuestionDetail.as_view(), name='question_detail'),
+     path('events/registration/', rpview.RegistrationPresenceList.as_view(), name='event_registration_list'),
+     path('events/registration/<int:event_id>/<int:user_id>/', rpview.RegistrationPresenceDetail.as_view(), name='event_registration_detail'),
 ]
 
 # auth urls
