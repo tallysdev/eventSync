@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
-import ThemeRoom from "@/components/ThemeRoom/CreateComponentTR.vue";
+import ThemeRoom from "@/components/ThemeRoom/CreateRooms.vue";
 
 describe("ThemeRoom.vue", () => {
     const wrapper = mount(ThemeRoom);
