@@ -10,23 +10,45 @@ from rest_framework.views import APIView
 from ..permissions import ReadOnly
 from ..serializers.event_serializers import EventSerializer
 
+class CustomPageNumberPagination(PageNumberPagination):
+    page_size_query_param = 'page_size'
+
 
 class EventListView(APIView):
     """
     List all events, or create a new event.
     """
     permission_classes = [IsAuthenticated | ReadOnly]
-    pagination_class = PageNumberPagination
+    pagination_class = CustomPageNumberPagination
 
     @extend_schema(
         responses={200: EventSerializer(many=True)},
         parameters=[
             OpenApiParameter(name='page', description='Page number', required=False, type=int),
             OpenApiParameter(name='page_size', description='Page size', required=False, type=int),
+            OpenApiParameter(name='status', description='Event status', required=False, type=str),
+            OpenApiParameter(name='event_type', description='Event type', required=False, type=str),
+            OpenApiParameter(name='name', description='Event name', required=False, type=str),
         ],
     )
     def get(self, request, format=None):
         events = Event.objects.all().order_by("id")
+
+        # Filter by status if the status parameter is provided
+        status_filter = request.query_params.get('status')
+        if status_filter:
+            events = events.filter(status=status_filter)
+
+        # Filter by event type if the event_type parameter is provided
+        event_type_filter = request.query_params.get('event_type')
+        if event_type_filter:
+            events = events.filter(event_type=event_type_filter)
+
+        # Filter by name if the name parameter is provided
+        name_filter = request.query_params.get('name')
+        if name_filter:
+            events = events.filter(name__icontains=name_filter)
+
         paginator = self.pagination_class()
         result_page = paginator.paginate_queryset(events, request)
         serializer = EventSerializer(result_page, many=True)

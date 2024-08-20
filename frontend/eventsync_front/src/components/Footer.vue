@@ -16,8 +16,14 @@
         <v-col cols="12" md="3" class="text-center text-md-left">
           <h3 class="text-h6 font-weight-bold">Mapa do site</h3>
           <v-list dense>
-            <v-list-item v-for="item in siteMapItems" :key="item">
-              <v-list-item-title>{{ item }}</v-list-item-title>
+            <v-list-item @click="navigateTo('/')">
+              <v-list-item-title>Home</v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="navigateTo('/events')">
+              <v-list-item-title>Eventos</v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="navigateTo('/login')">
+              <v-list-item-title>Login</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-col>
@@ -35,9 +41,16 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 const findEventsItems = ['Hoje', 'Amanhã', 'Esta Semana', 'Próxima Semana']
-const siteMapItems = ['Home', 'Eventos', 'Login', 'Contato']
 const contactItems = ['Email: fakeemail@gmail.com', 'Celular: 213214124124']
+
+const navigateTo = (route: string) => {
+  router.push(route)
+}
 </script>
 
 <style scoped>
@@ -48,6 +61,7 @@ const contactItems = ['Email: fakeemail@gmail.com', 'Celular: 213214124124']
 
 .footer-row > .v-col {
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 @media (min-width: 960px) {
