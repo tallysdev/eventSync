@@ -26,6 +26,7 @@ class RegistrationPresenceList(APIView):
         ]
     )
     def post(self, request, format=None):
+        print(request.user)
         event_id = request.query_params.get('event_id')
         user_id = request.query_params.get('user_id')
 

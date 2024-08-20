@@ -10,6 +10,8 @@ from rest_framework.views import APIView
 from ..permissions import ReadOnly
 from ..serializers.event_serializers import EventSerializer
 
+from ..utils.register import save_current_user_registration
+
 class CustomPageNumberPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
 
@@ -59,8 +61,11 @@ class EventListView(APIView):
         responses={201: EventSerializer},
     )
     def post(self, request, format=None):
+        print(request.user)
         serializer = EventSerializer(data=request.data)
         if serializer.is_valid():
+            event_instance = serializer.save()  # Salva o evento
+            save_current_user_registration(request.user, event_instance)
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

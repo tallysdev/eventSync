@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import ESUser, Local, Event, Sponsor, Sponsorship
+from .models import ESUser, Local, Event, Sponsor, Sponsorship, RegistrationPresence
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
@@ -59,3 +59,10 @@ class SponsorshipAdmin(admin.ModelAdmin):
     list_display = ('event', 'sponsor')
     list_filter = ('event', 'sponsor')
     search_fields = ('event_name', 'sponsor_name')
+
+
+@admin.register(RegistrationPresence)
+class RegistrationPresenceAdmin(admin.ModelAdmin):
+    list_display = ['user', 'event', 'presence', 'type', 'date_inscription', 'date_presence']
+    search_fields = ['user__username', 'event__name']
+    list_filter = ['presence', 'type', 'date_inscription', 'date_presence']
