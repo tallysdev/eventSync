@@ -13,7 +13,7 @@
 </style>
 
 <script setup lang="ts">
-import ThemeRoom from '@/components/ThemeRoom/CreateComponentTR.vue';
+import ThemeRoom from '@/components/ThemeRoom/CreateRooms.vue';
 import NavBar from '@/components/NavBar.vue';
 import FooterVue from '@/components/Footer.vue';
 
