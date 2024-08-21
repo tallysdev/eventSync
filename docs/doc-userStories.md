@@ -99,16 +99,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**                 | Tallys                                 |
 | **Testador**                | Vinícius                               |                                |
 
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA02.01 | O sistema deve permitir ao organizador criar um novo formulário de avaliação para um evento. |
-| TA02.02 | O sistema deve permitir ao organizador adicionar perguntas ao formulário de avaliação. |
-| TA02.03 | O sistema deve permitir ao organizador alterar as perguntas no formulário de avaliação. |
-| TA02.04 | O sistema deve permitir ao organizador excluir perguntas do formulário de avaliação. |
-| TA02.05 | O sistema deve permitir aos participantes acessar e preencher o formulário de avaliação do evento. |
-| TA02.06 | O sistema deve registrar e armazenar as respostas dos participantes no formulário de avaliação. |
-| TA02.07 | O sistema deve permitir ao organizador visualizar as respostas dos participantes no formulário de avaliação. |
-
 ### User Story US03 - Manter Evento.
 | Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.|
 |---|---
