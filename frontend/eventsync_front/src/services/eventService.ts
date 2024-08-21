@@ -84,3 +84,27 @@ export const checkUserSubscription = async (eventId: number, userId: number) => 
     throw error
   }
 }
+
+export const fetchMyEvents = (
+  page: number = 1,
+  pageSize: number = 10,
+  status?: string,
+  type?: string,
+  name?: string
+) => {
+  return api.get('eventsorganized/', {
+    params: { page, page_size: pageSize, status, event_type: type, name }
+  })
+}
+
+export const fetchEventsPresence = (
+  page: number = 1,
+  pageSize: number = 10,
+  status?: string,
+  type?: string,
+  name?: string
+) => {
+  return api.get('eventspresence/', {
+    params: { page, page_size: pageSize, status, event_type: type, name }
+  })
+}
