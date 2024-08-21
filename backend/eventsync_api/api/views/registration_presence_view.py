@@ -10,6 +10,8 @@ from ..permissions import IsOrganizerForPatch, ReadOnly
 from ..serializers.registration_presence_serializers import \
     RegistrationPresenceSerializer
 
+from ..serializers.auth_serializers import ESUserSerializer
+
 
 class RegistrationPresenceList(APIView):
     """
@@ -126,3 +128,37 @@ class RegistrationPresenceDetail(APIView):
         registration = self.get_object(event, user)
         registration.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class OrganizerDetail(APIView):
+    """
+    Retrieve the organizer of an event.
+    """
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self, event):
+        try:
+            return RegistrationPresence.objects.get(event=event, type='organizer')
+        except RegistrationPresence.DoesNotExist:
+            raise Http404
+        
+    def get_orguser(self, userid):
+        try:
+            return ESUser.objects.get(pk=userid)
+        except ESUser.DoesNotExist:
+            raise Http404
+
+    @extend_schema(
+        summary='Retrieve organizer for an event',
+        responses={200: RegistrationPresenceSerializer},
+    )
+    def get(self, request, event_id, format=None):
+        try:
+            event = Event.objects.get(id=event_id)
+        except Event.DoesNotExist:
+            return Response({'error': 'Event not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        registration = self.get_object(event)
+        user = self.get_orguser(registration.user)
+        serializer = ESUserSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)

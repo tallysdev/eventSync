@@ -137,3 +137,10 @@ export const deleteEvent = async (eventId: number) => {
     throw error
   }
 }
+
+export const getOrganizer = (eventid: number) => {
+  const { token } = useAuthStore()
+  return api.get(`organizer/${eventid}/`, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+}
