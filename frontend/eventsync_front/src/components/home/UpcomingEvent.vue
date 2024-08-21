@@ -26,14 +26,14 @@
                     <h1 class="text-h4 font-weight-bold text-left event-title">
                       {{ event.name }}
                     </h1>
-                    <div class="d-flex align-center mb-2">
+                    <div class="d-flex align-center mb-2" v-if="locations[event.local]">
                       <v-icon class="mr-2" color="background">mdi-map-marker</v-icon>
                       <p class="text-h6 font-weight-light primary--text">
-                        {{ event.locationDetails.local_name }},
-                        {{ event.locationDetails.street_name }}
-                        {{ event.locationDetails.street_number }},
-                        {{ event.locationDetails.city }} -
-                        {{ event.locationDetails.state }}
+                        {{ locations[event.local].local_name }},
+                        {{ locations[event.local].street_name }}
+                        {{ locations[event.local].street_number }},
+                        {{ locations[event.local].city }} -
+                        {{ locations[event.local].state }}
                       </p>
                     </div>
                     <p class="text-h5">
@@ -66,37 +66,39 @@ import { ref, onMounted } from 'vue'
 import { fetchEvents, fetchLocal } from '@/services/eventService'
 import { useRouter } from 'vue-router'
 import { formatDate } from '@/utils/formatDate'
+import type { Event } from '@/types/event'
+import type { Local } from '@/types/local'
 
 const router = useRouter()
-const upcomingEvents = ref([])
+const upcomingEvents = ref<Event[]>([])
+const locations = ref<Record<number, Local>>({})
 
-const fetchLocationDetails = async (localId: number) => {
+const fetchLocationDetails = async (localId: number): Promise<void> => {
   try {
-    const response = await fetchLocal(localId)
-    return response.data
+    if (!locations.value[localId]) {
+      const response = await fetchLocal(localId)
+      locations.value[localId] = response.data
+    }
   } catch (error) {
     console.error('Error fetching local detail:', error)
-    return null
   }
 }
 
 const fetchUpcomingEvents = async () => {
   const response = await fetchEvents(1, 4, 'upcoming')
-  const events = response.data.results
+  const events = response.data.results as Event[]
 
-  // Fetch location details for each event
   for (const event of events) {
     if (event.local) {
-      event.locationDetails = await fetchLocationDetails(event.local)
-    } else {
-      event.locationDetails = {}
+      await fetchLocationDetails(event.local)
     }
   }
 
   upcomingEvents.value = events
 }
 
-const goToEvent = (id: number): void => {
+const goToEvent = (id: number | undefined): void => {
+  if (!id) return
   router.push(`/events/${id}`)
 }
 
@@ -112,37 +114,5 @@ onMounted(() => {
 .height93 {
   height: 93%;
 }
-:deep(.v-carousel__controls) {
-  bottom: 0 !important;
-  align-items: center !important;
-  width: 100% !important;
-  color: white !important;
-}
-
-.event-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-}
-
-.event-details h3 {
-  margin: 0;
-  color: black;
-}
-
-.event-details p.primary--text {
-  color: #3b5998;
-}
-
-.event-details p {
-  margin: 10px 0;
-}
-
-@media (max-width: 601px) {
-  .event-title {
-    font-size: 1.5rem !important;
-  }
-}
+/* Additional styles */
 </style>
