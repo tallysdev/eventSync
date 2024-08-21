@@ -25,6 +25,18 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA02.12                       | O sistema não deve permitir ao organizador cadastrar perguntas múltipla escolha vazias. | Sim |
 | TA02.13                       | O sistema não deve permitir ao organizador cadastrar perguntas múltipla escolha sem opções de marcar. | Sim |
 
+### User Story US03 - Manter Evento - 67%
+| Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.|
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA03.01                       | O sistema deve permitir o cadastro de um novo evento com todos os campos obrigatórios preenchidos. | Sim |
+| TA03.02                       | O sistema não deve permitir o cadastro de um novo evento sem todos os campos obrigatórios preenchidos. | Sim |
+| TA03.03                       | O sistema deve permitir a visualização dos detalhes de um evento específico cadastrado. | Sim |
+| TA03.04                       | O sistema deve permitir a alteração dos dados de um evento existente. | Não |
+| TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
+| TA03.06                       | O sistema deve listar todos os eventos cadastrados de forma organizada. | Sim |
 
 
 ### User Story US16 - Gerar certificado de participação - 100%
