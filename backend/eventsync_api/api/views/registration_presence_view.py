@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from rest_framework.permissions import IsAuthenticated
 from ..permissions import IsOrganizerForPatch, ReadOnly
 from ..serializers.registration_presence_serializers import \
     RegistrationPresenceSerializer
