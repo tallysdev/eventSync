@@ -192,7 +192,8 @@ const getStatusColor = (status: string): string => {
 const handleGenerateCertificate = async (event: Event) => {
   try {
     await gerarCertificado(
-      authStore.getUser.name, // Substitua pelo nome do usuário
+      authStore.getUser.name,
+      authStore.getUser.cpf, // Substitua pelo nome do usuário
       event.name,
       event.hours_quantity, // Substitua pela duração do evento
       event.start_date,

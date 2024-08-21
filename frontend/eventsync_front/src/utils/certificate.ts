@@ -1,15 +1,18 @@
 import jsPDF from 'jspdf';
 import { getOrganizer } from '@/services/eventService';
 import { type Profile } from '@/types/users';
+import { v4 as uuidv4 } from 'uuid';
 
 export const gerarCertificado = async (
     nomeUsuario: string,
+    cpfUser: string,
     nomeEvento: string,
     horasEvento: number,
     dataEvento1: string,
     dataEvento2: string,
     eventId: number,
 ) => {
+    const randomValue = uuidv4();
     try {
         // Obtendo informações do organizador
         const response = await getOrganizer(eventId);
@@ -46,7 +49,7 @@ export const gerarCertificado = async (
         doc.setFontSize(14);
         doc.setFont('Arial', 'normal');
         doc.text(
-            `Certificamos que ${nomeUsuario} participou do evento ${nomeEvento}`,
+            `Certificamos que ${nomeUsuario} portador do cpf: ${cpfUser} participou do evento ${nomeEvento}`,
             148.5,
             90,
             { align: 'center' }
@@ -59,8 +62,12 @@ export const gerarCertificado = async (
         );
 
         // Assinatura
-        doc.text(`${organizer.name}`, 148.5, 150, { align: 'center' });
-        doc.text('Organizador do Evento', 148.5, 160, { align: 'center' });
+        doc.text(`${organizer.name}`, 148.5, 140, { align: 'center' });
+        doc.text('Organizador do Evento', 148.5, 155, { align: 'center' });
+
+        // Adicionando o randomValue bem à direita
+        const margin = 10; // Margem da borda direita
+        doc.text(`${randomValue}`, 297 - margin, 170, { align: 'right' }); // Ajustado para X=297-margem
 
         // Nome do arquivo
         const nomeArquivo = `Certificado_${nomeUsuario.replace(/\s+/g, '_')}.pdf`;
