@@ -108,3 +108,28 @@ export const fetchEventsPresence = (
     params: { page, page_size: pageSize, status, event_type: type, name }
   })
 }
+
+export const updateEvent = (formData: FormData, eventId: number) => {
+  const { token } = useAuthStore()
+  return api.patch(`events/${eventId}/`, formData, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+}
+
+export const deleteEvent = async (eventId: number) => {
+  const { token } = useAuthStore()
+  try {
+    const response = await api.delete(`events/${eventId}/`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+
+    console.error(
+      'Error deleting event:',
+      axiosError.response?.data || axiosError.message
+    )
+    throw error
+  }
+}
