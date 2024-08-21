@@ -141,7 +141,7 @@
   const route = useRoute()
   const valid = ref(false)
   const submitting = ref(false)
-  const eventId = route.params.id
+  const eventId = Number(route.params.id)
   
   const errorMessage = ref<string | null>(null)
   const showError = ref(false)
@@ -191,6 +191,7 @@
         hours_quantity: eventForm.value.hours_quantity,
         event_type: eventForm.value.event_type,
         description: eventForm.value.description,
+        status: 'upcoming'
       })
     ) {
       submitting.value = false
@@ -228,7 +229,7 @@
   }
   
   const goBack = () => {
-    router.push({ name: 'home' })
+    router.push({ name: 'events-organized' })
   }
   
   const isFormValid = computed(() => {

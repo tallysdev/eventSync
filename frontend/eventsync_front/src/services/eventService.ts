@@ -92,8 +92,10 @@ export const fetchMyEvents = (
   type?: string,
   name?: string
 ) => {
+  const { token } = useAuthStore()
   return api.get('eventsorganized/', {
-    params: { page, page_size: pageSize, status, event_type: type, name }
+    params: { page, page_size: pageSize, status, event_type: type, name },
+    headers: { Authorization: `Bearer ${token}` } 
   })
 }
 
@@ -104,8 +106,10 @@ export const fetchEventsPresence = (
   type?: string,
   name?: string
 ) => {
+  const { token } = useAuthStore()
   return api.get('eventspresence/', {
-    params: { page, page_size: pageSize, status, event_type: type, name }
+    params: { page, page_size: pageSize, status, event_type: type, name },
+    headers: { Authorization: `Bearer ${token}` } 
   })
 }
 

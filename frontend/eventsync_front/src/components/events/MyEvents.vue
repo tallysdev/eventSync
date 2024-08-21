@@ -195,7 +195,7 @@
   
   // Redirecionar para a página de edição
   const editEvent = (id: number): void => {
-    router.push(`/events/edit/${id}`)
+    router.push(`/events-organized/update/${id}`)
   }
   
   // Confirmar deleção
