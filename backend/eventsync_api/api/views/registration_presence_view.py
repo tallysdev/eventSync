@@ -136,9 +136,9 @@ class OrganizerDetail(APIView):
     """
     permission_classes = [IsAuthenticated]
 
-    def get_object(self, event):
+    def get_object(self, eventid):
         try:
-            return RegistrationPresence.objects.get(event=event, type='organizer')
+            return RegistrationPresence.objects.get(event=eventid, type='organizer')
         except RegistrationPresence.DoesNotExist:
             raise Http404
         
@@ -159,6 +159,6 @@ class OrganizerDetail(APIView):
             return Response({'error': 'Event not found'}, status=status.HTTP_404_NOT_FOUND)
 
         registration = self.get_object(event)
-        user = self.get_orguser(registration.user)
+        user = self.get_orguser(registration.user.pk)
         serializer = ESUserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)

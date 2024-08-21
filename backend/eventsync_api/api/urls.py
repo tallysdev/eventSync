@@ -37,7 +37,7 @@ urlpatterns = [
      path('events/registration/<int:event_id>/<int:user_id>/', rpview.RegistrationPresenceDetail.as_view(), name='event_registration_detail'),
      path('eventsorganized/', evtview.UserOrganizedEventsView.as_view(), name='events_organized'),
      path('eventspresence/', evtview.UserPresentEventsView.as_view(), name='events_presence'),
-     path('organizer//<int:event_id,>/', rpview.OrganizerDetail.as_view(), name='organizer'),
+     path('organizer/<int:event_id>/', rpview.OrganizerDetail.as_view(), name='organizer'),
 ]
 
 # auth urls
