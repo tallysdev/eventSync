@@ -17,6 +17,7 @@
     "@mdi/font": "^7.4.47",
     "@vuepic/vue-datepicker": "^9.0.0",
     "axios": "^1.7.2",
+    "jspdf": "^2.5.1",
     "jwt-decode": "^4.0.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
