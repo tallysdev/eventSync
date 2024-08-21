@@ -35,6 +35,8 @@ urlpatterns = [
      path('questions/<int:pk>/', qview.QuestionDetail.as_view(), name='question_detail'),
      path('events/registration/', rpview.RegistrationPresenceList.as_view(), name='event_registration_list'),
      path('events/registration/<int:event_id>/<int:user_id>/', rpview.RegistrationPresenceDetail.as_view(), name='event_registration_detail'),
+     path('eventsorganized/', evtview.UserOrganizedEventsView.as_view(), name='events_organized'),
+     path('eventspresence/', evtview.UserPresentEventsView.as_view(), name='events_presence'),
 ]
 
 # auth urls
