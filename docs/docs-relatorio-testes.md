@@ -50,6 +50,19 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
 | TA03.06                       | O sistema deve listar todos os eventos cadastrados de forma organizada. | Sim |
 
+### User Story US06 - Seção do Patrocinador - 50%
+| Descrição | O sistema deve conter uma área na tela para os patrocinadores e apoiadores(órgãos gerais que são cadastrados pelo administrador) do sistema, na seção particular de eventos deve conter uma mesma área para os patrocinadores e organizadores da plataforma. |
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA06.01                       | O sistema deve permitir ao administrador inserir um novo patrocinador na plataforma. | Sim |
+| TA06.02                       | O sistema deve permitir ao administrador alterar os dados de um patrocinador existente. | Não |
+| TA06.03                       | O sistema deve permitir ao administrador excluir um patrocinador existente. | Não |
+| TA06.04                       | O sistema deve listar todos os patrocinadores cadastrados de forma organizada. |Sim |
+| TA06.05                       | O sistema não deve permitir a inserção de um patrocinador sem todas as informações obrigatórias preenchidas. | Sim |
+| TA06.08                       | O sistema deve permitir ao administrador filtrar patrocinadores por eventos associados. | Não |
+
 ### User Story US12 - Reserva e confirmação - 100%
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro. |
 |---|---
@@ -78,7 +91,6 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 ### User Story US16 - Gerar certificado de participação - 100%
 | Descrição | O sistema deve ser capaz de gerar um certificado para o membro que participou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuário, CPF do usuário, horas destinadas ao evento, e suas possíveis menções no evento.
 |---|---
-
 
 | **Testes de Aceitação (TA)** | **Descrição** | **Passou**
 | ----------- | --------- |--------- |
