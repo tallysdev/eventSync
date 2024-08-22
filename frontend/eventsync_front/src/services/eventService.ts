@@ -95,7 +95,7 @@ export const fetchMyEvents = (
   const { token } = useAuthStore()
   return api.get('eventsorganized/', {
     params: { page, page_size: pageSize, status, event_type: type, name },
-    headers: { Authorization: `Bearer ${token}` } 
+    headers: { Authorization: `Bearer ${token}` }
   })
 }
 
@@ -109,7 +109,7 @@ export const fetchEventsPresence = (
   const { token } = useAuthStore()
   return api.get('eventspresence/', {
     params: { page, page_size: pageSize, status, event_type: type, name },
-    headers: { Authorization: `Bearer ${token}` } 
+    headers: { Authorization: `Bearer ${token}` }
   })
 }
 
@@ -130,10 +130,7 @@ export const deleteEvent = async (eventId: number) => {
   } catch (error) {
     const axiosError = error as AxiosError
 
-    console.error(
-      'Error deleting event:',
-      axiosError.response?.data || axiosError.message
-    )
+    console.error('Error deleting event:', axiosError.response?.data || axiosError.message)
     throw error
   }
 }
@@ -143,4 +140,39 @@ export const getOrganizer = (eventid: number) => {
   return api.get(`organizer/${eventid}/`, {
     headers: { Authorization: `Bearer ${token}` }
   })
+}
+
+export const markParticipantAsApproved = async (eventId: number, participantId: number) => {
+  try {
+    const { token } = useAuthStore()
+    return await api.patch(
+      `/events/registration/${eventId}/${participantId}/`,
+      { presence: true },
+      {
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    )
+  } catch (error) {
+    const axiosError = error as AxiosError
+    console.error('Error approving participant:', axiosError.response?.data || axiosError.message)
+    throw error
+  }
+}
+
+export const fetchOrganizerId = async (eventId: number) => {
+  try {
+    const { token } = useAuthStore()
+    const response = await api.get(`organizer/${eventId}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+    console.error('Error fetching organizer id:', axiosError.response?.data || axiosError.message)
+    throw error
+  }
+}
+
+export const checkPresenceStatus = (eventId: number, participantId: number) => {
+  return api.get(`events/registration/${eventId}/${participantId}/`)
 }

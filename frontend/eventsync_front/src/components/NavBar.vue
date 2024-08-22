@@ -27,8 +27,8 @@
             ></v-text-field>
           </v-col>
           <v-col cols="7" class="d-flex align-center justify-space-between">
-            <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
             <template v-if="isAuthenticated">
+              <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
               <v-btn :to="{ name: 'certificates' }">Certificados</v-btn>
               <v-btn :to="{ name: 'events-organized' }">Eventos Organizados</v-btn>
               <v-btn
@@ -107,7 +107,7 @@
             </template>
             <v-list-item-title>Pesquisar eventos</v-list-item-title>
           </v-list-item>
-          <v-list-item @click="() => router.push({ name: 'create-event' })">
+          <v-list-item v-if="isAuthenticated" @click="navigateTo('/create-event')">
             <template v-slot:prepend>
               <v-icon>mdi-plus</v-icon>
             </template>

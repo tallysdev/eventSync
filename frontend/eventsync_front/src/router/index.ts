@@ -7,6 +7,7 @@ import RegisterView from '@/views/RegisterView.vue'
 import { useAuthStore } from '@/stores/auth'
 import EventsOrgView from '@/views/EventsOrgView.vue'
 import EventsParticipatedView from '@/views/EventsParticipatedView.vue'
+import PartcipantView from '@/views/PartcipantView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,30 +20,34 @@ const router = createRouter({
     {
       path: '/create-event',
       name: 'create-event',
-      component: () => import('../views/EventPageView.vue')
+      component: () => import('../views/EventPageView.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/create-form',
       name: 'create-form',
-      component: () => import('../views/CreateForm.vue')
+      component: () => import('../views/CreateForm.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/local-form',
       name: 'local-form',
-      component: () => import('../views/LocalView.vue')
+      component: () => import('../views/LocalView.vue'),
+      meta: { requiresAuth: true }
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   component: () => import('../views/AboutView.vue')
+    // },
     {
       path: '/sponsors',
       name: 'sponsors',
-      component: SponsorsView
+      component: SponsorsView,
+      meta: { requiresAuth: true }
       // para views que sejam privadas usar esse exemplo
       // meta: { requiresAuth: true }
     },
@@ -71,7 +76,8 @@ const router = createRouter({
     {
       path: '/certificates',
       name: 'certificates',
-      component: EventsParticipatedView
+      component: EventsParticipatedView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/login',
@@ -82,6 +88,12 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegisterView
+    },
+    {
+      path: '/participants/:id',
+      name: 'participants',
+      component: PartcipantView,
+      meta: { requiresAuth: true }
     },
     {
       path: '/:pathMatch(.*)*',
