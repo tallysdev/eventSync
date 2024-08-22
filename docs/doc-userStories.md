@@ -16,8 +16,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 22/04/2024 | 0.1.2   | Aplicando padrão, removendo duplicatas e remodelando user stories | Tallys | 
 | 23/04/2024 | 0.1.3   | Correção de Ortografia             | Tallys |
 | 20/07/2024 | 0.1.4   | Adição de Testes de aceitação             | Dayanne|
-
-
+| 22/08/2024 | 0.1.5   | Movido Testes de aceitação para outro documento, adicionado estimativa de tempo real gasto            | Dayanne|
 
 ### Tabelas de Users Stories
 | Nome | Descrição |
@@ -60,7 +59,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Essencial                               |
 | **Estimativa**              | 8 h                                    |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 12 h                                   |
 | **Tamanho Funcional**       | 7 PF                                   |
 | **Analista**                | Ítalo                                  |
 | **Desenvolvedor**           | Lucas                                  |
@@ -83,7 +82,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Essencial                               |
 | **Estimativa**              | 10 h                                    |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 15 h                                    |
 | **Tamanho Funcional**       | 8 PF                                    |
 | **Analista**                | Lucas                                  |
 | **Desenvolvedor**           | Dayanne                                |
@@ -105,7 +104,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Essencial                               |
 | **Estimativa**              | 8 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 16 h                                    |
 | **Tamanho Funcional**       | 7 PF                                    |
 | **Analista**                | Tallys                                  |
 | **Desenvolvedor**           | Vinícius                                |
@@ -124,22 +123,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Essencial                               |
+| **Prioridade**              | Média                               |
 | **Estimativa**              | 6 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 12 h                                   |
 | **Tamanho Funcional**       | 5 PF                                    |
 | **Analista**                | Lucas                                   |
 | **Desenvolvedor**           | Dayanne                                 |
 | **Revisor**                 | Tallys                                  |
 | **Testador**                | Vinícius                                |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA04.01 | O sistema deve permitir a criação de uma nova sala temática dentro de um evento existente.            |
-| TA04.02 | O sistema deve permitir a alteração dos dados de uma sala temática existente.                         |
-| TA04.03 | O sistema deve permitir a exclusão de uma sala temática existente.                                    |
-| TA04.04 | O sistema deve garantir que as salas temáticas sejam criadas com horários distintos e não se sobreponham. |
-| TA04.05 | O sistema deve listar todas as salas temáticas de um evento de forma clara e organizada.              |
 
 ### User Story US05 - Manter Presença.
 | Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
@@ -155,7 +146,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Alta                                    |
 | **Estimativa**              | 7 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 5 h                                     |
 | **Tamanho Funcional**       | 6 PF                                    |
 | **Analista**                | Dayanne                                 |
 | **Desenvolvedor**           | Tallys                                  |
@@ -186,7 +177,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Alta                                    |
 | **Estimativa**              | 6 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 5 h                                     |
 | **Tamanho Funcional**       | 5 PF                                    |
 | **Analista**                | Tallys                                  |
 | **Desenvolvedor**           | Vinícius                                |
@@ -209,23 +200,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Essencial                               |
+| **Prioridade**              | Média                               |
 | **Estimativa**              | 8 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                     |
 | **Tamanho Funcional**       | 7 PF                                    |
 | **Analista**                | Vinícius                                |
 | **Desenvolvedor**           | Ítalo                                   |
 | **Revisor**                 | Lucas                                   |
 | **Testador**                | Dayanne                                 |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA07.01 | O sistema deve permitir que um usuário convide participantes para um evento específico.      |
-| TA07.02 | O sistema deve permitir visualizar a lista de participantes inscritos em um evento.          |
-| TA07.03 | O sistema deve permitir que um usuário realize a inscrição de novos participantes no evento. |
-| TA07.04 | O sistema deve permitir que um usuário cancele a inscrição de um participante no evento.     |
-| TA07.05 | O sistema deve listar todos os participantes inscritos em um evento de forma clara e organizada. |
-| TA07.06 | O sistema deve permitir o envio de mensagens para os participantes do evento.                |
 
 ### User Story US08 - Calendário de Eventos.
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
@@ -237,9 +219,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Média                                   |
+| **Prioridade**              | Baixa                                   |
 | **Estimativa**              | 5 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 4 PF                                    |
 | **Analista**                | Lucas                                   |
 | **Desenvolvedor**           | Dayanne                                 |
@@ -247,7 +229,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Testador**                | Vinícius                                |
 
 ### User Story US09 - Gerar Relatórios de participantes do evento.
-| Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
+| Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros. |
 |---|---
 
 | **Requisitos envolvidos** |                                                    |
@@ -257,20 +239,14 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Alta                                    |
+| **Prioridade**              | Média                                    |
 | **Estimativa**              | 7 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 6 PF                                    |
 | **Analista**                | Dayanne                                 |
 | **Desenvolvedor**           | Tallys                                  |
 | **Revisor**                 | Vinícius                                |
 | **Testador**                | Ítalo                                   |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA09.01 | O sistema deve permitir gerar relatórios detalhados sobre os participantes de um evento.     |
-| TA09.02 | O sistema deve permitir filtrar os participantes do evento por instituição, região, raça, sexo, idade e gênero. |
-| TA09.03 | O sistema deve exibir os relatórios gerados de forma clara e organizada para fácil interpretação. |
 
 ### User Story US10 - Notificações para Usuários.
 | Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
@@ -282,9 +258,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Alta                                    |
+| **Prioridade**              | Baixa                                    |
 | **Estimativa**              | 6 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 5 PF                                    |
 | **Analista**                | Tallys                                  |
 | **Desenvolvedor**           | Vinícius                                |
@@ -304,7 +280,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Média                                   |
 | **Estimativa**              | 4 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 3 PF                                    |
 | **Analista**                | Vinícius                                |
 | **Desenvolvedor**           | Ítalo                                   |
@@ -325,7 +301,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Alta                                    |
 | **Estimativa**              | 5 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 8 h                                     |
 | **Tamanho Funcional**       | 4 PF                                    |
 | **Analista**                | Ítalo                                   |
 | **Desenvolvedor**           | Dayanne                                 |
@@ -344,9 +320,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Média                                   |
+| **Prioridade**              | Baixa                                   |
 | **Estimativa**              | 6 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 5 PF                                    |
 | **Analista**                | Tallys                                  |
 | **Desenvolvedor**           | Lucas                                   |
@@ -368,9 +344,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Alta                                    |
+| **Prioridade**              | Baixa                                    |
 | **Estimativa**              | 7 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 6 PF                                    |
 | **Analista**                | Lucas                                   |
 | **Desenvolvedor**           | Vinícius                                |
@@ -390,7 +366,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Média                                   |
 | **Estimativa**              | 4 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 4 h                                     |
 | **Tamanho Funcional**       | 3 PF                                    |
 | **Analista**                | Dayanne                                 |
 | **Desenvolvedor**           | Tallys                                  |
@@ -409,7 +385,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 |------------------------------|----------------------------------------|
 | **Prioridade**              | Alta                                    |
 | **Estimativa**              | 5 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 4 h                                       |
 | **Tamanho Funcional**       | 4 PF                                    |
 | **Analista**                | Tallys                                  |
 | **Desenvolvedor**           | Ítalo                                   |
@@ -428,9 +404,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Informação                   | Detalhes                                |
 |------------------------------|----------------------------------------|
-| **Prioridade**              | Alta                                    |
+| **Prioridade**              | Média                                    |
 | **Estimativa**              | 6 h                                     |
-| **Tempo Gasto (real):**     |                                        |
+| **Tempo Gasto (real):**     | 0 h                                       |
 | **Tamanho Funcional**       | 5 PF                                    |
 | **Analista**                | Vinícius                                |
 | **Desenvolvedor**           | Dayanne                                 |
