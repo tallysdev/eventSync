@@ -90,6 +90,14 @@ class Event(models.Model):
         verbose_name_plural = "Events"
         ordering = ['id']
 
+    def update_status(self):
+        now = timezone.now()
+        if self.start_date > now:
+            self.status = 'upcoming'
+        elif self.start_date <= now <= self.end_date:
+            self.status = 'ongoing'
+        else:
+            self.status = 'completed'
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)

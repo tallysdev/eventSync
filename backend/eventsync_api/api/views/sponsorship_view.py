@@ -3,11 +3,10 @@ from django.http import Http404
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from ..permissions import ReadOnly
+from ..permissions import IsOrganizerOfEvent
 from ..serializers.sponsorship_serializers import SponsorshipSerializer
 
 
@@ -15,7 +14,7 @@ class SponsorShipListView(APIView):
     """
     List all sponsorships, or create a new sponsorship.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsOrganizerOfEvent,]
     pagination_class = PageNumberPagination
 
     @extend_schema(
@@ -52,7 +51,7 @@ class SponsorShipDetailView(APIView):
     """
     Retrieve, update or delete an sponsorship.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsOrganizerOfEvent,]
 
     def get_object(self, pk):
         try:
