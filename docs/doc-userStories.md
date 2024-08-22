@@ -67,15 +67,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**                 | Dayanne                                |
 | **Testador**                | Tallys                                 |
 
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA01.01 | O sistema deve permitir o cadastro de um novo usuário com todos os campos obrigatórios preenchidos. |
-| TA01.02 | O sistema deve permitir a busca de um usuário pelo seu ID. |
-| TA01.03 | O sistema deve listar todos os usuários cadastrados. |
-| TA01.04 | O sistema deve permitir a visualização detalhada de um usuário específico. |
-| TA01.05 | O sistema deve permitir a atualização dos dados de um usuário existente. |
-| TA01.06 | O sistema deve permitir a exclusão de um usuário específico. |
-
 ### User Story US02 - Formulário de avaliação de evento.
 | Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulário feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
 |---|---

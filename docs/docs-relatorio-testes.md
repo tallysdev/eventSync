@@ -5,6 +5,18 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 
 ## Casos de uso testados
 
+### User Story US01 - Manter Usuário - 40%
+| Descrição | O sistema deve ser capaz de cadastrar, listar, excluir, atualizar, vários tipos de usuários com permissões referente ao seu tipo e mantê-los nos sistema. |
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA01.01                       | O sistema deve permitir o cadastro de um novo usuário com todos os campos obrigatórios preenchidos. | Sim |
+| TA01.02                       | O sistema deve permitir a busca de um usuário pelo seu ID. | Não |
+| TA01.03                       | O sistema deve permitir a atualização dos dados de um usuário existente. | Não |
+| TA01.04                       | O sistema deve permitir a exclusão de um usuário específico. | Não |
+| TA01.05                       | O sistema não deve permitir o cadastro de um novo usuário sem todos os campos obrigatórios preenchidos. | Sim |
+
 ### User Story US02 - Formulário de avaliação de evento - 100%
 | Descrição | O sistema deve fornecer para o organizador do evento uma seção de criação de formulário de avaliação do evento, está seção será obrigatória. Consiste em um formulário feito pelo organizador para o participante avaliar e retornar seu feedback sobre o evento. |
 |---|---
