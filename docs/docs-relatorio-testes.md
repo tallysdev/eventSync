@@ -62,6 +62,19 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA12.05                       | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença. | Sim |
 
 
+### User Story US15 - Manter Local de evento 83%
+| Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA15.01                       | O sistema deve permitir o cadastro de um novo local para eventos com todas as informações obrigatórias. | Sim |
+| TA15.02                       | O sistema não deve permitir o cadastro de um novo local para eventos com alguma informação obrigatória faltando. | Sim |
+| TA15.03                       | O sistema deve permitir a atualização das informações de um local já cadastrado. | Sim |
+| TA15.04                       | O sistema não deve permitir a atualização das informações de um local já cadastrado faltando campos obrigatórios. | Sim |
+| TA15.05                       | O sistema deve permitir a exclusão de um local cadastrado, caso não esteja associado a eventos futuros. | Não |
+| TA15.06                       | O sistema deve listar todos os locais cadastrados com suas informações detalhadas. | Sim |
+
 ### User Story US16 - Gerar certificado de participação - 100%
 | Descrição | O sistema deve ser capaz de gerar um certificado para o membro que participou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuário, CPF do usuário, horas destinadas ao evento, e suas possíveis menções no evento.
 |---|---
