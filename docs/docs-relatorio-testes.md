@@ -50,6 +50,17 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
 | TA03.06                       | O sistema deve listar todos os eventos cadastrados de forma organizada. | Sim |
 
+### User Story US12 - Reserva e confirmação - 100%
+| Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro. |
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA12.01                       | O sistema deve permitir ao usuário fazer uma reserva para um evento futuro. | Sim |
+| TA12.03                       | O sistema deve enviar uma confirmação de reserva ou presença para o usuário. | Sim |
+| TA12.04                       | O sistema deve permitir que o usuário visualize suas reservas e confirmações de eventos. | Sim |
+| TA12.05                       | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença. | Sim |
+
 
 ### User Story US16 - Gerar certificado de participação - 100%
 | Descrição | O sistema deve ser capaz de gerar um certificado para o membro que participou do evento como, participante e/ou patrocinador do evento. Contendo nome do usuário, CPF do usuário, horas destinadas ao evento, e suas possíveis menções no evento.
