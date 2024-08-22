@@ -50,6 +50,17 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
 | TA03.06                       | O sistema deve listar todos os eventos cadastrados de forma organizada. | Sim |
 
+### User Story US05 - Manter Presença.
+| Descrição | Dentro do evento e/ou sala temática o criador do evento pode adicionar uma lista de presença que marca a participação do participante no evento e/ou sala. O organizador também pode validar a presença do o usuário no evento principal se ele tiver uma quantidade X de presença em salas temáticas.
+|---|---
+
+| **Testes de Aceitação (TA)** | **Descrição** |  **Passou** |
+| ----------- | --------- |
+| TA05.01 | O sistema deve gerar uma lista de presença para o evento. | Sim |
+| TA05.02 | O sistema deve permitir que o criador do evento marque a presença de um participante manualmente. | Sim |
+| TA05.03 | O sistema deve permitir que o participante conteste a presença registrada em um evento ou sala temática. | Não |
+| TA05.04 | O sistema deve gerar relatórios de presença para análise e verificação. | Não |
+
 ### User Story US06 - Seção do Patrocinador - 50%
 | Descrição | O sistema deve conter uma área na tela para os patrocinadores e apoiadores(órgãos gerais que são cadastrados pelo administrador) do sistema, na seção particular de eventos deve conter uma mesma área para os patrocinadores e organizadores da plataforma. |
 |---|---
@@ -61,7 +72,7 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA06.03                       | O sistema deve permitir ao administrador excluir um patrocinador existente. | Não |
 | TA06.04                       | O sistema deve listar todos os patrocinadores cadastrados de forma organizada. |Sim |
 | TA06.05                       | O sistema não deve permitir a inserção de um patrocinador sem todas as informações obrigatórias preenchidas. | Sim |
-| TA06.08                       | O sistema deve permitir ao administrador filtrar patrocinadores por eventos associados. | Não |
+| TA06.06                       | O sistema deve permitir ao administrador filtrar patrocinadores por eventos associados. | Não |
 
 ### User Story US12 - Reserva e confirmação - 100%
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro. |
@@ -70,9 +81,9 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
 | ---------------------------- | ------------- | ---------- |
 | TA12.01                       | O sistema deve permitir ao usuário fazer uma reserva para um evento futuro. | Sim |
-| TA12.03                       | O sistema deve enviar uma confirmação de reserva ou presença para o usuário. | Sim |
-| TA12.04                       | O sistema deve permitir que o usuário visualize suas reservas e confirmações de eventos. | Sim |
-| TA12.05                       | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença. | Sim |
+| TA12.02                       | O sistema deve enviar uma confirmação de reserva ou presença para o usuário. | Sim |
+| TA12.03                       | O sistema deve permitir que o usuário visualize suas reservas e confirmações de eventos. | Sim |
+| TA12.04                       | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença. | Sim |
 
 ### User Story US15 - Manter Local de evento 83%
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
@@ -201,6 +212,27 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | ---------------------------- | ------------- | ---------- |
 | TA15.05                       | O sistema deve permitir a exclusão de um local cadastrado, caso não esteja associado a eventos futuros. | Não |
 
-### User Story US16 - 0 testes falharam
+### User Story US16 - 1 testes falharam
 
 - TA15.05 - O teste falhou porque ele deixou excluir o local mesmo tendo um evento associado a ele. **Sugestão:** mudar a lógica de exclussão para o local, possivelmente não está sendo feito uma verificação da existência de um evento relacionado a esse local.
+
+### Resultado dos testes totais
+
+| **USs** | **Testes feitos** | **Testes sem sucesso** |
+| ---------------------------- | ------------- | ---------- |
+| US01                       | 5  | 3 |
+| US02                       | 13 | 0 |
+| US03                       | 6 | 2 |
+| US05                       | 4 | 2 |
+| US06                       | 6 | 3 |
+| US12                       | 4 | 0 |
+| US15                       | 6 | 1 |
+| US16                       | 3 | 1 |
+
+~~~mermaid
+
+pie title Testes feitos
+    "Testes com sucesso"  : 47
+    "Testes sem sucesso"  : 12
+
+~~~
