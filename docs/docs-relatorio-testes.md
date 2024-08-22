@@ -74,7 +74,6 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA12.04                       | O sistema deve permitir que o usuário visualize suas reservas e confirmações de eventos. | Sim |
 | TA12.05                       | O sistema deve permitir ao usuário cancelar uma reserva ou confirmação de presença. | Sim |
 
-
 ### User Story US15 - Manter Local de evento 83%
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
 |---|---
@@ -100,11 +99,17 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 
 ## Casos de uso não testados
 
+### User Story US04 - Manter Sala tematica.
+| Descrição | Dentro do evento pode ser criado salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
+|---|---
+
+- O US04 não foi implementado, mas com alguns USs existentes no sistema (US01 e US03) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a relação entre o evento e salas temáticas, assim como adicionar sua criação no banco.
+
 ### User Story US08 - Calendário de Eventos.
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |---|---
 
-- O US08 não foi implementado pois o tempo estava bem corrido, foi focado nos principais USs do sistema, mas com alguns USs existentes no sistema (US03 e US15) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a parte da agenda, por exemplo para facilitar a visualização das datas disponíveis no sistema de forma que não bata com outros eventos no mesmo local, no momento o sistema não trata sobre eventos no mesmo dia e local.
+- O US08 não foi implementado, mas com alguns USs existentes no sistema (US03 e US15) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a parte da agenda, por exemplo para facilitar a visualização das datas disponíveis no sistema de forma que não bata com outros eventos no mesmo local, no momento o sistema não trata sobre eventos no mesmo dia e local.
 
 ### User Story US10 - Notificações para Usuários.
 | Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |

@@ -113,7 +113,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Testador**                | Lucas                                   |
 
 ### User Story US04 - Manter Sala tematica.
-| Descrição | Dentro do evento pode ser criando salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
+| Descrição | Dentro do evento pode ser criado salas temáticas dentro de um evento. As salas se assemelham a um evento normal só que sem avaliação obrigatória do organizador, o participante pode se inscrever nas salas dos eventos contato que as salas estejam em horários separados.
 |---|---
 
 | **Requisitos envolvidos** |                                                    |
