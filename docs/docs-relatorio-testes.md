@@ -105,11 +105,23 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 
 - O US04 não foi implementado, mas com alguns USs existentes no sistema (US01 e US03) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a relação entre o evento e salas temáticas, assim como adicionar sua criação no banco.
 
+### User Story US07 - Gerenciar Participantes.
+| Descrição | O sistema deve ser capaz de permitir que os usuários, gerencie a lista de participantes inscritos em um evento específico, possibilitando adicionar, autorizar, remover e visualizar participantes, marcar presença, garantindo uma gestão eficiente das inscrições |
+|---|---
+
+-  O US07 não foi implementado, mas com alguns USs existentes no sistema (US01 e US03) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar uma página acessível ao organizador dentro do sistema que possibilite que ele possa fazer isso, já que temos os dados sobre os participantes.
+
 ### User Story US08 - Calendário de Eventos.
 | Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
 |---|---
 
 - O US08 não foi implementado, mas com alguns USs existentes no sistema (US03 e US15) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a parte da agenda, por exemplo para facilitar a visualização das datas disponíveis no sistema de forma que não bata com outros eventos no mesmo local, no momento o sistema não trata sobre eventos no mesmo dia e local.
+
+### User Story US09 - Gerar Relatórios de participantes do evento.
+| Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros. |
+|---|---
+
+- O US09 não foi implementado, mas com alguns USs existentes no sistema  (US01 e US03) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria uma página onde você possa gerar esse relatório, já que seria apenas 
 
 ### User Story US10 - Notificações para Usuários.
 | Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
