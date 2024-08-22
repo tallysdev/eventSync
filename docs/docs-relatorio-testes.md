@@ -97,3 +97,41 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA16.01 | O sistema deve permitir a geração de um certificado de participação para um usuário específico, contendo nome, CPF, horas e menções. | Sim
 | TA16.02 | O sistema deve permitir a visualização e o download do certificado gerado em formato PDF.    | Sim
 | TA16.03 | O sistema deve garantir que somente eventos aos quais o usuário participou sejam incluídos no certificado. | Sim
+
+## Casos de uso não testados
+
+### User Story US08 - Calendário de Eventos.
+| Descrição| O sistema deve permitir o gerenciamento de uma agenda, possibilitando visualizar datas disponíveis e realizar agendamentos para eventos, com base em datas e locais. |
+|---|---
+
+- O US08 não foi implementado pois o tempo estava bem corrido, foi focado nos principais USs do sistema, mas com alguns USs existentes no sistema (US03 e US15) já se torna possível a sua implementação no futuro. O que falta para esse US ser concluído seria criar a parte da agenda, por exemplo para facilitar a visualização das datas disponíveis no sistema de forma que não bata com outros eventos no mesmo local, no momento o sistema não trata sobre eventos no mesmo dia e local.
+
+### User Story US10 - Notificações para Usuários.
+| Descrição | O sistema deve ser capaz de possibilitar o envio de mensagens, notificações aos usuários do sistema sobre novos eventos e/ou eventos marcados como favoritos, atualizações e informações relevantes. Via email e/ou telefone |
+|---|---
+
+- O US10 não foi implementado, mas a existência de alguns USs (US01, US03 e US12 por exemplo) já torna possível a possibilidade da sua existência futuramente, já que temos a existência de usuários com diferentes tipos de permissão (participante e organizador por exemplo), o que falta para ele ser concluído seria de fato cadastrar as mensagens para que o organizador com apenas um clique possa notificar os participantes do evento em que ele criou.
+
+### User Story US11 - Seção de avaliação.
+| Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na seção do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
+|---|---
+
+- O US11 não foi implementado, mas a existência de alguns USs (US01, US02, US03 e US12 por exemplo) já torna possível a possibilidade da sua existência futuramente, já que temos a existência de usuários, eventos e o organizador de evento pode criar um formulário, o que falta a ser feito é colocar um botão que possibilite ao participante ter acesso ao formulário, assim como armazenar as suas respostas.
+
+### User Story US13 - Eventos Relacionados.
+| Descrição | O sistema deve possuir uma seção que a partir do histórico de eventos do usuário logado, ele possa fornecer indicações outros eventos próximos que estejam nas mesma categorias dos eventos anteriores. |
+|---|---
+
+- O US13 não foi implementado, mas a existência de alguns USs (US01, US03 e US12 por exemplo) já torna possível a possibilidade da sua existência futuramente, já que podemos fazer cruzamento de informações fornecidas desses usuários com base em eventos que participou, e assim o sistema poder recomendar eventos, isso ainda não foi implementado.
+
+### User Story US14 - Manter Feed de comentários gerais.
+| Descrição | Deve ter uma seção no sistema para interações de conversar de texto de todos os usuários, algo como um fórum. O usuário adiciona seu comentário e aparecerá sua foto do perfil, nome e comentário para todos.
+|---|---
+
+- O US14 não foi implementado, mas a existência de alguns USs (US01 por exemplo) já torna possível a possibilidade da sua existência futuramente, pois usuários já podem se cadastrar no nosso sistema, o que falta é existir um local apropiado para se colocar esses comentários, assim como falta implementar o seu armazenamento no banco de dados.
+
+### User Story US17 - Gerar Crachá
+| Descrição | O sistema deve ser capaz de gerar uma figura de crachá para o usuário cadastrado em um evento ativo com suas informações pessoais públicas e sua atuação no evento e qr code para registrar a presença no evento e/ou sala temática.
+|---|---
+
+- O US17 não foi implementado, mas a existência de alguns USs (US01, US02 por exemplo) já torna possível a possibilidade da sua existência futuramente, o que falta é o sistema ser capaz de pegar essas informações e gerar de fato o crachá.
