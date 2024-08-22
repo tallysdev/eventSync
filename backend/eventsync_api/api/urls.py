@@ -38,6 +38,7 @@ urlpatterns = [
      path('eventsorganized/', evtview.UserOrganizedEventsView.as_view(), name='events_organized'),
      path('eventspresence/', evtview.UserPresentEventsView.as_view(), name='events_presence'),
      path('organizer/<int:event_id>/', rpview.OrganizerDetail.as_view(), name='organizer'),
+     path('participants/<int:event_id>/', rpview.EventParticipantsList.as_view(), name='participants'),
 ]
 
 # auth urls

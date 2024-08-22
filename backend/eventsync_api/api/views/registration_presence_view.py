@@ -162,3 +162,33 @@ class OrganizerDetail(APIView):
         user = self.get_orguser(registration.user.pk)
         serializer = ESUserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+class EventParticipantsList(APIView):
+    """
+    Retrieve all participants of an event.
+    """
+    pagination_class = PageNumberPagination
+
+    def get_event(self, event_id):
+        try:
+            return Event.objects.get(pk=event_id)
+        except Event.DoesNotExist:
+            raise Http404
+
+    def get_participants(self, event):
+        return RegistrationPresence.objects.filter(event=event, type='participant')
+
+    @extend_schema(
+        summary='Retrieve participants for an event',
+        responses={200: ESUserSerializer(many=True)},
+    )
+    def get(self, request, event_id, format=None):
+        event = self.get_event(event_id)
+        participants = self.get_participants(event.pk)
+
+        users = [participant.user for participant in participants]
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(users, request)
+        serializer = ESUserSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
