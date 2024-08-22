@@ -12,7 +12,7 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
 | ---------------------------- | ------------- | ---------- |
 | TA01.01                       | O sistema deve permitir o cadastro de um novo usuário com todos os campos obrigatórios preenchidos. | Sim |
-| TA01.02                       | O sistema deve permitir a busca de um usuário pelo seu ID. | Não |
+| TA01.02                       | O sistema deve permitir a busca de um usuário pelo seu CPF. | Não |
 | TA01.03                       | O sistema deve permitir a atualização dos dados de um usuário existente. | Não |
 | TA01.04                       | O sistema deve permitir a exclusão de um usuário específico. | Não |
 | TA01.05                       | O sistema não deve permitir o cadastro de um novo usuário sem todos os campos obrigatórios preenchidos. | Sim |
@@ -152,3 +152,55 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 |---|---
 
 - O US17 não foi implementado, mas a existência de alguns USs (US01, US02 por exemplo) já torna possível a possibilidade da sua existência futuramente, o que falta é o sistema ser capaz de pegar essas informações e gerar de fato o crachá.
+
+## Análise dos testes que falharam
+
+### User Story US01 - 3 testes falharam
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA01.02                       | O sistema deve permitir a busca de um usuário pelo seu CPF. | Não |
+| TA01.03                       | O sistema deve permitir a atualização dos dados de um usuário existente. | Não |
+| TA01.04                       | O sistema deve permitir a exclusão de um usuário específico. | Não |
+
+- TA01.02 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que usuários com devidas permissões para isso (por exemplo o organizador) possam fazer pesquisas por CPFs de participantes, caso eles precisem.
+- TA01.03 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no back. **Sugestão:** ter uma tela onde seja possível que usuários possam atualizar seus dados.
+- TA01.04 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no back. **Sugestão:** ter uma tela onde seja possível que usuários possam excluir seus dados.
+
+### User Story US02 - 0 testes falharam
+- Todos os testes desse USs passaram.
+
+### User Story US03 - 2 testes falharam
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA03.04                       | O sistema deve permitir a alteração dos dados de um evento existente. | Não |
+| TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
+
+- TA03.04 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que usuários com devidas permissões para isso (por exemplo o organizador) possam alterar dados do seu evento.
+- TA03.05 -  O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que usuários com devidas permissões para isso (por exemplo o organizador) possam excluir seu evento.
+
+### User Story US06 - 3 testes falharam
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA06.02                       | O sistema deve permitir ao administrador alterar os dados de um patrocinador existente. | Não |
+| TA06.03                       | O sistema deve permitir ao administrador excluir um patrocinador existente. | Não |
+| TA06.08                       | O sistema deve permitir ao administrador filtrar patrocinadores por eventos associados. | Não |
+
+- TA06.02 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que o administrador possa alterar um patrocinador.
+- TA06.03 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que o administrador possa excluir um patrocinador.
+- TA06.08 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que o administrador possa filtrar os patrocinadores.
+
+### User Story US12 - 0 testes falharam
+- Todos os testes dessa USs passaram.
+
+### User Story US15 - 1 testes falharam
+
+| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
+| ---------------------------- | ------------- | ---------- |
+| TA15.05                       | O sistema deve permitir a exclusão de um local cadastrado, caso não esteja associado a eventos futuros. | Não |
+
+### User Story US16 - 0 testes falharam
+
+- TA15.05 - O teste falhou porque ele deixou excluir o local mesmo tendo um evento associado a ele. **Sugestão:** mudar a lógica de exclussão para o local, possivelmente não está sendo feito uma verificação da existência de um evento relacionado a esse local.
