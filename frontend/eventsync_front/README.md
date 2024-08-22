@@ -39,3 +39,9 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+### Configuração de ambiente
+Antes de executar o projeto, copie o arquivo .env.example para .env e atualize o link da API conforme necessário.
+```sh
+cp .env.example .env
+```

@@ -27,7 +27,7 @@
                 <b>Cancelar Inscrição</b>
               </v-btn>
             </template>
-            <v-btn v-else @click="handleSubscription" color="primary" class="text-no-wrap">
+            <v-btn v-else-if="event.status === 'upcoming' || event.status === 'ongoing'" @click="handleSubscription" color="primary" class="text-no-wrap">
               <b>Inscrever-se</b>
             </v-btn>
           </v-col>
@@ -171,6 +171,9 @@ const handleSubscriptionError = (error: unknown) => {
       ) {
         snackbarMessage.value = 'Usuário já está inscrito nesse evento.'
         isSubscribed.value = true
+      }
+      else{
+        snackbarMessage.value = 'Evento não disponivel para inscricão.'
       }
     }
   } else {

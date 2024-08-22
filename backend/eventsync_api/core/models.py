@@ -79,7 +79,7 @@ class Event(models.Model):
     min_quantity = models.IntegerField()
     hours_quantity = models.IntegerField()
     description = models.TextField()
-    local = models.ForeignKey(Local, on_delete=models.CASCADE)
+    local = models.ForeignKey(Local, on_delete=models.SET_NULL, null=True)
     status = models.CharField(
         max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
     event_type = models.CharField(
@@ -90,6 +90,14 @@ class Event(models.Model):
         verbose_name_plural = "Events"
         ordering = ['id']
 
+    def update_status(self):
+        now = timezone.now()
+        if self.start_date > now:
+            self.status = 'upcoming'
+        elif self.start_date <= now <= self.end_date:
+            self.status = 'ongoing'
+        else:
+            self.status = 'completed'
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)

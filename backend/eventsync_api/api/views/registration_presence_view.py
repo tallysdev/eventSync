@@ -1,13 +1,16 @@
-from ..permissions import ReadOnly
-from ..serializers.registration_presence_serializers import RegistrationPresenceSerializer
-from core.models import RegistrationPresence, Event, ESUser
+from core.models import ESUser, Event, RegistrationPresence
+from django.http import Http404
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import status
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.http import Http404
+from rest_framework.permissions import IsAuthenticated
+from ..permissions import IsOrganizerForPatch, ReadOnly
+from ..serializers.registration_presence_serializers import \
+    RegistrationPresenceSerializer
+
+from ..serializers.auth_serializers import ESUserSerializer
 
 
 class RegistrationPresenceList(APIView):
@@ -26,6 +29,7 @@ class RegistrationPresenceList(APIView):
         ]
     )
     def post(self, request, format=None):
+        print(request.user)
         event_id = request.query_params.get('event_id')
         user_id = request.query_params.get('user_id')
 
@@ -55,7 +59,7 @@ class RegistrationPresenceDetail(APIView):
     """
     Handle retrieving and deleting a specific registration for an event.
     """
-    permission_classes = [IsAuthenticated | ReadOnly]
+    permission_classes = [IsOrganizerForPatch,]
 
     def get_object(self, event, user):
         try:
@@ -124,3 +128,67 @@ class RegistrationPresenceDetail(APIView):
         registration = self.get_object(event, user)
         registration.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class OrganizerDetail(APIView):
+    """
+    Retrieve the organizer of an event.
+    """
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self, eventid):
+        try:
+            return RegistrationPresence.objects.get(event=eventid, type='organizer')
+        except RegistrationPresence.DoesNotExist:
+            raise Http404
+        
+    def get_orguser(self, userid):
+        try:
+            return ESUser.objects.get(pk=userid)
+        except ESUser.DoesNotExist:
+            raise Http404
+
+    @extend_schema(
+        summary='Retrieve organizer for an event',
+        responses={200: RegistrationPresenceSerializer},
+    )
+    def get(self, request, event_id, format=None):
+        try:
+            event = Event.objects.get(id=event_id)
+        except Event.DoesNotExist:
+            return Response({'error': 'Event not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        registration = self.get_object(event)
+        user = self.get_orguser(registration.user.pk)
+        serializer = ESUserSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+class EventParticipantsList(APIView):
+    """
+    Retrieve all participants of an event.
+    """
+    pagination_class = PageNumberPagination
+
+    def get_event(self, event_id):
+        try:
+            return Event.objects.get(pk=event_id)
+        except Event.DoesNotExist:
+            raise Http404
+
+    def get_participants(self, event):
+        return RegistrationPresence.objects.filter(event=event, type='participant')
+
+    @extend_schema(
+        summary='Retrieve participants for an event',
+        responses={200: ESUserSerializer(many=True)},
+    )
+    def get(self, request, event_id, format=None):
+        event = self.get_event(event_id)
+        participants = self.get_participants(event.pk)
+
+        users = [participant.user for participant in participants]
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(users, request)
+        serializer = ESUserSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)

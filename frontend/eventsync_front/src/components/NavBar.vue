@@ -3,9 +3,15 @@
     <!-- Desktop Navbar -->
     <v-app-bar app color="secondary" dense flat class="py-2 mb-2 hidden-sm-and-down fill-width">
       <v-container>
-        <v-row class="d-flex align-center justify-space-evenly">
+        <v-row class="d-flex align-center justify-space-between">
           <v-col cols="1">
-            <v-img @click="navigateTo('/')" class="cursor-pointer" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img
+              @click="navigateTo('/')"
+              class="cursor-pointer"
+              src="../../favicon.ico"
+              alt="Platform Logo"
+              height="40"
+            ></v-img>
           </v-col>
           <v-col cols="3">
             <v-text-field
@@ -20,29 +26,11 @@
               rounded
             ></v-text-field>
           </v-col>
-          <v-col cols="3">
-            <v-select
-              :items="locations"
-              item-text="name"
-              item-value="id"
-              label="Localizações"
-              prepend-inner-icon="mdi-map-marker"
-              variant="solo"
-              density="comfortable"
-              bg-color="transparent"
-              flat
-              rounded
-              hide-details
-              class="pr-6"
-            ></v-select>
-          </v-col>
-          <v-col cols="5" class="d-flex align-center justify-space-around">
-            <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
-            <!-- Conditionally display based on whether user is logged in -->
+          <v-col cols="7" class="d-flex align-center justify-space-between">
             <template v-if="isAuthenticated">
-              <v-btn class="text-none" color="success" variant="flat">
-                {{ userName }}
-              </v-btn>
+              <v-btn :to="{ name: 'create-event' }">Crie seu evento</v-btn>
+              <v-btn :to="{ name: 'certificates' }">Certificados</v-btn>
+              <v-btn :to="{ name: 'events-organized' }">Eventos Organizados</v-btn>
               <v-btn
                 class="text-none"
                 color="primary-darken-1"
@@ -83,9 +71,14 @@
       <v-container>
         <v-row class="d-flex align-center justify-space-between">
           <v-col cols="2">
-            <v-img @click="navigateTo('/')" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img
+              @click="navigateTo('/')"
+              src="../../favicon.ico"
+              alt="Platform Logo"
+              height="40"
+            ></v-img>
           </v-col>
-          <v-col cols="2" class="d-flex align-center justify-end">
+          <v-col cols="8" class="d-flex align-center justify-end">
             <v-btn icon @click="dialog = true">
               <v-icon>mdi-menu</v-icon>
             </v-btn>
@@ -99,12 +92,8 @@
       <v-card>
         <v-toolbar flat color="secondary">
           <v-toolbar-title>
-            <template v-if="isAuthenticated">
-              Olá, {{ userName }}
-            </template>
-            <template v-else>
-              Mobile Menu
-            </template>
+            <template v-if="isAuthenticated"> Olá, {{ userName }} </template>
+            <template v-else> Mobile Menu </template>
           </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialog = false">
@@ -118,35 +107,37 @@
             </template>
             <v-list-item-title>Pesquisar eventos</v-list-item-title>
           </v-list-item>
-
-          <v-list-item @click="() => router.push({ name: 'create-event' })">
+          <v-list-item v-if="isAuthenticated" @click="navigateTo('/create-event')">
             <template v-slot:prepend>
               <v-icon>mdi-plus</v-icon>
             </template>
             <v-list-item-title>Crie seu evento</v-list-item-title>
           </v-list-item>
-          <v-list-group>
-            <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" prepend-icon="mdi-map-marker" title="Localizações"></v-list-item>
-            </template>
-            <v-list-item v-for="(location, index) in locations" :key="index">
-              <v-list-item-title>{{ location }}</v-list-item-title>
-            </v-list-item>
-          </v-list-group>
           <v-list-item v-if="!isAuthenticated" to="/login">
             <template v-slot:prepend>
               <v-icon>mdi-login</v-icon>
             </template>
             <v-list-item-title>Acesse sua conta</v-list-item-title>
           </v-list-item>
-
           <v-list-item v-if="!isAuthenticated" to="/register">
             <template v-slot:prepend>
               <v-icon>mdi-account-plus</v-icon>
             </template>
             <v-list-item-title>Cadastre-se</v-list-item-title>
           </v-list-item>
+          <v-list-item v-if="isAuthenticated" @click="navigateTo('/certificates')">
+            <template v-slot:prepend>
+              <v-icon>mdi-certificate</v-icon>
+            </template>
+            <v-list-item-title>Certificados</v-list-item-title>
+          </v-list-item>
 
+          <v-list-item v-if="isAuthenticated" @click="navigateTo('/events-organized')">
+            <template v-slot:prepend>
+              <v-icon>mdi-calendar-check</v-icon>
+            </template>
+            <v-list-item-title>Eventos Organizados</v-list-item-title>
+          </v-list-item>
           <v-list-item v-if="isAuthenticated" @click="handleLogout">
             <template v-slot:prepend>
               <v-icon>mdi-logout</v-icon>
@@ -223,7 +214,6 @@ const handleLogout = () => {
     router.go(0)
   }, 100)
 }
-
 </script>
 
 <style scoped></style>
