@@ -37,7 +37,7 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA02.12                       | O sistema não deve permitir ao organizador cadastrar perguntas múltipla escolha vazias. | Sim |
 | TA02.13                       | O sistema não deve permitir ao organizador cadastrar perguntas múltipla escolha sem opções de marcar. | Sim |
 
-### User Story US03 - Manter Evento - 67%
+### User Story US03 - Manter Evento - 100%
 | Descrição | O sistema deve ser capaz de cadastrar e manter qualquer tipo de evento, podendo também alterar, excluir e visualizar os dados do evento.|
 |---|---
 
@@ -46,8 +46,8 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | TA03.01                       | O sistema deve permitir o cadastro de um novo evento com todos os campos obrigatórios preenchidos. | Sim |
 | TA03.02                       | O sistema não deve permitir o cadastro de um novo evento sem todos os campos obrigatórios preenchidos. | Sim |
 | TA03.03                       | O sistema deve permitir a visualização dos detalhes de um evento específico cadastrado. | Sim |
-| TA03.04                       | O sistema deve permitir a alteração dos dados de um evento existente. | Não |
-| TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
+| TA03.04                       | O sistema deve permitir a alteração dos dados de um evento existente. | Sim |
+| TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Sim |
 | TA03.06                       | O sistema deve listar todos os eventos cadastrados de forma organizada. | Sim |
 
 ### User Story US05 - Manter Presença.
@@ -181,15 +181,8 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 ### User Story US02 - 0 testes falharam
 - Todos os testes desse USs passaram.
 
-### User Story US03 - 2 testes falharam
-
-| **Testes de Aceitação (TA)** | **Descrição** | **Passou** |
-| ---------------------------- | ------------- | ---------- |
-| TA03.04                       | O sistema deve permitir a alteração dos dados de um evento existente. | Não |
-| TA03.05                       | O sistema deve permitir a exclusão de um evento específico. | Não |
-
-- TA03.04 - O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que usuários com devidas permissões para isso (por exemplo o organizador) possam alterar dados do seu evento.
-- TA03.05 -  O teste falhou porque não existe um lugar que se possa testar isso nas telas disponíveis no sistema, pois isso só está implementado no backend. **Sugestão:** ter uma tela onde seja possível que usuários com devidas permissões para isso (por exemplo o organizador) possam excluir seu evento.
+### User Story US03 - 0 testes falharam
+- Todos os testes desse USs passaram.
 
 ### User Story US06 - 3 testes falharam
 
@@ -222,7 +215,7 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 | ---------------------------- | ------------- | ---------- |
 | US01                       | 5  | 3 |
 | US02                       | 13 | 0 |
-| US03                       | 6 | 2 |
+| US03                       | 6 | 0 |
 | US05                       | 4 | 2 |
 | US06                       | 6 | 3 |
 | US12                       | 4 | 0 |
@@ -232,7 +225,7 @@ Os testes de aceitação têm como propósito principal validar que um sistema o
 ~~~mermaid
 
 pie title Testes feitos
-    "Testes com sucesso"  : 47
-    "Testes sem sucesso"  : 12
+    "Testes com sucesso"  : 37
+    "Testes sem sucesso"  : 10
 
 ~~~
