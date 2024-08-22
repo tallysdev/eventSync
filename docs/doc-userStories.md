@@ -246,14 +246,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**                 | Tallys                                  |
 | **Testador**                | Vinícius                                |
 
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA08.01 | O sistema deve permitir visualizar um calendário com as datas disponíveis para eventos.      |
-| TA08.02 | O sistema deve permitir agendar novos eventos em datas específicas.                          |
-| TA08.03 | O sistema deve permitir visualizar os eventos agendados por data e local.                   |
-| TA08.04 | O sistema deve permitir editar a data e o local de um evento já agendado.                   |
-| TA08.05 | O sistema deve permitir cancelar um evento agendado.                                         |
-
 ### User Story US09 - Gerar Relatórios de participantes do evento.
 | Descrição | O sistema deve ser capaz de gerar relatórios informativos sobre eventos realizados, participantes com filtros sobre: Instituição, região, raça, sexo, idade e gênero. |
 |---|---
@@ -299,14 +291,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**                 | Ítalo                                   |
 | **Testador**                | Lucas                                   |
 
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA10.01 | O sistema deve permitir o envio de notificações por email para os usuários sobre novos eventos. |
-| TA10.02 | O sistema deve permitir o envio de notificações por email para os usuários sobre eventos favoritos. |
-| TA10.03 | O sistema deve permitir o envio de atualizações e informações relevantes para os usuários via email. |
-
 ### User Story US11 - Seção de avaliação.
-| Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na sessão do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa comentar ou preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
+| Descrição | O sistema deve possuir uma seção onde o usuário possa ver os eventos que já participou, na seção do evento em si deve ter uma opção para feedback sobre o evento. Em que o usuário possa preencher um formulário de avaliação do evento, desde que ainda esteja dentro do prazo de avaliação. |
 |---|---
 
 | **Requisitos envolvidos** |                                                    |
@@ -324,14 +310,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**           | Ítalo                                   |
 | **Revisor**                 | Lucas                                   |
 | **Testador**                | Dayanne                                 |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA11.01 | O sistema deve permitir ao usuário visualizar os eventos que já participou.                  |
-| TA11.02 | O sistema deve fornecer uma opção para o usuário fornecer feedback sobre o evento.           |
-| TA11.03 | O sistema deve permitir ao usuário comentar sobre o evento, se dentro do prazo de avaliação. |
-| TA11.04 | O sistema deve permitir ao usuário preencher um formulário de avaliação do evento.           |
-| TA11.05 | O sistema deve garantir que o formulário de avaliação esteja acessível somente durante o prazo de avaliação. |
 
 ### User Story US12 - Reserva e confirmação.
 | Descrição | O sistema deve possuir uma seção onde o usuário posso fazer uma reserva para algum evento futuro. |
@@ -375,14 +353,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**                 | Vinícius                                |
 | **Testador**                | Ítalo                                   |
 
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA13.01 | O sistema deve analisar o histórico de eventos do usuário e sugerir eventos relacionados.    |
-| TA13.02 | O sistema deve exibir sugestões de eventos que estão nas mesmas categorias dos eventos anteriores. |
-| TA13.03 | O sistema deve permitir ao usuário visualizar detalhes dos eventos relacionados sugeridos.  |
-| TA13.04 | O sistema deve permitir que o usuário se inscreva nos eventos relacionados sugeridos.        |
-| TA13.05 | O sistema deve atualizar as sugestões de eventos relacionados com base no histórico de eventos mais recente do usuário. |
-
 ### User Story US14 - Manter Feed de comentários gerais.
 | Descrição | Deve ter uma seção no sistema para interações de conversar de texto de todos os usuários, algo como um fórum. O usuário adiciona seu comentário e aparecerá sua foto do perfil, nome e comentário para todos.
 |---|---
@@ -406,16 +376,6 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**           | Vinícius                                |
 | **Revisor**                 | Dayanne                                 |
 | **Testador**                | Tallys                                  |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA14.01 | O sistema deve permitir ao usuário inserir um comentário no feed geral.                      |
-| TA14.02 | O sistema deve exibir o comentário inserido com a foto do perfil, nome e texto do comentário.|
-| TA14.03 | O sistema deve permitir ao usuário alterar um comentário que ele fez anteriormente.           |
-| TA14.04 | O sistema deve permitir ao usuário apagar um comentário que ele fez anteriormente.            |
-| TA14.05 | O sistema deve permitir ao usuário denunciar um comentário.                                  |
-| TA14.06 | O sistema deve permitir ao administrador confirmar uma denúncia de comentário.               |
-| TA14.07 | O sistema deve garantir que somente o autor do comentário possa apagá-lo, a menos que o comentário tenha sido denunciado e confirmado para remoção. |
 
 ### User Story US15 - Manter Local de evento.
 | Descrição |O sistema deve ser capaz de cadastrar, listar, excluir e atualizar, locais onde acontecerá o evento.
@@ -476,10 +436,3 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**           | Dayanne                                 |
 | **Revisor**                 | Tallys                                  |
 | **Testador**                | Lucas                                   |
-
-| **Testes de Aceitação (TA)** | **Descrição** |
-| ----------- | --------- |
-| TA17.01 | O sistema deve gerar um crachá com as informações pessoais públicas do usuário, sua atuação no evento e um QR code. |
-| TA17.02 | O sistema deve permitir a visualização e o download do crachá gerado em formato de imagem.   |
-| TA17.03 | O sistema deve garantir que o QR code no crachá seja funcional para registrar a presença no evento ou sala temática. |
-| TA17.04 | O sistema deve permitir a atualização das informações no crachá caso haja alterações nos dados do evento ou do usuário. |
