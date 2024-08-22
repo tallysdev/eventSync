@@ -90,7 +90,15 @@ class Event(models.Model):
         verbose_name = "Event"
         verbose_name_plural = "Events"
         ordering = ['id']
-        
+
+    def update_status(self):
+        now = timezone.now()
+        if self.start_date > now:
+            self.status = 'upcoming'
+        elif self.start_date <= now <= self.end_date:
+            self.status = 'ongoing'
+        else:
+            self.status = 'completed'
 
 class ThemeRoom(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)

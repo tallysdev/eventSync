@@ -84,3 +84,63 @@ export const checkUserSubscription = async (eventId: number, userId: number) => 
     throw error
   }
 }
+
+export const fetchMyEvents = (
+  page: number = 1,
+  pageSize: number = 10,
+  status?: string,
+  type?: string,
+  name?: string
+) => {
+  const { token } = useAuthStore()
+  return api.get('eventsorganized/', {
+    params: { page, page_size: pageSize, status, event_type: type, name },
+    headers: { Authorization: `Bearer ${token}` } 
+  })
+}
+
+export const fetchEventsPresence = (
+  page: number = 1,
+  pageSize: number = 10,
+  status?: string,
+  type?: string,
+  name?: string
+) => {
+  const { token } = useAuthStore()
+  return api.get('eventspresence/', {
+    params: { page, page_size: pageSize, status, event_type: type, name },
+    headers: { Authorization: `Bearer ${token}` } 
+  })
+}
+
+export const updateEvent = (formData: FormData, eventId: number) => {
+  const { token } = useAuthStore()
+  return api.patch(`events/${eventId}/`, formData, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+}
+
+export const deleteEvent = async (eventId: number) => {
+  const { token } = useAuthStore()
+  try {
+    const response = await api.delete(`events/${eventId}/`, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    return response
+  } catch (error) {
+    const axiosError = error as AxiosError
+
+    console.error(
+      'Error deleting event:',
+      axiosError.response?.data || axiosError.message
+    )
+    throw error
+  }
+}
+
+export const getOrganizer = (eventid: number) => {
+  const { token } = useAuthStore()
+  return api.get(`organizer/${eventid}/`, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+}
