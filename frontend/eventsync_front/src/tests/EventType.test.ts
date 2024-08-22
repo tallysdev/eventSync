@@ -21,5 +21,4 @@ describe('EventType.vue', () => {
   it('renders the correct number of event types', () => {
     expect(wrapper.findAll('v-avatar')).toHaveLength(eventTypes.length)
   })
-
 })

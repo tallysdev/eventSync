@@ -7,7 +7,7 @@ import LoginForm from '@/components/login/LoginForm.vue'
     <LoginForm />
   </main>
 </template>
-  
+
 <style>
 @media (min-width: 1024px) {
   .forms {

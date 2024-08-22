@@ -1,31 +1,35 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`EventType.vue > renders correctly 1`] = `
-"<section class="d-block my-10">
-  <!-- TODO: Make the type clickable and redirect to events of this type -->
+"<section class="d-block my-10" eventtypes="[object Object],[object Object],[object Object],[object Object]">
   <v-row justify="center">
     <v-col cols="12" lg="10">
       <h2 class="text-h4 text-start mb-6 font-weight-bold">Escolha o seu tipo de evento</h2>
       <v-row class="d-flex justify-center">
-        <v-col cols="auto" lg="2" class="text-center">
+        <v-col cols="auto" lg="2" class="text-center" style="cursor: pointer;">
           <v-avatar size="100" color="primary">
-            <v-icon size="50">mdi-music</v-icon>
-          </v-avatar><span class="d-block mt-6 text-h6">Show</span>
+            <v-icon size="50">mdi-calendar</v-icon>
+          </v-avatar><span class="d-block mt-6 text-h6">Todos</span>
         </v-col>
-        <v-col cols="auto" lg="2" class="text-center">
+        <v-col cols="auto" lg="2" class="text-center" style="cursor: pointer;">
           <v-avatar size="100" color="primary">
-            <v-icon size="50">mdi-basketball</v-icon>
-          </v-avatar><span class="d-block mt-6 text-h6">Esporte</span>
+            <v-icon size="50">mdi-account-group</v-icon>
+          </v-avatar><span class="d-block mt-6 text-h6">Conferência</span>
         </v-col>
-        <v-col cols="auto" lg="2" class="text-center">
+        <v-col cols="auto" lg="2" class="text-center" style="cursor: pointer;">
           <v-avatar size="100" color="primary">
-            <v-icon size="50">mdi-drama-masks</v-icon>
-          </v-avatar><span class="d-block mt-6 text-h6">Teatro</span>
+            <v-icon size="50">mdi-lightbulb-outline</v-icon>
+          </v-avatar><span class="d-block mt-6 text-h6">Oficina</span>
         </v-col>
-        <v-col cols="auto" lg="2" class="text-center">
+        <v-col cols="auto" lg="2" class="text-center" style="cursor: pointer;">
           <v-avatar size="100" color="primary">
-            <v-icon size="50">mdi-movie</v-icon>
-          </v-avatar><span class="d-block mt-6 text-h6">Cinema</span>
+            <v-icon size="50">mdi-school</v-icon>
+          </v-avatar><span class="d-block mt-6 text-h6">Seminário</span>
+        </v-col>
+        <v-col cols="auto" lg="2" class="text-center" style="cursor: pointer;">
+          <v-avatar size="100" color="primary">
+            <v-icon size="50">mdi-handshake</v-icon>
+          </v-avatar><span class="d-block mt-6 text-h6">Encontro</span>
         </v-col>
       </v-row>
     </v-col>

@@ -7,7 +7,7 @@ import RegisterForm from '@/components/register/RegisterForm.vue'
     <RegisterForm />
   </main>
 </template>
-  
+
 <style>
 @media (min-width: 1024px) {
   .forms {

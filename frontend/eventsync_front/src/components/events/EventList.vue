@@ -101,8 +101,8 @@ const snackbarMessage = ref('')
 const snackbarColor = ref('')
 
 // Filter variables
-const selectedStatus = ref<string | null>(null)
-const selectedType = ref<string | null>(null)
+const selectedStatus = ref<string | undefined>(undefined)
+const selectedType = ref<string | undefined>(undefined)
 
 const statuses = [
   { title: 'Todos', value: null },
@@ -134,8 +134,8 @@ const fetchEventsData = async () => {
     const response = await fetchEvents(
       currentPage.value,
       itemsPerPage,
-      selectedStatus.value,
-      selectedType.value,
+      selectedStatus.value || undefined,
+      selectedType.value || undefined,
       searchQuery.value
     )
     events.value = response.data.results
@@ -179,13 +179,14 @@ const getStatusColor = (status: string): string => {
   }
 }
 
-const goToEvent = (id: number): void => {
+const goToEvent = (id: number | undefined): void => {
+  if (!id) return
   router.push(`/events/${id}`)
 }
 
 // Check if the query parameter for type exists and is valid
 onMounted(() => {
-  const queryType = route.query.type as string | null
+  const queryType = route.query.type as string | undefined
 
   if (queryType && eventTypes.some((type) => type.value === queryType)) {
     selectedType.value = queryType

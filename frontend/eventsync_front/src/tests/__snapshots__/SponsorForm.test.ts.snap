@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SponsorForm.vue > render correctly 1`] = `
+"<v-dialog model-value="true" max-width="600">
+  <v-card>
+    <v-card-title><span class="headline">Novo Patrocinador</span></v-card-title>
+    <v-card-text>
+      <v-form modelvalue="false" lazy-validation="">
+        <v-text-field modelvalue="" label="Nome" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+        <v-text-field modelvalue="" label="Email" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+},(value) => {
+  if (!value) {
+    return &quot;Email é necessário&quot;;
+  }
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if (!emailRegex.test(value)) {
+    return &quot;Por favor, insira um email válido&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+        <v-text-field modelvalue="" label="Telefone" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+        <v-textarea modelvalue="" label="Descrição" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-textarea>
+        <v-file-input modelvalue="" label="Logo" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-file-input>
+      </v-form>
+      <!--v-if-->
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn color="blue darken-1" text="">Cancelar</v-btn>
+      <v-btn color="blue darken-1" text="" disabled="true">Salvar</v-btn>
+    </v-card-actions>
+  </v-card>
+</v-dialog>"
+`;

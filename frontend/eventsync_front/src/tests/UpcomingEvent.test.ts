@@ -30,7 +30,7 @@ describe('UpcomingEvents.vue', () => {
     }
   ]
   const wrapper = mount(UpcomingEvents, {
-    props: { upcomingEvents },
+    props: { upcomingEvents }
   })
 
   it('renders correctly', () => {

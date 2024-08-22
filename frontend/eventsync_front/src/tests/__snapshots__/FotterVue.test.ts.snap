@@ -36,9 +36,6 @@ exports[`FooterVue.vue > renders correctly 1`] = `
           <v-list-item data-v-4896eafd="">
             <v-list-item-title data-v-4896eafd="">Login</v-list-item-title>
           </v-list-item>
-          <v-list-item data-v-4896eafd="">
-            <v-list-item-title data-v-4896eafd="">Contato</v-list-item-title>
-          </v-list-item>
         </v-list>
       </v-col>
       <v-col data-v-4896eafd="" cols="12" md="4" class="text-center text-md-left">

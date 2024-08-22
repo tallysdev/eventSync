@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from '@/components/NavBar.vue';
-import FooterVue from '@/components/Footer.vue';
-import EventList from '@/components/events/EventList.vue';
+import NavBar from '@/components/NavBar.vue'
+import FooterVue from '@/components/Footer.vue'
+import EventList from '@/components/events/EventList.vue'
 </script>
 
 <style scoped>

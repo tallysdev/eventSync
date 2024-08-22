@@ -5,7 +5,13 @@
       <v-container>
         <v-row class="d-flex align-center justify-space-evenly">
           <v-col cols="1">
-            <v-img @click="navigateTo('/')" class="cursor-pointer" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img
+              @click="navigateTo('/')"
+              class="cursor-pointer"
+              src="../../favicon.ico"
+              alt="Platform Logo"
+              height="40"
+            ></v-img>
           </v-col>
           <v-col cols="3">
             <v-text-field
@@ -83,7 +89,12 @@
       <v-container>
         <v-row class="d-flex align-center justify-space-between">
           <v-col cols="2">
-            <v-img @click="navigateTo('/')" src="../../favicon.ico" alt="Platform Logo" height="40"></v-img>
+            <v-img
+              @click="navigateTo('/')"
+              src="../../favicon.ico"
+              alt="Platform Logo"
+              height="40"
+            ></v-img>
           </v-col>
           <v-col cols="2" class="d-flex align-center justify-end">
             <v-btn icon @click="dialog = true">
@@ -99,12 +110,8 @@
       <v-card>
         <v-toolbar flat color="secondary">
           <v-toolbar-title>
-            <template v-if="isAuthenticated">
-              Olá, {{ userName }}
-            </template>
-            <template v-else>
-              Mobile Menu
-            </template>
+            <template v-if="isAuthenticated"> Olá, {{ userName }} </template>
+            <template v-else> Mobile Menu </template>
           </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-btn icon @click="dialog = false">
@@ -127,7 +134,11 @@
           </v-list-item>
           <v-list-group>
             <template v-slot:activator="{ props }">
-              <v-list-item v-bind="props" prepend-icon="mdi-map-marker" title="Localizações"></v-list-item>
+              <v-list-item
+                v-bind="props"
+                prepend-icon="mdi-map-marker"
+                title="Localizações"
+              ></v-list-item>
             </template>
             <v-list-item v-for="(location, index) in locations" :key="index">
               <v-list-item-title>{{ location }}</v-list-item-title>
@@ -223,7 +234,6 @@ const handleLogout = () => {
     router.go(0)
   }, 100)
 }
-
 </script>
 
 <style scoped></style>

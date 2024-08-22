@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EventForm from '@/components/EventForm.vue';
+import EventForm from '@/components/EventForm.vue'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import EventForm from '@/components/EventForm.vue';
     <EventForm />
   </main>
 </template>
-  
+
 <style>
 @media (min-width: 1024px) {
   .forms {
@@ -17,4 +17,3 @@ import EventForm from '@/components/EventForm.vue';
   }
 }
 </style>
-  

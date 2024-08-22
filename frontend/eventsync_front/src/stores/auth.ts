@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia'
 import api from '@/services/api'
 import { jwtDecode, type JwtPayload } from 'jwt-decode'
-import {type User, type AuthState, type Profile} from '../types/users'
-
+import { type User, type AuthState, type Profile } from '../types/users'
 
 export const useAuthStore = defineStore({
   persist: true,
@@ -11,7 +10,7 @@ export const useAuthStore = defineStore({
     user: null,
     token: null,
     profile: null,
-    rtoken: null,
+    rtoken: null
   }),
 
   getters: {
@@ -19,7 +18,7 @@ export const useAuthStore = defineStore({
     isAuthenticated: (state): boolean => !!state.token,
     hasAdminPerm: (state): boolean => !!state.profile?.is_staff,
     hasProfile: (state): boolean => !!state.profile,
-    getToken: (state): String | null => state.token,
+    getToken: (state): String | null => state.token
   },
   actions: {
     async login(user: User) {

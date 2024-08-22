@@ -4,5 +4,4 @@ import 'vuetify/styles'
 
 const vuetify = createVuetify()
 
-
 config.global.plugins = [vuetify]

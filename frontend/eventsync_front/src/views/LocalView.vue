@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Local from '@/components/LocalVue.vue';
+import Local from '@/components/LocalVue.vue'
 </script>
 
 <template>

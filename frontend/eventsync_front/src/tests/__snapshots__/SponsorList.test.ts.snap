@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SponsorList.vue > renders correctly 1`] = `
+"<v-row justify="center">
+  <v-col cols="12" lg="10">
+    <h2 class="text-h4 text-start mb-6 font-weight-bold">Patrocinadores</h2>
+    <v-alert type="info" color="info" variant="tonal"><b>Nenhum patrocinador encontrado</b></v-alert>
+    <v-row justify="center" class="mt-4">
+      <v-col cols="auto">
+        <v-pagination modelvalue="1" length="1"></v-pagination>
+      </v-col>
+    </v-row>
+    <v-btn color="primary" class="mt-4"><b> Adicionar Patrocinador </b></v-btn>
+    <v-dialog model-value="false" max-width="600">
+      <v-card>
+        <v-card-title><span class="headline">Novo Patrocinador</span></v-card-title>
+        <v-card-text>
+          <v-form modelvalue="false" lazy-validation="">
+            <v-text-field modelvalue="" label="Nome" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+            <v-text-field modelvalue="" label="Email" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+},(value) => {
+  if (!value) {
+    return &quot;Email é necessário&quot;;
+  }
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  if (!emailRegex.test(value)) {
+    return &quot;Por favor, insira um email válido&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+            <v-text-field modelvalue="" label="Telefone" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-text-field>
+            <v-textarea modelvalue="" label="Descrição" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-textarea>
+            <v-file-input modelvalue="" label="Logo" rules="(value) => {
+  if (!value) {
+    return &quot;Campo obrigatório&quot;;
+  }
+  return true;
+}" required=""></v-file-input>
+          </v-form>
+          <!--v-if-->
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text="">Cancelar</v-btn>
+          <v-btn color="blue darken-1" text="" disabled="true">Salvar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-col>
+  <v-snackbar modelvalue="false" timeout="4000" top="" color="" p=""></v-snackbar>
+</v-row>"
+`;

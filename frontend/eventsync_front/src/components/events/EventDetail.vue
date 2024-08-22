@@ -56,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import {
@@ -76,7 +76,7 @@ const router = useRouter()
 const authStore = useAuthStore()
 const event = ref<Event | null>(null)
 const local = ref<Local | null>(null)
-const isSubscribed = ref(false) // Track subscription status
+const isSubscribed = ref(false)
 
 const showSnackbar = ref(false)
 const snackbarMessage = ref('')
@@ -87,16 +87,17 @@ const fetchEventDetailData = async () => {
   try {
     const response = await fetchEvent(eventId)
     event.value = response.data
-    await fetchLocalData(event.value.local)
+    if (event.value && event.value.local) {
+      await fetchLocalData(Number(event.value.local))
+    }
   } catch (error) {
     console.error('Error fetching event detail:', error)
   }
 }
 
-const fetchLocalData = async (localId: string) => {
+const fetchLocalData = async (localId: number) => {
   try {
-    const localIdNumber = Number(localId)
-    const response = await fetchLocal(localIdNumber)
+    const response = await fetchLocal(localId)
     local.value = response.data
   } catch (error) {
     console.error('Error fetching local detail:', error)
@@ -106,10 +107,10 @@ const fetchLocalData = async (localId: string) => {
 const checkSubscriptionStatus = async () => {
   if (authStore.isAuthenticated && event.value) {
     try {
-      console.log(authStore.token)
-      const response = await checkUserSubscription(event.value.id, authStore.getUser.id)
-      console.log('Subscription status:', response.data)
-      isSubscribed.value = await checkUserSubscription(event.value.id, authStore.getUser.id)
+      if (event.value.id) {
+        const response = await checkUserSubscription(event.value.id, authStore.getUser?.id ?? 0)
+        isSubscribed.value = response.data
+      }
     } catch (error) {
       console.error('Error checking subscription status:', error)
     }
@@ -117,29 +118,33 @@ const checkSubscriptionStatus = async () => {
 }
 
 const handleSubscription = async () => {
-  if (authStore.isAuthenticated) {
+  if (authStore.isAuthenticated && event.value) {
     try {
-      await signupForEvent(event.value.id, authStore.getUser.id)
-      snackbarMessage.value = 'Inscrição realizada com sucesso!'
-      snackbarColor.value = 'success'
-      isSubscribed.value = true
+      if (event.value.id) {
+        await signupForEvent(event.value.id, authStore.getUser?.id ?? 0)
+        snackbarMessage.value = 'Inscrição realizada com sucesso!'
+        snackbarColor.value = 'success'
+        isSubscribed.value = true
+      }
     } catch (error) {
       handleSubscriptionError(error)
     }
   } else {
     snackbarMessage.value = 'Você precisa estar logado para se inscrever.'
     snackbarColor.value = 'error'
+    showSnackbar.value = true
     setTimeout(() => {
       router.push('/login')
     }, 2000)
+    return
   }
   showSnackbar.value = true
 }
 
 const handleUnsubscription = async () => {
-  if (authStore.isAuthenticated) {
+  if (authStore.isAuthenticated && event.value) {
     try {
-      await cancelSubscription(event.value.id, authStore.getUser.id)
+      if (event.value.id) await cancelSubscription(event.value.id, authStore.getUser?.id ?? 0)
       snackbarMessage.value = 'Inscrição cancelada com sucesso!'
       snackbarColor.value = 'success'
       isSubscribed.value = false
@@ -177,11 +182,12 @@ const handleSubscriptionError = (error: unknown) => {
     snackbarMessage.value = 'Erro ao realizar inscrição.'
   }
   snackbarColor.value = 'error'
+  showSnackbar.value = true
 }
 
 onMounted(async () => {
   await fetchEventDetailData()
-  await checkSubscriptionStatus() // Check if the user is already subscribed after fetching event details
+  await checkSubscriptionStatus()
 })
 </script>
 

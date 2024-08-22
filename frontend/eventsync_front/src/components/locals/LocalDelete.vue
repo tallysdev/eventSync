@@ -15,40 +15,48 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, defineEmits, watch } from 'vue';
-import { deleteLocal } from '@/services/localService';
-import type { Local } from '@/types/local';
+import { ref, defineProps, defineEmits, watch } from 'vue'
+import { deleteLocal } from '@/services/localService'
+import type { Local } from '@/types/local'
 
 const props = defineProps<{
-  dialog: boolean;
-  local: Local | null;
-}>();
+  dialog: boolean
+  local: Local | null
+}>()
 
 const emit = defineEmits<{
-  (e: 'update:dialog', value: boolean): void;
-  (e: 'local-deleted', message: string, color: string): void;
-}>();
+  (e: 'update:dialog', value: boolean): void
+  (e: 'local-deleted', message: string, color: string): void
+}>()
 
-const dialog = ref(props.dialog);
-const local = ref(props.local);
+const dialog = ref(props.dialog)
+const local = ref(props.local)
 
 const confirmDelete = async () => {
   if (local.value) {
     try {
-      await deleteLocal(local.value.id);
-      emit('local-deleted', 'Local excluído com sucesso', 'green');
+      if (local.value.id) {
+        await deleteLocal(local.value.id)
+        emit('local-deleted', 'Local excluído com sucesso', 'green')
+      }
     } catch (error) {
-      console.error('Error deleting local:', error);
-      emit('local-deleted', 'Erro ao excluir local', 'red');
+      console.error('Error deleting local:', error)
+      emit('local-deleted', 'Erro ao excluir local', 'red')
     } finally {
-      dialog.value = false;
-      emit('update:dialog', dialog.value);
+      dialog.value = false
+      emit('update:dialog', dialog.value)
     }
   }
-};
+}
 
-watch(() => props.dialog, (newVal) => dialog.value = newVal);
-watch(() => props.local, (newVal) => local.value = newVal);
+watch(
+  () => props.dialog,
+  (newVal) => (dialog.value = newVal)
+)
+watch(
+  () => props.local,
+  (newVal) => (local.value = newVal)
+)
 
-watch(dialog, (newVal) => emit('update:dialog', newVal));
+watch(dialog, (newVal) => emit('update:dialog', newVal))
 </script>

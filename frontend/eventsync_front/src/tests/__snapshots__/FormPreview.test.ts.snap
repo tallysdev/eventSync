@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FormPreview.vue > renders correctly 1`] = `
+"<v-form data-v-7395e4fa="" class="d-flex flex-column align-center">
+  <div data-v-7395e4fa="" class="field-size">
+    <v-card data-v-7395e4fa="" outlined="" elevation="4">
+      <v-card-title data-v-7395e4fa="" class="d-flex justify-space-between align-center">
+        <p data-v-7395e4fa="" class="question-text">O que você mais gostou?</p>
+      </v-card-title>
+      <v-card-subtitle data-v-7395e4fa="">
+        <v-textarea data-v-7395e4fa="" readonly="" placeholder="Resposta para: O que você mais gostou?" outlined=""></v-textarea>
+      </v-card-subtitle>
+      <!--v-if-->
+      <!--v-if-->
+    </v-card>
+  </div>
+  <div data-v-7395e4fa="" class="field-size">
+    <v-card data-v-7395e4fa="" outlined="" elevation="4">
+      <v-card-title data-v-7395e4fa="" class="d-flex justify-space-between align-center">
+        <p data-v-7395e4fa="" class="question-text">Escolha seu tipo de evento:</p>
+      </v-card-title>
+      <!--v-if-->
+      <v-card-subtitle data-v-7395e4fa="">
+        <v-checkbox data-v-7395e4fa="" label="AAA" value="AAA"></v-checkbox>
+        <v-checkbox data-v-7395e4fa="" label="BBB" value="BBB"></v-checkbox>
+        <v-checkbox data-v-7395e4fa="" label="CCC" value="CCC"></v-checkbox>
+      </v-card-subtitle>
+      <!--v-if-->
+    </v-card>
+  </div>
+  <div data-v-7395e4fa="" class="field-size">
+    <v-card data-v-7395e4fa="" outlined="" elevation="4">
+      <v-card-title data-v-7395e4fa="" class="d-flex justify-space-between align-center">
+        <p data-v-7395e4fa="" class="question-text">Qual é o seu gênero musical favorito?</p>
+      </v-card-title>
+      <!--v-if-->
+      <!--v-if-->
+      <v-card-subtitle data-v-7395e4fa="">
+        <v-radio-group data-v-7395e4fa="" modelvalue="" column="">
+          <v-radio data-v-7395e4fa="" label="Rock" value="Rock"></v-radio>
+          <v-radio data-v-7395e4fa="" label="Pop" value="Pop"></v-radio>
+          <v-radio data-v-7395e4fa="" label="Jazz" value="Jazz"></v-radio>
+        </v-radio-group>
+      </v-card-subtitle>
+    </v-card>
+  </div>
+</v-form>"
+`;

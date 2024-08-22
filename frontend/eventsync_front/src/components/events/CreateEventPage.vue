@@ -34,7 +34,7 @@
           <v-select
             class="field-size pb-2"
             :label="'Localização do Evento'"
-            v-model="eventForm.location"
+            v-model="eventForm.local"
             :items="locations"
             item-title="local_name"
             item-value="id"
@@ -115,6 +115,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import NavBar from '../NavBar.vue'
 import FooterVue from '../Footer.vue'
+import { type FormValuesEvent } from '@/types/event'
 import {
   validateFields,
   validateNumberInput,
@@ -124,19 +125,18 @@ import {
 } from '../../stores/validatorEvent'
 import { addEvent, fetchLocations } from '@/services/eventService'
 
-class EventForm {
-  name = ''
-  start_date = ''
-  end_date = ''
-  location = ''
-  event_type = ''
-  min_quantity = ''
-  max_quantity = ''
-  hours_quantity = ''
-  description = ''
-}
-
-const eventForm = ref(new EventForm())
+const eventForm = ref<FormValuesEvent>({
+  name: '',
+  start_date: '',
+  end_date: '',
+  local: '',
+  min_quantity: 1,
+  max_quantity: 1,
+  hours_quantity: 1,
+  event_type: '',
+  description: '',
+  status: 'upcoming'
+})
 const locations = ref<any[]>([])
 const eventTypeOptions = ['conference', 'workshop', 'seminar', 'meetup']
 const router = useRouter()
@@ -167,13 +167,13 @@ const submitForm = async () => {
       name: eventForm.value.name,
       start_date: eventForm.value.start_date,
       end_date: eventForm.value.end_date,
-      local: eventForm.value.location,
+      local: eventForm.value.local,
       min_quantity: eventForm.value.min_quantity,
       max_quantity: eventForm.value.max_quantity,
       hours_quantity: eventForm.value.hours_quantity,
       event_type: eventForm.value.event_type,
       description: eventForm.value.description,
-      status: 'upcoming'
+      status: eventForm.value.status
     })
   ) {
     submitting.value = false
@@ -184,12 +184,12 @@ const submitForm = async () => {
   formData.append('name', eventForm.value.name)
   formData.append('start_date', eventForm.value.start_date)
   formData.append('end_date', eventForm.value.end_date)
-  formData.append('status', 'upcoming')
-  formData.append('local', eventForm.value.location)
+  formData.append('status', eventForm.value.status)
+  formData.append('local', eventForm.value.local)
   formData.append('description', eventForm.value.description)
-  formData.append('min_quantity', eventForm.value.min_quantity)
-  formData.append('max_quantity', eventForm.value.max_quantity)
-  formData.append('hours_quantity', eventForm.value.hours_quantity)
+  formData.append('min_quantity', eventForm.value.min_quantity.toString())
+  formData.append('max_quantity', eventForm.value.max_quantity.toString())
+  formData.append('hours_quantity', eventForm.value.hours_quantity.toString())
   formData.append('event_type', eventForm.value.event_type)
 
   try {
@@ -212,7 +212,18 @@ const showSnackbar = (message: string, type: string) => {
 }
 
 const resetForm = () => {
-  eventForm.value = new EventForm()
+  eventForm.value = {
+    name: '',
+    start_date: '',
+    end_date: '',
+    local: '',
+    min_quantity: 1,
+    max_quantity: 1,
+    hours_quantity: 1,
+    event_type: '',
+    description: '',
+    status: 'upcoming'
+  }
 }
 
 const goBack = () => {
@@ -224,10 +235,10 @@ const isFormValid = computed(() => {
     eventForm.value.name &&
     eventForm.value.start_date &&
     eventForm.value.end_date &&
-    eventForm.value.location &&
-    eventForm.value.min_quantity &&
-    eventForm.value.max_quantity &&
-    eventForm.value.hours_quantity &&
+    eventForm.value.local &&
+    eventForm.value.min_quantity > 0 &&
+    eventForm.value.max_quantity > 0 &&
+    eventForm.value.hours_quantity > 0 &&
     eventForm.value.description &&
     eventForm.value.event_type
   )

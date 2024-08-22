@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SponsorVue from '@/components/SponsorVue.vue';
+import SponsorVue from '@/components/SponsorVue.vue'
 </script>
 
 <template>

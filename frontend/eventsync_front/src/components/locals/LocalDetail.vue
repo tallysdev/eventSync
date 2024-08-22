@@ -14,7 +14,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn @click="dialog = false" color="primary" text large>
-          <span style="font-size: 14px; font-weight: bolder;">Fechar</span>
+          <span style="font-size: 14px; font-weight: bolder">Fechar</span>
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -22,23 +22,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, watch } from 'vue';
-import type { Local } from '@/types/local';
+import { ref, defineProps, watch } from 'vue'
+import type { Local } from '@/types/local'
 
 const props = defineProps<{
-  dialog: boolean;
-  local: Local | null;
-}>();
+  dialog: boolean
+  local: Local | null
+}>()
 
 const emit = defineEmits<{
-  (e: 'update:dialog', value: boolean): void;
-}>();
+  (e: 'update:dialog', value: boolean): void
+}>()
 
-const dialog = ref(props.dialog);
-const local = ref(props.local);
+const dialog = ref(props.dialog)
+const local = ref(props.local)
 
-watch(() => props.dialog, (newVal) => dialog.value = newVal);
-watch(() => props.local, (newVal) => local.value = newVal);
+watch(
+  () => props.dialog,
+  (newVal) => (dialog.value = newVal)
+)
+watch(
+  () => props.local,
+  (newVal) => (local.value = newVal)
+)
 
-watch(dialog, (newVal) => emit('update:dialog', newVal));
+watch(dialog, (newVal) => emit('update:dialog', newVal))
 </script>

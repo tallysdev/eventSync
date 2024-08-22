@@ -8,7 +8,6 @@ vi.mock('@/services/sponsorService', () => ({
 }))
 
 describe('SponsorForm.vue', () => {
-
   it('render correctly', () => {
     const wrapper = mount(SponsorForm, {
       props: {

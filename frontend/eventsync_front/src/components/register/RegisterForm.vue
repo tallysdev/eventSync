@@ -98,7 +98,10 @@
           </v-btn>
 
           <v-card-text class="text-center">
-            <router-link to="/login" class="text-blue-darken-2 text-decoration-none text-subtitle-1">
+            <router-link
+              to="/login"
+              class="text-blue-darken-2 text-decoration-none text-subtitle-1"
+            >
               Já tem uma conta? <v-icon icon="mdi-chevron-right"></v-icon>
             </router-link>
           </v-card-text>
@@ -117,7 +120,13 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { emailValidation, passwordValidation, confirmPasswordValidation, isValidCPF, isValidPhoneNumber } from '@/utils/validation'
+import {
+  emailValidation,
+  passwordValidation,
+  confirmPasswordValidation,
+  isValidCPF,
+  isValidPhoneNumber
+} from '@/utils/validation'
 import NavBar from '../../components/NavBar.vue'
 import FooterVue from '../../components/Footer.vue'
 import { type RegisterUser } from '@/types/users'
@@ -125,6 +134,7 @@ import { registerUserInDB } from '@/services/registerService'
 
 const router = useRouter()
 const visible = ref(false)
+const valid = ref(false) // Declare valid as a reactive reference
 const email = ref('')
 const cpf = ref('')
 const name = ref('')
@@ -140,7 +150,7 @@ const rules = {
   birthDate: (value: string) => !!value || 'Data de nascimento é necessária',
   phone: isValidPhoneNumber,
   password: passwordValidation,
-  confirmPassword: confirmPasswordValidation,
+  confirmPassword: confirmPasswordValidation
 }
 
 const errorMessage = ref<string | null>(null)
