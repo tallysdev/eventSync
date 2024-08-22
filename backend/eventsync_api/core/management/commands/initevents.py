@@ -1,16 +1,27 @@
 import random
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
-from core.models import Local, Event
+from core.models import Local, Event, ESUser, RegistrationPresence
+
 
 class Command(BaseCommand):
-    help = 'Create 5 Local and 20 Event records for testing'
+    help = 'Create 5 Local and 20 Event records for testing, and create a unique user who will be the organizer for each event'
 
     def handle(self, *args, **kwargs):
-        # Criar 5 Locais
+        # Create a unique user
+        user = ESUser.objects.create_user(
+            email='organizer@example.com',
+            password='organizerpass',
+            cpf='12345678901',
+            name='Event Organizer',
+            birth_date='1990-01-01',
+            phone='12345678901',
+        )
+
+        # Create 5 Locals
         locals_data = [
             {'local_name': 'Local A', 'street_name': 'Street A', 'street_number': '123', 'city': 'City A', 'state': 'State A', 'cep': '00000-000', 'reference': 'Reference A'},
             {'local_name': 'Local B', 'street_name': 'Street B', 'street_number': '456', 'city': 'City B', 'state': 'State B', 'cep': '11111-111', 'reference': 'Reference B'},
@@ -21,7 +32,7 @@ class Command(BaseCommand):
 
         locals = [Local.objects.create(**data) for data in locals_data]
 
-        # Criar 20 Eventos
+        # Create 20 Events
         event_statuses = ['upcoming', 'ongoing', 'completed', 'cancelled']
         event_types = ['conference', 'workshop', 'seminar', 'meetup']
 
@@ -30,7 +41,7 @@ class Command(BaseCommand):
             start_date = timezone.now().date() + timedelta(days=random.randint(1, 30))
             end_date = start_date + timedelta(days=random.randint(1, 5))
 
-            Event.objects.create(
+            event = Event.objects.create(
                 name=f'Event {i+1}',
                 start_date=start_date,
                 end_date=end_date,
@@ -43,4 +54,12 @@ class Command(BaseCommand):
                 event_type=random.choice(event_types)
             )
 
-        self.stdout.write(self.style.SUCCESS('Successfully created 5 locals and 20 events in your dev database'))
+            # Create RegistrationPresence for the organizer
+            RegistrationPresence.objects.create(
+                user=user,
+                event=event,
+                presence=True,
+                type='organizer'
+            )
+
+        self.stdout.write(self.style.SUCCESS('Successfully created 5 locals, 20 events, and assigned an organizer to each event in your dev database'))
