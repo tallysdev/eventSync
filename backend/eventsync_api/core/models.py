@@ -79,7 +79,7 @@ class Event(models.Model):
     min_quantity = models.IntegerField()
     hours_quantity = models.IntegerField()
     description = models.TextField()
-    local = models.ForeignKey(Local, on_delete=models.CASCADE)
+    local = models.ForeignKey(Local, on_delete=models.SET_NULL, null=True)
     status = models.CharField(
         max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
     event_type = models.CharField(
