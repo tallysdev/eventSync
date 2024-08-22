@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 
 from ..permissions import ReadOnly
 from ..serializers.theme_room_serializers import ThemeRoomSerializer
-from datetime import date
+from datetime import date, datetime
 
 
 class ThemeRoomListView(APIView):
@@ -63,30 +63,30 @@ class ThemeRoomListView(APIView):
             return Response({"detail": "Event not found."}, status=status.HTTP_404_NOT_FOUND)
 
         # Obtenha as datas do evento
-        event_start_date = event.start_date
+        # event_start_date = event.start_date
 
-        event_end_date = event.end_date
+        # event_end_date = event.end_date
 
-        # Obtenha a data de início e fim da Theme Room
-        theme_room_start_date = request.data.get('start_date')
+        # # Obtenha a data de início e fim da Theme Room
+        # theme_room_start_date = request.data.get('start_date')
 
-        theme_room_end_date = request.data.get('end_date')
+        # theme_room_end_date = request.data.get('end_date')
 
-        # Valide se as datas da Theme Room estão dentro do intervalo do evento
-        if theme_room_start_date and theme_room_end_date:
+        # # Valide se as datas da Theme Room estão dentro do intervalo do evento
+        # if theme_room_start_date and theme_room_end_date:
 
-            # Converta as datas para objetos date, se necessário
-            theme_room_start_date = date.fromisoformat(theme_room_start_date)
+        #     # Converta as datas para objetos date, se necessário
+        #     theme_room_start_date = date.fromisoformat(theme_room_start_date)
 
-            theme_room_end_date = date.fromisoformat(theme_room_end_date)
+        #     theme_room_end_date = date.fromisoformat(theme_room_end_date)
 
-            if theme_room_start_date < event_start_date or theme_room_end_date > event_end_date:
-                return Response(
-                    {"detail": "Theme room dates must be within the event's date range."},
-                    status=status.HTTP_400_BAD_REQUEST,
-                )
+        #     if theme_room_start_date < event_start_date or theme_room_end_date > event_end_date:
+        #         return Response(
+        #             {"detail": "Theme room dates must be within the event's date range."},
+        #             status=status.HTTP_400_BAD_REQUEST,
+        #         )
 
-        # Serializar e salvar os dados
+        # # Serializar e salvar os dados
         serializer = ThemeRoomSerializer(data=request.data)
 
         if serializer.is_valid():

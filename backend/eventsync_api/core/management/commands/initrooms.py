@@ -23,15 +23,15 @@ class Command(BaseCommand):
 
             ThemeRoom.objects.create(
                 event = Event.objects.get(pk=1),
-                name=f'Event {i+1}',
-                speaker=f'Speaker {i+1}',
+                name=f'Sala Tematica {i+1}',
+                speaker=f'Palestrante {i+1}',
                 start_date=start_date,
                 end_date=end_date,
                 start_time=start_time,
                 max_quantity=random.randint(10, 100),
                 min_quantity=random.randint(1, 10),
                 hours_quantity=random.randint(1, 8),
-                description=f'Description for Event {i+1}',
+                description=f'Descrição da Sala {i+1}',
                 local=f'Bloco A, Sala A34',
                 audiences='Alunos',
                 status=random.choice(event_statuses),
