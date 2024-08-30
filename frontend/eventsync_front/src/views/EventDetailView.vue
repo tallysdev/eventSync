@@ -6,6 +6,7 @@
         <section class="d-block my-10">
           <EventDetail />
         </section>
+        <ListRooms class="pa-0" />
       </v-container>
     </v-main>
     <FooterVue />
@@ -15,6 +16,7 @@
 import EventDetail from '@/components/events/EventDetail.vue'
 import FooterVue from '../components/Footer.vue'
 import NavBar from '../components/NavBar.vue'
+import ListRooms from '@/components/ThemeRoom/ListRooms.vue';
 </script>
 
 <style scoped>

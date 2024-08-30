@@ -5,6 +5,7 @@
       <v-container fluid class="pa-4 d-flex flex-column h-100 w-100">
         <EventType :event-types="eventTypes" />
         <UpcomingEvents :upcoming-events="upcomingEvents" />
+        <v-btn to="/events/1/list/theme-room" color="primary" class="mt-4 align-self-center">Ver mais Eventos</v-btn>
       </v-container>
     </v-main>
     <FooterVue />

@@ -3,6 +3,7 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 
 from .managers import ESUserManager
 
@@ -99,6 +100,38 @@ class Event(models.Model):
         else:
             self.status = 'completed'
 
+class ThemeRoom(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    
+    start_date = models.DateField()
+    end_date = models.DateField()
+    start_time = models.TimeField()
+    
+    speaker = models.CharField(max_length=100)
+    name = models.CharField(max_length=150)
+    description = models.TextField()
+    hours_quantity = models.IntegerField()
+    audiences = models.TextField()
+    
+    max_quantity = models.IntegerField()
+    min_quantity = models.IntegerField()
+    local = models.TextField()
+    
+    status = models.CharField(max_length=20, choices=EVENT_STATUS_CHOICES, default='upcoming')
+    event_type = models.CharField(max_length=20, choices=EVENT_TYPE_CHOICES, default='conference')
+
+    class Meta:
+        verbose_name = "Theme Room"
+        verbose_name_plural = "Theme Rooms"
+        ordering = ['id']
+
+    def clean(self):
+        # Call the parent class's clean method to ensure any inherited validation is executed
+        super().clean()
+        
+        # Ensure start_date and end_date are within the Event's date range
+        if self.start_date < self.event.start_date or self.end_date > self.event.end_date:
+            raise ValidationError('The start date and end date of the Theme Room must be within the Event\'s date range.')
 class Sponsor(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='logos/', blank=True, null=True)

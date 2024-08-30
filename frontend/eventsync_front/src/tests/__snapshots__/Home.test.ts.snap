@@ -169,6 +169,7 @@ exports[`Home.vue > renders correctly 1`] = `
           </v-col>
         </v-row>
       </section>
+      <v-btn data-v-08e32229="" to="/events" color="primary" class="mt-4 align-self-center">Ver mais Eventos</v-btn>
     </v-container>
   </v-main>
   <v-footer data-v-4896eafd="" data-v-08e32229="" color="secondary" class="py-6" width="auto" height="auto">

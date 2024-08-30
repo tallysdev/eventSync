@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+
 import SponsorsView from '@/views/SponsorsView.vue'
 import EventListView from '@/views/EventListView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -50,6 +51,21 @@ const router = createRouter({
       meta: { requiresAuth: true }
       // para views que sejam privadas usar esse exemplo
       // meta: { requiresAuth: true }
+    },
+    {
+      path: '/events/:id/create/theme-room',
+      name: 'create-theme-room',
+      component: () => import('../views/ThemeRoomViews/CreateTrView.vue')
+    },
+    {
+      path: '/events/:id/list/theme-room',
+      name: 'list-theme-room',
+      component: () => import('../views/ThemeRoomViews/ListTrView.vue')
+    },
+    {
+      path: '/events/:id/edit/theme-room/:room_id',
+      name: 'edit-theme-room',
+      component: () => import('../views/ThemeRoomViews/EditTrView.vue')
     },
     {
       path: '/events',
